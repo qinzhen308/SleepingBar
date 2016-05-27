@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/bg_item_email">
+    <TextView
+            android:id="@+id/email_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+    <!--<ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/item_line"/>-->
+</LinearLayout>

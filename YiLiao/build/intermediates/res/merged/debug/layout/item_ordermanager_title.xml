@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_marginTop="@dimen/all_margin" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginRight="@dimen/all_margin" >
+
+        <TextView
+            android:id="@+id/item_ordermanager_shopTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/text_height"
+            android:layout_alignParentLeft="true"
+            android:drawablePadding="@dimen/all_margin"
+            android:drawableRight="@drawable/arrr_small"
+            android:gravity="center_vertical"
+            android:text="海悦汇官方旗舰店"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/item_ordermanager_stateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/text_height"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="等待付款"
+            android:textColor="@color/main_red"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+</LinearLayout>

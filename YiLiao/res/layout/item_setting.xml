@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+         android:id="@+id/tv_setting_item"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:drawableRight="@drawable/arrr_small"
+        android:layout_marginTop="10dp"
+        android:text="关于我们"
+        android:padding="5dp"
+        android:textSize="@dimen/text_size_big_big"
+        android:textColor="@color/text_grey_french1"
+        />
+     
+     <View style="@style/divider_horizontal_grey"/>
+    
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        android:layout_width="280dp"
+        android:layout_height="320dp"
+        android:background="@drawable/bg_dialog_blue"
+        android:layout_centerInParent="true"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:gravity="center"
+            android:text="健康积分说明"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big_big" />
+
+        <TextView
+            android:id="@+id/iv_cancel"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:layout_alignTop="@+id/tv_title"
+            android:layout_alignBottom="@+id/tv_title"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_big_big_big"
+            android:textColor="@color/white"
+            android:text="x" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_below="@+id/tv_title"
+            android:background="#6BCDF4"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="3dp" />
+        
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:background="#3BB4E3"
+            android:layout_height="0.1dp"
+            android:layout_below="@+id/divider"
+            android:layout_marginBottom="3dp"
+            />
+
+        <ScrollView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/divider2"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarThumbVertical="@drawable/ic_scrollbar"
+            android:scrollbarTrackVertical="@color/blue1"
+            android:scrollbarSize="15dp"
+            android:background="@color/blue"
+            android:scrollbarStyle="outsideInset"
+             >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView 
+                    android:id="@+id/tv_content"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/text_size_big"
+                    android:paddingRight="2dp"
+                    android:textColor="@color/white"
+                    />
+                
+            </LinearLayout>
+            
+        </ScrollView>
+<!--         <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/divider2"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarThumbVertical="@drawable/ic_scollbar"
+            android:scrollbarTrackVertical="@color/blue1"
+            android:scrollbarSize="20dp"
+            android:background="@color/blue"
+            android:scrollbarStyle="outsideOverlay"
+             /> -->
+    </RelativeLayout>
+
+</RelativeLayout>

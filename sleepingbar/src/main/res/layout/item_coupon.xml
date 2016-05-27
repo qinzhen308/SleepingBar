@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
+    
+    <com.bolaa.sleepingbar.view.AutoResizeTextView
+        android:id="@+id/tv_value"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="309"
+        android:singleLine="true"
+        android:text="￥15"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+    
+    <RelativeLayout
+        android:id="@+id/layout_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="381"
+        android:background="@drawable/bg_coupon_right"
+        android:layout_alignBottom="@+id/tv_value"
+        android:layout_toRightOf="@+id/tv_value"
+        android:layout_alignTop="@+id/tv_value"
+        >
+         <com.bolaa.sleepingbar.view.AutoResizeTextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+             android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="体检抵用券"
+        android:textColor="@color/light_gray"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/tv_name"
+        android:lines="2"
+        android:text="有效期：2015.12.01-2016.01.20"
+        android:textColor="@color/light_gray"
+        />
+    
+    
+    <TextView 
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@+id/tv_date"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="未使用"
+        android:textColor="@color/light_gray"
+        />
+        
+        
+    </RelativeLayout>
+    
+   
+    
+ 
+    
+
+</LinearLayout>

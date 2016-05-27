@@ -1,0 +1,510 @@
+[
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_pay_mode.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_pay_mode.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\load_data_stats.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\load_data_stats.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_confirm.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_confirm.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refreshs_header.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\pull_to_refreshs_header.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register2.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_register2.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_waypay.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_waypay.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_hospital_combo_select.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_hospital_combo_select.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_fishion_detail_web.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_fishion_detail_web.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_emailvalidate.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_emailvalidate.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bind_login.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_bind_login.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_myinfo.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_myinfo.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_cash_history.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_cash_history.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register3.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_register3.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_hospital_combo_select.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_hospital_combo_select.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\pull_to_refresh_header.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_wheel.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_wheel.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_hispital.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_hispital.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_updatenotice.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_updatenotice.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_find_pwd.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_find_pwd.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\include_list_footer.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\include_list_footer.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_hospital_combo.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_hospital_combo.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_multi_list_parent.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_multi_list_parent.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_medical_report.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_medical_report.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_coupon_list.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_coupon_list.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_waypay.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_waypay.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_updatepw.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_updatepw.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_hospital_evaluate.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_hospital_evaluate.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\load_doag.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\layout\\load_doag.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_logisticsinfo.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_logisticsinfo.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_score.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_score.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_payresult.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_payresult.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_date_selecting.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_date_selecting.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_common_list.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_common_list.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_bank.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_select_bank.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\base_title.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\base_title.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\include_home_right.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\include_home_right.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_hospital_evaluate.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_hospital_evaluate.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_myleaves.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_myleaves.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_paypw1.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_paypw1.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_score_history.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_score_history.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_time_selecting.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_time_selecting.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_myname.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_myname.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_goodcard.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_goodcard.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_refound.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_refound.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\view_listview.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\view_listview.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\category_layout_base_view.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\category_layout_base_view.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activtiy_about.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activtiy_about.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_score_change.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_score_change.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\view_popwindow.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\view_popwindow.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_baselist2.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_baselist2.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_hospital_detail.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_hospital_detail.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\pdf_file_password.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\pdf_file_password.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\toast_view_ios.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\layout\\toast_view_ios.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_logout.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_logout.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_hospital_describe.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\fragment_hospital_describe.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_ordermanager_title.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_ordermanager_title.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_baseexpanablelv.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_baseexpanablelv.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\date_pick_head.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\date_pick_head.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_multi_list_child.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_multi_list_child.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\layer_email_item.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\layer_email_item.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_commodity.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_commodity.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_bindinggoodcard.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_bindinggoodcard.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\list_footer.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\list_footer.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_select_address.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_select_address.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_setting.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_setting.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\layer_loading_view.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\layer_loading_view.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_params_list_in_dialog.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_params_list_in_dialog.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_hospital_combo.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\fragment_hospital_combo.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\custom_toast.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\custom_toast.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_gridview.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_gridview.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_voucher.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_voucher.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_region_pwindow.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_region_pwindow.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_hospital_detail_v2.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_hospital_detail_v2.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_report_detail.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_report_detail.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\auto_scroll_banner.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\auto_scroll_banner.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my_score.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_my_score.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\wheel_date_picker.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\wheel_date_picker.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_paypassword.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_paypassword.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_base.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_base.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_paypw2.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_paypw2.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activtiy_settings.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activtiy_settings.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_coupon.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_coupon.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\include_home_main.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\include_home_main.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_already_reservation.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_already_reservation.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\header_pulltorefresh_home.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\header_pulltorefresh_home.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_pagenumber.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_pagenumber.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_launch.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_launch.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_bindingsuc.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_bindingsuc.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_time_selecting.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_time_selecting.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_myvoucher.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_myvoucher.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_region_select.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_region_select.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_waypay.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_waypay.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\layer_grid_item.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\layer_grid_item.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_address.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_address.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_bank.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_bank.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\category_layout_list_item.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\category_layout_list_item.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\layer_grid_item_one.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\layer_grid_item_one.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_phonevalidate.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_phonevalidate.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_ordermanager.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_ordermanager.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\include_stag_list_footer.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\include_stag_list_footer.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_shoppingcard.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_shoppingcard.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\layout_btn_footer.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\layout_btn_footer.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_evaluatelist.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_evaluatelist.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_region.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_region.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_score_describ.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_score_describ.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activtiy_cash_withdraw.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activtiy_cash_withdraw.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_hospital_evaluate.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\fragment_hospital_evaluate.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_attribute.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_attribute.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my_account.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_my_account.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_myreciveaddress.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_myreciveaddress.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\layout_clear_footer.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\layout_clear_footer.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_voucherlist.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_voucherlist.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pay_from_order.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_pay_from_order.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_myreciveaddress.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_myreciveaddress.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_make_appointment.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_make_appointment.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pay_test.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_pay_test.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_leaving.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_leaving.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_finish_info.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_finish_info.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_good_params.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\dialog_good_params.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\item_orderfilter.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\item_orderfilter.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_base.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\fragment_base.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\layout\\activity_region.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\layout\\activity_region.xml"
+    }
+]

@@ -1,0 +1,59 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:alwaysDrawnWithCache="false"
+        android:background="#F1F5F8"
+        android:cacheColorHint="@color/transparency"
+        android:divider="@null"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:listSelector="@null"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:scrollingCache="false"/>
+    <View 
+        style="@style/divider_vertical_gray"/>
+
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:alwaysDrawnWithCache="false"
+        android:background="@color/white"
+        android:cacheColorHint="@color/transparency"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:gravity="center"
+        android:divider="@null"
+        android:listSelector="@color/transparency"
+        android:scrollbars="none"
+        android:scrollingCache="false"/>
+    
+    <View 
+        style="@style/divider_vertical_gray"/>
+    
+    <ListView
+        android:id="@+id/listView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:alwaysDrawnWithCache="false"
+        android:background="@color/white"
+        android:cacheColorHint="@color/transparency"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:gravity="center"
+        android:divider="@null"
+        android:listSelector="@color/transparency"
+        android:scrollbars="none"
+        android:scrollingCache="false"/>
+</LinearLayout>

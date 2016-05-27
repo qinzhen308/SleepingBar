@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/et_phone1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/text_height"
+            android:background="@drawable/bg_editor"
+            android:hint="请输入手机号"
+            android:inputType="number"
+            android:maxLength="11"
+            android:numeric="integer"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColorHint="@color/gray"
+            android:textSize="@dimen/text_size_small" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/all_margin" >
+
+            <CheckBox
+                android:id="@+id/cb_regist_protocol1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:button="@drawable/checkbox_style_yellow"
+                android:checked="true" />
+
+            <TextView
+                android:id="@+id/cb_regist_protocol1Tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/cb_regist_protocol1"
+                android:button="@drawable/checkbox_style_yellow"
+                android:paddingLeft="@dimen/all_margin"
+                android:text="同意海悦汇用户注册协议"
+                android:textSize="@dimen/text_size_small" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/btn_next11"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_black"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="下一步"
+            android:textColor="@color/btn_black"
+            android:textSize="@dimen/size_submit_btn" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="遇到问题？您可以"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/tv_contact_server1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="联系客服"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+</LinearLayout>

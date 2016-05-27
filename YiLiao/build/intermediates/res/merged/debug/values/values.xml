@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emails">
+        <item>163.com</item>
+        <item>126.com</item>
+        <item>qq.com</item>
+        <item>gmail.com</item>
+        <item>sina.com</item>
+        <item>sohu.com</item>
+        <item>yahoo.com</item>
+        <item>hotmail.com</item>
+    </string-array>
+    <string-array name="feedback_type">
+        <item>投诉</item>
+        <item>举报</item>
+        <item>建议</item>
+        <item>售后</item>
+        <item>求购</item>
+        <item>商家留言</item>
+    </string-array>
+    <string-array name="orderFilter">
+        <item>全部订单</item>
+        <item>待付款</item>
+        <item>待发货</item>
+        <item>待收货</item>
+        <item>已完成</item>
+        <item>待评论</item>
+        <item>已取消订单</item>
+    </string-array>
+    <string-array name="orderFilter_value">
+        <item>""</item>
+        <item>state_new</item>
+        <item>state_pay</item>
+        <item>state_send</item>
+        <item>state_success</item>
+        <item>state_noeval</item>
+        <item>state_cancel</item>
+    </string-array>
+    <string-array name="refound_type">
+        <item>改买其他商品</item>
+        <item>改用其他配送方式</item>
+        <item>从其他店铺购买</item>
+        <item>其他原因</item>
+    </string-array>
+    <bool name="default_circle_indicator_centered">true</bool>
+    <bool name="default_circle_indicator_snap">false</bool>
+    <bool name="default_title_indicator_selected_bold">true</bool>
+    <color name="app_internal_line">#f1f1f1</color>
+    <color name="app_title_text_main">#27272f</color>
+    <color name="app_title_text_second">#9d9d9d</color>
+    <color name="app_title_text_select_red">#e30c26</color>
+    <color name="black">#000000</color>
+    <color name="blacktranslucent_background">#99000000</color>
+    <color name="blue">#5BC6F2</color>
+    <color name="blue1">#46B8EA</color>
+    <color name="calendar_color_black">#666666</color>
+    <color name="calendar_color_gray">#cccccc</color>
+    <color name="calendar_color_green">#60c677</color>
+    <color name="calendar_color_month_title">#526276</color>
+    <color name="calendar_color_orange">#fc6c00</color>
+    <color name="calendar_color_white">#ffffff</color>
+    <color name="color_edt">#EEEEEE</color>
+    <color name="color_jia">#E0E0E0</color>
+    <color name="color_jian">#F0F0F0</color>
+    <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
+    <color name="default_circle_indicator_page_color">#00000000</color>
+    <color name="default_circle_indicator_stroke_color">#FFDDDDDD</color>
+    <color name="default_title_indicator_footer_color">#FF6899FF</color>
+    <color name="default_title_indicator_selected_color">#FFFFFFFF</color>
+    <color name="default_title_indicator_text_color">#BBFFFFFF</color>
+    <color name="gray">#CDC9C9</color>
+    <color name="gray1">#F1F5F8</color>
+    <color name="gray2">#E6E6E6</color>
+    <color name="green_light">#9DC799</color>
+    <color name="grey_deep">#504F4B</color>
+    <color name="grey_french">#62626A</color>
+    <color name="header_color">#FFD800</color>
+    <color name="home_banner_tip_fill_color">#eff0f1</color>
+    <color name="home_color">#F5F5F5</color>
+    <color name="home_color1">#EEEEEE</color>
+    <color name="home_top_bacground">#e20c24</color>
+    <color name="home_top_search">#cf010b</color>
+    <color name="light_black">#919191</color>
+    <color name="light_blue">#33B5E5</color>
+    <color name="light_gray">#999999</color>
+    <color name="light_orgin">#FF6F5B</color>
+    <color name="main_red">#E53333</color>
+    <color name="main_red_trans">#aaC30D23</color>
+    <color name="menu_nomal">#C40F1F</color>
+    <color name="menu_press">#A2091B</color>
+    <color name="milky">#f7f7f7</color>
+    <color name="o">#ddeeee</color>
+    <color name="o1">#ffffdd</color>
+    <color name="pull_refresh_background">#f6f6f6</color>
+    <color name="red1">#fd7d45</color>
+    <color name="red_deep">#A2091B</color>
+    <color name="text_grey">#4B4B4B</color>
+    <color name="text_grey_french1">#949293</color>
+    <color name="text_grey_french2">#BEBEBE</color>
+    <color name="transparency">#00000000</color>
+    <color name="transparency_black">#55000000</color>
+    <color name="transparency_grey">#2a000000</color>
+    <color name="transparency_grey2">#6ae9e9e9</color>
+    <color name="v_common_divider_line_color">#e5e5e5</color>
+    <color name="v_common_line_color">#f0f0f0</color>
+    <color name="v_hint_color">#b2b2b2</color>
+    <color name="v_light_black_color">#444444</color>
+    <color name="v_title_bg">#e63b53</color>
+    <color name="v_title_black_color">#333333</color>
+    <color name="vpi__background_holo_dark">#ff000000</color>
+    <color name="vpi__background_holo_light">#fff3f3f3</color>
+    <color name="vpi__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+    <color name="vpi__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+    <color name="vpi__bright_foreground_holo_dark">@color/vpi__background_holo_light</color>
+    <color name="vpi__bright_foreground_holo_light">@color/vpi__background_holo_dark</color>
+    <color name="vpi__bright_foreground_inverse_holo_dark">@color/vpi__bright_foreground_holo_light</color>
+    <color name="vpi__bright_foreground_inverse_holo_light">@color/vpi__bright_foreground_holo_dark</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_gray">#CDC9C9</color>
+    <color name="yellow">#C40F1F</color>
+    <color name="yellow_real">#DDB775</color>
+    <declare-styleable name="CirclePageIndicator"><attr format="boolean" name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="orientation"><enum name="horizontal" value="0"/><enum name="vertical" value="1"/></attr><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr format="dimension" name="strokeWidth"/></declare-styleable>
+    <declare-styleable name="PullToRefresh"><attr format="reference|color" name="ptrRefreshableViewBackground"/><attr format="reference|color" name="ptrHeaderBackground"/><attr format="reference|color" name="ptrHeaderTextColor"/><attr format="reference|color" name="ptrHeaderSubTextColor"/><attr name="ptrMode"><flag name="disabled" value="0x0"/><flag name="pullFromStart" value="0x1"/><flag name="pullFromEnd" value="0x2"/><flag name="both" value="0x3"/><flag name="manualOnly" value="0x4"/><flag name="pullDownFromTop" value="0x1"/><flag name="pullUpFromBottom" value="0x2"/></attr><attr format="reference|boolean" name="ptrShowIndicator"/><attr format="reference" name="ptrDrawable"/><attr format="reference" name="ptrDrawableStart"/><attr format="reference" name="ptrDrawableEnd"/><attr format="reference|boolean" name="ptrOverScroll"/><attr format="reference" name="ptrHeaderTextAppearance"/><attr format="reference" name="ptrSubHeaderTextAppearance"/><attr name="ptrAnimationStyle"><flag name="rotate" value="0x0"/><flag name="flip" value="0x1"/></attr><attr format="reference|boolean" name="ptrScrollingWhileRefreshingEnabled"/><attr format="reference|boolean" name="ptrListViewExtrasEnabled"/><attr format="reference|boolean" name="ptrRotateDrawableWhilePulling"/><attr format="reference|color" name="ptrAdapterViewBackground"/><attr format="reference" name="ptrDrawableTop"/><attr format="reference" name="ptrDrawableBottom"/><attr format="boolean" name="waterpullshowheader"/></declare-styleable>
+    <declare-styleable name="StaggeredGridView"><attr format="boolean" name="drawSelectorOnTopStag"/><attr format="integer" name="numColumnsStag"/></declare-styleable>
+    <declare-styleable name="TitlePageIndicator"><attr format="dimension" name="clipPadding"/><attr format="color" name="footerColor"/><attr format="dimension" name="footerLineHeight"/><attr name="footerIndicatorStyle"><enum name="none" value="0"/><enum name="triangle" value="1"/><enum name="underline" value="2"/></attr><attr format="dimension" name="footerIndicatorHeight"/><attr format="dimension" name="footerIndicatorUnderlinePadding"/><attr format="dimension" name="footerPadding"/><attr format="color" name="selectedColor"/><attr format="boolean" name="selectedBold"/><attr format="color" name="textColor"/><attr format="dimension" name="textSize"/><attr format="dimension" name="titlePadding"/><attr format="dimension" name="topPadding"/></declare-styleable>
+    <declare-styleable name="ViewPagerIndicator"><attr format="reference" name="vpiCirclePageIndicatorStyle"/><attr format="reference" name="vpiIconPageIndicatorStyle"/><attr format="reference" name="vpiTitlePageIndicatorStyle"/><attr format="reference" name="vpiTabPageIndicatorStyle"/><attr format="reference" name="vpiTabTextStyle"/></declare-styleable>
+    <declare-styleable name="pullshowfoot"><attr format="boolean" name="showfoot"/></declare-styleable>
+    <declare-styleable name="pullshowheader"><attr format="boolean" name="showheader"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="all_margin">10dp</dimen>
+    <dimen name="banner_height_size">200dp</dimen>
+    <dimen name="btn_height">50dp</dimen>
+    <dimen name="category_height">36dp</dimen>
+    <dimen name="catergory_size">65dp</dimen>
+    <dimen name="coner_size">5dp</dimen>
+    <dimen name="default_circle_indicator_radius">3dp</dimen>
+    <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
+    <dimen name="default_title_indicator_clip_padding">4dp</dimen>
+    <dimen name="default_title_indicator_footer_indicator_height">4dp</dimen>
+    <dimen name="default_title_indicator_footer_indicator_underline_padding">20dp</dimen>
+    <dimen name="default_title_indicator_footer_line_height">2dp</dimen>
+    <dimen name="default_title_indicator_footer_padding">7dp</dimen>
+    <dimen name="default_title_indicator_text_size">15dp</dimen>
+    <dimen name="default_title_indicator_title_padding">5dp</dimen>
+    <dimen name="default_title_indicator_top_padding">7dp</dimen>
+    <dimen name="list_item_img_height">85dip</dimen>
+    <dimen name="ratingbar_small_maxHeight">22dp</dimen>
+    <dimen name="ratingbar_small_minHeight">20dp</dimen>
+    <dimen name="recommend_goods_item_height">30dp</dimen>
+    <dimen name="text_height">45dp</dimen>
+    <dimen name="text_size">14sp</dimen>
+    <dimen name="text_size_big">16sp</dimen>
+    <dimen name="text_size_big_big">16sp</dimen>
+    <dimen name="text_size_big_big_big">18sp</dimen>
+    <dimen name="text_size_mini">9sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="title_bg_height">30dp</dimen>
+    <dimen name="title_height">45dp</dimen>
+    <dimen name="tv_hot_search_margin">5dp</dimen>
+    <item name="auto_focus" type="id"/>
+    <item name="date_page_one" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="encode_failed" type="id"/>
+    <item name="encode_succeeded" type="id"/>
+    <item name="gridview" type="id"/>
+    <item name="launch_product_query" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <item name="scrollview" type="id"/>
+    <item name="search_book_contents_failed" type="id"/>
+    <item name="search_book_contents_succeeded" type="id"/>
+    <item name="selected_view" type="id"/>
+    <item name="staggridview" type="id"/>
+    <item name="stgv" type="id"/>
+    <item name="webview" type="id"/>
+    <integer name="default_circle_indicator_orientation">0</integer>
+    <integer name="default_title_indicator_footer_indicator_style">2</integer>
+    <string name="app_name">维极体检</string>
+    <string name="app_no_net_crabs">当前处于无网络状态，请检查设置</string>
+    <string name="baoyou">包邮</string>
+    <string name="begin_time">即将开始:</string>
+    <string name="beizhu">  1、我看了。阿斯达克NSA;
+            2、是动词JI件速度快男士；
+            3、就看那看小时内。 "</string>
+    <string name="captcha_already_send">已经将手机验证码发送至手机请查收后，输入验证码数字进行验证。</string>
+    <string name="day">天</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hour">小时</string>
+    <string name="label_loading">努力加载中…</string>
+    <string name="left_time">剩余时间:</string>
+    <string name="login_edit_captcha">请输入验证码</string>
+    <string name="login_edit_name_hint">手机号码/用户名/邮箱</string>
+    <string name="login_edit_psw_hint">密码</string>
+    <string name="login_net_error">您的网络好像有问题，请稍侯再试</string>
+    <string name="login_net_error_renew">当前网络不稳定，请稍后重新登录</string>
+    <string name="login_other_type">使用其他账号登录</string>
+    <string name="login_re_pwd">找回密码？</string>
+    <string name="login_title">登录</string>
+    <string name="login_tv_qq">QQ帐号登录</string>
+    <string name="login_tv_sina_weibo">新浪微博帐号登录</string>
+    <string name="login_tv_taobao">淘宝帐号登录</string>
+    <string name="minute">分钟</string>
+    <string name="minute_one_word">分</string>
+    <string name="pull_to_refresh">下拉即可刷新…</string>
+    <string name="pull_to_refresh_nodata">好厉害！都看完了~</string>
+    <string name="pull_to_refresh_release">松开即可刷新…</string>
+    <string name="pull_update_time">更新于:</string>
+    <string name="regist">注册</string>
+    <string name="regist_title">注册</string>
+    <string name="second">秒</string>
+    <string name="up_to_refresh">上拉加载更多</string>
+    <string name="user_info_check_process">正在出价…</string>
+    <string name="user_login_process">登录中…</string>
+    <string name="wenxintisi">  1、我看了。阿斯达克NSA;
+            2、是动词JI件速度快男士；
+            3、就看那看小时内。 "</string>
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>  
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
+    </style>
+    <style name="AnimationRightFade">  
+        <item name="android:windowEnterAnimation">@anim/in_righttoleft</item>  
+        <item name="android:windowExitAnimation">@anim/out_lefttoright</item>  
+    </style>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+
+
+
+
+
+
+        -->
+    </style>
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+    </style>
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+    <style name="CustomCheckboxTheme_btn" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style_btn</item>
+    </style>
+    <style name="CustomCheckboxTheme_pw" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style_pw</item>
+    </style>
+    <style name="CustomCheckboxTheme_yellow" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style_yellow</item>
+    </style>
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 设置完全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置无边框 -->
+        <!-- <item name="android:windowFrame">@null</item> -->
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置为浮动窗口 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置动画 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!-- 设置屏幕变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="MenuDialogAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+    <style name="MenuDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="PageIndicatorDefaults_muying" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator_new</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator_muying</item>
+    </style>
+    <style name="PageIndicatorDefaults_new" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator_new</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator_new</item>
+    </style>
+    <style name="TextAppearance.TabPageIndicator" parent="Widget">
+
+    </style>
+    <style name="TextAppearance.TabPageIndicator_new" parent="Widget_new">
+        <!--<item name="android:textColor">@color/news_tab_theme</item>-->
+    </style>
+    <style name="Theme.PageIndicator.Notitle" parent="Theme.PageIndicatorDefaults">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:listViewStyle">@style/MyListView</item>
+    </style>
+    <style name="Theme.PageIndicatorDefaults" parent="@android:style/Theme.Holo.Light">
+        <item name="vpiCirclePageIndicatorStyle">@style/Widget.CirclePageIndicator</item>
+        <item name="vpiTitlePageIndicatorStyle">@style/Widget.TitlePageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+        <item name="vpiTabTextStyle">@style/Widget.TabPageIndicator.Text</item>
+    </style>
+    <style name="Widget" parent="@android:style/Theme.Holo.Light"/>
+    <style name="Widget.CirclePageIndicator" parent="Widget">
+        <item name="centered">@bool/default_circle_indicator_centered</item>
+        <item name="fillColor">@color/default_circle_indicator_fill_color</item>
+        <item name="pageColor">@color/default_circle_indicator_page_color</item>
+        <item name="orientation">@integer/default_circle_indicator_orientation</item>
+        <item name="radius">@dimen/default_circle_indicator_radius</item>
+        <item name="snap">@bool/default_circle_indicator_snap</item>
+        <item name="strokeColor">@color/default_circle_indicator_stroke_color</item>
+        <item name="strokeWidth">@dimen/default_circle_indicator_stroke_width</item>
+    </style>
+    <style name="Widget.IconPageIndicator_new" parent="Widget_new">
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+    </style>
+    <style name="Widget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">22dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+    <style name="Widget.TabPageIndicator.Text" parent="Widget">
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textColor">@color/vpi__dark_theme</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="Widget.TabPageIndicator_muying" parent="Widget_new">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_indicator_btn_bg</item>
+        <!--<item name="android:paddingLeft">7dip</item>-->
+        <!--<item name="android:paddingRight">7dip</item>-->
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator_new</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="Widget.TabPageIndicator_new" parent="Widget_new">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_indicator</item>
+        <!--<item name="android:paddingLeft">7dip</item>-->
+        <!--<item name="android:paddingRight">7dip</item>-->
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator_new</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="Widget.TitlePageIndicator" parent="Widget">
+        <item name="clipPadding">@dimen/default_title_indicator_clip_padding</item>
+        <item name="footerColor">@color/default_title_indicator_footer_color</item>
+        <item name="footerLineHeight">@dimen/default_title_indicator_footer_line_height</item>
+        <item name="footerIndicatorStyle">@integer/default_title_indicator_footer_indicator_style</item>
+        <item name="footerIndicatorHeight">@dimen/default_title_indicator_footer_indicator_height</item>
+        <item name="footerIndicatorUnderlinePadding">@dimen/default_title_indicator_footer_indicator_underline_padding</item>
+        <item name="footerPadding">@dimen/default_title_indicator_footer_padding</item>
+        <item name="selectedColor">@color/default_title_indicator_selected_color</item>
+        <item name="selectedBold">@bool/default_title_indicator_selected_bold</item>
+        <item name="textColor">@color/default_title_indicator_text_color</item>
+        <item name="textSize">@dimen/default_title_indicator_text_size</item>
+        <item name="titlePadding">@dimen/default_title_indicator_title_padding</item>
+        <item name="topPadding">@dimen/default_title_indicator_top_padding</item>
+    </style>
+    <style name="Widget_new"/>
+    <style name="activityLeftAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_zoom_in</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_zoom_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>
+    </style>
+    <style name="dialogAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_show</item>
+        <item name="android:windowExitAnimation">@anim/dialog_dismiss</item>
+    </style>
+    <style name="divider_horizontal">
+
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.01dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="divider_horizontal_grey">
+
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.01dp</item>
+        <item name="android:background">@color/white_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="divider_horizontal_grey2">
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.01dp</item>
+        <item name="android:background">@color/gray2</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="divider_horizontal_yellow">
+
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/yellow</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="divider_vertical_gray">
+
+        <!-- 垂直分割线 -->
+        <item name="android:layout_width">0.01dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/white_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="divider_vertical_white">
+
+        <!-- 垂直分割线 -->
+        <item name="android:layout_width">0.01dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="launch_fullscreen" parent="android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/app_launch</item>
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+    </style>
+    <style name="launch_fullscreen_trans" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+    </style>
+    <style name="loading_large">
+        <item name="android:indeterminateDrawable">@anim/loading_large</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <style name="style_ratingbar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_star</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:maxHeight">40dp</item>
+    </style>
+    <style name="style_ratingbar_small" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/drawable_rating_bar</item>
+        <item name="android:minHeight">@dimen/ratingbar_small_minHeight</item>
+        <item name="android:maxHeight">@dimen/ratingbar_small_maxHeight</item>
+    </style>
+    <style name="toastStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

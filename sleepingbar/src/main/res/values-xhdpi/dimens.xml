@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <dimen name="v_item_deal_height">108dp</dimen>
+    <dimen name="bottom_tab_font_size">11sp</dimen>
+    <dimen name="bottom_tab_height">55dp</dimen>
+
+    <dimen name="btn_more_height">45dp</dimen>
+
+    <dimen name="banner_height">60dp</dimen>
+
+    <dimen name="zhi_banner_height">60dp</dimen>
+    <dimen name="special_banner_height">120dp</dimen>
+    <dimen name="special_banner_size">13sp</dimen>
+
+    <dimen name="title_bg_height">50dp</dimen>
+
+    <dimen name="title_integral_padding">10dp</dimen>
+    <dimen name="title_bar_btn_width">50dp</dimen>
+    <dimen name="title_bar_center_font_width">225dp</dimen>
+    <dimen name="title_bar_center_font_size">17.5sp</dimen>
+    <dimen name="title_bar_btn_font_size">14sp</dimen>
+    <dimen name="title_bar_btn_sign_font_size">13sp</dimen>
+    <dimen name="title_bar_btn_padding">7dp</dimen>
+    <dimen name="prog_bar_height">4dp</dimen>
+
+    <dimen name="btn_submit_height">35dp</dimen>
+    <dimen name="btn_submit_width">155dp</dimen>
+    <dimen name="size_submit_btn">17.5sp</dimen>
+
+    <dimen name="size_width_camera">600px</dimen>
+    <dimen name="size_height_camera">500px</dimen>
+
+    <dimen name="size_width_slipbutton">100px</dimen>
+
+    <dimen name="sign_popup_width">330px</dimen>
+    <dimen name="sign_popup_heigth">230px</dimen>
+    <dimen name="sign_popup_xpos">-270px</dimen>
+    <dimen name="sign_popup_btn_offset">15dip</dimen>
+
+    <dimen name="category_filter_width">270dip</dimen>
+    <dimen name="category_filter_height">350dip</dimen>
+    <dimen name="category_filter_item_height">50dip</dimen>
+    <dimen name="category_filter_left_distance">80dip</dimen>
+    <dimen name="list_item_height">98.5dip</dimen>
+    <dimen name="list_item_img_width">113.5dip</dimen>
+    <dimen name="list_item_img_height">95dip</dimen>
+
+    <!--swipe width-->
+    <dimen name="swipe_width">250px</dimen>
+
+    <!--webview title height-->
+    <dimen name="webview_title_height">130px</dimen>
+
+	<!--广告阴影高度-->
+	<dimen name="ad_height">95dp</dimen>
+	<dimen name="ad_btn_height">85dp</dimen>
+	<dimen name="ad_btn_width">30dp</dimen>
+    <dimen name="ad_btn_margin">17dp</dimen>
+    <dimen name="ad_text_margin">8dp</dimen>
+
+    <!--签到关注按钮宽度-->
+    <dimen name="sign_btn_width">150dp</dimen>
+
+	<!-- 品牌团 -->
+	<dimen name="brand_item_height">192dp</dimen>
+	<dimen name="brand_item_right_width">144dp</dimen>
+	<dimen name="brand_item_icon_width">120px</dimen>
+	<dimen name="brand_item_icon_height">60px</dimen>
+	<dimen name="brand_item_left_marginTop">6dp</dimen>
+	<dimen name="brand_item_title_textSize">15.4sp</dimen>
+	<dimen name="brand_item_rebate_textSize">17.6sp</dimen>
+	<dimen name="brand_item_limited_textSize">14.3sp</dimen>
+
+    <dimen name="font_size_25">12.5sp</dimen>
+    <dimen name="font_size_27">13.5sp</dimen>
+    <dimen name="font_size_32">18sp</dimen>
+    <dimen name="font_size_34">17sp</dimen>
+    <dimen name="font_size_40">18sp</dimen>
+
+    <dimen name="dialog_title_padding_left">6dp</dimen>
+
+    <dimen name="dialog_submit_height">45dp</dimen>
+    <dimen name="dialog_submit_width">50.5dp</dimen>
+
+    <dimen name="home_category_float_margin_left">20dp</dimen>
+
+    <dimen name="brandtextsize">13sp</dimen>
+    <dimen name="lottery_code_nums_text_size">19sp</dimen>
+
+    <dimen name="sign_img_width">180dp</dimen>
+    <dimen name="sign_img_height">166dp</dimen>
+    <dimen name="sign_outer_margin">16dp</dimen>
+    <dimen name="sign_outer_margin_top">22dp</dimen>
+
+
+    <dimen name="deal_coupon_list_text_marginLeft">10dp</dimen>
+    <dimen name="deal_coupon_list_text_paddingBottomAndTop">0dp</dimen>
+    <dimen name="deal_coupon_list_text_paddingLeftAndRight">2dp</dimen>
+
+    <!--品牌特卖图片水平间距-->
+    <dimen name="brand_sale_item_gap_horizontal">10dp</dimen>
+
+    <dimen name="category_deal_tab_divider_padding">6dp</dimen>
+    <!-- 分类页 分类Tab字体大小 -->
+    <dimen name="category_deal_tab_text_size">16sp</dimen>
+    <!-- 分类页 筛选view字体大小 -->
+    <dimen name="category_deal_right_view_text_size">14sp</dimen>
+    <dimen name="category_deal_tianmao_taobao_shangcheng_size">14sp</dimen>
+    <dimen name="category_deal_tab_padding_left_and_right">12dp</dimen>
+    <dimen name="category_deal_tab_bottom_red_line_height">4dp</dimen>
+    <dimen name="category_deal_sort_layout_padding_top_and_bottom">10dp</dimen>
+    <dimen name="category_deal_right_view_radio_button_margin">10dp</dimen>
+
+    <!--首页分类宫格-->
+    <dimen name="v_catrgory_item_height_size">80dp</dimen>
+    <dimen name="v_category_title_text_size">13sp</dimen>
+    <dimen name="v_category_title_margin_top_size">12dp</dimen>
+    <dimen name="v_category_title_margin_bottom_size">13dp</dimen>
+    <dimen name="v_category_home_top_height">115dp</dimen>
+    <!-- 首页 分类模块 筛选view字体大小 -->
+    <dimen name="home_category_right_view_text_size">14sp</dimen>
+    <dimen name="home_category_tab_padding_left_and_right">8dp</dimen>
+    <dimen name="home_category_sort_layout_padding_top_and_bottom">11dp</dimen>
+    <dimen name="home_category_right_view_radio_button_margin">8dp</dimen>
+    <dimen name="home_category_text_size">15sp</dimen>
+    <dimen name="home_category_text_size_selected">16sp</dimen>
+
+    <dimen name="home_category_all_width">55dp</dimen>
+    <dimen name="home_category_margin_right">20dp</dimen>
+    <dimen name="home_top_search_image_margin">10dp</dimen>
+
+    <dimen name="bg_home_category_width">15dp</dimen>
+    <!--品牌特卖更多汉子和句号的间距-->
+    <dimen name="brandviewpager_height_chars_points">24dp</dimen>
+    <dimen name="brandviewpager_more_textsize">12sp</dimen>
+    <!--新用户选择身份页面中 确定按钮距离周围的margin值-->
+    <dimen name="select_identity_confirm_margin">20dp</dimen>
+
+    <!--消息中心相关尺寸-->
+    <dimen name="msg_item_leftright_margin">10dp</dimen>
+    <dimen name="msg_item_text_leftright_margin">10dp</dimen>
+    <dimen name="msg_item_iamge_margin_top">10dp</dimen>
+    <dimen name="msg_item_margin_top">15dp</dimen>
+    <dimen name="msg_item_contenttv_height">34dp</dimen>
+    <dimen name="msg_item_moretv_height">40dp</dimen>
+    <dimen name="msg_item_image_margin_top">10dp</dimen>
+    <dimen name="msg_item_big_text_size">14sp</dimen>
+    <dimen name="msg_item_small_text_size">11sp</dimen>
+    <dimen name="msg_title_text_size">18sp</dimen>
+
+    <!-- 分享弹框内的间距start -->
+    <dimen name="share_dialog_share_first_line_dis">45dp</dimen>
+    <dimen name="share_dialog_share_second_line_dis">25dp</dimen>
+    <dimen name="share_dialog_close_top_dis">35dp</dimen>
+    <dimen name="share_dialog_type_name_size">15sp</dimen>
+    <!--购物车角标的底色图片宽高-->
+    <dimen name="cart_background_pic_width">13dp</dimen>
+    <!--购物车角标文字大小-->
+    <dimen name="cart_number_size">10sp</dimen>
+    <!--1:1图需求新增-->
+    <!--grid-->
+    <dimen name="v_item_deal_current_price_grid">17sp</dimen>
+    <dimen name="v_item_deal_title_size_grid">12sp</dimen>
+    <dimen name="v_item_deal_lingquan_marigin_top_grid">3dp</dimen>
+    <dimen name="v_item_deal_price_margin_bottom_grid">-2dp</dimen>
+    <dimen name="deal_coupon_list_text_size">9sp</dimen>
+    <!--swipe-->
+    <dimen name="v_item_deal_title_size_list">14sp</dimen>
+    <dimen name="v_item_deal_price_margin_bottom">9dp</dimen>
+    <dimen name="v_item_deal_price_favor_padding_bottom">2dp</dimen>
+    <dimen name="v_item_deal_little_text_size">10sp</dimen>
+    <dimen name="v_item_deal_lingquan_list">11sp</dimen>
+    <dimen name="v_item_big_deal_title_size">11sp</dimen>
+    <dimen name="v_item_deal_current_price">23sp</dimen>
+    <dimen name="v_item_deal_origin_price">12sp</dimen>
+    <dimen name="v_item_deal_saled_and_shangcheng_size">10sp</dimen>
+    <dimen name="v_item_deal_height_swipe">140dp</dimen>
+    <dimen name="v_item_deal_lingquan_marigin_top">3dp</dimen>
+    <!--406 图片1:1插入 列表中分割线两边的距离-->
+    <dimen name="swipe_list_item_margin_left">147dp</dimen>
+    <dimen name="swipe_list_item_margin_right">10dp</dimen>
+    
+    <!-- ratingbar的minHeight 和 maxHeight -->
+    <dimen name="ratingbar_small_minHeight">18dp</dimen>
+    <dimen name="ratingbar_small_maxHeight">19dp</dimen>
+    
+    <!-- 字体大小相关 -->
+    <!-- 一般的字体大小 -->
+    <dimen name="text_size">13sp</dimen>
+    <!-- 较小的字体大小 -->
+    <dimen name="text_size_small">11sp</dimen>
+    <!-- 较大的字体大小 -->
+    <dimen name="text_size_big">15sp</dimen>
+    <dimen name="text_size_big_big">17sp</dimen>
+    <dimen name="text_size_big_big_big">19sp</dimen>
+    <!-- 迷你字体 -->
+    <dimen name="text_size_mini">7sp</dimen>
+    
+</resources>

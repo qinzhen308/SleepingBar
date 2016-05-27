@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include
+            android:id="@+id/layout_main"
+            layout="@layout/include_home_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <include
+            layout="@layout/include_home_right"
+            android:id="@+id/layout_right"
+            android:layout_width="@dimen/category_filter_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            />
+            
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <com.bolaa.medical.view.pulltorefresh.PullExpanableListView
+        android:id="@+id/baseExpanableLv_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="@null" />
+
+    <LinearLayout
+        android:id="@+id/baseExpanableLv_noDataLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/none_order" />
+
+        <TextView
+            android:id="@+id/baseExpanableLv_noDataTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="您还没有相关订单"
+            android:textColor="@color/text_grey_french2"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

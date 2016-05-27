@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"        
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="商品参数"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/text_size_big"
+        />
+    
+    <View style="@style/divider_horizontal_grey"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
+    
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="[暂无属性]"
+        android:textColor="@color/text_grey_french1"
+        android:textSize="@dimen/text_size" />
+    
+    <ListView 
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:id="@+id/lv_good_params"
+        android:layout_height="0dp"
+        android:listSelector="@null"
+        android:divider="@color/white_gray"
+        android:dividerHeight="0.01dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:fadeScrollbars="false"
+        ></ListView>
+    
+    
+    <TextView
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_rectangle_red"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/btn_black"
+        android:textSize="@dimen/text_size" />
+    
+
+</LinearLayout>

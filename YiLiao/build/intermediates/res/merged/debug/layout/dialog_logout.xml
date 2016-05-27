@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_rectangle_white_coner"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="确定退出登录？"
+            android:textSize="@dimen/text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_marginRight="@dimen/all_margin"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/dialog_logout_cancelBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rectangle_stroke_grey"
+                android:text="取消"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/dialog_logout_okBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/all_margin"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rectangle_black_coner"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

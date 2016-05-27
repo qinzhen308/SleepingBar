@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_marginTop="@dimen/all_margin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginTop="@dimen/all_margin"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/item_myRA_nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/all_margin"
+            android:drawableLeft="@drawable/user_small"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="hhh" />
+
+        <TextView
+            android:id="@+id/item_myRA_phoneTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:drawableLeft="@drawable/phone_small"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="hhh" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_myRA_addressTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/all_margin"
+        android:gravity="center_vertical|left"
+        android:text="hhh"
+        android:textColor="@color/text_grey_french1" />
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_marginLeft="@dimen/all_margin" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/all_margin" >
+
+        <CheckBox
+            android:id="@+id/item_myRA_defaultBox"
+            style="@style/CustomCheckboxTheme_yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:gravity="center"
+            android:paddingLeft="@dimen/all_margin"
+            android:text="默认地址"
+            android:textColor="@color/text_grey" />
+
+        <TextView
+            android:id="@+id/item_myRA_writeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/item_myRA_deleteTv"
+            android:drawableLeft="@drawable/edit3"
+            android:drawablePadding="@dimen/all_margin"
+            android:gravity="center"
+            android:text="编辑"
+            android:textColor="@color/text_grey" />
+
+        <TextView
+            android:id="@+id/item_myRA_deleteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:drawableLeft="@drawable/rubish3"
+            android:drawablePadding="@dimen/all_margin"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/text_grey" />
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+</LinearLayout>

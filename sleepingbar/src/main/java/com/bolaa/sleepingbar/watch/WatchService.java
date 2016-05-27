@@ -1,0 +1,270 @@
+package com.bolaa.sleepingbar.watch;
+
+import android.app.Service;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattDescriptor;
+import android.bluetooth.BluetoothGattService;
+import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothProfile;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.IBinder;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.bolaa.sleepingbar.R;
+import com.core.framework.develop.LogUtil;
+
+import java.util.Arrays;
+import java.util.UUID;
+
+/**
+ * 保持手环与app的数据交互，处理数据逻辑
+ * 直接通过设备的address连接
+ * 这里不进行扫描设备,只尝试连接
+ * 同时只能连接一支手环,如果传入的address不同，那么进行连接
+ * Created by paulz on 2016/5/27.
+ */
+public class WatchService extends Service{
+    // Stops scanning after 10 seconds.
+    private static final long SCAN_PERIOD = 10000;
+    private static final String FLAG_CURRENT_DEVICE_ADDRESS="flag_current_device_address";
+
+
+    /**搜索BLE终端*/
+    private BluetoothAdapter mBluetoothAdapter;
+    /**读写BLE终端*/
+    private BluetoothLeClass mBLE;
+    private boolean mScanning;
+    private Handler mHandler=new Handler();
+
+
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        init();
+    }
+
+
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+//        scanLeDevice(true);
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return super.onUnbind(intent);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+    }
+
+
+    private void init() {
+        if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+            LogUtil.d("watch----没有4.0蓝牙权限");
+            stopSelf();
+            return;
+        }
+
+        // Initializes a Bluetooth adapter.  For API level 18 and above, get a reference to
+        // BluetoothAdapter through BluetoothManager.
+        final BluetoothManager bluetoothManager =
+                (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        mBluetoothAdapter = bluetoothManager.getAdapter();
+
+        // Checks if Bluetooth is supported on the device.
+        if (mBluetoothAdapter == null) {
+            LogUtil.d("watch----获取蓝牙适配器失败");
+            stopSelf();
+            return;
+        }
+        //直接开启蓝牙
+        mBluetoothAdapter.enable();
+        //初始化蓝牙工具类
+        mBLE = new BluetoothLeClass(this);
+        if (!mBLE.initialize()) {
+            LogUtil.d("watch-----Unable to initialize Bluetooth");
+            stopSelf();
+            return;
+        }
+        //发现BLE终端的Service时回调
+        mBLE.setOnServiceDiscoverListener(mOnServiceDiscover);
+        //收到BLE终端数据交互的事件
+        mBLE.setOnDataAvailableListener(mOnDataAvailable);
+
+        mBLE.setOnConnectListener(new BluetoothLeClass.OnConnectListener() {
+            @Override
+            public void onConnect(BluetoothGatt gatt) {
+                LogUtil.d("watch---onConnect---device="+gatt.getDevice()+"("+gatt.getDevice().getName()+") ,connected Devices="+bluetoothManager.getConnectedDevices(BluetoothProfile.GATT).size());
+            }
+        });
+
+        mBLE.setOnDisconnectListener(new BluetoothLeClass.OnDisconnectListener() {
+            @Override
+            public void onDisconnect(BluetoothGatt gatt) {
+                LogUtil.d("watch---onDisconnect---device="+gatt.getDevice()+"("+gatt.getDevice().getName()+") ,connected Devices="+bluetoothManager.getConnectedDevices(BluetoothProfile.GATT).size());
+            }
+        });
+    }
+
+    private void tryConnect(Intent intent){
+        String address=intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS);
+        boolean isSuc=mBLE.connect(address);
+        LogUtil.d("watch---尝试连接:"+isSuc);
+        if(!isSuc){
+            //尝试连接失败，直接关闭
+            stopSelf();
+        }
+    }
+
+
+    private void scanLeDevice(final boolean enable) {
+        if (enable) {
+            // Stops scanning after a pre-defined scan period.
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mScanning = false;
+                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                }
+            }, SCAN_PERIOD);
+
+            mScanning = true;
+            mBluetoothAdapter.startLeScan(new UUID[]{WatchConstant.UUID_SERVICE},mLeScanCallback);
+        } else {
+            mScanning = false;
+            mBluetoothAdapter.stopLeScan(mLeScanCallback);
+        }
+    }
+
+    /**
+     * 搜索到BLE终端服务的事件
+     */
+    private BluetoothLeClass.OnServiceDiscoverListener mOnServiceDiscover = new BluetoothLeClass.OnServiceDiscoverListener(){
+
+        @Override
+        public void onServiceDiscover(final BluetoothGatt gatt) {
+//			displayGattServices(mBLE.getSupportedGattServices());
+//            enableNotification(gatt,true);
+//            setAll(gatt);
+            new Handler(getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(),"发现服务",Toast.LENGTH_LONG).show();
+                }
+            });
+            new Handler(getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    enableNotification(gatt,true);
+                }
+            },8000);
+        }
+
+    };
+
+    /**
+     * 收到BLE终端数据交互的事件
+     */
+    private BluetoothLeClass.OnDataAvailableListener mOnDataAvailable = new BluetoothLeClass.OnDataAvailableListener(){
+
+        /**
+         * BLE终端数据被读的事件
+         */
+        @Override
+        public void onCharacteristicRead(BluetoothGatt gatt,
+                                         BluetoothGattCharacteristic characteristic, int status) {
+            if (status == BluetoothGatt.GATT_SUCCESS)
+                LogUtil.d("watch---onCharRead "+gatt.getDevice().getName()
+                        +" read "
+                        +characteristic.getUuid().toString()
+                        +" -> "
+                        +Utils.bytesToHexString(characteristic.getValue()));
+            LogUtil.d("watch---onCharRead "+gatt.getDevice().getName()
+                    +" read "
+                    +characteristic.getUuid().toString()
+                    +" -> "
+                    + Arrays.toString(characteristic.getValue()));
+        }
+
+        /**
+         * 收到BLE终端写入数据回调
+         */
+        @Override
+        public void onCharacteristicWrite(BluetoothGatt gatt,
+                                          BluetoothGattCharacteristic characteristic) {
+            LogUtil.d("watch---onCharWrite "+gatt.getDevice().getName()
+                    +" write "
+                    +characteristic.getUuid().toString()
+                    +" -> "
+                    +new String(characteristic.getValue()));
+        }
+    };
+
+    // Device scan callback.
+    private BluetoothAdapter.LeScanCallback mLeScanCallback =
+            new BluetoothAdapter.LeScanCallback() {
+
+                @Override
+                public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (device != null&&device.getName().contains("aceband")){
+                                if (mScanning) {
+                                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                                    mScanning = false;
+                                }
+                                mBLE.connect(device.getAddress());
+                            }
+                        }
+                    });
+                }
+            };
+
+    //必须在主线程执行
+    public void enableNotification(BluetoothGatt mBluetoothGatt,boolean b){
+            BluetoothGattService service =mBluetoothGatt.getService(UUID.fromString("000056ff-0000-1000-8000-00805f9b34fb"));
+
+            BluetoothGattCharacteristic ale =service.getCharacteristic(WatchConstant.UUID_CHARA_READ);
+
+            boolean set = mBluetoothGatt.setCharacteristicNotification(ale, true);
+
+            LogUtil.d("watch--- setnotification = " + set);
+            BluetoothGattDescriptor dsc =ale.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
+
+            dsc.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            boolean success =mBluetoothGatt.writeDescriptor(dsc);
+            LogUtil.d("watch---writing enabledescriptor:" + success);
+            Toast.makeText(getApplicationContext(),"通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
+        }
+
+}

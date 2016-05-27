@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- deal列表item -->
+    <dimen name="v_item_deal_img_height">95dp</dimen>
+    <dimen name="v_item_deal_img_width">130dp</dimen>
+    <dimen name="v_item_deal_title_size">15sp</dimen>
+    <dimen name="v_item_deal_little_text_size">9sp</dimen>
+    <dimen name="v_item_deal_price_layer_height">30dp</dimen>
+    <dimen name="v_item_deal_price_layer_height_new">32dp</dimen>
+    <dimen name="v_common_padding">10dp</dimen>
+    <!-- deal大图item -->
+    <dimen name="v_item_deal_content_height">68dp</dimen>
+    <dimen name="v_item_big_deal_title_size">11sp</dimen>
+
+    <!-- deal精品预告大图item -->
+    <dimen name="v_item_deal_comming_content_height">50dp</dimen>
+    <!-- 首页分类宫格 -->
+    <dimen name="v_catrgory_item_height_size">80dp</dimen>
+    <dimen name="v_category_title_text_size">11sp</dimen>
+    <dimen name="v_category_title_margin_top_size">12dp</dimen>
+    <dimen name="v_category_title_margin_bottom_size">13dp</dimen>
+    <!-- 首页分类宫格(下部) -->
+    <!-- <dimen name="v_catrgory_bottom_item_height_size">170dp</dimen> -->
+    <dimen name="v_catrgory_bottom_item_height_size">255dp</dimen>
+    <!-- 广告 -->
+    <dimen name="v_adversitiment_height_size">110dp</dimen>
+    <!-- 大促 -->
+    <dimen name="v_promotion_height_size">40dp</dimen>
+    <dimen name="v_category_gird_view">100dp</dimen>
+
+    <!-- camera -->
+    <dimen name="size_width_camera">480px</dimen>
+    <dimen name="size_height_camera">360px</dimen>
+    <!-- slipbutton -->
+    <dimen name="size_width_slipbutton">100px</dimen>
+    <!-- swipe width -->
+    <dimen name="swipe_width">150px</dimen>
+    <!-- webview title height -->
+    <dimen name="webview_title_height">70px</dimen>
+
+    <!-- 身份选择页面适配 -->
+    <dimen name="indetity_title_height_size">60dp</dimen>
+    <dimen name="indetity_big_title_text_size">18sp</dimen>
+    <dimen name="indetity_little_title_text_size">16sp</dimen>
+    <dimen name="indetity_mail_role_magrin_top_size">10dp</dimen>
+    <dimen name="indetity_femail_role_magrin_top_size">10dp</dimen>
+    <dimen name="indetity_close_magrin_top_size">15dp</dimen>
+
+    <!-- pullRefreshHeader 下拉列表header高度 -->
+    <dimen name="pull_refresh_header_height">40dp</dimen>
+
+    <!-- 瀑布流间距 -->
+    <dimen name="stgv_margin">3dp</dimen>
+
+    <!-- 返积分提示title_pading -->
+    <dimen name="back_integration_title_pading_size">40dp</dimen>
+
+    <!-- 列表微调距离 -->
+    <dimen name="list_water_margin_top">-4dp</dimen>
+    <dimen name="list_swipe_margin_top">-1dp</dimen>
+    <dimen name="sign_popup_width">250px</dimen>
+    <dimen name="sign_popup_heigth">180px</dimen>
+    <dimen name="sign_popup_xpos">-210px</dimen>
+    <dimen name="sign_popup_btn_offset">15dip</dimen>
+    <dimen name="category_filter_width">250dip</dimen>
+    <dimen name="category_filter_height">300dip</dimen>
+    <dimen name="category_filter_item_height">50dip</dimen>
+    <dimen name="category_filter_left_distance">85dip</dimen>
+    <dimen name="list_item_height">92dip</dimen>
+
+    <!-- 广告阴影高度 -->
+    <dimen name="ad_height">90dp</dimen>
+    <dimen name="ad_btn_height">80dp</dimen>
+    <dimen name="ad_btn_width">30dp</dimen>
+    <dimen name="ad_btn_margin">17dp</dimen>
+
+    <!-- 签到关注按钮宽度 -->
+    <dimen name="sign_btn_width">145dp</dimen>
+
+    <!-- 产品价值文字大小 -->
+    <dimen name="tip_text_Size">10sp</dimen>
+
+    <!-- 现金购列表积分字体大小 -->
+    <dimen name="score_cash_text_size">13sp</dimen>
+
+    <!-- 首页5宫格图片大小 -->
+    <dimen name="bottom_category_ic_width">30dp</dimen>
+    <dimen name="bottom_category_ic_height">30dp</dimen>
+
+    <!-- 品牌团页面 -->
+    <dimen name="brand_item_height">160dp</dimen>
+    <dimen name="brand_item_right_width">120dp</dimen>
+    <dimen name="brand_item_icon_width">90px</dimen>
+    <dimen name="brand_item_icon_height">45px</dimen>
+    <dimen name="brand_item_left_marginTop">2dp</dimen>
+    <dimen name="brand_item_title_textSize">14sp</dimen>
+    <dimen name="brand_item_rebate_textSize">16sp</dimen>
+    <dimen name="brand_item_limited_textSize">13sp</dimen>
+    <dimen name="font_size_25">11sp</dimen>
+    <dimen name="font_size_27">12sp</dimen>
+    <dimen name="font_size_32">15sp</dimen>
+    <dimen name="font_size_34">15sp</dimen>
+    <dimen name="font_size_40">18sp</dimen>
+    <dimen name="dialog_title_padding_left">6dp</dimen>
+    <dimen name="dialog_submit_height">30.66dp</dimen>
+    <dimen name="dialog_submit_width">44.66dp</dimen>
+    <dimen name="title_height">55dp</dimen>
+    <dimen name="muying_brand_goods_gray_text">12sp</dimen>
+    <dimen name="home_category_float_margin_left">15dp</dimen>
+    <dimen name="brandtextsize">12sp</dimen>
+    <dimen name="sign_img_width">160dp</dimen>
+    <dimen name="sign_img_height">148dp</dimen>
+    <dimen name="sign_outer_margin">12dp</dimen>
+    <dimen name="sign_outer_margin_top">16dp</dimen>
+
+    <!-- 品牌特卖图片水平间距 -->
+    <dimen name="brand_sale_item_gap_horizontal">8dp</dimen>
+    <!-- 品牌特卖更多汉子和句号的间距 -->
+    <dimen name="brandviewpager_height_chars_points">28dp</dimen>
+    <dimen name="brandviewpager_more_textsize">10sp</dimen>
+    <dimen name="category_deal_tianmao_taobao_shangcheng_size">10sp</dimen>
+    <!--
+        &lt;!&ndash; 分类页 筛选view字体大小 &ndash;&gt;
+    <dimen name="category_deal_right_view_text_size">10sp</dimen>
+    -->
+    <!-- 新用户选择身份页面中 确定按钮距离周围的margin值 -->
+    <dimen name="select_identity_confirm_margin">12dp</dimen>
+    <!-- 购物车角标的底色图片宽高 -->
+    <dimen name="cart_background_pic_width">10dp</dimen>
+    <!-- 购物车角标文字大小 -->
+    <dimen name="cart_number_size">7sp</dimen>
+    <!-- 1:1图需求新增 -->
+    <!-- grid -->
+    <dimen name="v_item_deal_current_price_grid">15sp</dimen>
+    <dimen name="v_item_deal_title_size_grid">12sp</dimen>
+    <dimen name="deal_coupon_list_text_size">9sp</dimen>
+    <dimen name="v_item_deal_lingquan_marigin_top_grid">2dp</dimen>
+    <!-- swipe -->
+    <dimen name="v_item_deal_title_size_list">13sp</dimen>
+    <dimen name="v_item_deal_lingquan_marigin_top">3dp</dimen>
+    <dimen name="v_item_deal_current_price">21sp</dimen>
+    <dimen name="v_item_deal_origin_price">10sp</dimen>
+    <dimen name="v_item_deal_lingquan_list">10sp</dimen>
+    <dimen name="v_item_deal_saled_and_shangcheng_size">9sp</dimen>
+    <dimen name="v_item_deal_height_swipe">140dp</dimen>
+
+    <!-- ratingbar的minHeight 和 maxHeight -->
+    <dimen name="ratingbar_small_minHeight">20dp</dimen>
+    <dimen name="ratingbar_small_maxHeight">22dp</dimen>
+    <dimen name="list_item_img_height">85dip</dimen>
+
+    <!-- 字体大小相关 -->
+    <!-- 一般的字体大小 -->
+    <dimen name="text_size">12sp</dimen>
+    <!-- 较小的字体大小 -->
+    <dimen name="text_size_small">10sp</dimen>
+    <!-- 较大的字体大小 -->
+    <dimen name="text_size_big">14sp</dimen>
+    <dimen name="text_size_big_big">16sp</dimen>
+    <dimen name="text_size_big_big_big">18sp</dimen>
+    <!-- 迷你字体 -->
+    <dimen name="text_size_mini">6sp</dimen>
+
+</resources>

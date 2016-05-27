@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="orderFilter">
+        <item>全部订单</item>
+        <item>待付款</item>
+        <item>待发货</item>
+        <item>待收货</item>
+        <item>已完成</item>
+        <item>待评论</item>
+        <item>已取消订单</item>
+    </string-array>
+    <string-array name="orderFilter_value">
+        <item>""</item>
+        <item>state_new</item>
+        <item>state_pay</item>
+        <item>state_send</item>
+        <item>state_success</item>
+        <item>state_noeval</item>
+        <item>state_cancel</item>
+    </string-array>
+    <string-array name="emails">
+        <item>163.com</item>
+        <item>126.com</item>
+        <item>qq.com</item>
+        <item>gmail.com</item>
+        <item>sina.com</item>
+        <item>sohu.com</item>
+        <item>yahoo.com</item>
+        <item>hotmail.com</item>
+    </string-array>
+    <string-array name="feedback_type">
+        <item>投诉</item>
+        <item>举报</item>
+        <item>建议</item>
+        <item>售后</item>
+        <item>求购</item>
+        <item>商家留言</item>
+    </string-array>
+    <string-array name="refound_type">
+        <item>改买其他商品</item>
+        <item>改用其他配送方式</item>
+        <item>从其他店铺购买</item>
+        <item>其他原因</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/tv_max_cash"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="当前可提现最大金额：0.00元"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey"
+        />
+    
+    <LinearLayout 
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_rectangle_strake_grey_no_coner"
+        android:orientation="horizontal"
+        >
+        
+        <EditText 
+            android:id="@+id/et_cash"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:paddingLeft="5dp"
+            android:layout_margin="5dp"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/text_size_big"
+            />
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="元"
+        android:layout_marginRight="5dp"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey"
+        />
+        
+    </LinearLayout>
+    
+    
+    <TextView 
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="收款人姓名："
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey"
+        />
+   
+     <EditText 
+         android:id="@+id/et_name"
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:inputType="text"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_big"
+            />
+     
+     <View style="@style/divider_horizontal_grey"/>
+     
+     
+     <TextView 
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="收款银行："
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey"
+        />
+     
+     
+     
+     <TextView 
+         android:id="@+id/tv_bank_name"
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/text_grey_french1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:inputType="text"
+            android:textSize="@dimen/text_size_big"
+            />
+     
+     <View style="@style/divider_horizontal_grey"/>
+     
+     
+      <TextView 
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="收款银行账号："
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey"
+        />
+     
+     <EditText 
+         android:id="@+id/et_bank_number"
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:inputType="number"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_big"
+            />
+     
+     <View style="@style/divider_horizontal_grey"/>
+    
+     <TextView 
+         android:id="@+id/btn_submit"
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        android:text="提 交"
+        android:background="@drawable/btn_blue"
+        android:textSize="@dimen/text_size_big_big"
+        android:textColor="@color/btn_white_blue"
+        />
+
+</LinearLayout>

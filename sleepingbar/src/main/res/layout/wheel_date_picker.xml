@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#E9E9E9" 
+    android:orientation="horizontal" >
+
+    <com.bolaa.sleepingbar.view.wheel.WheelView
+        android:id="@+id/wheel_yearWv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/all_margin"
+        android:layout_weight="1"
+        android:background="#E9E9E9" />
+
+    <com.bolaa.sleepingbar.view.wheel.WheelView
+        android:id="@+id/wheel_monthWv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/all_margin"
+        android:layout_weight="1"
+        android:background="#E9E9E9" />
+
+    <com.bolaa.sleepingbar.view.wheel.WheelView
+        android:id="@+id/wheel_dayWv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/all_margin"
+        android:layout_weight="1"
+        android:background="#E9E9E9" />
+
+</LinearLayout>

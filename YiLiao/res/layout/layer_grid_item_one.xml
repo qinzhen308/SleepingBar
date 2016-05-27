@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <ImageView
+        android:id="@+id/iv_goods_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_list_default" />
+
+    <TextView
+        android:id="@+id/tv_goods_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_goods_pic"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:text="标题"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/tv_goods_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_goods_title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/iv_goods_pic"
+        android:maxLines="2"
+        android:text="副标题"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size"
+        android:visibility="gone" />
+
+ 
+    <TextView
+        android:layout_below="@+id/tv_goods_title"
+        android:id="@+id/tv_goods_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="100¥"
+        android:textColor="@color/menu_nomal"
+        android:textSize="@dimen/text_size" />
+
+    <CheckBox
+        android:id="@+id/cb_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_goods_title"
+        android:button="@drawable/checkbox_style_heart"
+        android:padding="5dp" 
+         />
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9E9E9"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/wheel_okTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="@dimen/all_margin"
+          android:background="#E9E9E9"
+        android:text="完成" />
+
+    <View style="@style/divider_horizontal" />
+
+    <include layout="@layout/wheel_date_picker" />
+
+</LinearLayout>

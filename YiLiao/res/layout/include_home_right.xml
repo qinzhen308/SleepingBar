@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.bolaa.medical.view.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_user" />
+    
+    <TextView 
+        android:id="@+id/tv_login"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="登录/注册"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        />
+    
+    <View 
+        style="@style/divider_horizontal_grey"
+        android:layout_marginTop="20dp"/>
+    
+    <ListView 
+        android:id="@+id/lv_menu"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@null"
+        />
+        
+
+</LinearLayout>

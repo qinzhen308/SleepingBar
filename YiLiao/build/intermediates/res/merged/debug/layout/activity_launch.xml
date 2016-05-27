@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+    
+    <ImageView 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:scaleType="centerCrop"
+    	android:src="@drawable/app_launch"/>
+    
+    <TextView 
+        android:id="@+id/tv_version"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/white"
+        android:text="维极体检 for android v1.0"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+		android:visibility="gone"
+        android:layout_marginBottom="20dp"
+        />
+    
+    
+</RelativeLayout>
+    
+
+

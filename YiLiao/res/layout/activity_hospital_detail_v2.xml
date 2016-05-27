@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+     >
+
+    <RadioGroup
+        android:id="@+id/rg_hospital_detail"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:layout_height="@dimen/text_height"
+        android:padding="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:text="机构信息"
+            android:background="@drawable/rb_left_blue"
+            android:textColor="@color/rb_white_blue"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:text="体检套餐"
+            android:background="@drawable/rb_middle_blue"
+            android:textColor="@color/rb_white_blue"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:text="用户评价"
+            android:background="@drawable/rb_right_blue"
+            android:textColor="@color/rb_white_blue"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            />
+
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1">
+
+
+
+    </FrameLayout>
+
+
+
+    <TextView 
+        android:id="@+id/btn_make_appointment"
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/text_size_big"
+        android:text="预 约"
+        android:layout_marginBottom="20dp"
+        android:singleLine="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:background="@drawable/btn_blue"
+        android:textColor="@color/btn_white_blue"
+        />
+    
+</LinearLayout>
+    
+
+

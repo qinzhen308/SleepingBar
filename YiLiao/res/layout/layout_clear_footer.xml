@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    >
+
+    <LinearLayout
+    android:id="@+id/ll_clear_history"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/bg_rectangle_stroke_yellow"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+        
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/rubish"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:text="清空历史"
+        android:textColor="@color/main_red"
+        android:textSize="@dimen/text_size_big" />
+    </LinearLayout>
+
+</LinearLayout>

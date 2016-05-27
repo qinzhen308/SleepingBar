@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+    <style name="MyListView" parent="@android:style/Widget.ListView">
+        <item name="android:overScrollFooter">@null</item>
+    </style>
+</resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/all_margin"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_marginTop="@dimen/all_margin" >
+
+            <ImageView
+                android:id="@+id/dialog_attribute_iv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                 />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/all_margin"
+                android:layout_toRightOf="@+id/dialog_attribute_iv"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/dialog_attribute_priceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥232.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_big" />
+
+                <TextView
+                    android:id="@+id/dialog_attribute_attriTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/all_margin"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/dialog_attribute_closeIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="@dimen/all_margin"
+                android:paddingLeft="20dp"
+                android:paddingRight="@dimen/all_margin"
+                android:paddingTop="@dimen/all_margin"
+                android:src="@drawable/close2" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/btn_height"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_marginRight="@dimen/all_margin" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <View style="@style/divider_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/all_margin"
+                    android:layout_marginTop="@dimen/all_margin"
+                    android:text="规格"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_big" />
+
+                <com.bolaa.sleepingbar.view.ReGridView
+                    android:id="@+id/dialog_attribute_guigeGv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="@dimen/all_margin"
+                    android:numColumns="3"
+                    android:verticalSpacing="@dimen/all_margin" />
+
+                <View
+                    style="@style/divider_horizontal"
+                    android:layout_marginTop="@dimen/all_margin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/all_margin"
+                    android:layout_marginTop="@dimen/all_margin"
+                    android:text="颜色"
+                    android:textColor="@color/text_grey"
+                    android:textSize="@dimen/text_size_big" />
+
+                <com.bolaa.sleepingbar.view.ReGridView
+                    android:id="@+id/dialog_attribute_colorGv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="@dimen/all_margin"
+                    android:numColumns="3"
+                    android:verticalSpacing="@dimen/all_margin" />
+
+                <View
+                    style="@style/divider_horizontal"
+                    android:layout_marginTop="@dimen/all_margin" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dialog_attribute_okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size" />
+
+</RelativeLayout>

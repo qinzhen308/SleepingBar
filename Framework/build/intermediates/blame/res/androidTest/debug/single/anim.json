@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\dialog_enter.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\anim\\dialog_enter.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\dialog_show.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\anim\\dialog_show.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\loading_large.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\anim\\loading_large.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\dialog_dismiss.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\anim\\dialog_dismiss.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\dialog_exit.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\anim\\dialog_exit.xml"
+    }
+]

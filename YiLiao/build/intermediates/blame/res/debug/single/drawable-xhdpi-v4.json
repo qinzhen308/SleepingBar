@@ -1,0 +1,886 @@
+[
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_small.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\user_small.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_pay_failed.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_pay_failed.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\logo_launch.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\logo_launch.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_model_home_list.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_model_home_list.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_address.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_address.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\classfiy2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\classfiy2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_model_home_big.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_model_home_big.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\close2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\close2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shopeurp.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shopeurp.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_selected_holo.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_launch.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\app_launch.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\loading_large_01.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\loading_large_01.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\fashion2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\fashion2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_bg_sel.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\edit_bg_sel.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\new_z2_user_center.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\new_z2_user_center.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shopcar4.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shopcar4.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_load_all_date.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\app_load_all_date.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\fair.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\fair.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_help.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_help.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shopcar62.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shopcar62.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\pay_suc.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\pay_suc.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\none_cart.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\none_cart.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\anquan_mail.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\anquan_mail.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\zs_bank.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\zs_bank.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\img_title_indicator_selected_new.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\img_title_indicator_selected_new.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\edit.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\find_pwd_setpwd.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\find_pwd_setpwd.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\arrb.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\arrb.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_star_yellow.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_star_yellow.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_middle_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_middle_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_middle_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_middle_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_star_gray.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_star_gray.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\load_refresh_sel.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\load_refresh_sel.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\line_top.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\line_top.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\collecte.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\collecte.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_center_btn_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_center_btn_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\qq.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\qq.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\loadding_big.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\loadding_big.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toggle2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\toggle2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\wecaht2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\wecaht2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_top_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_top_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\login_logo.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\login_logo.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rubish.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\rubish.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shicip.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shicip.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\anquan_phone.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\anquan_phone.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\load_no_data_search.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\load_no_data_search.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_bg.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\user_bg.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\selected_yellow.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\selected_yellow.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\arrr_small.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\arrr_small.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\weiji_btn.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\weiji_btn.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\star2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\radio_bg_nor.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\radio_bg_nor.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_medical_report.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_medical_report.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_selector_normal.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_selector_normal.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shop_car.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shop_car.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\phone_step1.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\phone_step1.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\load_no_data.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\load_no_data.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shouhou.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shouhou.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\guanzhu_black.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\guanzhu_black.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\back.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\back.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\new_z1_user_center.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\new_z1_user_center.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit3.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\edit3.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\phone_small.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\phone_small.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\union_pay.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\union_pay.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\car1.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\car1.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\kitch.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\kitch.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\load_no_data_error.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\load_no_data_error.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\load_no_data_default.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\load_no_data_default.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\recharge502.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\recharge502.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\myorder.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\myorder.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\test_shop_logo.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\test_shop_logo.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\colse2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\colse2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\star.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_pic_fail.jpg",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\app_pic_fail.jpg"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user32.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\user32.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_scrollbar.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_scrollbar.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_coupon_right.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_coupon_right.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\find_pwd_phone_selected.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\find_pwd_phone_selected.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toggle.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\toggle.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\goods_collected.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\goods_collected.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\collect_shop.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\collect_shop.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\radio_bg_sel.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\radio_bg_sel.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\show_head_toast_bg.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\show_head_toast_bg.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_single_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_single_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\service.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\service.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\find_pwd_phone.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\find_pwd_phone.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\guide2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\guide2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_main_header.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_main_header.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\proess.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\proess.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_msg_content.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_msg_content.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\img_title_indicator_unselected_new.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\img_title_indicator_unselected_new.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_on.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\btn_on.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_good_recommend.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_good_recommend.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_pay_success.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_pay_success.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_coupon_valid.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_coupon_valid.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_user.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_user.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_left_btn_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_left_btn_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\daifukuan.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\daifukuan.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\new_z4_user_center.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\new_z4_user_center.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\guide3.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\guide3.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rubish3.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\rubish3.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\e_mail.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\e_mail.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_category_title_down.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_category_title_down.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\defalut_order.jpg",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\defalut_order.jpg"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icon_big.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\icon_big.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\img_some_point.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\img_some_point.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_left_btn_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_left_btn_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\user2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\wechat.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\wechat.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\baby.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\baby.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_make_appointment.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_make_appointment.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\collected.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\collected.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_bottom_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_bottom_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_arrow_left.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_arrow_left.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_center_two_btn_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_center_two_btn_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\phone_step2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\phone_step2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_center_btn_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_center_btn_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\medicen.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\medicen.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\home2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\home2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_selected_focused_holo.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_sort_down.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_sort_down.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\good_detail_back.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\good_detail_back.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\pay_fail.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\pay_fail.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_bg_nor.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\edit_bg_nor.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\address.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\address.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_selector_checked.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_selector_checked.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shop_car_order.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shop_car_order.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\viptickt.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\viptickt.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_unselected_focused_holo.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\style.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\style.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\chenk.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\chenk.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\new_z0_user_center.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\new_z0_user_center.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\collecting.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\collecting.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_good_show.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_good_show.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\loading_little.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\loading_little.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_category_title_up.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_category_title_up.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\message.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\message.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_search_home.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_search_home.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tog_tri.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\tog_tri.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\test_zfb.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\test_zfb.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\fliter.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\fliter.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\wallet.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\wallet.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shop200.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shop200.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\wifi.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\wifi.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_search_cancel.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_search_cancel.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\defalut_good.jpg",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\defalut_good.jpg"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\setting.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_triangle_up.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_triangle_up.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\pinglun.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\pinglun.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_coupon_invalid.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_coupon_invalid.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\none_order.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\none_order.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_menu.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_menu.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_action_up.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\list_action_up.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\colse1.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\colse1.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\guide1.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\guide1.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\home.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\home.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_bottom_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_bottom_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\test_wx.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\test_wx.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\find_pwd_setpwd_selected.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\find_pwd_setpwd_selected.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_right_btn_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_right_btn_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_selected_pressed_holo.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_category_title_down_pressed.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_category_title_down_pressed.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\daishouhuo.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\daishouhuo.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\entr_shop.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\entr_shop.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\selected_black.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\selected_black.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_refresh_success.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\app_refresh_success.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_top_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_top_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\car.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\car.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\arrow_left.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\arrow_left.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\collectting.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\collectting.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\unlock2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\unlock2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\zhifubao.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\zhifubao.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\check4.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\check4.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_main.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_main.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icon_small.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\icon_small.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_share_qq.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_share_qq.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\search.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\search.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\password.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\password.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_search.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_search.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_center_two_btn_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_center_two_btn_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\none_car.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\none_car.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_selected_holo_top.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_selected_holo_top.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\gread.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\gread.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_evaluate_star1.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_evaluate_star1.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\new_z3_user_center.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\new_z3_user_center.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\loading_bg.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\loading_bg.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shop_car2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shop_car2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\new_z5_user_center.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\new_z5_user_center.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\none_collect.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\none_collect.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\anquan_lock.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\anquan_lock.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\guanzhu_red.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\guanzhu_red.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_action_down.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\list_action_down.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\daifahuo.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\daifahuo.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\food.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\food.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\img_list_default.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\img_list_default.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\img_default_banner.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\img_default_banner.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_arrow_right.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_arrow_right.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_off.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\btn_off.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_triangle_down.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_triangle_down.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\toast_ios_single_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\drawable-xhdpi-v4\\toast_ios_single_normal.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_unselected_pressed_holo.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_evaluate_star2.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_evaluate_star2.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\select_white.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\select_white.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\triangle_double.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\triangle_double.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\anquan_key.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\anquan_key.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_category_title_up_pressed.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_category_title_up_pressed.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\arr_big.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\arr_big.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_sort_tab_right_btn_pressed.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\bg_sort_tab_right_btn_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_sort_up.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_sort_up.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vpi__tab_unselected_holo.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\vpi__tab_unselected_holo.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shop_car1.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\shop_car1.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\line_bottom.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\line_bottom.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\delete_black.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\delete_black.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\logo.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\logo.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_sort_unselected.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_sort_unselected.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_search_cancel_pressed.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_search_cancel_pressed.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\check.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\check.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\recharge500.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\recharge500.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_make_appointment_now.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\ic_make_appointment_now.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\trans.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\trans.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\logo_black.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\drawable-xhdpi\\logo_black.png"
+    }
+]

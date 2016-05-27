@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:test="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/tv_date_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_arrow_left"
+            android:drawablePadding="3dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:text="无"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_big" />
+
+        <TextView
+            android:id="@+id/tv_date_middle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:text="今天"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size_big" />
+
+        <TextView
+            android:id="@+id/tv_date_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:gravity="center_vertical|right"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:text="10.21"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_big" />
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        
+        <com.bolaa.medical.view.pulltorefresh.PullListView
+        android:id="@+id/pull_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/list_swipe_margin_top"
+        android:alwaysDrawnWithCache="false"
+        android:background="@color/milky"
+        android:cacheColorHint="@null"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        test:showheader="false" />
+        
+        <FrameLayout 
+            android:id="@+id/layout_load_state_container"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        
+        
+    </RelativeLayout>
+
+    
+
+</LinearLayout>

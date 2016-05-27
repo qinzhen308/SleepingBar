@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F5F8"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        >
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="体检金额："
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        />
+        
+        <TextView
+            android:id="@+id/tv_money_sum"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="810"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        />
+        
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="元"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        />
+        
+        
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="使用账户余额："
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="@color/text_grey_french1"
+                />
+
+            <EditText
+                android:id="@+id/et_balance"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text=""
+                android:ems="4"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/text_grey_french2"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:background="@null"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="@color/text_grey_french1"
+                />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="元"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="@color/text_grey_french1"
+                />
+
+        </LinearLayout>
+
+
+        <View
+            style="@style/divider_horizontal_grey2"/>
+
+        <TextView
+            android:id="@+id/tv_rebate"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="体检抵用券：50元"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:paddingLeft="3dp"
+            android:drawableRight="@drawable/arrr_small"
+            android:paddingRight="3dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/text_grey_french1"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="实际所需支付金额："
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/text_grey_french1"
+            />
+
+        <TextView
+            android:id="@+id/tv_money_should_pay"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="1"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_big_big_big"
+            android:textColor="@color/text_grey_french1"
+            />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="元"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/text_grey_french1"
+            />
+
+
+    </LinearLayout>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        >
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="支付方式："
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/text_grey_french1"
+            />
+
+        <ListView
+            android:id="@+id/lv_pay_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@null"
+            />
+
+    </LinearLayout>
+    
+
+    <View 
+        style="@style/divider_horizontal_grey2"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="为了防止恶意预约，需要支付一定的预约费用。"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/text_grey_french1"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="该费用将在体检结束后返还账户。"
+        android:gravity="center_vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/text_grey_french1"
+        />
+    
+    <TextView
+            android:id="@+id/btn_pay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:background="@drawable/btn_blue"
+            android:gravity="center"
+            android:text="提 交"
+            android:textColor="@color/btn_white_blue"
+            android:textSize="@dimen/text_size_big_big" />
+    
+
+</LinearLayout>

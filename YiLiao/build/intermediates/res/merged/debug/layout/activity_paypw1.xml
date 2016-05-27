@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/phone_step1" />
+
+    <View style="@style/divider_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/all_margin"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/payPW1_phoneEdt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_height"
+            android:layout_weight="1.5"
+            android:background="@drawable/bg_rectangle_stroke_grey"
+            android:gravity="center_vertical"
+            android:hint="请输入手机号码"
+            android:inputType="number"
+            android:maxLength="11"
+            android:numeric="integer"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/payPW1_timeTv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_grey_coner"
+            android:gravity="center"
+            android:text="重新发送"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/payPW1_yzCodeEdt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/all_margin"
+        android:background="@drawable/bg_rectangle_stroke_grey"
+        android:gravity="center_vertical"
+        android:hint="请输入验证码"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size" />
+
+    <Button
+        android:id="@+id/payPW1_nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_black"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/btn_black"
+        android:textSize="@dimen/text_size" />
+
+</LinearLayout>

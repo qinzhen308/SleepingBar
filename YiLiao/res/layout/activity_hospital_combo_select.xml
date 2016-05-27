@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F5F8"
+    android:orientation="vertical"
+     >
+
+    <com.bolaa.medical.view.pulltorefresh.PullListView xmlns:test="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:alwaysDrawnWithCache="false"
+        android:cacheColorHint="@null"
+        android:divider="@null"
+        android:dividerHeight="12dp"
+        android:background="#F1F5F8"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        test:showheader="true"
+        />
+
+    <TextView
+        android:id="@+id/btn_make_appointment"
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/text_size_big"
+        android:text="预 约"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:background="@drawable/btn_blue"
+        android:textColor="@color/btn_white_blue"
+        />
+
+
+
+    
+
+    
+</LinearLayout>
+    
+
+

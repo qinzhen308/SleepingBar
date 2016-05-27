@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:background="@color/white">
+    <LinearLayout
+        android:id="@+id/layer_pro_tip"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:layout_gravity="center_vertical"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:indeterminateDrawable="@drawable/load_refresh_progress"/>
+        <TextView
+            android:id="@+id/tv_empty_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/label_loading"
+            android:textColor="@color/grey_deep"
+            android:textSize="14sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layer_no_data"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/app_load_all_date"/>
+    </LinearLayout>
+</RelativeLayout>

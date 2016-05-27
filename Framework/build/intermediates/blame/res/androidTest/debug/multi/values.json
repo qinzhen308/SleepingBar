@@ -1,0 +1,215 @@
+[
+    {
+        "outputFile": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 46,
+                    "endOffset": 97
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 46,
+                        "endOffset": 97
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 102,
+                    "endLine": 6,
+                    "endColumn": 12,
+                    "endOffset": 347
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 102,
+                        "endLine": 6,
+                        "endColumn": 12,
+                        "endOffset": 347
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 352,
+                    "endLine": 24,
+                    "endColumn": 12,
+                    "endOffset": 1144
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 352,
+                        "endLine": 24,
+                        "endColumn": 12,
+                        "endOffset": 1144
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1149,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1438
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1149,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1438
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1443,
+                    "endLine": 37,
+                    "endColumn": 12,
+                    "endOffset": 1598
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1443,
+                        "endLine": 37,
+                        "endColumn": 12,
+                        "endOffset": 1598
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 1603,
+                    "endLine": 54,
+                    "endColumn": 12,
+                    "endOffset": 2352
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 1603,
+                        "endLine": 54,
+                        "endColumn": 12,
+                        "endOffset": 2352
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 2357,
+                    "endLine": 58,
+                    "endColumn": 12,
+                    "endOffset": 2588
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 55,
+                        "startColumn": 4,
+                        "startOffset": 2357,
+                        "endLine": 58,
+                        "endColumn": 12,
+                        "endOffset": 2588
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 2593,
+                    "endLine": 66,
+                    "endColumn": 12,
+                    "endOffset": 3012
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 4,
+                        "startOffset": 2593,
+                        "endLine": 66,
+                        "endColumn": 12,
+                        "endOffset": 3012
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 3017,
+                    "endLine": 70,
+                    "endColumn": 12,
+                    "endOffset": 3234
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 3017,
+                        "endLine": 70,
+                        "endColumn": 12,
+                        "endOffset": 3234
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 3239,
+                    "endLine": 76,
+                    "endColumn": 12,
+                    "endOffset": 3545
+                },
+                "from": {
+                    "file": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 71,
+                        "startColumn": 4,
+                        "startOffset": 3239,
+                        "endLine": 76,
+                        "endColumn": 12,
+                        "endOffset": 3545
+                    }
+                }
+            }
+        ]
+    }
+]

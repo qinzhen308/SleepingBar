@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginRight="@dimen/all_margin" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="请选择支付方式"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/watPay_moneyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="7822.00元"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+    <ListView
+        android:id="@+id/watPay_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="@null" />
+
+    <View style="@style/divider_horizontal" />
+
+</LinearLayout>

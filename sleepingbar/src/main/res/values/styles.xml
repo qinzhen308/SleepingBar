@@ -1,0 +1,150 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
+
+
+
+
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+
+
+
+
+
+
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+    </style>
+    
+    <style name="launch_fullscreen" parent="android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground" >@drawable/app_launch</item>
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+    </style>
+
+    <style name="launch_fullscreen_trans" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/activityLeftAnimation</item>
+    </style>
+
+    <style name="divider_horizontal">
+
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.01dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="divider_horizontal_grey">
+
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.01dp</item>
+        <item name="android:background">@color/white_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="divider_horizontal_grey2">
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.01dp</item>
+        <item name="android:background">@color/gray2</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="divider_horizontal_yellow">
+
+        <!-- 水平分割线 -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/yellow</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="divider_vertical_gray">
+
+        <!-- 垂直分割线 -->
+        <item name="android:layout_width">0.01dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/white_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="divider_vertical_white">
+
+        <!-- 垂直分割线 -->
+        <item name="android:layout_width">0.01dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 自定义toast样式 -->
+    <style name="toastStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="activityLeftAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_zoom_in</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_zoom_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>
+    </style>
+
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+    <style name="CustomCheckboxTheme_yellow" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style_yellow</item>
+    </style>
+
+    <style name="CustomCheckboxTheme_btn" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style_btn</item>
+    </style>
+
+    <style name="CustomCheckboxTheme_pw" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style_pw</item>
+    </style>
+
+    <style name="style_ratingbar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_star</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:maxHeight">40dp</item>
+    </style>
+    
+    <style name="style_ratingbar_small" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/drawable_rating_bar</item>
+        <item name="android:minHeight">@dimen/ratingbar_small_minHeight</item>
+        <item name="android:maxHeight">@dimen/ratingbar_small_maxHeight</item>
+    </style>
+    
+    <style name="AnimationRightFade">  
+        <item name="android:windowEnterAnimation">@anim/in_righttoleft</item>  
+        <item name="android:windowExitAnimation">@anim/out_lefttoright</item>  
+    </style>  
+
+</resources>

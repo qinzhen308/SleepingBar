@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_pay"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="支付宝支付"
+        android:drawableLeft="@drawable/test_zfb"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="8dp"
+        android:drawableRight="@drawable/selector_checkbox_pay"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        />
+    <View
+        android:id="@+id/divider"
+        style="@style/divider_horizontal_grey2"/>
+</LinearLayout>

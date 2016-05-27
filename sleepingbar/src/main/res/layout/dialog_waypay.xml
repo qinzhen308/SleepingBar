@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:background="#EEEEEE" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:gravity="center_vertical"
+            android:text="支付方式"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_big" />
+
+        <ImageView
+            android:id="@+id/dialog_waypay_closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="@dimen/all_margin"
+            android:src="@drawable/close2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog_waypay_onlineLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginRight="@dimen/all_margin" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="在线支付"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size" />
+
+        <ImageView
+            android:id="@+id/dialog_waypay_onlineSelectIv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/selected_yellow" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/dialog_waypay_okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size" />
+
+</LinearLayout>

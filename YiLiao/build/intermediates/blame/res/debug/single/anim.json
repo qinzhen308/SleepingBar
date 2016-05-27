@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_bottom_out.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_bottom_out.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\loading_large.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\anim\\loading_large.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\dialog_show.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\anim\\dialog_show.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_zoom_in_out.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_zoom_in_out.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_top_in.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_top_in.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_top_out.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_top_out.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\in_righttoleft.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\in_righttoleft.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\push_right_out.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\push_right_in.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_zoom_out.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_zoom_out.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\dialog_dismiss.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\anim\\dialog_dismiss.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\dialog_exit.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\anim\\dialog_exit.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\out_lefttoright.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\out_lefttoright.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\dialog_enter.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\exploded-aar\\SleepingBar\\Framework\\unspecified\\res\\anim\\dialog_enter.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_bottom_in.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_bottom_in.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\push_left_in.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\anim_zoom_in.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\anim_zoom_in.xml"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\YiLiao\\res\\anim\\push_left_out.xml"
+    }
+]

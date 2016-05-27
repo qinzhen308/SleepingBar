@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginRight="@dimen/all_margin" >
+
+        <TextView
+            android:id="@+id/item_shopping_idTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="订单号：9989737872" />
+
+        <TextView
+            android:id="@+id/item_shopping_stateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="未支付"
+            android:textColor="@color/yellow" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_shopping_cardbgLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/shop_car" />
+
+        <TextView
+            android:id="@+id/item_shopping_cardNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:text="海悦卡"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big" />
+
+        <TextView
+            android:id="@+id/item_shopping_cardMoneyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/all_margin"
+            android:text="¥ 200000"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/item_shopping_cardLogoIv"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="@dimen/all_margin"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/item_shopping_timeTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="12-10-31 12:24:32"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/item_shopping_cancelTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_stroke_grey"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/item_shopping_payTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_stroke_yellow"
+            android:gravity="center"
+            android:text="去支付"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_marginTop="@dimen/all_margin" />
+
+</LinearLayout>

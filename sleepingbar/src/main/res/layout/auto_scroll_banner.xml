@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/rlayout_total_advertisement"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white" >
+
+        <RelativeLayout
+            android:id="@+id/rlayout_advertisement"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white" >
+
+            <com.bolaa.sleepingbar.view.banner.BannerViewPager
+                android:id="@+id/vp_ad_view_pager"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <com.bolaa.sleepingbar.view.banner.LoopCirclePageIndicator
+                android:id="@+id/idc_ad_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:padding="10dip"
+                app:fillColor="@color/home_banner_tip_fill_color"
+                app:pageColor="@color/white"
+                app:radius="4dip" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_empty_banner"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/banner_height_size"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_default_banner"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</merge>

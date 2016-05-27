@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/item_region_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/text_size" />
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_marginLeft="@dimen/all_margin" />
+
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bolaa.medical.view.ResizeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlayout_login"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/iv_iconLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp" >
+
+        <com.bolaa.medical.view.CircleImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_user" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_iconLayout"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="horizontal" >
+
+            
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_edit_usename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp" >
+                    
+                    <TextView 
+                        android:id="@+id/label_phone"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="手机号码"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:ems="4"
+                        android:textColor="@color/text_grey_french1"
+                        android:textSize="@dimen/text_size_big"
+                        />
+
+                    <EditText
+                        android:id="@+id/edit_usename"
+                        android:layout_width="fill_parent"
+                        android:layout_toRightOf="@+id/label_phone"
+                        android:layout_height="@dimen/text_height"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:inputType="textCapWords"
+                        android:layout_marginLeft="3dp"
+                        android:singleLine="true"
+                        android:hint="手机号码"
+                        android:textColorHint="@color/text_grey_french1"
+                        android:textSize="@dimen/text_size_big" />
+
+                    <TextView
+                        android:id="@+id/tv_usename_cancel_press"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/edit_usename"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/all_margin"
+                        android:background="@drawable/bg_search_cancel"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider_horizontal_grey"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/rl_edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp" >
+                    
+                    <TextView 
+                        android:id="@+id/label_pw"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="密码"
+                        android:ems="4"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/text_grey_french1"
+                        android:textSize="@dimen/text_size_big"
+                        />
+
+                    <EditText
+                        android:id="@+id/edit_passwrod"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/text_height"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:layout_toRightOf="@+id/label_pw"
+                        android:inputType="textPassword"
+                        android:layout_marginLeft="3dp"
+                        android:hint="密码"
+                        android:singleLine="true"
+                        android:textColorHint="@color/text_grey_french1"
+                        android:textSize="@dimen/text_size_big" />
+
+                    <TextView
+                        android:id="@+id/tv_password_cancel_press"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignRight="@+id/edit_passwrod"
+                        android:layout_marginRight="@dimen/all_margin"
+                        android:background="@drawable/bg_search_cancel"
+                        android:visibility="gone" />
+
+                    
+                </RelativeLayout>
+                
+                <View
+                    style="@style/divider_horizontal_grey"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_blue"
+            android:text="登  录"
+            android:textColor="@color/btn_white_blue"
+            android:textSize="@dimen/text_size_big_big" />
+
+        <RelativeLayout
+            android:id="@+id/rayout_btn"
+            android:layout_width="fill_parent"
+            android:paddingTop="7dp"
+            android:layout_height="@dimen/text_height" >
+
+            <TextView
+                android:id="@+id/tv_re_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginStart="20dp"
+                android:text="@string/login_re_pwd"
+                android:textColor="@color/text_grey_french1"
+                android:padding="3dp"
+                android:textSize="@dimen/text_size"
+                 />
+
+            <TextView
+                android:id="@+id/regist"
+                android:layout_width="wrap_content"
+                android:padding="3dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="20dp"
+                android:text="@string/regist"
+                android:textColor="@color/text_grey_french1"
+                android:textSize="@dimen/text_size"
+                 />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/divider_horizontal_grey"
+        android:layout_above="@+id/login_loginLayout" />
+
+    
+
+</com.bolaa.medical.view.ResizeLayout>

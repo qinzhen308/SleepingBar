@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:background="#EEEEEE" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:gravity="center_vertical"
+            android:text="绑定信息"
+            android:textSize="@dimen/text_size" />
+
+        <ImageView
+            android:id="@+id/dialog_bindingGC_closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="@dimen/all_margin"
+            android:src="@drawable/close2" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="@dimen/all_margin"
+        android:layout_marginRight="@dimen/all_margin"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="购物卡卡号"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/dialog_bindingGC_idEdt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入购物卡卡号"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:background="@drawable/bg_line_top_bottom"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:gravity="center_vertical"
+            android:text="购物卡密码"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/dialog_bindingGC_pwEdt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_marginRight="@dimen/all_margin"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入购物卡密码"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialog_bindingGC_okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginTop="30dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size" />
+
+</LinearLayout>

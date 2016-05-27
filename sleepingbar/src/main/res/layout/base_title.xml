@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height"
+    android:background="@color/blue" >
+
+    <TextView
+        android:id="@+id/baseTitle_leftTv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/back"
+        android:gravity="center"
+        android:paddingLeft="@dimen/all_margin"
+        android:paddingRight="35dp" />
+
+    <TextView
+        android:id="@+id/baseTitle_milddleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_big" />
+
+    <ImageView
+        android:id="@+id/baseTitle_rightIv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="20dp" />
+
+    <TextView
+        android:id="@+id/baseTitle_rightTv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="@dimen/all_margin"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/xian"
+        style="@style/divider_horizontal"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

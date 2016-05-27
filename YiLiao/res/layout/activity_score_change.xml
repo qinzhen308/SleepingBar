@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="当前积分可兑换金额："
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey"
+        android:padding="4dp"
+        android:layout_marginTop="10dp"/>
+    
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_cash"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="0.00"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        android:padding="4dp"
+        />
+        
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:text="元"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        android:padding="4dp"
+        android:layout_marginRight="6dp"
+        />
+        
+    </LinearLayout>
+    
+    <View 
+        style="@style/divider_horizontal_grey"/>
+    
+    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="*转到银行卡请到“我的账户”中提现"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/text_grey_french1"
+        android:layout_marginTop="10dp"
+        android:padding="4dp"
+        android:layout_marginRight="6dp"
+        />
+    
+    <TextView 
+        android:id="@+id/btn_submit"
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:text="确  定"
+        android:gravity="center"
+        android:background="@drawable/btn_blue"
+        android:textSize="@dimen/text_size_big_big"
+        android:textColor="@color/btn_white_blue"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        />
+    
+    
+
+</LinearLayout>

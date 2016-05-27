@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/all_margin" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/all_margin"
+            android:layout_toLeftOf="@+id/updatePW_centerIv"
+            android:src="@drawable/proess" />
+
+        <ImageView
+            android:id="@+id/updatePW_centerIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/find_pwd_setpwd_selected" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/all_margin"
+            android:layout_toRightOf="@+id/updatePW_centerIv"
+            android:src="@drawable/proess" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/updatePW_centerIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/text_size_big" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/设置密码"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+    <EditText
+        android:id="@+id/updatePW_oldPWEdt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/all_margin"
+        android:background="@drawable/bg_rectangle_stroke_grey"
+        android:gravity="center_vertical"
+        android:hint="请输入旧密码"
+        android:padding="5dp"
+        android:password="true"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/updatePW_newPWEdt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/all_margin"
+        android:background="@drawable/bg_rectangle_stroke_grey"
+        android:gravity="center_vertical"
+        android:hint="请输入新密码"
+        android:padding="5dp"
+        android:password="true"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/updatePW_newAgainPWEdt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/all_margin"
+        android:background="@drawable/bg_rectangle_stroke_grey"
+        android:gravity="center_vertical"
+        android:hint="重复输入新密码"
+        android:padding="5dp"
+        android:password="true"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size" />
+
+    <Button
+        android:id="@+id/updatePW_okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_black"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="完成"
+        android:textColor="@color/btn_black"
+        android:textSize="@dimen/text_size" />
+
+</LinearLayout>

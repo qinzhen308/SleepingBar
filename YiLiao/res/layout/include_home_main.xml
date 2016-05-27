@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:src="@drawable/ic_menu" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="尚未体检"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_status_english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_status"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:text="—— Not yet physical examination ——"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_big"
+        android:textStyle="bold" />
+    
+
+    <TextView
+        android:id="@+id/tv_report_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_status_english"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="体检日期：2016年2月16"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size" />
+    
+    <TextView
+        android:id="@+id/tv_look_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_status_english"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="查看体检报告 >"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_big" />
+    
+    <RelativeLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tv_look_report"
+        android:layout_above="@+id/layout_bottom"
+        >
+        <ImageView
+        android:id="@+id/iv_make_appointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_make_appointment_now" />
+        
+        
+    </RelativeLayout>
+
+    
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/btn_my_appintment"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_stroke_white"
+            android:gravity="center"
+            android:text="我的预约"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big" />
+
+        <TextView
+            android:id="@+id/btn_health_score"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_stroke_white"
+            android:gravity="center"
+            android:text="健康积分"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big" />
+    </LinearLayout>
+
+</RelativeLayout>

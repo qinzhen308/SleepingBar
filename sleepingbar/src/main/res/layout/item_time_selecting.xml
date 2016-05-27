@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:paddingTop="15dp"
+    android:paddingBottom="10dp"
+    android:background="@color/white"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
+
+    
+    <TextView 
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginLeft="5dp"
+        android:text="上午  9：30-10：00"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/text_grey"
+        />
+    <View 
+        android:id="@+id/divider"
+        style="@style/divider_horizontal_grey"
+        android:layout_below="@+id/tv_time"
+        />
+    
+    
+	<TextView 
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/divider"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:padding="3dp"
+        android:text="预约"
+        android:textColor="@color/main_red"
+        />
+
+</RelativeLayout>
