@@ -15,10 +15,8 @@ import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.bolaa.sleepingbar.R;
 import com.core.framework.develop.LogUtil;
 
 import java.util.Arrays;
@@ -34,7 +32,7 @@ import java.util.UUID;
 public class WatchService extends Service{
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
-    private static final String FLAG_CURRENT_DEVICE_ADDRESS="flag_current_device_address";
+    public static final String FLAG_CURRENT_DEVICE_ADDRESS="flag_current_device_address";
 
 
     /**搜索BLE终端*/
@@ -62,6 +60,7 @@ public class WatchService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 //        scanLeDevice(true);
+        tryConnect(intent);
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -172,21 +171,12 @@ public class WatchService extends Service{
 
         @Override
         public void onServiceDiscover(final BluetoothGatt gatt) {
-//			displayGattServices(mBLE.getSupportedGattServices());
-//            enableNotification(gatt,true);
-//            setAll(gatt);
             new Handler(getMainLooper()).post(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getApplicationContext(),"发现服务",Toast.LENGTH_LONG).show();
-                }
-            });
-            new Handler(getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     enableNotification(gatt,true);
                 }
-            },8000);
+            });
         }
 
     };
@@ -227,7 +217,16 @@ public class WatchService extends Service{
                     +" -> "
                     +new String(characteristic.getValue()));
         }
+
+        @Override
+        public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+            //收到手环的上报消息
+            LogUtil.d("watch---onCharNotify"+gatt.getDevice().getName()+"notify--"+characteristic.getUuid().toString()+"--->"+Arrays.toString(Utils.bytesToIntArray(characteristic.getValue())));
+            LogUtil.d("totalcount---="+(++notifyCount));
+            CMDHandler.handleToObj(characteristic.getValue());
+        }
     };
+    int notifyCount=0;
 
     // Device scan callback.
     private BluetoothAdapter.LeScanCallback mLeScanCallback =

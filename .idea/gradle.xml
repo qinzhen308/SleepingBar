@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Framework" />
-            <option value="$PROJECT_DIR$/YiLiao" />
             <option value="$PROJECT_DIR$/android-pdfview" />
             <option value="$PROJECT_DIR$/sleepingbar" />
           </set>
@@ -19,7 +18,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Framework" />
-            <option value="$PROJECT_DIR$/YiLiao" />
             <option value="$PROJECT_DIR$/android-pdfview" />
             <option value="$PROJECT_DIR$/sleepingbar" />
           </set>

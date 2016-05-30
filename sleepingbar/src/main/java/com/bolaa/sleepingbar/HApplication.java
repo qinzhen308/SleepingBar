@@ -1,6 +1,7 @@
 package com.bolaa.sleepingbar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 
@@ -10,11 +11,15 @@ import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.RegionInfo;
 import com.bolaa.sleepingbar.model.RegoinWrapper;
+import com.bolaa.sleepingbar.model.Sleep;
 import com.bolaa.sleepingbar.model.tables.RegionTable;
+import com.bolaa.sleepingbar.model.tables.SleepTable;
+import com.bolaa.sleepingbar.model.tables.StepTable;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.MyApplication;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.develop.LogUtil;
@@ -67,6 +72,9 @@ public class HApplication extends MyApplication {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+		Intent intent = new Intent(this, WatchService.class);
+		intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,"4A:59:00:00:AA:0A");
+		startService(intent);
 	}
 
 	@Override
@@ -81,6 +89,8 @@ public class HApplication extends MyApplication {
 
 	private void initDatabase() {
 		Preferences.getInstance();
+		SleepTable.getInstance().init();
+		StepTable.getInstance().init();
 	}
 	
 	public void getRegionInBg(){

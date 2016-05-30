@@ -194,4 +194,21 @@ public class Utils {
         return (byte)"0123456789ABCDEF".indexOf(paramChar);
     }
 
+
+    public static int[] bytesToIntArray(byte[] src){
+        if(src==null||src.length==0){
+            return null;
+        }
+        int cmd=src[0]&0xffffffff;
+        int data1=0;
+        int data2=0;
+        if(src.length>=5){
+            data1=((src[1]<<24)&0xff000000)|((src[2]<<16)&0x00ff0000)|((src[3]<<8)&0x0000ff00)|((src[4]&0x000000ff));
+        }
+        if(src.length>=9){
+            data2=((src[5]<<24)&0xff000000)|((src[6]<<16)&0x00ff0000)|((src[7]<<8)&0x0000ff00)|((src[8]&0x000000ff));
+        }
+        return new int[]{cmd,data1,data2};
+    }
+
 }

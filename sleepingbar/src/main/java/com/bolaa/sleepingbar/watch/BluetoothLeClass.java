@@ -62,6 +62,8 @@ public class BluetoothLeClass{
                                           int status);
 		 public void onCharacteristicWrite(BluetoothGatt gatt,
                                            BluetoothGattCharacteristic characteristic);
+
+        public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic);
 	}
     
 	private OnConnectListener mOnConnectListener;
@@ -130,13 +132,14 @@ public class BluetoothLeClass{
                                             BluetoothGattCharacteristic characteristic) {
             Log.i(TAG, "onCharacteristicChanged: "+characteristic.getUuid());
             if (mOnDataAvailableListener!=null)
-        		mOnDataAvailableListener.onCharacteristicWrite(gatt, characteristic);
+        		mOnDataAvailableListener.onCharacteristicChanged(gatt, characteristic);
         }
 
         @Override
         public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
             super.onCharacteristicWrite(gatt, characteristic, status);
             Log.i(TAG, "onCharacteristicWrite: " + status);
+            if (mOnDataAvailableListener!=null) mOnDataAvailableListener.onCharacteristicWrite(gatt, characteristic);
             if (status != 0)
             {
 //                gatt.discoverServices();

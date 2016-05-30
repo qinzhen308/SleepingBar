@@ -24,9 +24,10 @@
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name=".HApplication"
         android:theme="@style/AppTheme">
         <activity
-            android:name="ui.LaunchActivity"
+            android:name=".ui.LaunchActivity"
             android:label="@string/app_name"
             android:theme="@style/launch_fullscreen_trans"
             android:screenOrientation="portrait"
