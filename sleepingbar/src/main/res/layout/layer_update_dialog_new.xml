@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="285dip"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_backgroud_new"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <LinearLayout
+        android:id="@+id/lay_icon_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/img_portrait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_portrait_product_normal"/>
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="哈喽，我是小倉倉"
+            android:textColor="@color/gray3"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay_icon_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:text="好久不见，我们又有新版本啦~"
+        android:textColor="#fd7793"
+        android:textSize="16sp"/>
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@+id/tv_dialog_title"
+        android:layout_marginBottom="10dp"
+        android:fadeScrollbars="false">
+
+        <TextView
+            android:id="@+id/tv_dialog_description"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/gray3"
+            android:textSize="15sp"/>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/lay_check_box_not_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sv_content">
+
+        <TextView
+            android:id="@+id/tv_no_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="2dp"
+            android:gravity="center"
+            android:text="不再提示"
+            android:textColor="@color/v_text_color_84"
+            android:textSize="14sp"/>
+
+        <CheckBox
+            android:id="@+id/check_no_notice"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/tv_no_tip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_no_tip"
+            android:button="@drawable/bg_update_dialog_not_notice"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay_check_box_not_notice"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_ensure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:background="@drawable/btn_blue"
+            android:gravity="center"
+            android:text="体验新版本"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_rectangle_strake_blue"
+            android:gravity="center"
+            android:text="暂不升级"
+            android:textColor="#c8c8c8"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

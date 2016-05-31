@@ -20,6 +20,7 @@ public class GlobeFlags {
     public static final String OLD_USER_FLAG = "-1"; //老用户标示
     public static final String UPDATE_USER_SIGN_MOVE_TIP = "update_user_sign_move_tip"; //老用户标示
     public static final String NEW_USER_INTEGRATION_TIP = "new_user_integration_tip"; //全新用户积分用处提示
+    public static final String NO_UPDATE_NOTICE_TAG = "no_update_notice_tag"; //是否再显示更新提示
 	
 	//列表的显示模式：宫格、列表、瀑布流
     public static final int MODE_BIG_PIC_MODE = 0;

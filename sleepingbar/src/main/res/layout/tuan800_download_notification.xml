@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lr_img_deal">
+        <ImageView android:id="@+id/down_img"
+                   android:layout_height="wrap_content"
+                   android:layout_width="wrap_content"
+                   android:layout_marginLeft="10dip"
+                   android:layout_marginRight="10dip"/>
+    </RelativeLayout>
+    <TextView android:id="@+id/down_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@id/lr_img_deal"
+              android:layout_alignTop="@id/lr_img_deal"
+              android:textSize="16sp"
+              android:layout_marginBottom="5dip"
+              android:text="@string/update_tuan_coupon_now"/>
+    <ProgressBar android:id="@+id/tuan_down_pb"
+                 android:layout_width="240dip"
+                 android:layout_height="wrap_content"
+                 android:layout_toRightOf="@id/lr_img_deal"
+                 android:layout_below="@id/down_tv"
+                 style="?android:attr/progressBarStyleHorizontal"
+                 android:layout_gravity="center_vertical"/>
+</RelativeLayout>

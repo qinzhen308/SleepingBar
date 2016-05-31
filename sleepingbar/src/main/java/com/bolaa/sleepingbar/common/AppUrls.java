@@ -156,6 +156,7 @@ public class AppUrls {
 	public String URL_HOSPITAL_EVALUATE_COMMIT=BASE_URL+"&c=order&act=save_comment";//机构评价
 	public String URL_HOSPITAL_COMBO_LIST=BASE_URL+"&c=hospital&act=package_list";//体检套餐列表
 	public String URL_HOSPITAL_EVALUATE_LIST=BASE_URL+"&c=hospital&act=comment_list";//评论列表
+	public String URL_CHECK_UPDATE=BASE_URL+"";//升级
 
 	/*支付宝回调地址*/
 	public String URL_ZFB_NOTIFY="http://jk.m1ju.com/app/respond_alipay.php";

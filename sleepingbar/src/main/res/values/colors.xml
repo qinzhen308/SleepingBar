@@ -2,8 +2,8 @@
 <resources>
 
     <!-- 底部按钮的背景颜色 -->
-    <color name="menu_nomal">#C40F1F</color>
-    <color name="menu_press">#A2091B</color>
+    <color name="menu_nomal">#FFFFFF</color>
+    <color name="menu_press">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <!-- 白色有点灰 -->
     <color name="white_gray">#CDC9C9</color>
@@ -11,6 +11,8 @@
     <color name="gray">#CDC9C9</color>
     <color name="gray1">#F1F5F8</color>
     <color name="gray2">#E6E6E6</color>
+    <color name="gray3">#666666</color>
+    <color name="v_text_color_84">#848484</color>
     <!-- 浅灰色 -->
     <color name="grey_french">#62626A</color>
     <!-- 深灰色 -->
@@ -72,7 +74,8 @@
     <color name="v_title_bg">#e63b53</color>
     <color name="v_title_black_color">#333333</color>
     <color name="blacktranslucent_background">#99000000</color>
-    <color name="main_red">#E53333</color>
+    <color name="main_red">#F34335</color>
+    <color name="main">#9C27B0</color>
     <color name="main_red_trans">#aaC30D23</color>
     <color name="red_deep">#A2091B</color>
     <color name="green_light">#9DC799</color>
@@ -89,5 +92,11 @@
     <color name="calendar_color_gray">#cccccc</color>
     <color name="calendar_color_month_title">#526276</color>
     <color name="calendar_color_white">#ffffff</color>
+
+    <color name="base_red">#F34335</color>
+    <color name="base_green">#4CAF50</color>
+    <color name="base_yellow">#FDC02E</color>
+    <color name="base_blue">#06A9F4</color>
+
 
 </resources>

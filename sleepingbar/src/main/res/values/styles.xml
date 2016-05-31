@@ -26,6 +26,15 @@
         -->
     </style>
 
+    <style name="dialog_style" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/transparency</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
     <!-- Application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
@@ -60,7 +69,7 @@
     </style>
     
     <style name="divider_horizontal_grey2">
-        <!-- 水平分割线 -->
+        <!-- 水平分割线 2-->
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0.01dp</item>
         <item name="android:background">@color/gray2</item>
@@ -82,6 +91,14 @@
         <item name="android:layout_width">0.01dp</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:background">@color/white_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 垂直分割线1 -->
+    <style name="divider_vertical_gray1">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/home_color1</item>
         <item name="android:orientation">vertical</item>
     </style>
 

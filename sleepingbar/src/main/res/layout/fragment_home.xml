@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main"
+            >
+
+            <TextView
+                android:id="@+id/tv_need_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:text="邀好友支持"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_funds_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:text="睡眠基金（元）"/>
+
+            <TextView
+                android:id="@+id/tv_funds_help"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:textSize="@dimen/text_size"
+                android:background="@color/white"
+                android:textColor="@color/main"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/tv_sleep_funds_label"
+                android:layout_alignTop="@+id/tv_sleep_funds_label"
+                android:text="\?"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_funds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_below="@+id/tv_sleep_funds_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="0.00"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_funds_got"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_below="@+id/tv_sleep_funds"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="50dp"
+                android:text="已累计收货基金0.00元"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+            android:id="@+id/layout_funds_supporter"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_funds_supporter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="@color/base_red"
+                android:text="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey"
+                android:layout_marginTop="5dp"
+                android:text="基金支持团"/>
+        </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/divider_vertical_gray1"/>
+
+            <LinearLayout
+                android:id="@+id/layout_sleep_ranklist"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_sleep_ranklist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textColor="@color/base_green"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="5dp"
+                    android:text="睡眠排行"/>
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/divider_vertical_gray"/>
+
+            <LinearLayout
+                android:id="@+id/layout_sleep_trend"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_sleep_trend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textColor="@color/base_yellow"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="5dp"
+                    android:text="睡眠趋势"/>
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/divider_vertical_gray"/>
+
+            <LinearLayout
+                android:id="@+id/layout_my_medal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_my_medal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textColor="@color/base_blue"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="5dp"
+                    android:text="我的勋章"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/divider_horizontal_grey"
+             />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="睡眠质量"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_grey_french1"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:text="2016-04-12"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:textColor="@color/main"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="优"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_deep_time"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="@color/main"
+                android:gravity="center"
+                android:layout_below="@+id/tv_sleep_quality"
+                android:layout_toLeftOf="@+id/tv_sleep_quality"
+                android:text="2h"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_sleep_deep_time"
+                android:layout_alignRight="@+id/tv_sleep_deep_time"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey_french1"
+                android:layout_below="@+id/tv_sleep_deep_time"
+                android:gravity="center"
+                android:text="深度睡眠"/>
+
+
+            <TextView
+                android:id="@+id/tv_sleep_light_time"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="@color/main"
+                android:gravity="center"
+                android:layout_below="@+id/tv_sleep_quality"
+                android:layout_toRightOf="@+id/tv_sleep_quality"
+                android:text="2h"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_sleep_light_time"
+                android:layout_alignRight="@+id/tv_sleep_light_time"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey_french1"
+                android:layout_below="@+id/tv_sleep_deep_time"
+                android:gravity="center"
+                android:text="浅度睡眠"/>
+
+            <TextView
+                android:id="@+id/tv_sleep_quality_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey_french1"
+                android:layout_below="@+id/tv_sleep_deep_time"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="30dp"
+                android:text="“良好的作息习惯是健康的基础”"/>
+
+
+
+        </RelativeLayout>
+
+        <View
+            style="@style/divider_horizontal_grey"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/base_green"
+            >
+
+            <TextView
+                android:id="@+id/tv_step_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:text="今日行走（步）"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_below="@+id/tv_step_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="55dp"
+                android:text="0"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/layout_step_walk"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_step_walk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/base_green"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="2dp"
+                    android:text="步行数"/>
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/divider_vertical_gray1"/>
+
+            <LinearLayout
+                android:id="@+id/layout_step_run"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_step_run"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/base_green"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="2dp"
+                    android:text="跑步数"/>
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/divider_vertical_gray"/>
+
+            <LinearLayout
+                android:id="@+id/layout_distance"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/base_green"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="2dp"
+                    android:text="公里数"/>
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                style="@style/divider_vertical_gray"/>
+
+            <LinearLayout
+                android:id="@+id/layout_calorie"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_calorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/base_green"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/text_grey"
+                    android:layout_marginTop="2dp"
+                    android:text="卡路里"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/divider_horizontal_grey"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_step_evaluate_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
+                android:text="评价"/>
+
+            <TextView
+                android:id="@+id/tv_step_evaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:textColor="@color/base_green"
+                android:layout_below="@+id/tv_step_evaluate_label"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="好厉害"/>
+
+            <TextView
+                android:id="@+id/tv_step_quanlity_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_grey_french1"
+                android:layout_below="@+id/tv_step_evaluate"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="40dp"
+                android:text="“良好的作息习惯是健康的基础”"/>
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

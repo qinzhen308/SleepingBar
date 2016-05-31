@@ -1,226 +1,331 @@
 package com.bolaa.sleepingbar.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.content.res.Resources.NotFoundException;
-import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.DrawerLayout.DrawerListener;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.AbsListView.LayoutParams;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragmentActivity;
-import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
-import com.bolaa.sleepingbar.common.AppUrls;
-import com.bolaa.sleepingbar.controller.AbstractListAdapter;
-import com.bolaa.sleepingbar.httputil.ParamBuilder;
-import com.bolaa.sleepingbar.model.Order;
-import com.bolaa.sleepingbar.model.wrapper.OrderWraper;
-import com.bolaa.sleepingbar.parser.gson.BaseObject;
-import com.bolaa.sleepingbar.parser.gson.GsonParser;
+import com.bolaa.sleepingbar.common.GlobeFlags;
+import com.bolaa.sleepingbar.ui.fragment.ActiveFragment;
+import com.bolaa.sleepingbar.ui.fragment.CommunityFragment;
+import com.bolaa.sleepingbar.ui.fragment.HomeFragment;
+import com.bolaa.sleepingbar.ui.fragment.UserCenterFragment;
+import com.bolaa.sleepingbar.update.UpdateUtil;
 import com.bolaa.sleepingbar.utils.AppUtil;
-import com.bolaa.sleepingbar.utils.Image13Loader;
-import com.core.framework.app.devInfo.ScreenUtil;
-import com.core.framework.develop.LogUtil;
-import com.core.framework.net.NetworkWorker;
-import com.core.framework.net.NetworkWorker.ICallback;
+import com.core.framework.app.MyApplication;
+import com.core.framework.image.image13.Image13lLoader;
+import com.core.framework.store.sharePer.PreferencesUtils;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * 首页
- * 
- * @author paulz
- * 
+ *
+ * @author paul'z
+ *
  */
 public class MainActivity extends BaseFragmentActivity implements
 		OnClickListener {
-	
-	Handler mHandler=new Handler();
-	private int mClickCount;
-	
-	private ViewGroup layoutMain;
-	private ViewGroup layoutRight;
-	private DrawerLayout mDrawerLayout;
-	
-	private ListView lvMenu;
-	private ImageView ivAvatar;
-	private ImageView ivAppointment;
-	private ImageView ivMenu;
-	private TextView btnScore;
-	private TextView tvLogin;
-	private TextView btnMyAppintment;
-	private TextView tvLookReport;
-	private TextView tvStatus;
-	private TextView tvStatusEnglish;
-	private TextView tvReportDate;
-	
-	private int maxX;
-	
-	private MenuAdapter mAdapter;
-	private Order nearlyReport;//最近的报告
-	
+	private TextView titleTv;
+	private TextView leftTv;
+	private ImageView rightIv;
+	private ImageView ivTab1Pic;
+	private ImageView ivTab2Pic;
+	private ImageView ivTab3Pic;
+	private ImageView ivTab4Pic;
+
+	private LinearLayout layoutTab1;
+	private LinearLayout layoutTab2;
+	private LinearLayout layoutTab3;
+	private LinearLayout layoutTab4;
+	private LinearLayout layoutTab1Selected;
+	private LinearLayout layoutTab2Selected;
+	private LinearLayout layoutTab3Selected;
+	private LinearLayout layoutTab4Selected;
+
+	private FragmentTransaction fragmentTransaction;
+
+	private boolean isFirst = true;
+
+	public static String TAB1 = "TAB1";
+	public static String TAB2 = "TAB2";
+	public static String TAB3 = "TAB3";
+	public static String TAB4 = "TAB4";
+
+	private String tag = "";
+	public static boolean isBackHome = false;
+
+	private Handler mHandler = new Handler();
+	private int mClickCount = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		initView();
-		setListener();
-	}
-	
-	@Override
-	protected void onNewIntent(Intent intent) {
-		// TODO Auto-generated method stub
-		super.onNewIntent(intent);
-		if(intent!=null){
-			if(mDrawerLayout.isDrawerOpen(Gravity.RIGHT)){
-				mDrawerLayout.closeDrawer(Gravity.RIGHT);
-			}
-		}
-	}
+		checkUpdate();
 
-	private void setListener() {
-		// TODO Auto-generated method stub
-		ivAppointment.setOnClickListener(this);
-		btnScore.setOnClickListener(this);
-		tvLogin.setOnClickListener(this);
-		ivMenu.setOnClickListener(this);
-		ivAvatar.setOnClickListener(this);
-		btnMyAppintment.setOnClickListener(this);
-		tvLookReport.setOnClickListener(this);
-		
-		mDrawerLayout.setDrawerListener(new DrawerListener() {
-			
-			@Override
-			public void onDrawerStateChanged(int arg0) {
-				// TODO Auto-generated method stub
-				LogUtil.d("drawer---onDrawerStateChanged----"+arg0);
-			}
-			
-			@Override
-			public void onDrawerSlide(View arg0, float arg1) {
-				// TODO Auto-generated method stub
-				LogUtil.d("drawer---onDrawerSlide----"+arg0+"--"+arg1);
-				layoutMain.scrollTo((int)(maxX*arg1), layoutMain.getTop());
-				
-			}
-			
-			@Override
-			public void onDrawerOpened(View arg0) {
-				// TODO Auto-generated method stub
-				
-				LogUtil.d("drawer---onDrawerOpened----view="+arg0);
-				
-			}
-			
-			@Override
-			public void onDrawerClosed(View arg0) {
-				// TODO Auto-generated method stub
-				LogUtil.d("drawer---onDrawerClosed----view="+arg0);
-				
-			}
-		});
-		
+//		if (!PreferencesUtils.getBoolean(AppStatic.receiveMsg)) {
+//			JPushInterface.stopPush(getApplicationContext());
+//		}
 	}
 
 	@Override
 	public void onLowMemory() {
+		// TODO Auto-generated method stub
 		super.onLowMemory();
-		Image13Loader.getInstance().clearMemoryCache();
+		Image13lLoader.getInstance().clearMemoryCache();
+
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if(AppStatic.getInstance().isLogin&&AppStatic.getInstance().getmUserInfo()!=null){
-			Image13Loader.getInstance().loadImage(AppStatic.getInstance().getmUserInfo().avatar, ivAvatar, R.drawable.ic_user);
-			getReportNearly();
-			tvLogin.setVisibility(View.INVISIBLE);
-		}else {
-			ivAvatar.setImageResource(R.drawable.ic_user);
-			tvLogin.setVisibility(View.VISIBLE);
-			tvStatus.setText("尚未体检");
-//			tvStatusEnglish.setText("—— Not yet physical examination  ——");
-			tvReportDate.setVisibility(View.GONE);
+		if (isBackHome) {
+			tag = TAB1;
+			switchToFragment(tag);
+			changeViewBackground(tag);
+			isBackHome = false;
+
 		}
-	}
-	
-	@Override
-	public void onWindowFocusChanged(boolean hasFocus) {
-		// TODO Auto-generated method stub
-		super.onWindowFocusChanged(hasFocus);
-		if(hasFocus){
-			maxX=layoutRight.getWidth();
-		}
-	}
-	
-	private void initView() {
-		mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
-		layoutMain=(ViewGroup)findViewById(R.id.layout_main);
-		layoutRight=(ViewGroup)findViewById(R.id.layout_right);
-		lvMenu=(ListView)layoutRight.findViewById(R.id.lv_menu);
-		ivAvatar=(ImageView)layoutRight.findViewById(R.id.iv_avatar);
-		ivAppointment=(ImageView)layoutMain.findViewById(R.id.iv_make_appointment);
-		btnScore=(TextView)layoutMain.findViewById(R.id.btn_health_score);
-		tvLogin=(TextView)layoutRight.findViewById(R.id.tv_login);
-		ivMenu=(ImageView)layoutMain.findViewById(R.id.iv_menu);
-		btnMyAppintment=(TextView)layoutMain.findViewById(R.id.btn_my_appintment);
-		tvLookReport=(TextView)layoutMain.findViewById(R.id.tv_look_report);
-		tvStatus=(TextView)layoutMain.findViewById(R.id.tv_status);
-		tvStatusEnglish=(TextView)layoutMain.findViewById(R.id.tv_status_english);
-		tvReportDate=(TextView)layoutMain.findViewById(R.id.tv_report_date);
-		
-		initMenu();
-	}
-	
-	private void initMenu(){
-		List<MenuItem> list=new ArrayList<MenuItem>();
-		list.add(new MenuItem(0,"我的信息"));
-		list.add(new MenuItem(1,"预约体检"));
-		list.add(new MenuItem(2,"体检报告"));
-		list.add(new MenuItem(3,"健康积分"));
-		list.add(new MenuItem(4,"优惠券"));
-		list.add(new MenuItem(5,"我的账户"));
-		list.add(new MenuItem(6,"设置"));
-		mAdapter=new MenuAdapter(this);
-		mAdapter.setList(list);
-		lvMenu.setAdapter(mAdapter);
+		// String tag1 = getIntent().getStringExtra("tag");
+		// if (!TextUtils.isEmpty(tag1)) {
+		// tag = tag1;
+		// switchToFragment(tag);
+		// changeViewBackground(tag);
+		// }
 	}
 
+	/*
+	 * private void initView() { layoutTab1 = (LinearLayout)
+	 * findViewById(R.id.tab_main_tab1); layoutTab1.setOnClickListener(this);
+	 * layoutTab2 = (LinearLayout) findViewById(R.id.tab_main_tab2);
+	 * layoutTab2.setOnClickListener(this); layoutTab3 = (LinearLayout)
+	 * findViewById(R.id.tab_main_tab3); layoutTab3.setOnClickListener(this);
+	 * layoutTab4 = (LinearLayout) findViewById(R.id.tab_main_tab4);
+	 * layoutTab4.setOnClickListener(this); titleTv = (TextView)
+	 * findViewById(R.id.baseTitle_milddleTv); ivTab1Pic = (ImageView)
+	 * findViewById(R.id.iv_main_tab1); tvTab1 = (TextView)
+	 * findViewById(R.id.tv_main_tab1); ivTab2Pic = (ImageView)
+	 * findViewById(R.id.iv_main_tab2); tvTab2 = (TextView)
+	 * findViewById(R.id.tv_main_tab2); ivTab3Pic = (ImageView)
+	 * findViewById(R.id.iv_main_tab3); tvTab3 = (TextView)
+	 * findViewById(R.id.tv_main_tab3); ivTab4Pic = (ImageView)
+	 * findViewById(R.id.iv_main_tab4); tvTab4 = (TextView)
+	 * findViewById(R.id.tv_main_tab4);
+	 *
+	 * leftTv = (TextView) findViewById(R.id.baseTitle_leftTv); rightIv =
+	 * (ImageView) findViewById(R.id.baseTitle_rightIv); //
+	 * rightIv.setOnClickListener(rightListener); initFragment(); }
+	 */
+
+	private void initView() {
+		layoutTab1 = (LinearLayout) findViewById(R.id.tab_main_tab1);
+		layoutTab1.setOnClickListener(this);
+		layoutTab2 = (LinearLayout) findViewById(R.id.tab_main_tab2);
+		layoutTab2.setOnClickListener(this);
+		layoutTab3 = (LinearLayout) findViewById(R.id.tab_main_tab3);
+		layoutTab3.setOnClickListener(this);
+		layoutTab4 = (LinearLayout) findViewById(R.id.tab_main_tab4);
+		layoutTab4.setOnClickListener(this);
+
+		layoutTab1Selected = (LinearLayout) findViewById(R.id.tab_main_tab1_selected);
+		layoutTab2Selected = (LinearLayout) findViewById(R.id.tab_main_tab2_selected);
+		layoutTab3Selected = (LinearLayout) findViewById(R.id.tab_main_tab3_selected);
+		layoutTab4Selected = (LinearLayout) findViewById(R.id.tab_main_tab4_selected);
+
+		titleTv = (TextView) findViewById(R.id.baseTitle_milddleTv);
+		ivTab1Pic = (ImageView) findViewById(R.id.iv_main_tab1);
+		ivTab2Pic = (ImageView) findViewById(R.id.iv_main_tab2);
+		ivTab3Pic = (ImageView) findViewById(R.id.iv_main_tab3);
+		ivTab4Pic = (ImageView) findViewById(R.id.iv_main_tab4);
+
+		leftTv = (TextView) findViewById(R.id.baseTitle_leftTv);
+		rightIv = (ImageView) findViewById(R.id.baseTitle_rightIv);
+		// rightIv.setOnClickListener(rightListener);
+		initFragment();
+	}
+
+	private void initFragment() {
+		if (isFirst) {
+			fragmentTransaction = getSupportFragmentManager()
+					.beginTransaction();
+			currentFrag = new HomeFragment();
+			fragmentTransaction.add(R.id.main_fLayout, currentFrag, TAB1)
+					.commit();
+			isFirst = false;
+			tag = TAB1;
+			// changeViewBackground(HOME);
+		}
+	}
+
+	Fragment currentFrag = null;
+
+	/**
+	 * fragment跳转
+	 *
+	 * @param Tag
+	 */
+	public void switchToFragment(String Tag) {
+		fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		Fragment findresult = null;
+		findresult = getSupportFragmentManager().findFragmentByTag(Tag);
+		if (currentFrag != null && currentFrag.getTag().equals(Tag)) {
+			// 判断为相同fragment不切换
+		} else {
+			if (findresult != null) {
+				fragmentTransaction.hide(currentFrag).show(findresult).commit();
+			} else {
+
+				if (Tag.equals(TAB1)) {
+					findresult = new HomeFragment();
+				} else if (Tag.equals(TAB2)) {
+					findresult = new ActiveFragment();
+				} else if (Tag.equals(TAB3)) {
+					findresult = new CommunityFragment();
+					return;
+				} else if (Tag.equals(TAB4)) {
+					findresult = new UserCenterFragment();
+				}
+
+				fragmentTransaction.hide(currentFrag)
+						.add(R.id.main_fLayout, findresult, Tag).commit();
+			}
+		}
+		currentFrag = findresult;
+
+	}
+
+	// @Override
+	// protected void onResume() {
+	// super.onResume();
+	// goodBusNumTv.setText(String.valueOf(AppStatic.goodBusNum));
+	// }
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 	}
 
-	
+	/*
+	 * public void changeViewBackground(String Tag) { if (Tag.equals(TAB1)) {
+	 * ivTab1Pic.setImageResource(R.drawable.home2);
+	 * ivTab2Pic.setImageResource(R.drawable.fashion);
+	 * ivTab3Pic.setImageResource(R.drawable.classfiy);
+	 * ivTab4Pic.setImageResource(R.drawable.user3);
+	 *
+	 * layoutTab1.setBackgroundResource(R.color.menu_press);
+	 * layoutTab2.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab3.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab4.setBackgroundResource(R.color.menu_nomal);
+	 *
+	 * } else if (Tag.equals(TAB2)) {
+	 * ivTab1Pic.setImageResource(R.drawable.home);
+	 * ivTab2Pic.setImageResource(R.drawable.fashion2);
+	 * ivTab3Pic.setImageResource(R.drawable.classfiy);
+	 * ivTab4Pic.setImageResource(R.drawable.user3);
+	 *
+	 * layoutTab1.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab2.setBackgroundResource(R.color.menu_press);
+	 * layoutTab3.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab4.setBackgroundResource(R.color.menu_nomal);
+	 *
+	 * } else if (Tag.equals(TAB3)) { //
+	 * ivTab1Pic.setImageResource(R.drawable.home); //
+	 * tvTab1.setTextColor(getResources().getColor(R.color.gray)); //
+	 * ivTab2Pic.setImageResource(R.drawable.fashion); //
+	 * tvTab2.setTextColor(getResources().getColor(R.color.gray)); //
+	 * ivTab3Pic.setImageResource(R.drawable.classfiy2); //
+	 * tvTab3.setTextColor(getResources().getColor(R.color.white)); //
+	 * ivTab4Pic.setImageResource(R.drawable.user3); //
+	 * tvTab4.setTextColor(getResources().getColor(R.color.gray)); // //
+	 * layoutTab1.setBackgroundResource(R.color.menu_nomal); //
+	 * layoutTab2.setBackgroundResource(R.color.menu_nomal); //
+	 * layoutTab3.setBackgroundResource(R.color.menu_press); //
+	 * layoutTab4.setBackgroundResource(R.color.menu_nomal);
+	 *
+	 *
+	 * } else if (Tag.equals(TAB4)) {
+	 * ivTab1Pic.setImageResource(R.drawable.home);
+	 * ivTab2Pic.setImageResource(R.drawable.fashion);
+	 * ivTab3Pic.setImageResource(R.drawable.classfiy);
+	 * ivTab4Pic.setImageResource(R.drawable.user32);
+	 *
+	 * layoutTab1.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab2.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab3.setBackgroundResource(R.color.menu_nomal);
+	 * layoutTab4.setBackgroundResource(R.color.menu_press); } }
+	 */
+
+	public void changeViewBackground(String Tag) {
+		if (Tag.equals(TAB1)) {
+			layoutTab1Selected.setVisibility(View.VISIBLE);
+			layoutTab2Selected.setVisibility(View.INVISIBLE);
+			layoutTab3Selected.setVisibility(View.INVISIBLE);
+			layoutTab4Selected.setVisibility(View.INVISIBLE);
+
+		} else if (Tag.equals(TAB2)) {
+			layoutTab1Selected.setVisibility(View.INVISIBLE);
+			layoutTab2Selected.setVisibility(View.VISIBLE);
+			layoutTab3Selected.setVisibility(View.INVISIBLE);
+			layoutTab4Selected.setVisibility(View.INVISIBLE);
+
+		} else if (Tag.equals(TAB3)) {
+			layoutTab1Selected.setVisibility(View.INVISIBLE);
+			layoutTab2Selected.setVisibility(View.INVISIBLE);
+			layoutTab3Selected.setVisibility(View.VISIBLE);
+			layoutTab4Selected.setVisibility(View.INVISIBLE);
+		} else if (Tag.equals(TAB4)) {
+
+			layoutTab1Selected.setVisibility(View.INVISIBLE);
+			layoutTab2Selected.setVisibility(View.INVISIBLE);
+			layoutTab3Selected.setVisibility(View.INVISIBLE);
+			layoutTab4Selected.setVisibility(View.VISIBLE);
+
+		}
+	}
+
+	@Override
+	public void onClick(View arg0) {
+
+		switch (arg0.getId()) {
+			case R.id.tab_main_tab1:
+				tag = TAB1;
+				break;
+			case R.id.tab_main_tab2:
+				tag = TAB2;
+				break;
+			case R.id.tab_main_tab3:
+				tag = TAB3;
+				break;
+			case R.id.tab_main_tab4:
+//				if (!AppStatic.getInstance().isLogin) {
+//					return;
+//				} else {
+//				}
+				tag = TAB4;
+				break;
+		}
+		switchToFragment(tag);
+		changeViewBackground(tag);
+	}
+
 	@Override
 	public void onBackPressed() {
-		if(mDrawerLayout.isDrawerOpen(Gravity.RIGHT)){
-			mDrawerLayout.closeDrawer(Gravity.RIGHT);
-			return;
-		}
+		// TODO Auto-generated method stub
 
 		if (mClickCount++ < 1) {
-			AppUtil.showToast(this, "再按一次就退出");
+			AppUtil.showToast(this, "再按一次就退出"+getResources().getString(R.string.app_name));
 			mHandler.postDelayed(new Runnable() {
 				@Override
 				public void run() {
@@ -234,170 +339,21 @@ public class MainActivity extends BaseFragmentActivity implements
 		HApplication.getInstance().exit();
 		super.onBackPressed();
 	}
-	
-	private void setLoginInfo(){
-		
-	}
-	
-	/**
-	 * 获取最近的体检报告
-	 */
-	private void getReportNearly(){
-		ParamBuilder params=new ParamBuilder();
-		params.append("page_size", 1);
-		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_REPORT_LIST),new ICallback() {
-			
-			@Override
-			public void onResponse(int status, String result) {
-				// TODO Auto-generated method stub
-				if(status==200){
-					BaseObject<OrderWraper> object=GsonParser.getInstance().parseToObj(result, OrderWraper.class);
-					if(object!=null){
-						if(object.data!=null&&object.status==BaseObject.STATUS_OK&&!AppUtil.isEmpty(object.data.order_list)){
-							nearlyReport=object.data.order_list.get(0);
-							tvStatus.setText(AppUtil.isNull(nearlyReport.health_statu_str)?"未知":nearlyReport.health_statu_str);
-//							tvStatusEnglish.setText("—— "+nearlyReport.health_statu_str_en+" ——");
-							tvReportDate.setText("体检日期："+nearlyReport.day_time);
-							tvReportDate.setVisibility(View.VISIBLE);
-						}else {
-						}
-					}else {
-					}
-				}else {
-				}
-			}
-		});
-	}
-	
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		if(v==ivAppointment){
-		}else if (v==btnScore) {
-			if(!AppStatic.getInstance().isLogin){
-				UserLoginActivity.invokeForResult(this, 5);
-			}else {
-			}
-		}else if (v==ivAvatar) {
-			if(!AppStatic.getInstance().isLogin){
-				UserLoginActivity.invokeForResult(this, 2);
-			}else {
-				MyInfoActivity.invoke(this);
-			}
-		}else if(v==tvLogin){
-			UserLoginActivity.invokeForResult(this, 1);
-		}else if (v==ivMenu) {
-			mDrawerLayout.openDrawer(Gravity.RIGHT);
-		}else if (v==btnMyAppintment) {
-			if(!AppStatic.getInstance().isLogin){
-				UserLoginActivity.invokeForResult(this, 3);
-			}else {
-			}
-		}else if (v==tvLookReport) {
-			if(!AppStatic.getInstance().isLogin){
-				UserLoginActivity.invokeForResult(this, 4);
-			}else {
 
-			}
-			
+	private void checkUpdate() {
+
+		if (PreferencesUtils.getString(GlobeFlags.NO_UPDATE_NOTICE_TAG).equals(
+				MyApplication.getInstance().getVersionName())) {
+			UpdateUtil.checkBackgroundDate(this, false, false);
+		} else {
+			UpdateUtil.checkBackgroundDate(this, false, true);
 		}
 	}
-	
-	@Override
-	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
-		// TODO Auto-generated method stub
-		super.onActivityResult(arg0, arg1, arg2);
-		if(arg0==1){
-			if(arg1==RESULT_OK){
-				setLoginInfo();
-			}
-		}
-		if(arg0==2){
-			if(arg1==RESULT_OK){
-				
-			}
-		}
-		if(arg0==3){
-			if(arg1==RESULT_OK){
-				
-			}
-		}
-		if(arg0==4){//查看体检报告
-
-		}
-		if(arg0==5){//健康积分
-
-		}
-	}
-
 
 	public static void invoke(Context context) {
+		isBackHome = true;
 		Intent intent = new Intent(context, MainActivity.class);
 		context.startActivity(intent);
-	}
-	
-	public class MenuAdapter extends AbstractListAdapter<MenuItem>{
-
-
-		public MenuAdapter(Activity context) {
-			super(context);
-			// TODO Auto-generated constructor stub
-		}
-
-		@Override
-		public View getView(int i, View view, ViewGroup viewGroup) {
-			// TODO Auto-generated method stub
-			TextView tView=new TextView(mContext);
-			final MenuItem item=mList.get(i);
-			tView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,(int)mContext.getResources().getDimension(R.dimen.text_height)));
-			tView.setGravity(Gravity.CENTER_VERTICAL);
-			tView.setText(item.title);
-			tView.setPadding(ScreenUtil.dip2px(mContext, 20), 0, 0, 0);
-			tView.setBackgroundResource(R.drawable.selector_home_right_list);
-			tView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-			try {
-				tView.setTextColor(ColorStateList.createFromXml(mContext.getResources(), mContext.getResources().getXml(R.color.btn_menu_item)));
-			} catch (NotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (XmlPullParserException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			tView.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					item.onClick(mContext);
-				}
-			});
-			return tView;
-		}
-		
-	}
-	
-	public Class[] activities={MyInfoActivity.class,MyInfoActivity.class,MyInfoActivity.class,MyInfoActivity.class,MyInfoActivity.class,MyInfoActivity.class,SettingsActivity.class};
-	public class MenuItem{
-		public int position;
-		public String title;
-		
-		public MenuItem(int position,String title){
-			this.position=position;
-			this.title=title;
-		}
-		
-		public void onClick(Context context){
-			if(position==6||AppStatic.getInstance().isLogin){
-				Intent intent=new Intent(context,activities[position]);
-				context.startActivity(intent);
-			}else {
-				AppUtil.showToast(getApplicationContext(), "请先登录");
-			}
-		}
 	}
 
 }

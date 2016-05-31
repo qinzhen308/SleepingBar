@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.core.framework.develop.LogUtil;
@@ -41,6 +42,7 @@ public class WatchService extends Service{
     private BluetoothLeClass mBLE;
     private boolean mScanning;
     private Handler mHandler=new Handler();
+    private String currentAddress;
 
 
     @Nullable
@@ -60,6 +62,9 @@ public class WatchService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 //        scanLeDevice(true);
+        if(intent!=null){
+            currentAddress=intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS);
+        }
         tryConnect(intent);
         return super.onStartCommand(intent, flags, startId);
     }
@@ -78,11 +83,13 @@ public class WatchService extends Service{
     @Override
     public void onLowMemory() {
         super.onLowMemory();
+        LogUtil.d("watch---onLowMemory-->执行");
     }
 
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
+        LogUtil.d("watch---onTrimMemory-->执行 level="+level);
     }
 
 
@@ -135,8 +142,12 @@ public class WatchService extends Service{
     }
 
     private void tryConnect(Intent intent){
-        String address=intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS);
-        boolean isSuc=mBLE.connect(address);
+        if(TextUtils.isEmpty(currentAddress)){
+            LogUtil.d("watch---无效mac地址,关闭服务...");
+            stopSelf();
+            return;
+        }
+        boolean isSuc=mBLE.connect(currentAddress);
         LogUtil.d("watch---尝试连接:"+isSuc);
         if(!isSuc){
             //尝试连接失败，直接关闭

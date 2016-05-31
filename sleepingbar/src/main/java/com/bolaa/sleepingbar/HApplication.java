@@ -72,9 +72,6 @@ public class HApplication extends MyApplication {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		Intent intent = new Intent(this, WatchService.class);
-		intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,"4A:59:00:00:AA:0A");
-		startService(intent);
 	}
 
 	@Override
