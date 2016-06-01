@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bolaa.sleepingbar.view.ResizeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlayout_login"
+    android:layout_width="fill_parent"
+    android:background="@drawable/bg_login"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_login_logo"/>
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:inputType="textCapWords"
+        android:layout_marginLeft="3dp"
+        android:textColor="#BF73DA"
+        android:singleLine="true"
+        android:text="手机号码：13110197779"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="185dp"
+        android:textSize="@dimen/text_size_big" />
+
+    <EditText
+        android:id="@+id/edit_captcha"
+        android:layout_width="wrap_content"
+        android:ems="10"
+        android:layout_height="30dp"
+        android:paddingLeft="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:gravity="center"
+        android:inputType="textCapWords"
+        android:textColor="@color/white"
+        android:layout_marginLeft="3dp"
+        android:singleLine="true"
+        android:hint="请输入手机验证码"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:textColorHint="#883EAE"
+        android:textSize="@dimen/text_size_big" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="#58319E"
+        />
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size"
+        />
+
+    <TextView
+        android:id="@+id/tv_phone_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重新输入手机号"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_marginBottom="110dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size"
+        />
+
+    <TextView
+        android:id="@+id/tv_get_captcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重发验证码"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size"
+        />
+
+
+
+
+</com.bolaa.sleepingbar.view.ResizeLayout>

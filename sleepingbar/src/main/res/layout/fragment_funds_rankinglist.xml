@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F8"
+    android:orientation="vertical"
+     >
+
+    <include
+        android:id="@+id/layout_my_funds"
+        layout="@layout/include_funds_rankinglist_my"
+        />
+
+    <com.bolaa.sleepingbar.view.pulltorefresh.PullListView xmlns:test="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="12dp"
+        android:alwaysDrawnWithCache="false"
+        android:cacheColorHint="@null"
+        android:divider="@color/milky"
+        android:dividerHeight="1dp"
+        android:background="@color/white"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        test:showheader="true"
+        />
+
+
+
+    
+
+    
+</LinearLayout>
+    
+
+
