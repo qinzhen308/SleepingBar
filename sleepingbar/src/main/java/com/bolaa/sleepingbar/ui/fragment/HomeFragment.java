@@ -2,6 +2,11 @@ package com.bolaa.sleepingbar.ui.fragment;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
+import com.bolaa.sleepingbar.model.Supporter;
+import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
+import com.bolaa.sleepingbar.ui.MyMedalActivity;
+import com.bolaa.sleepingbar.ui.SleepTrendActivity;
+import com.bolaa.sleepingbar.ui.SupporterActivity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -120,13 +125,13 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(v==layoutMedal){
-
+			MyMedalActivity.invoke(getActivity());
 		}else if(v==layoutRankinglist){
-
+			FundsRankinglistActivity.invoke(getActivity());
 		}else if(v==layoutSupport){
-
+			SupporterActivity.invoke(getActivity());
 		}else if(v==layoutSleepTrend){
-
+			SleepTrendActivity.invoke(getActivity());
 		}else if(v==tvNeedFriends){
 
 		}

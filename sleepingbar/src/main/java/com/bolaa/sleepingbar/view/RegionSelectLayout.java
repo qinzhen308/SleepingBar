@@ -239,7 +239,7 @@ public class RegionSelectLayout extends LinearLayout implements AdapterView.OnIt
 
             holder.mItemTv.setText(mList.get(position).region_name);
             if (selectParentPosition[mList.get(position).region_type-1] == position) {
-                convertView.setBackgroundColor(getResources().getColor(R.color.blue));
+                convertView.setBackgroundColor(getResources().getColor(R.color.purple));
                 holder.mItemTv.setTextColor(getResources().getColor(R.color.white));
                 holder.indicator.setVisibility(View.VISIBLE);
             } else {

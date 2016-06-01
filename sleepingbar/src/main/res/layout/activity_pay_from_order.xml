@@ -242,10 +242,10 @@
         android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             android:padding="8dp"
-            android:background="@drawable/btn_blue"
+            android:background="@drawable/btn_purple"
             android:gravity="center"
             android:text="提 交"
-            android:textColor="@color/btn_white_blue"
+            android:textColor="@color/btn_white_purple"
             android:textSize="@dimen/text_size_big_big" />
     
 

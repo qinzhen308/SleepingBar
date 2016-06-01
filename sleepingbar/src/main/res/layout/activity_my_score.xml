@@ -117,9 +117,9 @@
         android:layout_weight="1"
         android:text="积分记录"
         android:textSize="@dimen/text_size_big"
-        android:textColor="@color/blue"
+        android:textColor="@color/purple"
         android:gravity="center"
-        android:background="@drawable/bg_rectangle_strake_blue"
+        android:background="@drawable/bg_rectangle_strake_purple"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
@@ -133,9 +133,9 @@
         android:layout_weight="1"
         android:text="积分兑现"
         android:textSize="@dimen/text_size_big"
-        android:textColor="@color/blue"
+        android:textColor="@color/purple"
         android:gravity="center"
-        android:background="@drawable/bg_rectangle_strake_blue"
+        android:background="@drawable/bg_rectangle_strake_purple"
         android:layout_marginTop="10dp"
         />
 		    

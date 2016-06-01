@@ -5,7 +5,7 @@
 	    
 	</item>
     <item android:left="4dp">
-        <color android:color="@color/blue"/>
+        <color android:color="@color/purple"/>
     </item>
 	
 </layer-list>

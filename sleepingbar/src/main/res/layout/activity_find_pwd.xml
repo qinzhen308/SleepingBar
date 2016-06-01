@@ -128,7 +128,7 @@
             android:ems="5"
             android:text="获取验证码"
             android:textSize="@dimen/text_size"
-            android:textColor="@color/blue"
+            android:textColor="@color/purple"
              />
     </LinearLayout>
     
@@ -144,11 +144,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_height="@dimen/text_height"
-        android:background="@drawable/btn_blue"
+        android:background="@drawable/btn_purple"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:text="下一步"
-        android:textColor="@color/btn_white_blue"
+        android:textColor="@color/btn_white_purple"
         android:textSize="@dimen/text_size_big" />
     
     <TextView

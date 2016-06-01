@@ -35,8 +35,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:gravity="center"
-        android:background="@drawable/btn_blue"
-        android:textColor="@color/btn_white_blue"
+        android:background="@drawable/btn_purple"
+        android:textColor="@color/btn_white_purple"
         />
 
 

@@ -3,17 +3,21 @@
     android:id="@+id/base_title"
     android:layout_width="match_parent"
     android:layout_height="@dimen/title_height"
-    android:background="@color/blue" >
+    android:background="#F5F5F8" >
 
     <TextView
         android:id="@+id/baseTitle_leftTv"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:drawableLeft="@drawable/back"
+        android:drawableLeft="@drawable/arrow_left"
         android:gravity="center"
+        android:drawablePadding="5dp"
+        android:textColor="@color/text_grey"
         android:paddingLeft="@dimen/all_margin"
-        android:paddingRight="35dp" />
+        android:textSize="@dimen/text_size_big"
+        android:text="返回"
+        android:paddingRight="15dp" />
 
     <TextView
         android:id="@+id/baseTitle_milddleTv"
@@ -21,7 +25,7 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/text_grey"
         android:textSize="@dimen/text_size_big" />
 
     <ImageView
@@ -42,7 +46,7 @@
         android:paddingLeft="30dp"
         android:paddingRight="@dimen/all_margin"
         android:text="保存"
-        android:textColor="@color/white"
+        android:textColor="@color/text_grey"
         android:visibility="gone" />
 
     <View

@@ -194,7 +194,7 @@ public class Register3Activity extends BaseActivity implements OnClickListener {
 			}else {
 				btnGetCode.setText("重新获取");
 				btnGetCode.setEnabled(true);
-				btnGetCode.setTextColor(getResources().getColor(R.color.blue));
+				btnGetCode.setTextColor(getResources().getColor(R.color.purple));
 				timer.cancel();
 				timer=null;
 			}

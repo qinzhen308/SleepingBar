@@ -322,7 +322,7 @@ public class UserRePwdActivity extends BaseActivity {
 			}else {
 				btnGetCaptcha.setText("重新获取");
 				btnGetCaptcha.setEnabled(true);
-				btnGetCaptcha.setTextColor(getResources().getColor(R.color.blue));
+				btnGetCaptcha.setTextColor(getResources().getColor(R.color.purple));
 				timer.cancel();
 				timer=null;
 			}

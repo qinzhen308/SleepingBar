@@ -145,9 +145,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/btn_blue"
+            android:background="@drawable/btn_purple"
             android:text="登  录"
-            android:textColor="@color/btn_white_blue"
+            android:textColor="@color/btn_white_purple"
             android:textSize="@dimen/text_size_big_big" />
 
         <RelativeLayout

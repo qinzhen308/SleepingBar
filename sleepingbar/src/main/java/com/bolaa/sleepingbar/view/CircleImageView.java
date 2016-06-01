@@ -30,23 +30,28 @@ public class CircleImageView extends ImageView {
 	private int defaultColor = 0xFFFFFFFF;
 	// 如果只有其中一个有值，则只画一个圆形边框
 	private int mBorderOutsideColor = 0;
-	private int mBorderInsideColor = getResources().getColor(R.color.blue);
+	private int mBorderInsideColor =0;
 	// 控件默认长、宽
 	private int defaultWidth = 0;
 	private int defaultHeight = 0;
 
 	public CircleImageView(Context context) {
 		super(context);
+		init();
 	}
 
 	public CircleImageView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-
+		init();
 	}
 
 	public CircleImageView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		init();
+	}
 
+	private void init(){
+		mBorderInsideColor = getResources().getColor(R.color.purple);
 	}
 
 	public void setDefaultImageResource(int imgPreholderEvent) {

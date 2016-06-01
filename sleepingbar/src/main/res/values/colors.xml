@@ -24,15 +24,15 @@
     <!-- 黑色 -->
     <color name="black">#000000</color>
     
-    <color name="blue">#5BC6F2</color>
+    <color name="purple">#9C27B0</color>
     <color name="blue1">#46B8EA</color>
     
     <!-- 浅灰色字体1 -->
-    <color name="text_grey_french1">#949293</color>
+    <color name="text_grey_french1">#999999</color>
     <!-- 浅灰色字体2 -->
     <color name="text_grey_french2">#BEBEBE</color>
     <!-- 灰色字体 -->
-    <color name="text_grey">#4B4B4B</color>
+    <color name="text_grey">#333333</color>
 
     <!-- 透明 -->
     <color name="transparency">#00000000</color>
@@ -44,7 +44,7 @@
     <color name="pull_refresh_background">#f6f6f6</color>
     <color name="light_gray">#999999</color>
     <color name="header_color">#FFD800</color>
-    <color name="milky">#f7f7f7</color>
+    <color name="milky">#EEEEEE</color>
     <color name="v_hint_color">#b2b2b2</color>
     <color name="v_light_black_color">#444444</color>
     <color name="red1">#fd7d45</color>

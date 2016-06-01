@@ -116,7 +116,7 @@
                     android:ems="5"
                     android:text="发送验证码"
                     android:background="@drawable/bg_rectangle_strake_blue_no_coner"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/purple"
                     android:textSize="@dimen/text_size" />
             </RelativeLayout>
 
@@ -130,10 +130,10 @@
         android:layout_height="@dimen/text_height"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_blue"
+        android:background="@drawable/btn_purple"
         android:gravity="center"
         android:text="提交注册"
-        android:textColor="@color/btn_white_blue"
+        android:textColor="@color/btn_white_purple"
         android:textSize="@dimen/size_submit_btn" />
     
     <TextView

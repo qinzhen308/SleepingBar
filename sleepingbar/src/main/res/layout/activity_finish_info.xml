@@ -189,8 +189,8 @@
             android:paddingBottom="5dp"
             android:layout_margin="15dp"
             android:text="完  成"
-            android:textColor="@color/btn_white_blue"
-            android:background="@drawable/btn_blue"
+            android:textColor="@color/btn_white_purple"
+            android:background="@drawable/btn_purple"
             android:textSize="@dimen/text_size_big" />
 
 </LinearLayout>
