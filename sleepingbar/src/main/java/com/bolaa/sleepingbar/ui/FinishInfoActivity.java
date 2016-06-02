@@ -124,7 +124,7 @@ public class FinishInfoActivity extends BaseActivity {
 		mUserInfo = AppStatic.getInstance().getmUserInfo();
 		if (mUserInfo != null) {
 			mIconIv.setUrl(mUserInfo.avatar);
-			setText(mUserInfo.real_name, mNameTv);
+			setText(mUserInfo.nick_name, mNameTv);
 			setText(mUserInfo.birthday, mBirthTv);
 			if (mUserInfo.sex.equals("1")) {
 				mSexTv.setText("男");
@@ -362,7 +362,7 @@ public class FinishInfoActivity extends BaseActivity {
 							AppStatic.getInstance().saveUser(object.data);
 							finish();
 						}else {
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 						}
 					}else {
 						AppUtil.showToast(getApplicationContext(), "修改失败");

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/milky"
+    android:layout_height="match_parent" >
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_guide"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+    
+    <com.bolaa.sleepingbar.view.banner.LoopCirclePageIndicator
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/idc_ad_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="6dip"
+                    app:fillColor="#D7EDDD"
+                    app:pageColor="@color/white"
+                    app:radius="5dip"
+        />
+
+    <ImageView
+        android:id="@+id/iv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/weiji_btn"
+        android:visibility="gone"
+        android:layout_above="@+id/idc_ad_indicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        />
+
+    
+
+</RelativeLayout>

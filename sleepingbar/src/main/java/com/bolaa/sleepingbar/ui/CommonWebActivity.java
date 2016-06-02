@@ -12,6 +12,7 @@ public class CommonWebActivity extends BaseWebActivity{
 	
 	String pic_url;
 	String wap_url;
+	private String title;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,9 @@ public class CommonWebActivity extends BaseWebActivity{
 	}
 	private void initView(){
 		setActiviyContextView(R.layout.activity_fishion_detail_web, true, true);
-		setTitleText("", "体检报告", 0, true);
+		setTitleText("", title, 0, true);
 		mWebView=(WebView)findViewById(R.id.web_fishion);
+        mWebView.getSettings().setJavaScriptEnabled(true);
 		load(wap_url, false);
 	}
 	
@@ -31,10 +33,12 @@ public class CommonWebActivity extends BaseWebActivity{
 		Intent intent=getIntent();
 		wap_url=intent.getStringExtra(GlobeFlags.FLAG_FISHION_WAP_URL);
 		pic_url=intent.getStringExtra(GlobeFlags.FLAG_FISHION_PIC_URL);
+		title=intent.getStringExtra("title");
 	}
-	public static void invoke(Context context,String url){
+	public static void invoke(Context context,String url,String title){
 		Intent intent = new Intent(context,CommonWebActivity.class);
 		intent.putExtra(GlobeFlags.FLAG_FISHION_WAP_URL, url);
+		intent.putExtra("title", title);
 		context.startActivity(intent);
 		
 	}

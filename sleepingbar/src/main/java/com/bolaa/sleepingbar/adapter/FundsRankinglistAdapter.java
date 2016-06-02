@@ -27,11 +27,6 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public int getCount() {
-		return 5;
-	}
-
 	public void setPageType(int type){
 		pageType=type;
 	}

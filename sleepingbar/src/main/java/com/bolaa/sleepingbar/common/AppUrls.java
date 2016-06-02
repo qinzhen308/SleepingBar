@@ -28,9 +28,6 @@ public class AppUrls {
 	public String APP_KEY="test";
 	public String BASE_URL="http://192.168.2.126/beijingsleep/app/";
 	
-	public String URL_LOGIN=BASE_URL+"&c=user&act=login_act";
-	public String URL_LOGOUT=BASE_URL+"&c=user&act=login_out";//退出登录
-	public String URL_GET_CAPTCHA=BASE_URL+"&c=user&act=send_sms";
 	public String URL_REGISTER=BASE_URL+"&c=user&act=reg_act";
 	public String URL_USER_INFO_SAVE=BASE_URL+"&c=user&act=edit_profile";//修改或保存个人资料
 
@@ -54,6 +51,15 @@ public class AppUrls {
 	public String URL_SUPPORTER_DETAIL=BASE_URL+"sleep.php?act=fund_detail";//某支持者对我支持基金的明细
 	public String URL_FUNDS_RANKING_LIST=BASE_URL+"sleep.php?act=friend_fund_ranking";//基金排行
 	public String URL_MEDAL_LIST=BASE_URL+"user.php?act=my_medal";//我的勋章
+	public String URL_GET_CAPTCHA=BASE_URL+"user.php?act=send_verify_code";
+	public String URL_LOGIN=BASE_URL+"user.php?act=login";//登录
+	public String URL_LOGOUT=BASE_URL+"user.php?act=logout";//退出登录
+
+
+	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";
+	public String URL_ARTICAL_LAW="http://baidu.com";
+	public String URL_ARTICAL_ABOUT="http://baidu.com";
+
 
 	/*支付宝回调地址*/
 	public String URL_ZFB_NOTIFY="http://jk.m1ju.com/app/respond_alipay.php";

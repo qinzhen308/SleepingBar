@@ -20,7 +20,7 @@ public class FundsRankinglistActivity extends BaseFragmentActivity{
 
 	RadioGroup rgTitle;
 	FragmentManager mFm;
-	Fragment fragments[]=new Fragment[3];
+	Fragment fragments[]=new Fragment[2];
 	private int curPosition=0;
 
 	

@@ -188,7 +188,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 								showNodata();
 							} else {
 							}
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 						}
 					} else {
 						if (isFirst) {
@@ -233,7 +233,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.order_amount,object.data.order_sn);
 							}
 						} else {
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 						}
 					} else {
 						AppUtil.showToast(getApplicationContext(), "请检查网络");
@@ -294,7 +294,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 						} else {
 							//应付金额大于0，需要进行后续的三方支付，否则就已经完成了支付过程，所以即便是支付失败，这里也应该进入支付结果页(失败状态)
 							if(Float.compare(Float.valueOf(tvMoneyShouldPay.getText().toString()),0)>0){
-								AppUtil.showToast(getApplicationContext(), object.msg);
+								AppUtil.showToast(getApplicationContext(), object.info);
 							}else {
 								//失败
 								PayResultActivity.invoke(PayTestActivity.this, 0);

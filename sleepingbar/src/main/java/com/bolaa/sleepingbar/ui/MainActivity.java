@@ -356,4 +356,13 @@ public class MainActivity extends BaseFragmentActivity implements
 		context.startActivity(intent);
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode==RESULT_OK){
+			if(requestCode==101){//退出登录回来，需要关闭主页
+				finish();
+			}
+		}
+	}
 }

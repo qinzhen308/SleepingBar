@@ -126,15 +126,11 @@ public class MyInfoActivity extends BaseActivity {
 		mUserInfo = AppStatic.getInstance().getmUserInfo();
 		if (mUserInfo != null) {
 			mIconIv.setUrl(mUserInfo.avatar);
-			setText(mUserInfo.real_name, mNameTv);
-			setText(mUserInfo.real_name, mNameEt);
-			setText(mUserInfo.id_card, mIDCardTv);
-			setText(mUserInfo.id_card, mIDCardEt);
+			setText(mUserInfo.nick_name, mNameTv);
+			setText(mUserInfo.nick_name, mNameEt);
 			setText(mUserInfo.birthday, mBirthTv);
-			setText(mUserInfo.blood, mBloodTv);
 			mBirthday=mUserInfo.birthday;
 			sex=mUserInfo.sex;
-			blood=mUserInfo.blood;
 			if (mUserInfo.sex.equals("1")) {
 				mSexTv.setText("男");
 			} else if (mUserInfo.sex.equals("2")) {
@@ -376,11 +372,8 @@ public class MyInfoActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		mUserInfo=userInfo;
 		setText(userInfo.birthday, mBirthTv);
-		setText(userInfo.blood, mBloodTv);
-		setText(userInfo.id_card, mIDCardTv);
-		setText(userInfo.id_card, mIDCardEt);
-		setText(userInfo.real_name, mNameTv);
-		setText(userInfo.real_name, mNameEt);
+		setText(userInfo.nick_name, mNameTv);
+		setText(userInfo.nick_name, mNameEt);
 		if (userInfo.sex.equals("1")) {
 			mSexTv.setText("男");
 		} else if (userInfo.sex.equals("2")) {
@@ -445,7 +438,7 @@ public class MyInfoActivity extends BaseActivity {
 							setUserInfo(object.data);
 							finish();
 						}else {
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 						}
 					}else {
 						AppUtil.showToast(getApplicationContext(), "修改失败");

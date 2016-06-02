@@ -3,6 +3,7 @@ package com.bolaa.sleepingbar.common;
 import android.app.Activity;
 import android.content.Context;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
@@ -102,13 +103,13 @@ public class AppStatic {
 		PreferencesUtils.remove("avatar");
 		PreferencesUtils.remove("sex");
 		PreferencesUtils.remove("birthday");
-		PreferencesUtils.remove("mobile_phone");
-		PreferencesUtils.remove("blood");
-		PreferencesUtils.remove("id_card");
-		PreferencesUtils.remove("pay_points");
-		PreferencesUtils.remove("rank_name");
-		PreferencesUtils.remove("rank_points");
-		PreferencesUtils.remove("user_rank");
+		PreferencesUtils.remove("got_fund");
+		PreferencesUtils.remove("height");
+		PreferencesUtils.remove("is_hidden_coord");
+		PreferencesUtils.remove("is_open_fund");
+		PreferencesUtils.remove("is_runking");
+		PreferencesUtils.remove("user_money");
+		PreferencesUtils.remove("sleep_fund");
 	}
 
 	public void unbindThird(String type) {
@@ -129,18 +130,18 @@ public class AppStatic {
 	public void saveUser(UserInfo user) {
 		clearUser();
 		putData("user_id", user.user_id);
-		putData("real_name", user.real_name);
+		putData("nick_name", user.nick_name);
 		putData("user_name", user.user_name);
 		putData("avatar", user.avatar);
 		putData("sex", user.sex);
 		putData("birthday", user.birthday);
-		putData("mobile_phone", user.mobile_phone);
-		putData("blood", user.blood);
-		putData("id_card", user.id_card);
-		putData("pay_points", user.pay_points);
-		putData("rank_name", user.rank_name);
-		putData("", user.rank_points);
-		putData("user_rank", user.user_rank);
+		putData("got_fund", user.got_fund);
+		putData("height", user.height);
+		putData("user_money", user.user_money);
+		putData("sleep_fund", user.sleep_fund);
+		PreferencesUtils.putInteger("is_hidden_coord", user.is_hidden_coord);
+		PreferencesUtils.putInteger("is_open_fund", user.is_open_fund);
+		PreferencesUtils.putInteger("is_runking", user.is_runking);
 	}
 
 	private void putData(String key, String value) {
@@ -158,18 +159,18 @@ public class AppStatic {
 	public UserInfo getUser() {
 		UserInfo user = new UserInfo();
 		user.user_id=(PreferencesUtils.getString("user_id"));
-		user.real_name=(PreferencesUtils.getString("real_name"));
+		user.nick_name=(PreferencesUtils.getString("nick_name"));
 		user.user_name=(PreferencesUtils.getString("user_name"));
 		user.avatar=(PreferencesUtils.getString("avatar"));
 		user.sex=(PreferencesUtils.getString("sex"));
 		user.birthday=(PreferencesUtils.getString("birthday"));
-		user.mobile_phone=(PreferencesUtils.getString("mobile_phone"));
-		user.blood=(PreferencesUtils.getString("blood"));
-		user.id_card=(PreferencesUtils.getString("id_card"));
-		user.pay_points=(PreferencesUtils.getString("pay_points"));
-		user.rank_name=(PreferencesUtils.getString("rank_name"));
-		user.rank_points=(PreferencesUtils.getString("rank_points"));
-		user.user_rank=(PreferencesUtils.getString("user_rank"));
+		user.got_fund=(PreferencesUtils.getString("got_fund"));
+		user.height=(PreferencesUtils.getString("height"));
+		user.is_hidden_coord=(PreferencesUtils.getInteger("is_hidden_coord",0));
+		user.is_open_fund=(PreferencesUtils.getInteger("is_open_fund",0));
+		user.is_runking=(PreferencesUtils.getInteger("is_runking",0));
+		user.user_money=(PreferencesUtils.getString("user_money"));
+		user.sleep_fund=(PreferencesUtils.getString("sleep_fund"));
 		return user;
 	}
 
@@ -201,7 +202,7 @@ public class AppStatic {
 									callback.onResponse(1, result);//成功
 								}
 							}else {
-								AppUtil.showToast(context, baseObject==null?"发送失败":baseObject.msg);
+								AppUtil.showToast(context, baseObject==null?"发送失败":baseObject.info);
 								callback.onResponse(0, result);//失败
 							}
 						}else {

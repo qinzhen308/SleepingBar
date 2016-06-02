@@ -251,7 +251,7 @@ public class Register3Activity extends BaseActivity implements OnClickListener {
 									setResult(RESULT_OK);
 									finish();
 								}else {
-									AppUtil.showToast(getApplicationContext(), object.msg);
+									AppUtil.showToast(getApplicationContext(), object.info);
 								}
 							}else {
 								AppUtil.showToast(getApplicationContext(), "注册异常");

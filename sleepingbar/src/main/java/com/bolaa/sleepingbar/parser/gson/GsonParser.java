@@ -41,8 +41,8 @@ public class GsonParser {
 //		Response response=gson.fromJson(json2, Response.class);
 			Type type=getType(BaseObjectList.class, clazz);
 			obj = gson.fromJson(json, type);
-			HApplication.getInstance().saveToken(obj.token);
 			if(obj!=null&&obj.status==BaseObject.STATUS_EXPIRE){
+				HApplication.getInstance().saveToken("");
 				AppStatic.getInstance().clearLoginStatus();
 			}
 		} catch (JsonSyntaxException e) {
@@ -73,8 +73,8 @@ public class GsonParser {
 //			Response response=gson.fromJson(json2, Response.class);
 			Type type=getType(BaseObject.class, clazz);
 			obj=gson.fromJson(json, type);
-			HApplication.getInstance().saveToken(obj.token);
 			if(obj!=null&&obj.status==BaseObject.STATUS_EXPIRE){
+				HApplication.getInstance().saveToken("");
 				AppStatic.getInstance().clearLoginStatus();
 			}
 		} catch (JsonSyntaxException e) {
@@ -134,9 +134,9 @@ public class GsonParser {
 //			Response response=gson.fromJson(json2, Response.class);
 			Type type=getType(BaseObject.class, clazz);
 			obj=gson.fromJson(json, type);
-			HApplication.getInstance().saveToken(obj.token);
 			if(obj!=null){
 				if(obj.status==BaseObject.STATUS_EXPIRE){
+					HApplication.getInstance().saveToken("");
 					AppStatic.getInstance().clearLoginStatus();
 				}
 				return obj.data;
@@ -186,11 +186,14 @@ public class GsonParser {
 			if(state==BaseObject.STATUS_EXPIRE){
 				AppStatic.getInstance().clearLoginStatus();
 			}
-			String msg=jsonObject.optString("msg");
+			String msg=jsonObject.optString("info");
 			String token=jsonObject.optString("token");
-			HApplication.getInstance().saveToken(token);
+		if(state==BaseObject.STATUS_EXPIRE){
+			HApplication.getInstance().saveToken("");
+			AppStatic.getInstance().clearLoginStatus();
+		}
 			BaseObject baseObject=new BaseObject();
-			baseObject.msg=msg;
+			baseObject.info =msg;
 			baseObject.status=state;
 			if(baseObject!=null){
 				return baseObject;
@@ -205,11 +208,14 @@ public class GsonParser {
 		if(state==BaseObject.STATUS_EXPIRE){
 			AppStatic.getInstance().clearLoginStatus();
 		}
-		String msg=jsonObject.optString("msg");
+		String msg=jsonObject.optString("info");
 		String token=jsonObject.optString("token");
-		HApplication.getInstance().saveToken(token);
+		if(state==BaseObject.STATUS_EXPIRE){
+			HApplication.getInstance().saveToken("");
+			AppStatic.getInstance().clearLoginStatus();
+		}
 		BaseObjectList baseObject=new BaseObjectList();
-		baseObject.msg=msg;
+		baseObject.info =msg;
 		baseObject.status=state;
 		if(baseObject!=null){
 			return baseObject;

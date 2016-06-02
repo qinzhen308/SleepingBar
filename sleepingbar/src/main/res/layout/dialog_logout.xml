@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/all_margin"
                 android:layout_weight="1"
-                android:background="@drawable/bg_rectangle_black_coner"
+                android:background="@drawable/bg_rectangle_solid_purple"
                 android:text="确定"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size" />

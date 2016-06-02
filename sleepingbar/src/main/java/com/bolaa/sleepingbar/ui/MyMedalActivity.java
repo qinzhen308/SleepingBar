@@ -3,16 +3,11 @@ package com.bolaa.sleepingbar.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.widget.GridView;
-import android.widget.RadioGroup;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.MedalAdapter;
 import com.bolaa.sleepingbar.base.BaseActivity;
-import com.bolaa.sleepingbar.base.BaseFragmentActivity;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
@@ -20,7 +15,6 @@ import com.bolaa.sleepingbar.model.Medal;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.BaseObjectList;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
-import com.bolaa.sleepingbar.ui.fragment.FundsRankinglistFragment;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.core.framework.net.NetworkWorker;
 
@@ -61,7 +55,7 @@ public class MyMedalActivity extends BaseActivity{
                         }
                     }else {
                         showFailture();
-                        AppUtil.showToast(getApplicationContext(),objectList.msg);
+                        AppUtil.showToast(getApplicationContext(),objectList.info);
                     }
                 }else {
                     showFailture();

@@ -67,7 +67,6 @@ public class SupporterActivity extends BaseListActivity implements LoadStateCont
 			showLoading();
 		}
 		ParamBuilder params=new ParamBuilder();
-        params.append(ParamBuilder.ACCESS_TOKEN, HApplication.getInstance().token);
 		if(isRefresh){
 			immediateLoadData(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_SUPPORTER_LIST), SupporterWraper.class);
 		}else {

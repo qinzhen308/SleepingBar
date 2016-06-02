@@ -9,17 +9,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseActivity;
-import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
-import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
-import com.bolaa.sleepingbar.thirdlogin.ThirdFactory;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
@@ -36,8 +34,8 @@ import java.util.TimerTask;
  * Created by paulz on 2016/6/1.
  */
 public class QuickLoginCaptchaActivity extends BaseActivity{
-    TextView tvProtocal;
     EditText etPhone;
+    TextView tvPhone;
     TextView btnNext;
     TextView btnPrevious;
     TextView tvGetCaptcha;
@@ -57,21 +55,20 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
     }
 
     private void setListener() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnNext.setOnClickListener(this);
+        btnPrevious.setOnClickListener(this);
+        tvGetCaptcha.setOnClickListener(this);
     }
 
     private void initView() {
         setActiviyContextView(R.layout.activity_quick_login_captcha, false, false);
         etPhone=(EditText)findViewById(R.id.edit_captcha);
-        tvProtocal=(TextView)findViewById(R.id.tv_protocol);
+        tvPhone=(TextView)findViewById(R.id.tv_phone);
         btnNext=(TextView)findViewById(R.id.tv_next);
         btnPrevious=(TextView)findViewById(R.id.tv_phone_again);
         tvGetCaptcha=(TextView)findViewById(R.id.tv_get_captcha);
+
+        tvPhone.setText("手机号码："+phone);
     }
 
     /**
@@ -80,13 +77,9 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
      */
     private void getCode() {
         DialogUtil.showDialog(lodDialog);
-        if(AppUtil.isNull(phone)||phone.length()<11){
-            AppUtil.showToast(getApplicationContext(), "请输入正确的手机号");
-        }
         HttpRequester mRequester = new HttpRequester();
-        mRequester.mParams.clear();
         mRequester.mParams.put("mobile_phone", phone);
-        mRequester.mParams.put("send_type", "pwd_code");
+        mRequester.mParams.put("verify_type","1" );
 
         NetworkWorker.getInstance().post(AppUrls.getInstance().URL_GET_CAPTCHA,
                 new NetworkWorker.ICallback() {
@@ -103,7 +96,7 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
                                 AppUtil.showToast(getApplicationContext(), "验证码发送成功");
                                 captchaBtnDisabled();
                             }else {
-                                AppUtil.showToast(getApplicationContext(), baseObject==null?"发送失败":baseObject.msg);
+                                AppUtil.showToast(getApplicationContext(), baseObject==null?"发送失败":baseObject.info);
                             }
                         }else {
                             AppUtil.showToast(getApplicationContext(), "发送失败");
@@ -120,7 +113,7 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
             if(i>=0){
                 tvGetCaptcha.setText(""+i+"s");
             }else {
-                tvGetCaptcha.setText("重新获取");
+                tvGetCaptcha.setText("重发验证码");
                 tvGetCaptcha.setEnabled(true);
                 tvGetCaptcha.setTextColor(getResources().getColor(R.color.purple));
                 timer.cancel();
@@ -150,11 +143,11 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
      * 登录
      */
     private void login() {
-        DialogUtil.showDialog(lodDialog);
         if (StringUtil.isEmpty(etPhone.getText().toString())){
             AppUtil.showToast(this, "请输入验证码");
             return ;
         }
+        DialogUtil.showDialog(lodDialog);
         HttpRequester requester = new HttpRequester();
         requester.getParams().put("verify_code", etPhone.getText().toString());
         requester.getParams().put("mobile_phone", phone);
@@ -172,20 +165,19 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
                             if(object!=null){
                                 if(object.data!=null&&object.status==BaseObject.STATUS_OK){
                                     AppUtil.showToast(getApplicationContext(), "登录成功");
-
+                                    HApplication.getInstance().saveToken(object.token);
                                     AppStatic.getInstance().isLogin = true;
-
                                     PreferencesUtils.putBoolean("isLogin", true);
                                     ImageLoader.getInstance().clearDiscCache();
                                     ImageLoader.getInstance().clearMemoryCache();
                                     AppStatic.getInstance().setmUserInfo(
                                             object.data);
                                     AppStatic.getInstance().saveUser(object.data);
-
+                                    MainActivity.invoke(QuickLoginCaptchaActivity.this);
                                     setResult(RESULT_OK);
                                     finish();
                                 }else {
-                                    AppUtil.showToast(getApplicationContext(), object.msg);
+                                    AppUtil.showToast(getApplicationContext(), object.info);
                                 }
                             }else {
                                 AppUtil.showToast(getApplicationContext(), "请检查网络");
@@ -210,7 +202,7 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
         }else if(v==btnPrevious){
             QuickLoginActivity.invoke(this);
         }else if(v==tvGetCaptcha){
-
+            getCode();
         }else {
             super.onClick(v);
         }

@@ -193,7 +193,7 @@ public class UserRePwdActivity extends BaseActivity {
 
 									nextStep();
 								}else {
-									AppUtil.showToast(getApplicationContext(), object.msg);
+									AppUtil.showToast(getApplicationContext(), object.info);
 								}
 							}else {
 								AppUtil.showToast(getApplicationContext(), "请检查网络");
@@ -303,7 +303,7 @@ public class UserRePwdActivity extends BaseActivity {
 								captchaBtnDisabled();
 								tvCaptchaSendTip.setVisibility(View.VISIBLE);
 							}else {
-								AppUtil.showToast(getApplicationContext(), baseObject==null?"发送失败":baseObject.msg);
+								AppUtil.showToast(getApplicationContext(), baseObject==null?"发送失败":baseObject.info);
 							}
 						}else {
 							AppUtil.showToast(getApplicationContext(), "发送失败");
@@ -376,7 +376,7 @@ public class UserRePwdActivity extends BaseActivity {
 									setResult(RESULT_OK);
 									finish();
 								}else {
-									AppUtil.showToast(getApplicationContext(), object.msg);
+									AppUtil.showToast(getApplicationContext(), object.info);
 								}
 							}else {
 								AppUtil.showToast(getApplicationContext(), "请检查网络");

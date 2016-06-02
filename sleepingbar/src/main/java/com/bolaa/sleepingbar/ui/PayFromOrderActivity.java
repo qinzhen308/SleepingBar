@@ -160,7 +160,7 @@ public class PayFromOrderActivity extends BaseActivity implements PayUtil.PayLis
 								PayUtil.wayToZhifubao(PayFromOrderActivity.this,object.data.order_amount,object.data.order_sn);
 							}
 						} else {
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 							PayResultActivity.invoke(PayFromOrderActivity.this, 0);
 
 						}
@@ -212,7 +212,7 @@ public class PayFromOrderActivity extends BaseActivity implements PayUtil.PayLis
 								finish();
 							}
 						} else {
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 						}
 					} else {
 						AppUtil.showToast(getApplicationContext(), "请检查网络");

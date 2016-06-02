@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseActivity;
 import com.bolaa.sleepingbar.common.AppStatic;
@@ -108,7 +107,7 @@ public class SettingsActivity extends BaseActivity{
 							btnLogout.setVisibility(View.GONE);
 							MainActivity.invoke(SettingsActivity.this);
 						}else {
-							AppUtil.showToast(getApplicationContext(), object.msg);
+							AppUtil.showToast(getApplicationContext(), object.info);
 						}
 					}else {
 						AppUtil.showToast(getApplicationContext(), "请检查网络");

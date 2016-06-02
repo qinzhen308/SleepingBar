@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="睡吧"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size_big"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="2dp"
+            android:text="v1.0 for android"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_small"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginTop="20dp"
+            android:drawableRight="@drawable/arr_big"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            android:text="关于睡吧"
+            android:drawablePadding="8dp"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#F5F5F8"/>
+
+
+        <TextView
+            android:id="@+id/tv_service_protocal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:drawableRight="@drawable/arr_big"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            android:text="服务条款"
+            android:drawablePadding="8dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#F5F5F8"/>
+
+
+        <TextView
+            android:id="@+id/tv_legal_notice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:drawableRight="@drawable/arr_big"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            android:text="法律声明"
+            android:drawablePadding="8dp"
+            />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <TextView
+        android:id="@+id/btn_logout"
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_red"
+        android:text="退出"
+        android:textColor="@color/btn_black"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        />
+
+
+
+</LinearLayout>
+

@@ -55,7 +55,7 @@ public class SleepTrendActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setActiviyContextView(R.layout.activity_myinfo);
+		setActiviyContextView(R.layout.activity_sleep_trend);
 		setTitleText("", "睡眠趋势", 0, true);
 		initView();
 		setListener();

@@ -264,7 +264,7 @@ public class UserLoginActivity extends BaseActivity implements
 									setResult(RESULT_OK);
 									finish();
 								}else {
-									AppUtil.showToast(getApplicationContext(), object.msg);
+									AppUtil.showToast(getApplicationContext(), object.info);
 								}
 							}else {
 								AppUtil.showToast(getApplicationContext(), "请检查网络");

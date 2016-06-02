@@ -40,6 +40,13 @@ public class QuickLoginActivity extends BaseActivity{
                 }
             }
         });
+
+        tvProtocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommonWebActivity.invoke(QuickLoginActivity.this,"http://baidu.com","用户协议");
+            }
+        });
     }
 
     private void initView() {

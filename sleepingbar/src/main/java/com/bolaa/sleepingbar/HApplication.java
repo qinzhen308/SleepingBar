@@ -50,10 +50,8 @@ public class HApplication extends MyApplication {
 	}
 	
 	public void saveToken(String token){
-		if(!AppUtil.isNull(token)&&(!token.equals(this.token)||this.token==""||this.token.length()==0)){
-			this.token=token;
-			PreferencesUtils.putString(AppStatic.ACCESS_TOKEN, token);
-		}
+		this.token=token;
+		PreferencesUtils.putString(AppStatic.ACCESS_TOKEN, token);
 	}
 
 	@Override
