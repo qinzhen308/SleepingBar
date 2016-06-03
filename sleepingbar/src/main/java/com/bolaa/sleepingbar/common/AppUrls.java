@@ -54,6 +54,10 @@ public class AppUrls {
 	public String URL_GET_CAPTCHA=BASE_URL+"user.php?act=send_verify_code";
 	public String URL_LOGIN=BASE_URL+"user.php?act=login";//登录
 	public String URL_LOGOUT=BASE_URL+"user.php?act=logout";//退出登录
+	public String URL_DEAL_HISTORY=BASE_URL+"user.php?act=account_log";//历史交易记录
+	public String URL_ACCOUNT_INFO=BASE_URL+"user.php?act=user_account";//个人中心我的账户
+	public String URL_CASH_WITHDRAW=BASE_URL+"user.php?act=do_apply_cash";//提现
+	public String URL_CASH_WITHDRAW_PAGE_INFO=BASE_URL+"user.php?act=apply_cash";//提现页面信息
 
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";

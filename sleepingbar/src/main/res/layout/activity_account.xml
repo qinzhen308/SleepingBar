@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+     >
+
+    <TextView
+        android:id="@+id/tv_balance"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/main"
+        android:textSize="45sp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="账户余额（元）"
+        android:textColor="@color/main"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginTop="5dp"
+        />
+
+
+    <com.bolaa.sleepingbar.view.pulltorefresh.PullListView xmlns:test="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:alwaysDrawnWithCache="false"
+        android:cacheColorHint="@null"
+        android:divider="@color/milky"
+        android:dividerHeight="1dp"
+        android:background="@color/white"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        test:showheader="false"
+        />
+    
+
+    <TextView
+    android:id="@+id/btn_recharge"
+    android:layout_height="@dimen/text_height"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/btn_purple"
+    android:text="充值"
+    android:textColor="@color/btn_black"
+    android:textSize="@dimen/text_size_big"
+    android:gravity="center"
+    />
+
+    <TextView
+        android:id="@+id/btn_cash_withdraw"
+        android:layout_height="@dimen/text_height"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_rectangle_strake_purple"
+        android:text="提现"
+        android:textColor="@color/main"
+        android:textSize="@dimen/text_size_big"
+        android:gravity="center"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_deal_history"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="查看交易记录 >>"
+        android:padding="5dp"
+        android:textColor="@color/text_grey_french1"
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        />
+
+
+
+    
+
+    
+</LinearLayout>
+    
+
+

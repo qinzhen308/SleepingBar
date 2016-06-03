@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="left"
+        android:drawablePadding="8dp"
+        android:layout_gravity="right"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="0.00"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/text_grey"
+            android:gravity="center_vertical|left"
+            android:layout_marginLeft="5dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_account_info"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="李鹏 620230401020123412"
+            android:textSize="@dimen/text_size"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/text_grey"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_describe"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="转出"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/base_red"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="5dp"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="提现成功"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/text_grey_french1"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="2015-01-01"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/text_grey_french1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="5dp"
+            />
+
+    </LinearLayout>
+    
+
+    
+
+</LinearLayout>
