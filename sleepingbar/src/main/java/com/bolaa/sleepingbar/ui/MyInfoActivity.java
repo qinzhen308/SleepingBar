@@ -62,10 +62,11 @@ public class MyInfoActivity extends BaseActivity {
 	private TextView mNameTv;
 	private TextView mBirthTv;
 	private EditText mNameEt;
-	private EditText mIDCardEt;
+	private EditText mWeightEt;
+	private EditText mHeightEt;
 	private TextView mSexTv;
-	private TextView mIDCardTv;
-	private TextView mBloodTv;
+	private TextView mHeightTv;
+	private TextView mWeightTv;
 	private LinearLayout mTimeLayout;
 
 	private WheelView year;
@@ -103,12 +104,13 @@ public class MyInfoActivity extends BaseActivity {
 
 	private void initView() {
 		mIconIv = (CircleImageView) findViewById(R.id.myInfo_iconIv);
-		mBloodTv = (TextView) findViewById(R.id.tv_blood);
+		mHeightTv = (TextView) findViewById(R.id.tv_height);
+		mHeightEt = (EditText) findViewById(R.id.et_height);
 		mNameTv = (TextView) findViewById(R.id.tv_name);
 		mBirthTv = (TextView) findViewById(R.id.tv_birthday);
 		mSexTv = (TextView) findViewById(R.id.tv_sex);
-		mIDCardTv = (TextView) findViewById(R.id.tv_id_card);
-		mIDCardEt = (EditText) findViewById(R.id.et_id_card);
+		mWeightTv = (TextView) findViewById(R.id.tv_weight);
+		mWeightEt = (EditText) findViewById(R.id.et_weight);
 		mNameEt = (EditText) findViewById(R.id.et_name);
 		mIconIv.setEnabled(false);
 	}
@@ -116,7 +118,6 @@ public class MyInfoActivity extends BaseActivity {
 	private void setListener() {
 		// TODO Auto-generated method stub
 		mSexTv.setOnClickListener(this);
-		mBloodTv.setOnClickListener(this);
 		mIconIv.setOnClickListener(this);
 		mBirthTv.setOnClickListener(this);
 	}
@@ -177,8 +178,10 @@ public class MyInfoActivity extends BaseActivity {
 	private void switchMode(){
 		isModifyMode=!isModifyMode;
 		if(isModifyMode){
-			mIDCardTv.setVisibility(View.GONE);
-			mIDCardEt.setVisibility(View.VISIBLE);
+			mWeightTv.setVisibility(View.GONE);
+			mWeightEt.setVisibility(View.VISIBLE);
+			mHeightTv.setVisibility(View.GONE);
+			mHeightEt.setVisibility(View.VISIBLE);
 			mNameTv.setVisibility(View.GONE);
 			mNameEt.setVisibility(View.VISIBLE);
 			mNameEt.requestFocus();
@@ -186,8 +189,10 @@ public class MyInfoActivity extends BaseActivity {
 			setRightTvText("完成");
 			AppUtil.showSoftInputMethod(this, mNameEt);
 		}else {
-			mIDCardTv.setVisibility(View.VISIBLE);
-			mIDCardEt.setVisibility(View.GONE);
+			mWeightTv.setVisibility(View.VISIBLE);
+			mWeightEt.setVisibility(View.GONE);
+			mHeightTv.setVisibility(View.VISIBLE);
+			mHeightEt.setVisibility(View.GONE);
 			mNameTv.setVisibility(View.VISIBLE);
 			mNameEt.setVisibility(View.GONE);
 			setRightTvText("修改");
@@ -196,7 +201,6 @@ public class MyInfoActivity extends BaseActivity {
 		
 		mIconIv.setEnabled(isModifyMode);
 		mBirthTv.setEnabled(isModifyMode);
-		mBloodTv.setEnabled(isModifyMode);
 		mSexTv.setEnabled(isModifyMode);
 	}
 	
@@ -218,8 +222,6 @@ public class MyInfoActivity extends BaseActivity {
 			if(mDialog!=null&&!mDialog.isShowing()){
 				mDialog.show();
 			}
-		}else if (v==mBloodTv) {
-			showBloodWindow();
 		}else if (v==mIconIv) {
 			showPhotoWindow();
 		}else if (v==mSexTv) {
@@ -279,35 +281,7 @@ public class MyInfoActivity extends BaseActivity {
 					}
 				}).show();
 	}
-	
-	private void showBloodWindow() {
-		new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
-				.addSheetItem("A", SheetItemColor.Black, new OnSheetItemClickListener() {
-					@Override
-					public void onClick(int which) {
-						mBloodTv.setText("A");
-						blood="A";
-					}
-				}).addSheetItem("B", SheetItemColor.Black, new OnSheetItemClickListener() {
-					@Override
-					public void onClick(int which) {
-						mBloodTv.setText("B");
-						blood="B";
-					}
-				}).addSheetItem("AB", SheetItemColor.Black, new OnSheetItemClickListener() {
-					@Override
-					public void onClick(int which) {
-						mBloodTv.setText("AB");
-						blood="AB";
-					}
-				}).addSheetItem("O", SheetItemColor.Black, new OnSheetItemClickListener() {
-					@Override
-					public void onClick(int which) {
-						mBloodTv.setText("O");
-						blood="O";
-					}
-				}).show();
-	}
+
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -405,7 +379,7 @@ public class MyInfoActivity extends BaseActivity {
 		if (blood != null) {
 			requester.mParams.put("blood", blood);
 		}
-		String id_card=mIDCardEt.getText().toString().trim();
+		String id_card=mHeightEt.getText().toString().trim();
 		if (id_card .length()>0) {
 			requester.mParams.put("id_card", id_card);
 		}else {

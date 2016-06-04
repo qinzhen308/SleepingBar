@@ -2,26 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
 
     <TextView
-        android:id="@+id/tv_pay"
-        android:layout_marginTop="3dp"
+        android:id="@+id/tv_selector"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="支付宝支付"
-        android:drawableLeft="@drawable/test_zfb"
+        android:layout_width="wrap_content"
+        android:drawableLeft="@drawable/selector_checkbox_pay"
         android:gravity="center_vertical"
         android:drawablePadding="10dp"
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
         android:paddingTop="3dp"
         android:paddingBottom="8dp"
-        android:drawableRight="@drawable/selector_checkbox_pay"
         android:textSize="@dimen/text_size_big"
         android:textColor="@color/text_grey_french1"
         />
-    <View
-        android:id="@+id/divider"
-        style="@style/divider_horizontal_grey2"/>
+
+
+    <TextView
+        android:id="@+id/tv_pay"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="支付宝"
+        android:background="@drawable/selector_rectangle_purple_and_gray"
+        android:drawableLeft="@drawable/test_zfb"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/text_grey_french1"
+        />
+
 </LinearLayout>

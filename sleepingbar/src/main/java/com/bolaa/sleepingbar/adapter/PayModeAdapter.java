@@ -38,12 +38,9 @@ public class PayModeAdapter extends AbstractListAdapter<PayMode> {
 		}else {
 			holder.tvName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.test_zfb,0,R.drawable.selector_checkbox_pay,0);
 		}
-		if(i==getCount()-1){
-			holder.divider.setVisibility(View.GONE);
-		}else {
-			holder.divider.setVisibility(View.VISIBLE);
-		}
+
 		holder.tvName.setSelected(payMode.isSelected);
+		holder.tvSelector.setSelected(payMode.isSelected);
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -83,11 +80,11 @@ public class PayModeAdapter extends AbstractListAdapter<PayMode> {
 
 	class ViewHolder{
 		public TextView tvName;
-		public View divider;
+		public TextView tvSelector;
 
 		public ViewHolder(View view){
 			tvName=(TextView)view.findViewById(R.id.tv_pay);
-			divider=view.findViewById(R.id.divider);
+			tvSelector=(TextView)view.findViewById(R.id.tv_selector);
 		}
 		
 	}

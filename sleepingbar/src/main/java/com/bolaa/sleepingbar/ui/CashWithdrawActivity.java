@@ -200,7 +200,8 @@ public class CashWithdrawActivity extends BaseActivity{
 					BaseObject<Object> object= GsonParser.getInstance().parseToObj(result, Object.class);
 					if(object!=null){
 						if(object.data!=null&&object.status==BaseObject.STATUS_OK){
-							AppUtil.showToast(getApplicationContext(), object.info);
+//							AppUtil.showToast(getApplicationContext(), object.info);
+							CashWithdrawResultActivity.invoke(CashWithdrawActivity.this,1);
 							//可以发个广播
 							setResult(RESULT_OK);
 							finish();

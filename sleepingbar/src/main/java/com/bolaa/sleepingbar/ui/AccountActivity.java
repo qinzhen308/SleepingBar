@@ -125,7 +125,7 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
 		}else if(v==tvCashWithdraw){
             CashWithdrawActivity.invoke(this);
 		}else if(v==tvRecharge){
-
+			PayTestActivity.invoke(this);
 		}else{
 			super.onClick(v);
 		}

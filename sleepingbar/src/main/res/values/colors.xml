@@ -98,5 +98,7 @@
     <color name="base_yellow">#FDC02E</color>
     <color name="base_blue">#06A9F4</color>
 
+    <color name="text_yellow">#E25400</color>
+
 
 </resources>

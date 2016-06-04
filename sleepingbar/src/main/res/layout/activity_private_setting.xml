@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="是否参与睡眠基金排行"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_funds_rankinglist_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:gravity="center"
+            android:button="@drawable/checkbox_style_btn"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        style="@style/divider_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="是否公开睡眠基金"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_public_funds_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:gravity="center"
+            android:button="@drawable/checkbox_style_btn"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        style="@style/divider_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="是否隐藏我的地理位置"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            />
+
+        <CheckBox
+            android:id="@+id/cb_location_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:gravity="center"
+            android:button="@drawable/checkbox_style_btn"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        style="@style/divider_horizontal"/>
+
+</LinearLayout>
