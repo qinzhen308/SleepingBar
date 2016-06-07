@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bolaa.sleepingbar.view.ResizeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlayout_login"
+    android:layout_width="fill_parent"
+    android:background="@drawable/bg_login"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_login_logo"/>
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请打开手机蓝牙后将要绑定的手环靠近手机并点击要绑定的设备名称"
+        android:textColor="#BF73DA"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size"
+        />
+
+    <ListView
+        android:id="@+id/lv_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:divider="#58319E"
+        android:dividerHeight="1dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_search_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重新搜索设备"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size"
+        />
+
+    <TextView
+        android:id="@+id/tv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳过"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        />
+
+
+
+
+
+
+</com.bolaa.sleepingbar.view.ResizeLayout>

@@ -15,6 +15,7 @@ import com.bolaa.sleepingbar.adapter.PayModeAdapter;
 import com.bolaa.sleepingbar.base.BaseActivity;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Order;
 import com.bolaa.sleepingbar.model.PayMode;
@@ -25,6 +26,7 @@ import com.bolaa.sleepingbar.utils.PayUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.util.DialogUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,7 +39,6 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 	ListView lvPayMode;
 	PayModeAdapter mAdapter;
 
-	Settlement settlement;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		setExtra();
 		initView();
 		setListener();
-		loadPageInfo(true);
+		loadPageInfo();
 	}
 
 	private void setExtra(){
@@ -63,7 +64,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		lvPayMode.setAdapter(mAdapter);
 
 	}
-	
+
 	private void setListener(){
 		btnPay.setOnClickListener(this);
 		etBalance.addTextChangedListener(new TextWatcher() {
@@ -92,75 +93,43 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 	}
 
 
-
-	private void handleData(boolean isFirst){
-		if(isFirst){
-			mAdapter.setList(settlement.payment_list);
-			mAdapter.notifyDataSetChanged();
-		}else {
-		}
-	}
-
 	//获取页面数据, 只有第一次返回支付列表和优惠券信息
-	private void loadPageInfo(final boolean isFirst){
-		if(isFirst){
-			showLoading();
-		}else{
-			DialogUtil.showDialog(lodDialog);
-		}
-		ParamBuilder params=new ParamBuilder();
-		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_PAY_PAGE_INFO), new NetworkWorker.ICallback() {
-
-			@Override
-			public void onResponse(int status, String result) {
-				// TODO Auto-generated method stub
-				if (isFirst) {
-					showSuccess();
-				} else {
-					if (!isFinishing()) {
-						DialogUtil.dismissDialog(lodDialog);
-					}
-				}
-				if (status == 200) {
-					BaseObject<Settlement> object = GsonParser.getInstance().parseToObj(result, Settlement.class);
-					if (object != null) {
-						if (object.data != null && object.status == BaseObject.STATUS_OK) {
-							//提交成功  跳转到支付页面
-//							WayPayActivity.invoke(TimeSelectingActivity.this, object.data);
-							settlement = object.data;
-							handleData(isFirst);
-
-//							AppUtil.showToast(getApplicationContext(), "暂未接入支付");
-						} else {
-							if (isFirst) {
-								showNodata();
-							} else {
-							}
-							AppUtil.showToast(getApplicationContext(), object.info);
-						}
-					} else {
-						if (isFirst) {
-							showNodata();
-						} else {
-							AppUtil.showToast(getApplicationContext(), "请检查网络");
-						}
-					}
-				} else {
-					if (isFirst) {
-						showNodata();
-					} else {
-						AppUtil.showToast(getApplicationContext(), "请检查网络");
-					}
-				}
-			}
-		});
+	private void loadPageInfo(){
+		List<PayMode> list=new ArrayList<>();
+		PayMode mode1=new PayMode();
+		mode1.pay_code="wxpay";
+		mode1.pay_id="1";
+		mode1.pay_name="微信    ";
+		PayMode mode2=new PayMode();
+		mode2.pay_code="2";
+		mode2.pay_id="2";
+		mode2.pay_name="支付宝";
+		list.add(mode1);
+		list.add(mode2);
+		mAdapter.setList(list);
+		mAdapter.notifyDataSetChanged();
 	}
 
-	private void pay(String order_id){
-		ParamBuilder params=new ParamBuilder();
-		params.append("pay_id", mAdapter.getPayModeId());
-		params.append("order_id", order_id);
-		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_DO_PAY), new NetworkWorker.ICallback() {
+	private void pay(){
+		HttpRequester requester=new HttpRequester();
+		String balanceStr=etBalance.getText().toString().trim();
+		if(!AppUtil.isNull(balanceStr)){
+			float balance=Float.valueOf(balanceStr);
+			if(Float.compare(balance,0)<=0){
+				AppUtil.showToast(this, "请输入充值金额");
+				return;
+			}
+			requester.getParams().put("money",balance+"");
+		}else {
+			AppUtil.showToast(this, "请输入充值金额");
+			return;
+		}
+		if(AppUtil.isNull(mAdapter.getPayModeId())){
+			AppUtil.showToast(this, "请选择支付方式");
+			return;
+		}
+		requester.getParams().put("pay_id", mAdapter.getPayModeId());
+		NetworkWorker.getInstance().post( AppUrls.getInstance().URL_DO_RECHARGE, new NetworkWorker.ICallback() {
 
 			@Override
 			public void onResponse(int status, String result) {
@@ -177,7 +146,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 							if("wxpay".equals(mAdapter.getPayModeCode())){
 								AppUtil.showToast(getApplicationContext(), "提交成功，等待后续接入支付");
 							}else {
-								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.order_amount,object.data.order_sn);
+								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.price,object.data.out_trade_no);
 							}
 						} else {
 							AppUtil.showToast(getApplicationContext(), object.info);
@@ -190,7 +159,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 				}
 
 			}
-		});
+		},requester);
 	}
 
 	private void submit(){
@@ -198,7 +167,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		String balanceStr=etBalance.getText().toString().trim();
 		if(!AppUtil.isNull(balanceStr)){
 			float balance=Float.valueOf(balanceStr);
-			if(Float.compare(balance,settlement.user_money)>0){
+			if(Float.compare(balance,0)<=0){
 				AppUtil.showToast(this, "请输入充值金额");
 				return;
 			}
@@ -212,7 +181,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		DialogUtil.showDialog(lodDialog);
 
 
-		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_HOSPITAL_MAKE_AN_APPOINTMENT), new NetworkWorker.ICallback() {
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_DO_RECHARGE), new NetworkWorker.ICallback() {
 
 			@Override
 			public void onResponse(int status, String result) {
@@ -224,7 +193,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 						if (object.data != null && object.status == BaseObject.STATUS_OK) {
 							//提交成功
 							if(object.data.pay_statu==0){//调起三方支付
-								pay(object.data.order_id);
+//								pay(object.data.order_id);
 								return;
 							}else {//直接支付成功(原因：余额充足。。。)
 								//成功
@@ -257,7 +226,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(v==btnPay){
-			submit();
+			pay();
 		}else {
 			super.onClick(v);
 		}
@@ -297,9 +266,11 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 
 
 	public class PayOrderResult{
-		public String order_amount;
-		public String order_fee;
-		public String order_sn;
+		public String out_trade_no;
+		public String pay_online;
+		public String price;
+		public String return_url;
+		public String subject;
 	}
 
 }

@@ -58,6 +58,8 @@ public class AppUrls {
 	public String URL_ACCOUNT_INFO=BASE_URL+"user.php?act=user_account";//个人中心我的账户
 	public String URL_CASH_WITHDRAW=BASE_URL+"user.php?act=do_apply_cash";//提现
 	public String URL_CASH_WITHDRAW_PAGE_INFO=BASE_URL+"user.php?act=apply_cash";//提现页面信息
+	public String URL_DO_RECHARGE=BASE_URL+"user.php?act=do_recharge";//充值
+	public String URL_DEVICE_HISTORY=BASE_URL+"user.php?act=equipment_list";//已经绑定的设备列表
 
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";

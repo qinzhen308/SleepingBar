@@ -34,9 +34,9 @@ public class PayModeAdapter extends AbstractListAdapter<PayMode> {
 		final PayMode payMode=mList.get(i);
 		holder.tvName.setText(payMode.pay_name);
 		if(payMode.pay_code.equals("wxpay")){
-			holder.tvName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.test_wx,0,R.drawable.selector_checkbox_pay,0);
+			holder.tvName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.test_wx,0,0,0);
 		}else {
-			holder.tvName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.test_zfb,0,R.drawable.selector_checkbox_pay,0);
+			holder.tvName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.test_zfb,0,0,0);
 		}
 
 		holder.tvName.setSelected(payMode.isSelected);
