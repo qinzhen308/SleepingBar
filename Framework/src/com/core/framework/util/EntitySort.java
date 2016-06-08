@@ -31,7 +31,7 @@ public class EntitySort<T> implements Comparator<T> {
 	    }  
 	  
 	    // 排序规则实现  
-	    public int compare(T sortOne, T sortTow) {  
+	    public int compare(T sortOne, T sortTow) {
 	  
 	        StringBuffer methodName = new StringBuffer();  
 	        methodName.append("get");  
@@ -44,7 +44,7 @@ public class EntitySort<T> implements Comparator<T> {
 	        try {  
 	            keyOne = (String) sortOne.getClass()  
 	                    .getMethod(methodName.toString(), null)  
-	                    .invoke(sortOne, null);// 利用反射机制动态取得T下的字段值。  
+	                    .invoke(sortOne, null);// 利用反射机制动态取得T下的字段值。
 	  
 	            if (keyOne == null) {  
 	                keyOne = "";  

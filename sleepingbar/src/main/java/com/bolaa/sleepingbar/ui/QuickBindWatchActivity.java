@@ -51,6 +51,7 @@ public class QuickBindWatchActivity extends BaseActivity{
     }
 
     private void initBLE(){
+        long t1=System.currentTimeMillis();
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             LogUtil.d("watch----没有4.0蓝牙权限");
             AppUtil.showToast(getApplicationContext(),"无4.0蓝牙使用权限");
@@ -75,7 +76,9 @@ public class QuickBindWatchActivity extends BaseActivity{
         }
         mBluetoothAdapter.enable();
         //初始化蓝牙工具类
+        LogUtil.d("BLE---Time="+(System.currentTimeMillis()-t1));
         scanLeDevice(true);
+        LogUtil.d("BLE---Time="+(System.currentTimeMillis()-t1));
     }
 
     private void setListener() {
@@ -115,7 +118,8 @@ public class QuickBindWatchActivity extends BaseActivity{
             }, SCAN_PERIOD);
 
             mScanning = true;
-            mBluetoothAdapter.startLeScan(new UUID[]{WatchConstant.UUID_SERVICE},mLeScanCallback);
+//            mBluetoothAdapter.startLeScan(new UUID[]{WatchConstant.UUID_SERVICE},mLeScanCallback);
+            mBluetoothAdapter.startLeScan(mLeScanCallback);
         } else {
             mScanning = false;
             mBluetoothAdapter.stopLeScan(mLeScanCallback);

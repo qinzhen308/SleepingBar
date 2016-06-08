@@ -1,12 +1,12 @@
 package com.bolaa.sleepingbar.adapter;
 
 
-import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bolaa.sleepingbar.R;
@@ -39,9 +39,9 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 		final BluetoothDevice watch=mList.get(i);
 		holder.tvName.setText(watch.getName());
 		if(watch.getBondState()==BluetoothDevice.BOND_BONDED){
-			holder.tvStatus.setVisibility(View.VISIBLE);
+			holder.ivStatus.setVisibility(View.VISIBLE);
 		}else {
-			holder.tvStatus.setVisibility(View.GONE);
+			holder.ivStatus.setVisibility(View.GONE);
 		}
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -57,11 +57,11 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 
 	class ViewHolder{
 		public TextView tvName;
-		public TextView tvStatus;
+		public ImageView ivStatus;
 
 		public ViewHolder(View view){
 			tvName=(TextView)view.findViewById(R.id.tv_name);
-			tvStatus=(TextView) view.findViewById(R.id.tv_unbind);
+			ivStatus =(ImageView) view.findViewById(R.id.iv_status);
 		}
 		
 	}
