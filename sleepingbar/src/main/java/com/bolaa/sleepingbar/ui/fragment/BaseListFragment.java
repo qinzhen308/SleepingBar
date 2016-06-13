@@ -19,6 +19,8 @@ import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullListView;
+import com.bolaa.sleepingbar.view.pulltorefresh.PullSwipeListView;
+import com.bolaa.sleepingbar.view.pulltorefresh.SwipeListView;
 import com.bolaa.sleepingbar.view.pulltorefreshgrid.PullToRefreshStaggeredGridView;
 import com.bolaa.sleepingbar.view.pulltorefreshgrid.StaggeredGridView;
 import com.core.framework.develop.DevRunningTime;
@@ -32,8 +34,10 @@ import java.util.List;
 public abstract class BaseListFragment extends BaseFragment{
 	
 	protected PullListView mPullListView;
+	protected PullSwipeListView mPullSwipeListView;
 	protected ListView mListView;
-	
+	protected SwipeListView mSwipeListView;
+
     protected PullToRefreshStaggeredGridView mPullStaggerGridView; // 下拉刷新瀑布流
     protected StaggeredGridView mWaterGridView; // 瀑布流
 	
@@ -258,6 +262,14 @@ public abstract class BaseListFragment extends BaseFragment{
                     // mListView.setSelection(mListView.getLastVisiblePosition());
                 }
 
+                if (mSwipeListView != null) {
+                    if (mSwipeListView.getFooterViewsCount() >= 1) {
+                        mSwipeListView.removeFooterView(mFooterView);
+                    }
+                    mSwipeListView.addFooterView(mFooterView);
+//                     mSwipeListView.setSelection(mSwipeListView.getLastVisiblePosition());
+                }
+
                 if (mWaterGridView != null) {
                     mStaggerFootView.setVisibility(View.VISIBLE);
                     mProTipLayer.setVisibility(View.VISIBLE);
@@ -345,6 +357,10 @@ public abstract class BaseListFragment extends BaseFragment{
             mListView.removeFooterView(mSpecialFooterView);
         }
 
+        if (mSwipeListView != null && mSwipeListView.getFooterViewsCount() >= 1) {
+            mSwipeListView.removeFooterView(mSpecialFooterView);
+        }
+
 
         if (mWaterGridView != null) {
             mStaggerFootView.setVisibility(View.GONE);
@@ -360,6 +376,7 @@ public abstract class BaseListFragment extends BaseFragment{
 	
     private void removeAllFooyView(int page) {
         if (mListView != null) mListView.removeFooterView(mFooterView);
+        if (mSwipeListView != null) mSwipeListView.removeFooterView(mFooterView);
 
         if (mWaterGridView != null) {
             mStaggerFootView.setVisibility(View.GONE);
@@ -369,6 +386,15 @@ public abstract class BaseListFragment extends BaseFragment{
     private void addSpecailFooterView() {
         ListView listView = mListView ;
 
+        if (mSpecialFooterView != null && listView != null) {
+            if (listView.getFooterViewsCount() >= 1) {
+                listView.removeFooterView(mSpecialFooterView);
+            }
+            listView.addFooterView(mSpecialFooterView);
+            //listView.setSelection(listView.getLastVisiblePosition());
+        }
+
+        listView = mSwipeListView ;
         if (mSpecialFooterView != null && listView != null) {
             if (listView.getFooterViewsCount() >= 1) {
                 listView.removeFooterView(mSpecialFooterView);
@@ -422,6 +448,8 @@ public abstract class BaseListFragment extends BaseFragment{
 
             if (scrollState == SCROLL_STATE_IDLE && isScrollEnd) {
             	if (mPullListView != null && mPullListView.isFlingUp()) {
+                    loadNextPageData();
+                }else if (mPullSwipeListView != null && mPullSwipeListView.isFlingUp()) {
                     loadNextPageData();
                 }
             }

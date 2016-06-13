@@ -60,6 +60,10 @@ public class AppUrls {
 	public String URL_CASH_WITHDRAW_PAGE_INFO=BASE_URL+"user.php?act=apply_cash";//提现页面信息
 	public String URL_DO_RECHARGE=BASE_URL+"user.php?act=do_recharge";//充值
 	public String URL_DEVICE_HISTORY=BASE_URL+"user.php?act=equipment_list";//已经绑定的设备列表
+	public String URL_MY_FRIENDS_LIST=BASE_URL+"community.php?act=my_friend";//好友
+	public String URL_SEARCH_FRIENDS=BASE_URL+"community.php?act=search_index";//添加好友页面
+	public String URL_DO_CARE=BASE_URL+"community.php?act=do_care";//关注
+	public String URL_CANCEL_CARE=BASE_URL+"community.php?act=cancel_care";//取消关注
 
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";

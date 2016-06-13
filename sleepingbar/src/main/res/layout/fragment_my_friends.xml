@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_edit_grey_light"
+        android:drawableLeft="@drawable/search"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical|left"
+        android:drawablePadding="5dp"
+        android:hint="搜索"
+        android:textColor="@color/text_grey"
+        android:textColorHint="@color/text_grey_french1"
+        android:textSize="@dimen/text_size_big"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        />
+
+
+    <com.bolaa.sleepingbar.view.pulltorefresh.PullSwipeListView xmlns:test="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="12dp"
+        android:alwaysDrawnWithCache="false"
+        android:cacheColorHint="@null"
+        android:layout_below="@+id/et_search"
+        android:divider="@color/milky"
+        android:dividerHeight="1dp"
+        android:background="@color/white"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        test:showheader="true"
+        />
+
+    <FrameLayout
+        android:id="@+id/layout_load_state_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/et_search"
+        android:layout_marginTop="12dp"
+        />
+
+    
+</RelativeLayout>
+    
+
+

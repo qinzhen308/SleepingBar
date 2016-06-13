@@ -15,6 +15,7 @@ import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.ui.AboutActivity;
 import com.bolaa.sleepingbar.ui.AccountActivity;
 import com.bolaa.sleepingbar.ui.DeviceInfoActivity;
+import com.bolaa.sleepingbar.ui.MyFriendsActivity;
 import com.bolaa.sleepingbar.ui.MyInfoActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
 import com.bolaa.sleepingbar.ui.PrivateSettingActivity;
@@ -112,7 +113,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         }else if(v==layoutMedal){
             MyMedalActivity.invoke(getActivity());
         }else if(v==layoutFriends){
-
+            MyFriendsActivity.invoke(getActivity());
         }else if(v==layoutMsg){
 
         }else if(v==layoutAccount){

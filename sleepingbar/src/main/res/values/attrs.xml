@@ -8,6 +8,10 @@
     <declare-styleable name="pullshowfoot">
         <attr name="showfoot" format="boolean"></attr>
     </declare-styleable>
+
+    <declare-styleable name="swipelistviewstyle">
+        <attr name="right_width" format="dimension"/>
+    </declare-styleable>
     
     
     <declare-styleable name="PullToRefresh">
