@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <com.bolaa.sleepingbar.view.banner.AutoScollBanner
+        android:id="@+id/layout_auto_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.bolaa.sleepingbar.view.ListViewInScrollView
+        android:id="@+id/lv_information_text"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        />
+
+</merge>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">睡吧</string>
+    <string name="app_name">维极睡吧</string>
     <string name="hello_world">Hello world!</string>
     <string name="pull_to_refresh">下拉即可刷新&#8230;</string>
     <string name="up_to_refresh">上拉加载更多</string>

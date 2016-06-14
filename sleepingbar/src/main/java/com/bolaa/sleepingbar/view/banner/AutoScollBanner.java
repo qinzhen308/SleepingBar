@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.listener.BannerOnClickListener;
 import com.bolaa.sleepingbar.model.Banner;
+import com.bolaa.sleepingbar.model.Information;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.develop.LogUtil;
 
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lenovo on 2015/6/23.
+ * Created by paulz on 2015/6/23.
  */
 public class AutoScollBanner extends LinearLayout implements
 		BannerViewPager.OnSingleTouchListener {
@@ -128,6 +130,73 @@ public class AutoScollBanner extends LinearLayout implements
 			view.setOnClickListener(new BannerOnClickListener(mContext, banner));
 			Image13Loader.getInstance().loadNoStubImageFade(
 					banner.media_gallery, view);
+		}
+
+		if (mBannerAdater == null) {
+			mBannerAdater = new LoopBannerAdapter(mViews);
+			setPageAdapter(mBannerAdater);
+		} else {
+			mBannerAdater.setData(mViews);
+			if (mBannerAdater.convertRealPosition(mViewPager
+					.getAutoCurrentIndex()) >= mBannerAdater.getRealCount()) {
+				mViewPager.resetAutoCurrentIndex(mBannerAdater
+						.getOriginPosition());
+			} else {
+				mViewPager.setCurrentItem(mViewPager.getAutoCurrentIndex(),
+						false);
+			}
+
+			mViewPager.setOnSingleTouchListener(this);
+
+			mViewPager.setLoopPageIndicator(mPageIndicator,
+					mBannerAdater.getRealCount());
+			mPageIndicator.notifyDataSetChanged();
+
+			/*
+			 * if (dataVisibility() && mViewPager != null) {
+			 * mViewPager.startCircleView(); }
+			 */
+		}
+
+		showAdvertisementView();
+	}
+
+	public void showInformationViews(List<Information> informations) {
+		List<View> mViews = null;
+		if (informations != null) {
+			mViews = new ArrayList<View>(informations.size());
+
+			if (informations.size() == 1) {
+				mPageIndicator.setNeedCircle(false);
+			} else {
+				mPageIndicator.setNeedCircle(true);
+			}
+			mEmptyBannerIv.setVisibility(View.GONE);
+		} else if (informations == null || informations.size() == 0) {
+			mEmptyBannerIv.setVisibility(View.VISIBLE);
+			return;
+		}
+
+		int index = 0;
+		for (final Information information : informations) {
+			index++;
+			final ImageView view = new ImageView(mContext);
+			view.setLayoutParams(new LayoutParams(
+					ViewGroup.LayoutParams.MATCH_PARENT,
+					ViewGroup.LayoutParams.MATCH_PARENT));
+			view.setScaleType(ImageView.ScaleType.FIT_XY);
+
+			mViews.add(view);
+
+			view.setTag(mViews.size());
+			view.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					AppUtil.showToast(mContext,information.title);
+				}
+			});
+			Image13Loader.getInstance().loadNoStubImageFade(
+					information.file_url, view);
 		}
 
 		if (mBannerAdater == null) {
