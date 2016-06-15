@@ -75,7 +75,7 @@
         android:layout_marginTop="5dp"
         />
 
-    <GridView
+    <com.bolaa.sleepingbar.view.GridViewInScrollView
         android:id="@+id/gv_pics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,10 +88,11 @@
         />
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/gv_pics"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:orientation="horizontal"
+        android:layout_marginTop="5dp"
         android:layout_alignLeft="@+id/tv_content"
         android:gravity="center_vertical"
         >

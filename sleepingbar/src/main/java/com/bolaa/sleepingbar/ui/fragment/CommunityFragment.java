@@ -16,6 +16,7 @@ import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.base.BaseList2Activity;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Information;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
@@ -37,7 +38,7 @@ import java.util.List;
  * 首页--社区
  * Created by paulz on 2016/5/31.
  */
-public class CommunityFragment extends BaseListFragment implements View.OnClickListener {
+public class CommunityFragment extends BaseListFragment implements View.OnClickListener,LoadStateController.OnLoadErrorListener,PullToRefreshBase.OnRefreshListener {
     CommunityHeader header;
     TextView tvPublish;
     ImageView ivMsg;
@@ -145,27 +146,60 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
 
     @Override
     protected void handlerData(List allData, List currentData, boolean isLastPage) {
+        // TODO Auto-generated method stub
+        mPullListView.onRefreshComplete();
+        if(AppUtil.isEmpty(allData)){
+            showNodata();
+        }else {
+            showSuccess();
+        }
+        mAdapter.setList(allData);
+        mAdapter.notifyDataSetChanged();
 
     }
 
     @Override
     protected void loadError(String message, Throwable throwable, int page) {
-
+        // TODO Auto-generated method stub
+        mPullListView.onRefreshComplete();
+        showFailture();
     }
 
     @Override
     protected void loadTimeOut(String message, Throwable throwable) {
-
+        // TODO Auto-generated method stub
+        mPullListView.onRefreshComplete();
+        showFailture();
     }
 
     @Override
     protected void loadNoNet() {
-
+        // TODO Auto-generated method stub
+        mPullListView.onRefreshComplete();
+        showFailture();
     }
 
     @Override
     protected void loadServerError() {
+        // TODO Auto-generated method stub
+        mPullListView.onRefreshComplete();
+        showFailture();
 
+    }
+
+
+    @Override
+    public void onRefresh() {
+        // TODO Auto-generated method stub
+        if(!isLoading()){
+            initData(true);
+        }
+    }
+
+    @Override
+    public void onAgainRefresh() {
+        // TODO Auto-generated method stub
+        initData(false);
     }
 
     @Override

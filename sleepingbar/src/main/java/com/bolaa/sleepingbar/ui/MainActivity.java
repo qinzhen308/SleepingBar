@@ -193,7 +193,6 @@ public class MainActivity extends BaseFragmentActivity implements
 					findresult = new ActiveFragment();
 				} else if (Tag.equals(TAB3)) {
 					findresult = new CommunityFragment();
-					return;
 				} else if (Tag.equals(TAB4)) {
 					findresult = new UserCenterFragment();
 				}

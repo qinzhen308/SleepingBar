@@ -1,6 +1,12 @@
 package com.bolaa.sleepingbar.adapter;
 
 import android.content.Context;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
@@ -12,6 +18,7 @@ import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.core.framework.app.devInfo.ScreenUtil;
 
 /**
  * 社区首页---专题列表 适配器
@@ -41,13 +48,23 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 
 		final Topic item=mList.get(i);
 		holder.tvName.setText(item.nick_name);
-		holder.tvContent.setText(item.content);
+		String content=item.content+" 全文";
+		SpannableString spannableString1 = new SpannableString(content);
+		spannableString1.setSpan(new ClickableSpan(){
+			@Override
+			public void onClick(View widget) {
+
+			}
+		}, content.length()-2, content.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		spannableString1.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.main)),content.length()-2, content.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		holder.tvContent.setText(content);
 		holder.tvDate.setText(item.c_time);
 		holder.ivAvatar.setImageResource(item.status==1?R.drawable.ic_heart_purple:R.drawable.ic_heart_purple2);
 		holder.tvCommtenCount.setText("留言："+item.comment_num);
 		holder.tvPraiseCount.setText("赞："+item.praise_num);
 		Image13Loader.getInstance().loadImage(item.avatar,holder.ivAvatar,R.drawable.user2);
-
+		holder.pictureAdapter.setList(item.topic_imgs);
+		holder.pictureAdapter.notifyDataSetChanged();
 		holder.ivMenu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -76,6 +93,7 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 		public ImageView ivMenu;
 		public ImageView ivPraise;
 		public GridView gvPics;
+		public PictureAdapter pictureAdapter;
 
 		public ViewHolder(View view){
 			tvName=(TextView)view.findViewById(R.id.tv_name);
@@ -87,6 +105,9 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 			ivPraise=(ImageView) view.findViewById(R.id.iv_praise);
 			ivMenu=(ImageView) view.findViewById(R.id.iv_menu);
 			gvPics=(GridView) view.findViewById(R.id.gv_pics);
+			pictureAdapter=new PictureAdapter(mContext);
+			pictureAdapter.setWidth(ScreenUtil.WIDTH-ScreenUtil.dip2px(mContext,70),3);
+			gvPics.setAdapter(pictureAdapter);
 		}
 	}
 

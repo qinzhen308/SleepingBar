@@ -275,11 +275,10 @@ public class UserRePwdActivity extends BaseActivity {
 	/**
 	 * 获取验证码-忘记密码时2
 	 * 
-	 * @param phone
 	 */
 	private void getCode() {
 		DialogUtil.showDialog(lodDialog);
-		if(AppUtil.isNull(phone)||phone.length()<11){
+		if(AppUtil.isNull(phone)||!(phone.length()==11||phone.length()==14)){
 			AppUtil.showToast(getApplicationContext(), "请输入正确的手机号");
 		}
 		HttpRequester mRequester = new HttpRequester();

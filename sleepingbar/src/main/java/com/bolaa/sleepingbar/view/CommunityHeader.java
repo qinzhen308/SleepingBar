@@ -48,6 +48,7 @@ public class CommunityHeader extends LinearLayout{
         LayoutInflater.from(context).inflate(R.layout.layout_community_header,this);
 //        setOrientation(LinearLayout.VERTICAL);
         mBanner=(AutoScollBanner)findViewById(R.id.layout_auto_banner);
+        mBanner.setScale(0.3738f);
         lvInformation=(ListView) findViewById(R.id.lv_information_text);
     }
 

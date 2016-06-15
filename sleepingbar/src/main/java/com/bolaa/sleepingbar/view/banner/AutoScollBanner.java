@@ -17,6 +17,7 @@ import com.bolaa.sleepingbar.model.Banner;
 import com.bolaa.sleepingbar.model.Information;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.develop.LogUtil;
 
 import java.util.ArrayList;
@@ -62,6 +63,12 @@ public class AutoScollBanner extends LinearLayout implements
 
 	private boolean dataVisibility() {
 		return getVisibility() == VISIBLE;
+	}
+
+	public void setScale(float scale){
+		ViewGroup.LayoutParams lp=getLayoutParams();
+		lp.height=(int)(scale * ScreenUtil.WIDTH);
+		setLayoutParams(lp);
 	}
 
 	// 设置视图的Adapter
