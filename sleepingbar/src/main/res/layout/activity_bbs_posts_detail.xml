@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bolaa.sleepingbar.view.ResizeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:test="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <com.bolaa.sleepingbar.view.pulltorefresh.PullListView
+        xmlns:test="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/list_swipe_margin_top"
+        android:alwaysDrawnWithCache="false"
+        android:cacheColorHint="@null"
+        android:drawSelectorOnTop="false"
+        android:background="@color/white"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        android:layout_weight="1"
+        test:showheader="false"
+     />
+    
+    <View 
+        style="@style/divider_horizontal_grey"/>
+    
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        
+        <EditText 
+        android:id="@+id/et_bbs_posts_comment"
+            android:layout_height="35dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size"
+            android:layout_margin="10dp"
+            android:paddingLeft="8dp"
+            android:inputType="textCapSentences|textAutoCorrect|textMultiLine|textShortMessage"
+            android:background="@drawable/bg_edit_grey_light"
+            android:hint="添加评论"/>
+        
+
+        
+        <TextView 
+            android:id="@+id/btn_publish"
+            android:layout_height="match_parent"
+            android:layout_width="45dp"
+            android:textSize="@dimen/text_size"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="发送"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/main"
+            />
+        
+    </LinearLayout>
+    
+
+</com.bolaa.sleepingbar.view.ResizeLinearLayout>

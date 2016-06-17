@@ -24,6 +24,7 @@ import com.bolaa.sleepingbar.model.wrapper.RankinglistItemWraper;
 import com.bolaa.sleepingbar.model.wrapper.TopicWraper;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
+import com.bolaa.sleepingbar.ui.BBSSendPostsActivity;
 import com.bolaa.sleepingbar.ui.MyFriendsActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.view.CommunityHeader;
@@ -99,6 +100,8 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
     }
 
     private void setListener() {
+        mListView.setOnScrollListener(new MyOnScrollListener());
+        mPullListView.setOnRefreshListener(this);
         ivMsg.setOnClickListener(this);
         tvPublish.setOnClickListener(this);
         ivFriends.setOnClickListener(this);
@@ -136,7 +139,7 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
     @Override
     public void onClick(View v) {
         if(v==tvPublish){
-
+            BBSSendPostsActivity.invoke(getActivity());
         }else if(v==ivMsg){
 
         }else if(v==ivFriends){

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_rectangle_white_coner"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/dialog_updateIcon_photoTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:background="@drawable/bg_retangle_main_coner_top"
+            android:gravity="center"
+            android:text="拍照"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/dialog_updateIcon_pictureTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:background="@drawable/bg_line_top_bottom"
+            android:gravity="center"
+            android:text="从相册选择"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/dialog_updateIcon_cancelTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+</RelativeLayout>

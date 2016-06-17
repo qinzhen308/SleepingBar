@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+    
+    <ImageView 
+        android:id="@+id/iv_thumbnail"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/iv_cancel"
+        android:layout_height="25dp"
+        android:layout_width="25dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_rectangle_strake_half_circel_purple"
+        android:text="X"
+        android:textColor="@color/main"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+    
+    
+</RelativeLayout>

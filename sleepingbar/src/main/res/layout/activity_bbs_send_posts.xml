@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20dp"
+    android:orientation="vertical" >
+
+
+    <EditText
+        android:id="@+id/et_bbs_posts_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="6"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/bg_edit_grey_light"
+        android:gravity="top|left"
+        android:hint="话题内容"
+        android:padding="10dp"
+        android:textSize="@dimen/text_size" />
+
+    <GridView
+        android:id="@+id/gv_posts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_bbs_posts_content"
+        android:background="@color/white"
+        android:numColumns="4"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:layout_marginTop="10dp"
+        >
+    </GridView>
+
+
+
+
+
+</RelativeLayout>

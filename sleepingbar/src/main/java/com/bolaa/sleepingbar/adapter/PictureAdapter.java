@@ -15,6 +15,7 @@ import com.core.framework.app.devInfo.ScreenUtil;
 public class PictureAdapter extends AbstractListAdapter<String> {
 
 	private int itemHeight;
+	private String img_path;
 
 	public PictureAdapter(Context context) {
 		super(context);
@@ -23,6 +24,10 @@ public class PictureAdapter extends AbstractListAdapter<String> {
 
 	public void setWidth(int width,int column){
 		itemHeight=(width-ScreenUtil.dip2px(mContext,5)*(column-1))/column;
+	}
+
+	public void setImagePath(String img_path){
+		this.img_path=img_path;
 	}
 
 	@Override
@@ -37,7 +42,7 @@ public class PictureAdapter extends AbstractListAdapter<String> {
 			holder=(ViewHolder)view.getTag();
 		}
 
-		Image13Loader.getInstance().loadImageFade(mList.get(i),holder.ivPic);
+		Image13Loader.getInstance().loadImageFade(img_path+mList.get(i),holder.ivPic);
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

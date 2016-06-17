@@ -66,6 +66,13 @@ public class AppUrls {
 	public String URL_CANCEL_CARE=BASE_URL+"community.php?act=cancel_care";//取消关注
 	public String URL_TOPIC_LIST=BASE_URL+"community.php?act=topic_list";//社区首页的话题
 	public String URL_COMMUNITY_INFORMATION=BASE_URL+"community.php?act=index";//社区首页的图文和文字咨询
+	public String URL_COMMUNITY_SEND_POSTS=BASE_URL+"community.php?act=add_topic";//发帖
+	public String URL_TOPIC_DETAIL=BASE_URL+"community.php?act=topic_detail";//话题详情
+	public String URL_TOPIC_COMMENTS_LIST=BASE_URL+"community.php?act=comment_list";//话题详情的评论
+	public String URL_PUBLISH_COMMENTS=BASE_URL+"community.php?act=do_comment";//话题详情的评论
+	public String URL_BBS_POSTS_GOOD=BASE_URL+"community.php?act=do_praise";//话题点赞
+
+	public String URL_BBS_POSTS_INFORM=BASE_URL+"";//举报
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";
 	public String URL_ARTICAL_LAW="http://baidu.com";

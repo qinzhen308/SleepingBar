@@ -9,12 +9,13 @@ import java.util.List;
 public class Topic {
     public String avatar;
     public String c_time;
-    public String comment_num;
+    public int comment_num;
     public String content;
     public String id;
     public String img_path;
     public String nick_name;
-    public String praise_num;
+    public int praise_num;
+    public int is_praise;
     public int status;
     public List<String> topic_imgs;
     public String user_id;
