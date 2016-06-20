@@ -71,6 +71,8 @@ public class AppUrls {
 	public String URL_TOPIC_COMMENTS_LIST=BASE_URL+"community.php?act=comment_list";//话题详情的评论
 	public String URL_PUBLISH_COMMENTS=BASE_URL+"community.php?act=do_comment";//话题详情的评论
 	public String URL_BBS_POSTS_GOOD=BASE_URL+"community.php?act=do_praise";//话题点赞
+	public String URL_OTHER_USER_INFO=BASE_URL+"community.php?act=user_info";//其他用户的主页
+	public String URL_INFORMATION_DETAIL=BASE_URL+"community.php?act=info_detail";//资讯详情
 
 	public String URL_BBS_POSTS_INFORM=BASE_URL+"";//举报
 

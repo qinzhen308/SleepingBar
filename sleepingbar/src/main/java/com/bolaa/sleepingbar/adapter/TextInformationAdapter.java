@@ -10,6 +10,7 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.Information;
 import com.bolaa.sleepingbar.model.Watch;
+import com.bolaa.sleepingbar.ui.InformationActivity;
 
 /**
  * 社区首页--文字资讯设配器
@@ -38,7 +39,7 @@ public class TextInformationAdapter extends AbstractListAdapter<Information> {
 		holder.tvTitle.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				InformationActivity.invoke(mContext,information.article_id);
 			}
 		});
 		return view;

@@ -5,6 +5,8 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -46,7 +48,8 @@ public class CommunityHeader extends LinearLayout{
     private void init(Context context){
         this.context=context;
         LayoutInflater.from(context).inflate(R.layout.layout_community_header,this);
-//        setOrientation(LinearLayout.VERTICAL);
+        setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        setOrientation(LinearLayout.VERTICAL);
         mBanner=(AutoScollBanner)findViewById(R.id.layout_auto_banner);
         mBanner.setScale(0.3738f);
         lvInformation=(ListView) findViewById(R.id.lv_information_text);

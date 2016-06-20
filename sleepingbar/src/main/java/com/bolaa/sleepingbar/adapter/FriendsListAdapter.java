@@ -12,6 +12,7 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.model.RankinglistItem;
+import com.bolaa.sleepingbar.ui.OtherUserHomeActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 
@@ -69,7 +70,7 @@ public class FriendsListAdapter extends AbstractListAdapter<Friends> {
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				OtherUserHomeActivity.invoke(mContext,item.user_id,item.nick_name);
 			}
 		});
 		return view;

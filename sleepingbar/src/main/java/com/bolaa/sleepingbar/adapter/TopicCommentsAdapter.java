@@ -19,6 +19,7 @@ import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.model.TopicComments;
+import com.bolaa.sleepingbar.ui.OtherUserHomeActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.app.devInfo.ScreenUtil;
@@ -65,7 +66,7 @@ public class TopicCommentsAdapter extends AbstractListAdapter<TopicComments> {
 		holder.ivAvatar.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				OtherUserHomeActivity.invoke(mContext,item.user_id,item.nick_name);
 			}
 		});
 

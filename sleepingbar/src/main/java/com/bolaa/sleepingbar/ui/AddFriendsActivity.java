@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
-import com.bolaa.sleepingbar.adapter.DealHistoryAdapter;
 import com.bolaa.sleepingbar.adapter.FriendsNearbyAdapter;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
@@ -18,7 +17,6 @@ import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
-import com.bolaa.sleepingbar.model.wrapper.DealLogWraper;
 import com.bolaa.sleepingbar.model.wrapper.FriendsWraper;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
@@ -63,7 +61,7 @@ public class AddFriendsActivity extends BaseListActivity implements LoadStateCon
 		mPullListView=(PullListView) findViewById(R.id.pull_listview);
 		mPullListView.setMode(-1);
 		mListView=mPullListView.getRefreshableView();
-		mAdapter=new DealHistoryAdapter(this);
+		mAdapter=new FriendsNearbyAdapter(this);
 		mListView.setAdapter(mAdapter);
 	}
 	

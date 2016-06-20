@@ -26,6 +26,7 @@ import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.BBSPostsDetailActivity;
+import com.bolaa.sleepingbar.ui.OtherUserHomeActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.app.devInfo.ScreenUtil;
@@ -102,7 +103,7 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 		holder.ivAvatar.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				OtherUserHomeActivity.invoke(mContext,item.user_id,item.nick_name);
 			}
 		});
 

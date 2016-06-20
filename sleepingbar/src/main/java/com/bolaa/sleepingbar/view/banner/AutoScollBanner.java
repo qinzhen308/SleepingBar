@@ -15,6 +15,7 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.listener.BannerOnClickListener;
 import com.bolaa.sleepingbar.model.Banner;
 import com.bolaa.sleepingbar.model.Information;
+import com.bolaa.sleepingbar.ui.InformationActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.app.devInfo.ScreenUtil;
@@ -199,7 +200,8 @@ public class AutoScollBanner extends LinearLayout implements
 			view.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					AppUtil.showToast(mContext,information.title);
+//					AppUtil.showToast(mContext,information.title);
+					InformationActivity.invoke(mContext,information.article_id);
 				}
 			});
 			Image13Loader.getInstance().loadNoStubImageFade(

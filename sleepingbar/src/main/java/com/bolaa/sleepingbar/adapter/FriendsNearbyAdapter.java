@@ -11,6 +11,7 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.DealLog;
 import com.bolaa.sleepingbar.model.Friends;
+import com.bolaa.sleepingbar.ui.OtherUserHomeActivity;
 
 import org.w3c.dom.Text;
 
@@ -56,6 +57,12 @@ public class FriendsNearbyAdapter extends AbstractListAdapter<Friends> {
 				if(mOnCareEventListener!=null){
 					mOnCareEventListener.onCareEvent(friends,careView);
 				}
+			}
+		});
+		holder.ivAvatar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				OtherUserHomeActivity.invoke(mContext,friends.user_id,friends.nick_name);
 			}
 		});
 		return view;
