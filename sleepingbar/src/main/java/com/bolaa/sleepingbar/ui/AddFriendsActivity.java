@@ -175,7 +175,7 @@ public class AddFriendsActivity extends BaseListActivity implements LoadStateCon
 						if(obj.status==BaseObject.STATUS_OK){
 							view.setText("关注");
 							view.setBackgroundResource(R.drawable.bg_rectangle_strake_half_circel_purple);
-							friends.is_care=1;
+							friends.is_care=0;
 						}else {
 							AppUtil.showToast(getApplicationContext(),obj.info);
 						}

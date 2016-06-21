@@ -23,6 +23,7 @@ import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.model.Topic;
+import com.bolaa.sleepingbar.model.TopicComments;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.BBSPostsDetailActivity;
@@ -31,6 +32,7 @@ import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.net.NetworkWorker;
+import com.core.framework.util.IOSDialogUtil;
 
 /**
  * 社区首页---专题列表 适配器
@@ -38,7 +40,7 @@ import com.core.framework.net.NetworkWorker;
  */
 public class TopicListAdapter extends AbstractListAdapter<Topic> {
 
-	private OnCancelEventListener mOnCancelEventListener;
+	private OnShowMenuListener mOnShowMenuListener;
 
 	public TopicListAdapter(Context context) {
 		super(context);
@@ -89,7 +91,9 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 		holder.ivMenu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+                if(mOnShowMenuListener!=null){
+                    mOnShowMenuListener.onShow(item);
+                }
 			}
 		});
 
@@ -115,6 +119,9 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
         });
 		return view;
 	}
+
+
+
 
     private void clickGood(final Topic posts) {
         if (posts.is_praise == 1) {
@@ -145,6 +152,16 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
                     }
                 });
     }
+
+    public void setCaredStatusByUid(String user_id,int has_been_cared){
+        int size=getCount();
+        for(int i=0;i<size;i++){
+            Topic topic =mList.get(i);
+            if(user_id.equals(topic.user_id)){
+                topic.has_been_cared=has_been_cared;
+            }
+        }
+    }
 	
 	class ViewHolder{
 		public TextView tvName;
@@ -174,12 +191,12 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 		}
 	}
 
-	public void setOnCancelEventListener(OnCancelEventListener onCancelEventListener){
-		mOnCancelEventListener=onCancelEventListener;
+	public void setOnShowMenuListener(OnShowMenuListener onShowMenuListener){
+        mOnShowMenuListener=onShowMenuListener;
 	}
 
-	public interface OnCancelEventListener{
-		public void onCancel(Friends friends);
+	public interface OnShowMenuListener{
+		public void onShow(Topic topic);
 	}
 
 }

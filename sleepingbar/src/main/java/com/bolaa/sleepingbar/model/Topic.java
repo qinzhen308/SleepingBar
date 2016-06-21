@@ -19,5 +19,6 @@ public class Topic {
     public int status;
     public List<String> topic_imgs;
     public String user_id;
+    public int has_been_cared;//该贴主人是否已被我关注
 
 }

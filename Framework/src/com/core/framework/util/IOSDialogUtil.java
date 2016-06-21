@@ -189,7 +189,7 @@ public class IOSDialogUtil {
 	}
 
 	public enum SheetItemColor {
-		Blue("#037BFF"), Red("#FD4A2E"), Black("#000000");
+		Blue("#037BFF"), Red("#F34638"), Black("#000000"),Purple("#9C27B0");
 
 		private String name;
 

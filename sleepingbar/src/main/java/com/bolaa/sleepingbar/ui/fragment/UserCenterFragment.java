@@ -18,6 +18,7 @@ import com.bolaa.sleepingbar.ui.DeviceInfoActivity;
 import com.bolaa.sleepingbar.ui.MyFriendsActivity;
 import com.bolaa.sleepingbar.ui.MyInfoActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
+import com.bolaa.sleepingbar.ui.MyMsgActivity;
 import com.bolaa.sleepingbar.ui.PrivateSettingActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
 import com.bolaa.sleepingbar.utils.Image13Loader;
@@ -115,12 +116,11 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         }else if(v==layoutFriends){
             MyFriendsActivity.invoke(getActivity());
         }else if(v==layoutMsg){
-
+            MyMsgActivity.invoke(getActivity());
         }else if(v==layoutAccount){
             AccountActivity.invoke(getActivity());
         }else if(v==layoutDeviceInfo){
             DeviceInfoActivity.invoke(getActivity());
-
         }else if(v==layoutSettings){
             PrivateSettingActivity.invoke(getActivity());
         }else if(v==tvBindWatch){

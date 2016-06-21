@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar.ui.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.TextViewCompat;
@@ -18,7 +19,9 @@ import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.model.Information;
+import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
 import com.bolaa.sleepingbar.model.wrapper.RankinglistItemWraper;
 import com.bolaa.sleepingbar.model.wrapper.TopicWraper;
@@ -26,12 +29,14 @@ import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.BBSSendPostsActivity;
 import com.bolaa.sleepingbar.ui.MyFriendsActivity;
+import com.bolaa.sleepingbar.ui.MyMsgActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.view.CommunityHeader;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullListView;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullToRefreshBase;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.util.DialogUtil;
+import com.core.framework.util.IOSDialogUtil;
 
 import java.util.List;
 
@@ -44,6 +49,7 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
     TextView tvPublish;
     ImageView ivMsg;
     ImageView ivFriends;
+    Dialog loadDialog;
 
     @Override
     public void onResume() {
@@ -97,6 +103,8 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
         mListView.addHeaderView(header);
         mAdapter= new TopicListAdapter(getActivity());
         mListView.setAdapter(mAdapter);
+
+        loadDialog = DialogUtil.getCenterDialog(getActivity(), LayoutInflater.from(getActivity()).inflate(R.layout.load_doag, null));
     }
 
     private void setListener() {
@@ -105,7 +113,13 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
         ivMsg.setOnClickListener(this);
         tvPublish.setOnClickListener(this);
         ivFriends.setOnClickListener(this);
+        ((TopicListAdapter)mAdapter).setOnShowMenuListener(new TopicListAdapter.OnShowMenuListener() {
+            @Override
+            public void onShow(Topic topic) {
 
+                showMenu(topic);
+            }
+        });
     }
 
     private void loadHeaderData(){
@@ -136,12 +150,125 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
 
     }
 
+    private void showMenu(final Topic topic){
+        if(topic.has_been_cared==1){//已经被关注
+            new IOSDialogUtil(getActivity()).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+                    .addSheetItem("取消关注", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+                        @Override
+                        public void onClick(int which) {
+                            cancelCare(topic);
+                        }
+                    }).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+                @Override
+                public void onClick(int which) {
+                    inform(topic);
+                }
+            }).show();
+        }else {
+            new IOSDialogUtil(getActivity()).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+                    .addSheetItem("关注Ta", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+                        @Override
+                        public void onClick(int which) {
+                            doCare(topic,1);
+                        }
+                    }).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+                @Override
+                public void onClick(int which) {
+                    inform(topic);
+                }
+            }).show();
+        }
+    }
+
+    private void doCare(final Topic friends , int type){
+        DialogUtil.showDialog(loadDialog);
+        ParamBuilder params=new ParamBuilder();
+        params.append("f_type",type);
+        params.append("f_user_id",friends.user_id);
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_DO_CARE), new NetworkWorker.ICallback() {
+            @Override
+            public void onResponse(int status, String result) {
+                if(!getActivity().isFinishing())DialogUtil.dismissDialog(loadDialog);
+                if(status==200){
+                    BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+                    if(obj!=null){
+                        if(obj.status==BaseObject.STATUS_OK){
+                            ((TopicListAdapter)mAdapter).setCaredStatusByUid(friends.user_id,1);
+                            AppUtil.showToast(getActivity(),obj.info);
+                        }else {
+                            AppUtil.showToast(getActivity(),obj.info);
+                        }
+                    }else {
+                        AppUtil.showToast(getActivity(),"解析出错");
+                    }
+                }else {
+                    AppUtil.showToast(getActivity(),"请检查网络");
+                }
+            }
+        });
+    }
+
+    private void cancelCare(final Topic friends){
+        DialogUtil.showDialog(loadDialog);
+        ParamBuilder params=new ParamBuilder();
+        params.append("f_user_id",friends.user_id);
+        params.append("tab","me_care");
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_CANCEL_CARE), new NetworkWorker.ICallback() {
+            @Override
+            public void onResponse(int status, String result) {
+                if(!getActivity().isFinishing())DialogUtil.dismissDialog(loadDialog);
+                if(status==200){
+                    BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+                    if(obj!=null){
+                        if(obj.status==BaseObject.STATUS_OK){
+                            ((TopicListAdapter)mAdapter).setCaredStatusByUid(friends.user_id,0);
+                            AppUtil.showToast(getActivity(),obj.info);
+                        }else {
+                            AppUtil.showToast(getActivity(),obj.info);
+                        }
+                    }else {
+                        AppUtil.showToast(getActivity(),"解析出错");
+                    }
+                }else {
+                    AppUtil.showToast(getActivity(),"请检查网络");
+                }
+            }
+        });
+    }
+
+    private void inform(final Topic topic){
+        DialogUtil.showDialog(loadDialog);
+        ParamBuilder params=new ParamBuilder();
+        params.append("f_user_id",topic.id);
+        params.append("content",topic.content);
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_BBS_POSTS_INFORM), new NetworkWorker.ICallback() {
+            @Override
+            public void onResponse(int status, String result) {
+                if(!getActivity().isFinishing())DialogUtil.dismissDialog(loadDialog);
+                if(status==200){
+                    BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+                    if(obj!=null){
+                        if(obj.status==BaseObject.STATUS_OK){
+                            topic.has_been_cared=0;
+                        }else {
+                            AppUtil.showToast(getActivity(),obj.info);
+                        }
+                    }else {
+                        AppUtil.showToast(getActivity(),"解析出错");
+                    }
+                }else {
+                    AppUtil.showToast(getActivity(),"请检查网络");
+                }
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
         if(v==tvPublish){
             BBSSendPostsActivity.invoke(getActivity());
         }else if(v==ivMsg){
-
+            MyMsgActivity.invoke(getActivity());
         }else if(v==ivFriends){
             MyFriendsActivity.invoke(getActivity());
         }

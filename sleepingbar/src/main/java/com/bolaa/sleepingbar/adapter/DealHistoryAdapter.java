@@ -17,7 +17,7 @@ public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 		// TODO Auto-generated constructor stub
 	}
 
-	
+
 	@Override
 	public View getView(int i, View view, ViewGroup viewGroup) {
 		// TODO Auto-generated method stub

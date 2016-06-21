@@ -29,7 +29,7 @@ public class AppUrls {
 	public String BASE_URL="http://192.168.2.126/beijingsleep/app/";
 	
 	public String URL_REGISTER=BASE_URL+"&c=user&act=reg_act";
-	public String URL_USER_INFO_SAVE=BASE_URL+"&c=user&act=edit_profile";//修改或保存个人资料
+	public String URL_USER_INFO_SAVE=BASE_URL+"user.php?act=do_edit_userinfo";//修改或保存个人资料
 
 	public String URL_HOSPITAL_MAKE_AN_APPOINTMENT=BASE_URL+"&c=hospital&act=appointment";//预约
 	public String URL_REGION_ALL=BASE_URL+"&c=index&act=region_list";//全部地区
@@ -73,6 +73,8 @@ public class AppUrls {
 	public String URL_BBS_POSTS_GOOD=BASE_URL+"community.php?act=do_praise";//话题点赞
 	public String URL_OTHER_USER_INFO=BASE_URL+"community.php?act=user_info";//其他用户的主页
 	public String URL_INFORMATION_DETAIL=BASE_URL+"community.php?act=info_detail";//资讯详情
+	public String URL_MY_MSG=BASE_URL+"community.php?act=my_message";//我的消息
+	public String URL_USER_PAGE_INFO=BASE_URL+"user.php?act=edit_userinfo";//我的个人信息页面数据
 
 	public String URL_BBS_POSTS_INFORM=BASE_URL+"";//举报
 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal" >
+
+
+    <com.bolaa.sleepingbar.view.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/user2"
+        android:layout_marginLeft="5dp"
+        android:scaleType="fitXY"
+        />
+    
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:text="用户昵称"
+        android:singleLine="true"
+        android:layout_toLeftOf="@+id/tv_date"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/iv_avatar"
+        android:textColor="@color/text_grey"
+        android:gravity="center_vertical|left"
+        android:layout_marginTop="8dp"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="3月6日 12-12"
+        android:singleLine="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/tv_name"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/text_grey_french1"
+        android:layout_marginRight="8dp"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:text="内容按时发货付款圣诞快乐福建省的刻录机考老师的卡洛斯的附件考虑"
+        android:layout_below="@+id/tv_name"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/text_grey"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:layout_below="@+id/tv_content"
+        android:background="@drawable/bg_msg"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/text_grey"
+        android:layout_marginTop="5dp"
+        />
+
+
+
+</RelativeLayout>

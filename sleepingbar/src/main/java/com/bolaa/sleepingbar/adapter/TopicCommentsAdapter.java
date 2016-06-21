@@ -30,7 +30,7 @@ import com.core.framework.app.devInfo.ScreenUtil;
  */
 public class TopicCommentsAdapter extends AbstractListAdapter<TopicComments> {
 
-	private OnCancelEventListener mOnCancelEventListener;
+	private OnShowMenuListener mOnShowMenuListener;
 
 	public TopicCommentsAdapter(Context context) {
 		super(context);
@@ -54,12 +54,13 @@ public class TopicCommentsAdapter extends AbstractListAdapter<TopicComments> {
 		holder.tvName.setText(item.nick_name);
 		holder.tvContent.setText(item.content);
         holder.tvDate.setText(item.c_time);
-		holder.ivAvatar.setImageResource(item.status==1?R.drawable.ic_heart_purple:R.drawable.ic_heart_purple2);
 		Image13Loader.getInstance().loadImage(item.avatar,holder.ivAvatar,R.drawable.user2);
 		holder.ivMenu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				if(mOnShowMenuListener!=null){
+					mOnShowMenuListener.onShow(item);
+				}
 			}
 		});
 
@@ -73,6 +74,17 @@ public class TopicCommentsAdapter extends AbstractListAdapter<TopicComments> {
 
 		return view;
 	}
+
+	public void setCaredStatusByUid(String user_id,int has_been_cared){
+		int size=getCount();
+		for(int i=0;i<size;i++){
+			TopicComments comments=mList.get(i);
+			if(user_id.equals(comments.user_id)){
+				comments.has_been_cared=has_been_cared;
+			}
+		}
+	}
+
 	
 	class ViewHolder{
 		public TextView tvName;
@@ -90,12 +102,12 @@ public class TopicCommentsAdapter extends AbstractListAdapter<TopicComments> {
 		}
 	}
 
-	public void setOnCancelEventListener(OnCancelEventListener onCancelEventListener){
-		mOnCancelEventListener=onCancelEventListener;
+	public void setOnShowMenuListener(OnShowMenuListener onShowMenuListener){
+		mOnShowMenuListener=onShowMenuListener;
 	}
 
-	public interface OnCancelEventListener{
-		public void onCancel(Friends friends);
+	public interface OnShowMenuListener{
+		public void onShow(TopicComments comments);
 	}
 
 }

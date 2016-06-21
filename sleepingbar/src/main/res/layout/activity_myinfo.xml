@@ -127,7 +127,8 @@
             android:textSize="@dimen/text_size_big" />
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             >
 
@@ -152,6 +153,16 @@
 
 
         </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="@dimen/all_margin"
+            android:gravity="center_vertical|right"
+            android:enabled="false"
+            android:text="cm"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_big" />
 
     </LinearLayout>
 
@@ -178,7 +189,8 @@
             android:textSize="@dimen/text_size_big" />
         
         <RelativeLayout 
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             >
             
@@ -203,6 +215,16 @@
             
             
         </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="@dimen/all_margin"
+            android:gravity="center_vertical|right"
+            android:enabled="false"
+            android:text="kg"
+            android:textColor="@color/text_grey_french1"
+            android:textSize="@dimen/text_size_big" />
 
     </LinearLayout>
     

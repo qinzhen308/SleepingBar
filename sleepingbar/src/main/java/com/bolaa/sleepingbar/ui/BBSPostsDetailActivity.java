@@ -22,31 +22,21 @@ import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
-import com.bolaa.sleepingbar.view.CircleImageView;
 import com.bolaa.sleepingbar.view.ResizeLinearLayout;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullListView;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullToRefreshBase;
 import com.core.framework.app.devInfo.ScreenUtil;
-import com.core.framework.image.image13.Image13lLoader;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
 import com.core.framework.util.DialogUtil;
+import com.core.framework.util.IOSDialogUtil;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
-import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.EditText;
@@ -176,12 +166,20 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 		mListView.setOnScrollListener(new MyOnScrollListener());
 		btnPublish.setOnClickListener(this);
         ivPraise.setOnClickListener(this);
+		ivMenu.setOnClickListener(this);
 		rootLayout.setOnResizeListener(new ResizeLinearLayout.OnResizeListener() {
 
 			@Override
 			public void OnResize(int w, int h, int oldw, int oldh) {
 				// TODO Auto-generated method stub
 
+			}
+		});
+
+		((TopicCommentsAdapter)mAdapter).setOnShowMenuListener(new TopicCommentsAdapter.OnShowMenuListener() {
+			@Override
+			public void onShow(TopicComments comments) {
+				showMenu(comments);
 			}
 		});
 	}
@@ -312,6 +310,8 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 			} else {
 				UserLoginActivity.invoke(this);
 			}
+		}else if(v==ivMenu){
+			showMenu(posts);
 		}
 //		else if (v == ivCollection) {
 //			if (AppStatic.getInstance().isLogin) {
@@ -345,6 +345,173 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 		intent.putExtra("target_id", posts!=null?posts.id:(postsId+""));
 		intent.putExtra("posts_position", posts_position);
 		sendStickyBroadcast(intent);
+	}
+
+	private void showMenu(final Topic topic){
+		if(topic.has_been_cared==1){//已经被关注
+			new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+					.addSheetItem("取消关注", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+						@Override
+						public void onClick(int which) {
+							cancelCare(topic);
+						}
+					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+				@Override
+				public void onClick(int which) {
+					inform(topic.id,topic.content);
+				}
+			}).show();
+		}else {
+			new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+					.addSheetItem("关注Ta", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+						@Override
+						public void onClick(int which) {
+							doCare(topic,1);
+						}
+					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+				@Override
+				public void onClick(int which) {
+					inform(topic.id,topic.content);
+				}
+			}).show();
+		}
+	}
+
+	private void showMenu(final TopicComments comments){
+		if(comments.has_been_cared==1){//已经被关注
+			new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+					.addSheetItem("取消关注", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+						@Override
+						public void onClick(int which) {
+							cancelCare(comments);
+						}
+					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+				@Override
+				public void onClick(int which) {
+					inform(comments.id,comments.content);
+				}
+			}).show();
+		}else {
+			new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+					.addSheetItem("关注Ta", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+						@Override
+						public void onClick(int which) {
+							doCare(comments,1);
+						}
+					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+				@Override
+				public void onClick(int which) {
+					inform(comments.id,comments.content);
+				}
+			}).show();
+		}
+	}
+
+	private void doCare(final Object friends , int type){
+		String user_id="";
+		if(friends instanceof Topic){
+			user_id=((Topic)friends).user_id;
+		}else if(friends instanceof TopicComments){
+			user_id=((TopicComments)friends).user_id;
+		}else {
+			return;
+		}
+		DialogUtil.showDialog(lodDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_type",type);
+		params.append("f_user_id",user_id);
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_DO_CARE), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+							if(friends instanceof Topic){
+								((Topic)friends).has_been_cared=1;
+							}else if(friends instanceof TopicComments){
+								((TopicCommentsAdapter)mAdapter).setCaredStatusByUid(((TopicComments) friends).user_id,1);
+							}
+                            AppUtil.showToast(getApplicationContext(),obj.info);
+						}else {
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getApplicationContext(),"操作失败");
+					}
+				}else {
+					AppUtil.showToast(getApplicationContext(),"请检查网络");
+				}
+			}
+		});
+	}
+
+	private void cancelCare(final Object friends){
+		String user_id="";
+		if(friends instanceof Topic){
+			user_id=((Topic)friends).user_id;
+		}else if(friends instanceof TopicComments){
+			user_id=((TopicComments)friends).user_id;
+		}else {
+			return;
+		}
+		DialogUtil.showDialog(lodDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_user_id",user_id);
+		params.append("tab","me_care");
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_CANCEL_CARE), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+							if(friends instanceof Topic){
+								((Topic)friends).has_been_cared=0;
+							}else if(friends instanceof TopicComments){
+                                ((TopicCommentsAdapter)mAdapter).setCaredStatusByUid(((TopicComments) friends).user_id,0);
+                            }
+                            AppUtil.showToast(getApplicationContext(),obj.info);
+                        }else {
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getApplicationContext(),"操作失败");
+					}
+				}else {
+					AppUtil.showToast(getApplicationContext(),"请检查网络");
+				}
+			}
+		});
+	}
+
+	private void inform(String id,String content){
+		DialogUtil.showDialog(lodDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_user_id",id);
+		params.append("content", content);
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_BBS_POSTS_INFORM), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}else {
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getApplicationContext(),"举报失败");
+					}
+				}else {
+					AppUtil.showToast(getApplicationContext(),"请检查网络");
+				}
+			}
+		});
 	}
 
 	private void inform() {

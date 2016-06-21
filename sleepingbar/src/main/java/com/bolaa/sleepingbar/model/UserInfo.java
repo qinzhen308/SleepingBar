@@ -30,7 +30,8 @@ public class UserInfo implements Serializable {
 	public String user_name;// 用户名
 	public String user_money;// 用户余额
 	public String sleep_fund;// 睡眠基金
-	
+	public String weight;// 体重
+
 	
 	public String member_qqopenid;// 三方凭证 qq
 	public String member_wxopenid;// 三方凭证 微信

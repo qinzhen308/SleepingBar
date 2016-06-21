@@ -12,5 +12,6 @@ public class TopicComments {
     public String nick_name;
     public int status;
     public String user_id;
+    public int has_been_cared;
 
 }

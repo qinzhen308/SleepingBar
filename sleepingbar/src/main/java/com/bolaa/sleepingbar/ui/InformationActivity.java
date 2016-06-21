@@ -22,6 +22,8 @@ import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Information;
+import com.bolaa.sleepingbar.model.Topic;
+import com.bolaa.sleepingbar.model.TopicComments;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
 import com.bolaa.sleepingbar.model.wrapper.CommentsWraper;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
@@ -35,6 +37,7 @@ import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
 import com.core.framework.util.DialogUtil;
+import com.core.framework.util.IOSDialogUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -190,6 +193,13 @@ public class InformationActivity extends BaseListActivity implements
 			public void OnResize(int w, int h, int oldw, int oldh) {
 				// TODO Auto-generated method stub
 
+			}
+		});
+
+		((TopicCommentsAdapter)mAdapter).setOnShowMenuListener(new TopicCommentsAdapter.OnShowMenuListener() {
+			@Override
+			public void onShow(TopicComments comments) {
+				showMenu(comments);
 			}
 		});
 	}
@@ -460,6 +470,119 @@ public class InformationActivity extends BaseListActivity implements
 					}
 				}, requester);
 
+	}
+
+	private void showMenu(final TopicComments topic){
+		if(topic.has_been_cared==1){//已经被关注
+			new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+					.addSheetItem("取消关注", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+						@Override
+						public void onClick(int which) {
+							cancelCare(topic);
+						}
+					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+				@Override
+				public void onClick(int which) {
+					inform(topic);
+				}
+			}).show();
+		}else {
+			new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
+					.addSheetItem("关注Ta", IOSDialogUtil.SheetItemColor.Purple, new IOSDialogUtil.OnSheetItemClickListener() {
+						@Override
+						public void onClick(int which) {
+							doCare(topic,1);
+						}
+					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
+				@Override
+				public void onClick(int which) {
+					inform(topic);
+				}
+			}).show();
+		}
+	}
+
+	private void doCare(final TopicComments friends , int type){
+		DialogUtil.showDialog(lodDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_type",type);
+		params.append("f_user_id",friends.user_id);
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_DO_CARE), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+                            ((TopicCommentsAdapter)mAdapter).setCaredStatusByUid(friends.user_id,1);
+                            AppUtil.showToast(getApplicationContext(),obj.info);
+                        }else {
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getApplicationContext(),"解析出错");
+					}
+				}else {
+					AppUtil.showToast(getApplicationContext(),"请检查网络");
+				}
+			}
+		});
+	}
+
+	private void cancelCare(final TopicComments friends){
+		DialogUtil.showDialog(lodDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_user_id",friends.user_id);
+		params.append("tab","me_care");
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_CANCEL_CARE), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+                            ((TopicCommentsAdapter)mAdapter).setCaredStatusByUid(friends.user_id,0);
+                            AppUtil.showToast(getApplicationContext(),obj.info);
+                        }else {
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getApplicationContext(),"解析出错");
+					}
+				}else {
+					AppUtil.showToast(getApplicationContext(),"请检查网络");
+				}
+			}
+		});
+	}
+
+	private void inform(final TopicComments topic){
+		DialogUtil.showDialog(lodDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_user_id",topic.id);
+		params.append("content",topic.content);
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_BBS_POSTS_INFORM), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+
+						}else {
+							AppUtil.showToast(getApplicationContext(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getApplicationContext(),"解析出错");
+					}
+				}else {
+					AppUtil.showToast(getApplicationContext(),"请检查网络");
+				}
+			}
+		});
 	}
 
 //	private void collection() {

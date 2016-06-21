@@ -16,11 +16,14 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseActivity;
+import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
+import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
@@ -31,6 +34,7 @@ import com.bolaa.sleepingbar.view.wheel.NumericWheelAdapter;
 import com.bolaa.sleepingbar.view.wheel.OnWheelScrollListener;
 import com.bolaa.sleepingbar.view.wheel.WheelView;
 import com.core.framework.app.devInfo.ScreenUtil;
+import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
 import com.core.framework.store.sharePer.PreferencesUtils;
@@ -38,6 +42,7 @@ import com.core.framework.util.DialogUtil;
 import com.core.framework.util.IOSDialogUtil;
 import com.core.framework.util.IOSDialogUtil.OnSheetItemClickListener;
 import com.core.framework.util.IOSDialogUtil.SheetItemColor;
+import com.core.framework.util.StringUtil;
 
 import java.io.File;
 import java.util.Calendar;
@@ -86,7 +91,7 @@ public class MyInfoActivity extends BaseActivity {
 	private String real_name;
 	private String blood;
 	private String id_card;
-	private String sex;
+	private String sex="1";
 	private File avatar;
 
 	@Override
@@ -97,7 +102,8 @@ public class MyInfoActivity extends BaseActivity {
 		mBirthday = "1900-01-01";
 		initView();
 		setListener();
-		initData();
+        initData();
+        loadPageInfo(false);
 		mDialog = DialogUtil.getMenuDialog2(this, getDataPick(), ScreenUtil.getScreenWH(this)[1] / 2);
 		mDialog.setCanceledOnTouchOutside(true);
 	}
@@ -122,6 +128,38 @@ public class MyInfoActivity extends BaseActivity {
 		mBirthTv.setOnClickListener(this);
 	}
 
+    private void loadPageInfo(final boolean beforeModify){
+        DialogUtil.showDialog(lodDialog);
+        ParamBuilder params = new ParamBuilder();
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_USER_PAGE_INFO), new NetworkWorker.ICallback() {
+
+            @Override
+            public void onResponse(int status, String result) {
+                if (!isFinishing()) {
+                    DialogUtil.dismissDialog(lodDialog);
+                }
+                if(status==200){
+                    BaseObject<UserInfo> object= GsonParser.getInstance().parseToObj(result, UserInfo.class);
+                    if(object!=null){
+                        if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+                            if(beforeModify){
+                                AppUtil.showToast(getApplicationContext(), "修改成功");
+                                switchMode();
+                            }
+                            AppStatic.getInstance().saveUser(object.data);
+                            AppStatic.getInstance().setmUserInfo(object.data);
+                            initData();
+                        }else {
+                            AppUtil.showToast(getApplicationContext(), object.info);
+                        }
+                    }else {
+                        AppUtil.showToast(getApplicationContext(), "请检查网络");
+                    }
+                }
+
+            }
+        });
+    }
 
 	private void initData() {
 		mUserInfo = AppStatic.getInstance().getmUserInfo();
@@ -129,6 +167,10 @@ public class MyInfoActivity extends BaseActivity {
 			mIconIv.setUrl(mUserInfo.avatar);
 			setText(mUserInfo.nick_name, mNameTv);
 			setText(mUserInfo.nick_name, mNameEt);
+			setText(mUserInfo.height, mHeightEt);
+			setText(mUserInfo.height, mHeightTv);
+			setText(mUserInfo.weight, mWeightEt);
+			setText(mUserInfo.weight, mWeightTv);
 			setText(mUserInfo.birthday, mBirthTv);
 			mBirthday=mUserInfo.birthday;
 			sex=mUserInfo.sex;
@@ -137,7 +179,7 @@ public class MyInfoActivity extends BaseActivity {
 			} else if (mUserInfo.sex.equals("2")) {
 				mSexTv.setText("女");
 			} else {
-				mSexTv.setText("保密");
+				mSexTv.setText("男");
 			}
 			//设置时间选择弹框的初始值
 			if(!AppUtil.isNull(mUserInfo.birthday)){
@@ -151,8 +193,9 @@ public class MyInfoActivity extends BaseActivity {
 				}
 			}
 		} else {
-			mIconIv.setImageResource(R.drawable.icon_small);
+			mIconIv.setImageResource(R.drawable.img_avatar_default);
 			setText("", mNameTv);
+			setText("", mNameEt);
 			setText("", mBirthTv);
 			setText("", mSexTv);
 		}
@@ -243,7 +286,7 @@ public class MyInfoActivity extends BaseActivity {
 						}
 						Intent intent1 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 						intent1.putExtra(MediaStore.EXTRA_OUTPUT,
-								Uri.fromFile(new File(ImageUtil.filePath, "123.jpg")));
+								Uri.fromFile(new File(ImageUtil.filePath, "123.PNG")));
 						startActivityForResult(intent1, TAKE_PHOTO);
 					}
 				}).addSheetItem("本地获取", SheetItemColor.Black, new OnSheetItemClickListener() {
@@ -261,13 +304,7 @@ public class MyInfoActivity extends BaseActivity {
 
 	private void showSexWindow() {
 		new IOSDialogUtil(this).builder().setCancelable(true).setCanceledOnTouchOutside(true)
-				.addSheetItem("保密", SheetItemColor.Black, new OnSheetItemClickListener() {
-					@Override
-					public void onClick(int which) {
-						mSexTv.setText("保密");
-						sex="0";
-					}
-				}).addSheetItem("男", SheetItemColor.Black, new OnSheetItemClickListener() {
+				.addSheetItem("男", SheetItemColor.Black, new OnSheetItemClickListener() {
 					@Override
 					public void onClick(int which) {
 						mSexTv.setText("男");
@@ -301,8 +338,8 @@ public class MyInfoActivity extends BaseActivity {
 
 				switch (requestCode) {
 				case TAKE_PHOTO:
-					mFilePath = ImageUtil.filePath + "123.jpg";
-					mFilePath = ImageUtil.bitmap2File(mFilePath, new Date().getTime() + ".jpg");
+					mFilePath = ImageUtil.filePath + "123.PNG";
+					mFilePath = ImageUtil.bitmap2File(mFilePath, new Date().getTime() + ".PNG");
 
 					File file = new File(mFilePath);
 					if (!file.exists()) {
@@ -321,7 +358,7 @@ public class MyInfoActivity extends BaseActivity {
 						Bitmap bitmap = bundle.getParcelable("data");
 						if (bitmap != null) {
 
-							avatar = ImageUtil.saveImag(bitmap, new Date().getTime() + ".jpg");
+							avatar = ImageUtil.saveImag(bitmap, new Date().getTime() + ".PNG");
 							mIconIv.setImageBitmap(bitmap);
 //							putAvatar(bitmap, pFile);
 						}
@@ -348,12 +385,16 @@ public class MyInfoActivity extends BaseActivity {
 		setText(userInfo.birthday, mBirthTv);
 		setText(userInfo.nick_name, mNameTv);
 		setText(userInfo.nick_name, mNameEt);
+		setText(userInfo.height, mHeightTv);
+		setText(userInfo.height, mHeightEt);
+		setText(userInfo.weight, mWeightTv);
+		setText(userInfo.weight, mWeightEt);
 		if (userInfo.sex.equals("1")) {
 			mSexTv.setText("男");
 		} else if (userInfo.sex.equals("2")) {
 			mSexTv.setText("女");
 		} else {
-			mSexTv.setText("保密");
+			mSexTv.setText("男");
 		}
 	}
 
@@ -370,23 +411,31 @@ public class MyInfoActivity extends BaseActivity {
 		}
 		String real_name=mNameEt.getText().toString().trim();
 		if (real_name .length()>0) {
-			requester.mParams.put("real_name", real_name);
+			requester.mParams.put("nick_name", real_name);
 		}else {
-			requester.mParams.put("real_name", "");
+			requester.mParams.put("nick_name", "");
 			/*AppUtil.showToast(this, "请输入姓名");
 			return;*/
 		}
-		if (blood != null) {
-			requester.mParams.put("blood", blood);
-		}
-		String id_card=mHeightEt.getText().toString().trim();
-		if (id_card .length()>0) {
-			requester.mParams.put("id_card", id_card);
+
+		String weight=mWeightEt.getText().toString().trim();
+		if (weight .length()>0) {
+			requester.mParams.put("weight", weight);
 		}else {
-			requester.mParams.put("id_card", "");
-//			AppUtil.showToast(this, "请输入身份证");
-//			return;
+			requester.mParams.put("weight", "");
+			/*AppUtil.showToast(this, "请输入姓名");
+			return;*/
 		}
+
+		String height=mHeightEt.getText().toString().trim();
+		if (height.length()>0) {
+			requester.mParams.put("height", height);
+		}else {
+			requester.mParams.put("height", "");
+			/*AppUtil.showToast(this, "请输入姓名");
+			return;*/
+		}
+
 		if (avatar != null) {
 			requester.mParams.put("avatar", avatar);
 		}
@@ -395,22 +444,13 @@ public class MyInfoActivity extends BaseActivity {
 
 			@Override
 			public void onResponse(int status, String result) {
-				DialogUtil.dismissDialog(lodDialog);
-				if(status==200){
-					BaseObject<UserInfo> object=GsonParser.getInstance().parseToObj(result, UserInfo.class);
+                DialogUtil.dismissDialog(lodDialog);
+                if(status==200){
+					BaseObject<Object> object=GsonParser.getInstance().parseToObj(result, Object.class);
 					if(object!=null){
 						if(object.data!=null&&object.status==BaseObject.STATUS_OK){
-							AppUtil.showToast(getApplicationContext(), "修改成功");
-							AppStatic.getInstance().isLogin = true;
-							
-							PreferencesUtils.putBoolean("isLogin", true);
 
-							AppStatic.getInstance().setmUserInfo(
-									object.data);
-							AppStatic.getInstance().saveUser(object.data);
-							switchMode();
-							setUserInfo(object.data);
-							finish();
+                            loadPageInfo(true);
 						}else {
 							AppUtil.showToast(getApplicationContext(), object.info);
 						}

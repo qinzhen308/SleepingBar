@@ -105,6 +105,7 @@ public class AppStatic {
 		PreferencesUtils.remove("birthday");
 		PreferencesUtils.remove("got_fund");
 		PreferencesUtils.remove("height");
+		PreferencesUtils.remove("weight");
 		PreferencesUtils.remove("is_hidden_coord");
 		PreferencesUtils.remove("is_open_fund");
 		PreferencesUtils.remove("is_runking");
@@ -137,6 +138,7 @@ public class AppStatic {
 		putData("birthday", user.birthday);
 		putData("got_fund", user.got_fund);
 		putData("height", user.height);
+		putData("weight", user.weight);
 		putData("user_money", user.user_money);
 		putData("sleep_fund", user.sleep_fund);
 		PreferencesUtils.putInteger("is_hidden_coord", user.is_hidden_coord);
@@ -166,6 +168,7 @@ public class AppStatic {
 		user.birthday=(PreferencesUtils.getString("birthday"));
 		user.got_fund=(PreferencesUtils.getString("got_fund"));
 		user.height=(PreferencesUtils.getString("height"));
+		user.height=(PreferencesUtils.getString("weight"));
 		user.is_hidden_coord=(PreferencesUtils.getInteger("is_hidden_coord",0));
 		user.is_open_fund=(PreferencesUtils.getInteger("is_open_fund",0));
 		user.is_runking=(PreferencesUtils.getInteger("is_runking",0));
