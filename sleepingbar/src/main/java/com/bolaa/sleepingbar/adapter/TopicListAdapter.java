@@ -28,6 +28,7 @@ import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.BBSPostsDetailActivity;
 import com.bolaa.sleepingbar.ui.OtherUserHomeActivity;
+import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.app.devInfo.ScreenUtil;
@@ -75,6 +76,7 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 			@Override
 			public void onClick(View widget) {
 				AppUtil.showToast(mContext,"点了个几");
+				QuickBindWXActivity.invoke(mContext);
 			}
 		}, content.length()-2, content.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		spannableString1.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.main)),content.length()-2, content.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

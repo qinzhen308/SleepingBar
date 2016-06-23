@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar.ui.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,6 +17,10 @@ import android.webkit.WebViewClient;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
+import com.bolaa.sleepingbar.common.APIUtil;
+import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.ui.CommonWebActivity;
 import com.core.framework.develop.LogUtil;
 
 /**
@@ -68,13 +73,14 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         // initData(false);
-        load("http://www.baidu.com",false);
+        load(APIUtil.parseGetUrlHasMethod(new ParamBuilder().getParamList(),AppUrls.getInstance().URL_ACTIVE_HOME),false);
     }
 
-
+    @SuppressLint("JavascriptInterface")
     public void initView() {
         mWebView=(WebView) baseLayout.findViewById(R.id.webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.addJavascriptInterface(this,"active");
     }
 
     private void setListener() {
@@ -167,6 +173,10 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
             }
             return super.onConsoleMessage(consoleMessage);
         }
+    }
+
+    public void openDetail(String url){
+        CommonWebActivity.invoke(getActivity(),url,null);
     }
 
 

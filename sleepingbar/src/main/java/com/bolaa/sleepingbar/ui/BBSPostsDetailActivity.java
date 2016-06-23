@@ -358,7 +358,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
 				@Override
 				public void onClick(int which) {
-					inform(topic.id,topic.content);
+					inform(topic.id,topic.content,1);
 				}
 			}).show();
 		}else {
@@ -371,7 +371,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
 				@Override
 				public void onClick(int which) {
-					inform(topic.id,topic.content);
+					inform(topic.id,topic.content,1);
 				}
 			}).show();
 		}
@@ -388,7 +388,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
 				@Override
 				public void onClick(int which) {
-					inform(comments.id,comments.content);
+					inform(comments.id,comments.content,2);
 				}
 			}).show();
 		}else {
@@ -401,7 +401,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 					}).addSheetItem("举报", IOSDialogUtil.SheetItemColor.Red, new IOSDialogUtil.OnSheetItemClickListener() {
 				@Override
 				public void onClick(int which) {
-					inform(comments.id,comments.content);
+					inform(comments.id,comments.content,2);
 				}
 			}).show();
 		}
@@ -487,11 +487,11 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 		});
 	}
 
-	private void inform(String id,String content){
+	private void inform(String id,String content,int type){
 		DialogUtil.showDialog(lodDialog);
 		ParamBuilder params=new ParamBuilder();
-		params.append("f_user_id",id);
-		params.append("content", content);
+		params.append("o_id",id);
+		params.append("r_type", type);
 		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_BBS_POSTS_INFORM), new NetworkWorker.ICallback() {
 			@Override
 			public void onResponse(int status, String result) {

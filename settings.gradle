@@ -1,2 +1,2 @@
-include ':android-pdfview', ':sleepingbar'
+include ':android-pdfview', ':sleepingbar', ':share'
 include ':Framework'

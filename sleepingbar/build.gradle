@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     signingConfigs {
         sleepingbar_debug {
@@ -35,9 +34,16 @@ android {
     }
     productFlavors {
     }
-}
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':Framework')
+    compile project(':share')
 }
+

@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -8,6 +9,8 @@ import android.location.LocationManager;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.common.GlobeFlags;
+import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.RegionInfo;
 import com.bolaa.sleepingbar.model.RegoinWrapper;
@@ -19,6 +22,7 @@ import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.MyApplication;
 import com.core.framework.app.devInfo.ScreenUtil;
@@ -30,10 +34,15 @@ import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.List;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class HApplication extends MyApplication {
 	public String token="";
 	private static HApplication instance;
-	
+
+	public String push_regestion_id;//推送服务唯一表示
+
+
 
 	public Location mLocation;
 
@@ -47,6 +56,14 @@ public class HApplication extends MyApplication {
 	
 	public static HApplication getInstance(){
 		return instance;
+	}
+
+	private void initPushService(){
+		if(getCurProcessName().equals("com.bolaa.sleepingbar")){
+			JPushInterface.setDebugMode(true);
+			JPushInterface.init(this);
+			push_regestion_id=PreferencesUtils.getString(GlobeFlags.FLAG_PUSH_REGISTION_ID);
+		}
 	}
 	
 	public void saveToken(String token){
@@ -79,7 +96,8 @@ public class HApplication extends MyApplication {
 		AppStatic.getInstance().isLogin = PreferencesUtils.getBoolean("isLogin");
 		token = PreferencesUtils.getString(AppStatic.ACCESS_TOKEN);
 		AppStatic.getInstance().setmUserInfo(AppStatic.getInstance().getUser());
-
+		ShareUtil.initShareData();
+		initPushService();
 	}
 
 	private void initDatabase() {
@@ -149,6 +167,42 @@ public class HApplication extends MyApplication {
 			//不为空,显示地理位置经纬度
 		}
 		mLocation=location;
+	}
+
+
+	public boolean isAppOnForeground() {
+		ActivityManager mActivityManager = ((ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
+		String mPackageName = getPackageName();
+		List<ActivityManager.RunningTaskInfo> tasksInfo = mActivityManager.getRunningTasks(1);
+		if (tasksInfo.size() > 0) {
+			// 应用程序位于堆栈的顶层
+			if (mPackageName.equals(tasksInfo.get(0).topActivity
+					.getPackageName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * 上传push的registration id到服务器
+	 * @param id
+	 */
+	public void uploadRegistrationId(String id){
+		if(!AppStatic.getInstance().isLogin)return;
+		HttpRequester requester=new HttpRequester();
+		requester.getParams().put("mobile_key", id);
+
+		NetworkWorker.getInstance().post(AppUrls.getInstance().URL_BIND_PUSH_INFO, new NetworkWorker.ICallback() {
+
+			@Override
+			public void onResponse(int status, String result) {
+				// TODO Auto-generated method stub
+				if(status==200){
+					LogUtil.d("jpush---bind push info="+result);
+				}
+			}
+		},requester);
 	}
 	
 	

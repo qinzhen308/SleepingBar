@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="mta-sdk-1.6.2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/sleepingbar/libs/mta-sdk-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/share/libs/mta-sdk-1.6.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

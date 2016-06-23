@@ -15,6 +15,7 @@ import com.bolaa.sleepingbar.utils.AppUtil;
 import com.core.framework.app.MyApplication;
 import com.core.framework.image.image13.Image13lLoader;
 import com.core.framework.store.sharePer.PreferencesUtils;
+import com.umeng.socialize.UMShareAPI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -67,11 +68,14 @@ public class MainActivity extends BaseFragmentActivity implements
 
 	private Handler mHandler = new Handler();
 	private int mClickCount = 0;
+	UMShareAPI mShareAPI;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		mShareAPI = UMShareAPI.get(this);
 		initView();
 		checkUpdate();
 
@@ -358,6 +362,7 @@ public class MainActivity extends BaseFragmentActivity implements
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+		mShareAPI.onActivityResult(requestCode, resultCode, data);
 		if(resultCode==RESULT_OK){
 			if(requestCode==101){//退出登录回来，需要关闭主页
 				finish();

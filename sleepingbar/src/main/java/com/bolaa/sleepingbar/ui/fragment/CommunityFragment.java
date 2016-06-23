@@ -239,8 +239,8 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
     private void inform(final Topic topic){
         DialogUtil.showDialog(loadDialog);
         ParamBuilder params=new ParamBuilder();
-        params.append("f_user_id",topic.id);
-        params.append("content",topic.content);
+        params.append("o_id",topic.id);
+        params.append("r_type",1);
         NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_BBS_POSTS_INFORM), new NetworkWorker.ICallback() {
             @Override
             public void onResponse(int status, String result) {

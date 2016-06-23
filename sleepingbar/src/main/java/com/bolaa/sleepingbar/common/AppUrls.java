@@ -76,7 +76,10 @@ public class AppUrls {
 	public String URL_MY_MSG=BASE_URL+"community.php?act=my_message";//我的消息
 	public String URL_USER_PAGE_INFO=BASE_URL+"user.php?act=edit_userinfo";//我的个人信息页面数据
 
-	public String URL_BBS_POSTS_INFORM=BASE_URL+"";//举报
+	public String URL_ACTIVE_HOME=BASE_URL+"activity.php?act=list";//首页活动页
+
+	public String URL_BBS_POSTS_INFORM=BASE_URL+"community.php?act=to_report";//举报
+	public String URL_BIND_PUSH_INFO=BASE_URL+"";//上报push registration id
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";
 	public String URL_ARTICAL_LAW="http://baidu.com";
@@ -85,8 +88,6 @@ public class AppUrls {
 
 	/*支付宝回调地址*/
 	public String URL_ZFB_NOTIFY="http://jk.m1ju.com/app/respond_alipay.php";
-
-
 
 
 }

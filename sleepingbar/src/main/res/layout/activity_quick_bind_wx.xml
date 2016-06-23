@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bolaa.sleepingbar.view.ResizeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlayout_login"
+    android:layout_width="fill_parent"
+    android:background="@drawable/bg_login"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_login_logo"/>
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="看看谁在这里？"
+        android:textColor="#BF73DA"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size"
+        />
+
+    <TextView
+        android:id="@+id/tv_authorise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_wx_white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:drawablePadding="5dp"
+        android:text="微信授权"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignParentBottom="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳过"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        />
+
+
+</com.bolaa.sleepingbar.view.ResizeLayout>

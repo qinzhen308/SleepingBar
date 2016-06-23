@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="open_sdk_r5509">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/sleepingbar/libs/open_sdk_r5509.jar!/" />
+      <root url="jar://$PROJECT_DIR$/share/libs/open_sdk_r5509.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

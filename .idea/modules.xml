@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Framework/Framework.iml" filepath="$PROJECT_DIR$/Framework/Framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/SleepingBar.iml" filepath="$PROJECT_DIR$/SleepingBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-pdfview/android-pdfview.iml" filepath="$PROJECT_DIR$/android-pdfview/android-pdfview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/share/share.iml" filepath="$PROJECT_DIR$/share/share.iml" />
       <module fileurl="file://$PROJECT_DIR$/sleepingbar/sleepingbar.iml" filepath="$PROJECT_DIR$/sleepingbar/sleepingbar.iml" />
     </modules>
   </component>

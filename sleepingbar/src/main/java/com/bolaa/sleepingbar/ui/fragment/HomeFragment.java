@@ -5,8 +5,10 @@ import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.model.Supporter;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
+import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
 import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
+import com.bolaa.sleepingbar.utils.ShareUtil;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -133,7 +135,8 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		}else if(v==layoutSleepTrend){
 			SleepTrendActivity.invoke(getActivity());
 		}else if(v==tvNeedFriends){
-
+			ShareUtil shareUtil=new ShareUtil(getActivity(),"睡吧分享测试","让我测一下---这是内容","http://www.baidu.com");
+			shareUtil.showShareDialog();
 		}
 	}
 }

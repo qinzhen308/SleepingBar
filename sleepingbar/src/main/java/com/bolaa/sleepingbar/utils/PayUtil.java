@@ -23,7 +23,7 @@ public class PayUtil {
 	private static final int SDK_PAY_FLAG = 1;
 	private static final int SDK_CHECK_FLAG = 2;
 	// 商户PID
-	public static final String PARTNER = "2088611037557465";
+	public static final String PARTNER = "2088221933483858";
 	// 商户收款账号
 	public static final String SELLER = "dcst@dcstgroup.com";
 	// 商户私钥，pkcs8格式

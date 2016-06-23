@@ -22,9 +22,14 @@ public class CommonWebActivity extends BaseWebActivity{
 		initView();
 	}
 	private void initView(){
-		setActiviyContextView(R.layout.activity_fishion_detail_web, true, true);
-		setTitleText("", title, 0, true);
+		if(title==null){
+			setActiviyContextView(R.layout.activity_fishion_detail_web, true, false);
+		}else {
+			setActiviyContextView(R.layout.activity_fishion_detail_web, true, true);
+			setTitleText("", title, 0, true);
+		}
 		mWebView=(WebView)findViewById(R.id.web_fishion);
+		mWebView.addJavascriptInterface(this,"active");
         mWebView.getSettings().setJavaScriptEnabled(true);
 		load(wap_url, false);
 	}
@@ -35,11 +40,30 @@ public class CommonWebActivity extends BaseWebActivity{
 		pic_url=intent.getStringExtra(GlobeFlags.FLAG_FISHION_PIC_URL);
 		title=intent.getStringExtra("title");
 	}
+
+	/**
+	 *
+	 * @param context
+	 * @param url
+	 * @param title  null，不显示titlebar
+     */
 	public static void invoke(Context context,String url,String title){
 		Intent intent = new Intent(context,CommonWebActivity.class);
 		intent.putExtra(GlobeFlags.FLAG_FISHION_WAP_URL, url);
 		intent.putExtra("title", title);
 		context.startActivity(intent);
-		
+	}
+
+	public void finishNativePage(){
+		mWebView.stopLoading();
+		finish();
+	}
+
+	public void backWebPage(){
+		mWebView.goBack();
+	}
+
+	public void nextWebPage(){
+		mWebView.goForward();
 	}
 }

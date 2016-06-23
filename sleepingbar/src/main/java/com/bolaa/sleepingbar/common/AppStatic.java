@@ -19,7 +19,12 @@ import java.util.Iterator;
 public class AppStatic {
 	private static Context mContext;
 	public static String ACCESS_TOKEN = "token";
-	public static String WX_APPID = "wxd166f9628465c64a";
+	public static String WX_APPID = "wx26262e5349d964af";
+	public static String WX_secret = "a0dd91c217856873fae904fbb8201906";
+	public static String Sina_APPKEY = "3030426766";
+	public static String Sina_secret = "16d208f1c48bed71a46fe1190631f165";
+	public static String QQ_APPID = "1105350783";
+	public static String QQ_APPKEY = "sxXdFTEOIWDozoxZ";
 	private static AppStatic mInstance;
 	private UserInfo mUserInfo;
 	public boolean isLogin = false;// 用户是否登录

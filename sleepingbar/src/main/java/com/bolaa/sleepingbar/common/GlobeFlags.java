@@ -50,7 +50,9 @@ public class GlobeFlags {
     public static final String FLAG_FROM="flag_from";
     public static final String FLAG_GOOD_ID="flag_good_id";
     public static final String FLAG_MODE="flag_mode";
-    
-    
+
+
+    public static final String FLAG_PUSH_REGISTION_ID="flag_push_registion_id";
+
 
 }
