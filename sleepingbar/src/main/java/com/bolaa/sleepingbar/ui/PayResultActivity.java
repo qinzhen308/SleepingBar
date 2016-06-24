@@ -54,7 +54,6 @@ public class PayResultActivity extends BaseActivity {
 	private void initView() {
 		ivStatus = (ImageView) findViewById(R.id.iv_status);
 		tvStatus = (TextView) findViewById(R.id.tv_status);
-		btnBack = (TextView) findViewById(R.id.title_left);
 		tvStatusTip = (TextView) findViewById(R.id.tv_status_tip);
 		tvGotoAppointment = (TextView) findViewById(R.id.tv_go_to_appointment);
 		if(state==1){
@@ -68,7 +67,6 @@ public class PayResultActivity extends BaseActivity {
 	}
 
 	private void setListener(){
-		btnBack.setOnClickListener(this);
 		tvGotoAppointment.setOnClickListener(this);
 	}
 

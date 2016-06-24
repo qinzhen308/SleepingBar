@@ -27,8 +27,7 @@ public class PayUtil {
 	// 商户收款账号
 	public static final String SELLER = "dcst@dcstgroup.com";
 	// 商户私钥，pkcs8格式
-	public static final String RSA_PRIVATE = "MIICXQIBAAKBgQC89MbJHMa6H8f+VVtb28M8DWnj5M4mG079rx9/h0DBDR+d1MbDKs6EicmHHF5gwwLnxoIpk1j46mnF6n4BcBDfocnQj9zwIifGsjsR+JXzbMqf1cMZGHwyujBxYZr9D/J+WRzZHgbWZx1BP9XmCE5QkJZ/0KIOuvybvgBtA/SwCwIDAQABAoGBAJHkiKt1PXct3LPh4cUd/DMcxDqCSi0f/rBei3piyruDz3qEc+by4TtyS5i3baNWTqL4IT3Kl/Kww3RdpmajyVIdDmVq1PRMOD4frYba/dXqdQER5vD7ldg5HS5qn+MlH6fSIrvCUWCfL3ejUajsk5GWH9NG3h3v+eYcaVDTl8kZAkEA7pGyHINZlFaRLELUrpfkbueHP30XYp8DkQjNJoV4WTdiMcOuPer8l6VtiC1hurKCXBMPLxReO7EaBNUbts1FHwJBAMrDGPccDXL3ItXHuBaNWbWcp3/bLCEInkqF8S6Z+/vudgVokXSMvJ8Bcq2ejInPeq3ycle2bpxoBmJADIb465UCQDZaJT0Pw9Hi4xI1a6UXX+jQgOS7CB/k4HgjjDGxiNiyoIF79m+O4NtfyhOTW0egschuYzAzsMBiue3N65F7NLsCQEAdLuC8cxg+QzqcG36uFYbS0TghorOTWRIxhlD5Ce/guFr/dLcI5X/V4mA5+TB+dclZF4Tav+EfF52rqQpo3X0CQQCv6+XE3LM/YdNmU7fGVufg7EjIxkqin1PoFtb609wkKXuK689Vbpd2IPDcmldzZBjGBa+YoRxg5wvgB+Ey+B/p";
-
+	public static final String RSA_PRIVATE = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJwHt6YoFJGsz7ANdHij3Bn1SayXaUf0kmvEEFp3OzLjxhK0tiUePaGDgiM2/QzLoAg6q4A74ZHSNDirXm7X+liYTDxVV5bKSqT863bK3FIg/ipw2Dc0uEg4dQY3d7oFkpyvOtkV/xaVHpI+dcRVYFCPqeJFelLCVk4hoqnbSM8PAgMBAAECgYAV45dF/hV0olO4lQqj6gj0s06UoeEpMQxhhe3tYxCxAPdGpIdxCZ8Hy5U0L4CsjNx0ixaINN5eQKkG0jO7RR1fnFkmi5ZRuYabOwB+4gYVRuEpxAZcgiqHCS/Tj/xj0TzcGqvSyfiGxcJCSb+ro+B8TP7GW/cMNz7uDbUn5+PTMQJBAMqgLeCHWGvRh0QgyABclzwXC19a8TIEze4kOxW991FgbHjq1henuNt7Mj2hGHF/DZ10/B59RezGI+hByRGxDisCQQDFIWxFV8C9d+zzGu7fvruz4nszHyUjwE7quuo2DaIGbdlZ5kY3G15w75x7EXHR1VbXY/lJ3bFGMGZ2GdSQBLStAkA6qDwfr46tR668zjCXyjYNsy4boJwKOtHSirKADMo3yI4eQv1PQ8KD5xoYNTZ6RKmQV3lU6jb/4Cws5D5s3LCZAkEAjIAT4SB4WRI+qc6KbqJMuhsz3+3U1LReCuMJx1jUIGzuuypq5R/2odvF1dlLHFlHueChbso5bWNVw9sJK1SPSQJAeeJnurkwgKkbCFlR59jfMC8r9OjkQuPEXUhDDW0IspBfWLz5Qx8T8gkMNigCReOxiOx76879PFF+qxZc+mGj8A==";
 
 
 	public static String union_Model = "00";// 00-正式 01-测试(银联)
@@ -127,10 +126,10 @@ public class PayUtil {
 	 * 支付宝支付
 	 */
 	public static void wayToZhifubao(final Context context, String price,
-			String pay_sn) {
+			String pay_sn,String subject,String notify_url) {
 		mPayListener = (PayListener) context;
 		// 订单
-		String orderInfo = getOrderInfo(price, pay_sn);
+		String orderInfo = getOrderInfo(price, pay_sn,subject,notify_url);
 
 		try {
 			// 对订单做RSA 签名
@@ -168,7 +167,7 @@ public class PayUtil {
 	 * create the order info. 创建订单信息
 	 * 
 	 */
-	private static String getOrderInfo(String price, String pay_sn) {
+	private static String getOrderInfo(String price, String pay_sn,String subject,String notify_url) {
 
 		// 签约合作者身份ID
 		String orderInfo = "partner=" + "\"" + PARTNER + "\"";
@@ -180,7 +179,7 @@ public class PayUtil {
 		orderInfo += "&out_trade_no=" + "\"" + pay_sn + "\"";
 
 		// 商品名称
-		orderInfo += "&subject=" + "\"" + "维极体检套餐购买_" + pay_sn + "\"";
+		orderInfo += "&subject=" + "\"" + subject + "\"";
 
 		// 商品详情
 		orderInfo += "&body=" + "\"" + pay_sn + "\"";
@@ -189,7 +188,7 @@ public class PayUtil {
 		orderInfo += "&total_fee=" + "\"" + price + "\"";
 
 		// 服务器异步通知页面路径
-		orderInfo += "&notify_url=" + "\"" + AppUrls.getInstance().URL_ZFB_NOTIFY +"\"";
+		orderInfo += "&notify_url=" + "\"" + notify_url +"\"";
 
 		// 服务接口名称， 固定值
 		orderInfo += "&service=\"mobile.securitypay.pay\"";

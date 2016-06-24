@@ -157,7 +157,7 @@ public class PayFromOrderActivity extends BaseActivity implements PayUtil.PayLis
 							if("wxpay".equals(mAdapter.getPayModeCode())){
 								AppUtil.showToast(getApplicationContext(), "提交成功，等待后续接入支付");
 							}else {
-								PayUtil.wayToZhifubao(PayFromOrderActivity.this,object.data.order_amount,object.data.order_sn);
+//								PayUtil.wayToZhifubao(PayFromOrderActivity.this,object.data.order_amount,object.data.order_sn);
 							}
 						} else {
 							AppUtil.showToast(getApplicationContext(), object.info);

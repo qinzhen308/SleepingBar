@@ -75,6 +75,8 @@ public class AppUrls {
 	public String URL_INFORMATION_DETAIL=BASE_URL+"community.php?act=info_detail";//资讯详情
 	public String URL_MY_MSG=BASE_URL+"community.php?act=my_message";//我的消息
 	public String URL_USER_PAGE_INFO=BASE_URL+"user.php?act=edit_userinfo";//我的个人信息页面数据
+	public String URL_PRIVATE_SETTING=BASE_URL+"user.php?act=setting_privacy";//隐私设置
+	public String URL_SUPPORT_FUNDS_TO=BASE_URL+"sleep.php?act=send_fund";//基金支持
 
 	public String URL_ACTIVE_HOME=BASE_URL+"activity.php?act=list";//首页活动页
 

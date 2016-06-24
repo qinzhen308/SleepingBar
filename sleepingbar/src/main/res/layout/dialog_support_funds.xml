@@ -1,0 +1,169 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tv_support_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            android:text="支持给：王小二"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_size"
+            android:gravity="right"
+            android:text="达到条件"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_way_direct_give"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_red_no_coner"
+            android:gravity="center"
+            android:textSize="@dimen/text_size"
+            android:text="直接赠送"
+            />
+
+        <TextView
+            android:id="@+id/tv_way_after_5"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:textSize="@dimen/text_size"
+            android:background="@drawable/btn_red_no_coner"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="5天"
+            />
+
+        <TextView
+            android:id="@+id/tv_way_after_10"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:textSize="@dimen/text_size"
+            android:background="@drawable/btn_red_no_coner"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="10天"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:weightSum="5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_money1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/selector_support_funds"
+            android:gravity="center"
+            android:textSize="@dimen/text_size"
+            android:text="5元"
+            />
+
+        <TextView
+            android:id="@+id/tv_money2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:textSize="@dimen/text_size"
+            android:background="@drawable/selector_support_funds"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="10元"
+            />
+
+        <TextView
+            android:id="@+id/tv_money3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:textSize="@dimen/text_size"
+            android:background="@drawable/selector_support_funds"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="20元"
+            />
+        <TextView
+            android:id="@+id/tv_money4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:textColor="@color/btn_red"
+            android:textSize="@dimen/text_size"
+            android:background="@drawable/selector_support_funds"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="50元"
+            />
+
+        <EditText
+            android:id="@+id/et_money"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small"
+            android:background="@drawable/bg_support_funds2"
+            android:inputType="numberDecimal"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginLeft="8dp"
+            android:hint="输入金额"
+            android:textColorHint="@color/white"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_support"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height"
+        android:textColor="@color/btn_white_purple"
+        android:textSize="@dimen/text_size_big"
+        android:background="@drawable/btn_purple"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:hint="确定"
+        android:textColorHint="@color/white"
+        />
+
+
+
+</LinearLayout>

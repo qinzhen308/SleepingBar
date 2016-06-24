@@ -21,6 +21,7 @@ import com.bolaa.sleepingbar.utils.Image13Loader;
 public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem> {
 
 	private int pageType;
+	private OnSupportEventListener mOnSupportEventListener;
 
 	public FundsRankinglistAdapter(Context context) {
 		super(context);
@@ -50,7 +51,6 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		holder.tvSupportCount.setText(""+item.support_num);
 		Image13Loader.getInstance().loadImageFade(item.avatar,holder.ivAvatar);
 		holder.checkBox.setChecked(item.is_praise==1);
-
 		holder.checkBox.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -61,7 +61,9 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		holder.ivSupport.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				if(mOnSupportEventListener!=null){
+					mOnSupportEventListener.onSupport(item);
+				}
 			}
 		});
 
@@ -94,8 +96,12 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		}
 	}
 
+	public void setOnSupportEventListener(OnSupportEventListener onSupportEventListener){
+		mOnSupportEventListener=onSupportEventListener;
+	}
+
 	public interface OnSupportEventListener{
-		public void onSupport();
+		public void onSupport(RankinglistItem item);
 	}
 
 }

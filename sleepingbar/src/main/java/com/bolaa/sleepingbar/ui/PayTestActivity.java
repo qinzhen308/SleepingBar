@@ -128,6 +128,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 			AppUtil.showToast(this, "请选择支付方式");
 			return;
 		}
+		DialogUtil.showDialog(lodDialog);
 		requester.getParams().put("pay_id", mAdapter.getPayModeId());
 		NetworkWorker.getInstance().post( AppUrls.getInstance().URL_DO_RECHARGE, new NetworkWorker.ICallback() {
 
@@ -146,7 +147,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 							if("wxpay".equals(mAdapter.getPayModeCode())){
 								AppUtil.showToast(getApplicationContext(), "提交成功，等待后续接入支付");
 							}else {
-								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.price,object.data.out_trade_no);
+								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.price,object.data.out_trade_no,object.data.subject,object.data.return_url);
 							}
 						} else {
 							AppUtil.showToast(getApplicationContext(), object.info);
