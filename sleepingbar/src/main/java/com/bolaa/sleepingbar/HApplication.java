@@ -80,7 +80,7 @@ public class HApplication extends MyApplication {
 	public void doBackTransaction() {
 		ScreenUtil.setContextDisplay(this);
 		initDatabase();
-		getRegionInBg();
+//		getRegionInBg();
 		try{
 			//获取经纬度
 			getLocation();

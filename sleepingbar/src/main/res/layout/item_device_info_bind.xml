@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:text="名字是什么"
         android:textSize="@dimen/text_size_big"
-        android:textColor="@color/text_grey"
+        android:textColor="#BF73DA"
         android:layout_weight="1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"

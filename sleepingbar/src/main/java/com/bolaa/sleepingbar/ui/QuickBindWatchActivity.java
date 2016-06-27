@@ -5,8 +5,10 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,12 +44,22 @@ public class QuickBindWatchActivity extends BaseActivity{
     private boolean mScanning;
     private static final long SCAN_PERIOD = 10000;
 
+    private WatchConnectReceiver receiver;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
         setListener();
         initBLE();
+        registBroadcast();
+    }
+
+    @Override
+    protected void onDestroy() {
+        unRegistBroadcast();
+        super.onDestroy();
     }
 
     private void initBLE(){
@@ -144,6 +156,33 @@ public class QuickBindWatchActivity extends BaseActivity{
     public static void invoke(Context context){
         Intent intent=new Intent(context,QuickBindWatchActivity.class);
         context.startActivity(intent);
+    }
+
+    private void registBroadcast(){
+        if(receiver==null){
+            IntentFilter filter=new IntentFilter();
+            filter.addAction(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS);
+            receiver=new WatchConnectReceiver();
+            registerReceiver(receiver,filter);
+        }
+    }
+
+    private void unRegistBroadcast(){
+        if(receiver!=null){
+            unregisterReceiver(receiver);
+            receiver=null;
+        }
+    }
+
+    public class WatchConnectReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action=intent.getAction();
+            if(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS.equals(action)){
+                finish();
+            }
+        }
     }
 
 }

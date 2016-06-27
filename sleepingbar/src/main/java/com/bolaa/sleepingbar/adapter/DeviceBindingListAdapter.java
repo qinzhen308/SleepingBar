@@ -1,9 +1,12 @@
 package com.bolaa.sleepingbar.adapter;
 
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,13 +15,19 @@ import android.widget.TextView;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.Watch;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.watch.WatchService;
+import com.core.framework.util.DialogUtil;
+import com.core.framework.util.IOSDialogUtil;
 
 /**
  * 绑定设备时的列表适配器
  */
 public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevice> {
     private UnbindListener unbindListener;
+
+	private Dialog dialog;
+	private TextView tipView;
 
 	public DeviceBindingListAdapter(Context context) {
 		super(context);
@@ -37,7 +46,8 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 			holder=(ViewHolder)view.getTag();
 		}
 		final BluetoothDevice watch=mList.get(i);
-		holder.tvName.setText(watch.getName());
+		final String name=watch.getName();
+		holder.tvName.setText(AppUtil.isNull(name)?watch.getAddress():name);
 		if(watch.getBondState()==BluetoothDevice.BOND_BONDED){
 			holder.ivStatus.setVisibility(View.VISIBLE);
 		}else {
@@ -46,12 +56,46 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent=new Intent(mContext, WatchService.class);
-				intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,watch.getAddress());
-				mContext.startService(intent);
+				showLogoutDialog(AppUtil.isNull(name)?watch.getAddress():name,watch.getAddress());
+
 			}
 		});
 		return view;
+	}
+
+	/**
+	 * 显示退出登录
+	 */
+	private void showLogoutDialog(String name,final String address) {
+		if (dialog == null) {
+			View logoutView = LayoutInflater.from(mContext).inflate(R.layout.dialog_bind_watch_tip, null);
+			tipView=(TextView)logoutView.findViewById(R.id.tv_tip);
+			tipView.setText(name);
+			logoutView.findViewById(R.id.dialog_logout_cancelBtn).setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					if(!((Activity)mContext).isFinishing())dialog.dismiss();
+				}
+			});
+			logoutView.findViewById(R.id.dialog_logout_okBtn).setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent=new Intent(mContext, WatchService.class);
+					intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,address);
+					mContext.startService(intent);
+                    if(!((Activity)mContext).isFinishing())dialog.dismiss();
+                }
+			});
+			dialog = DialogUtil.getCenterDialog((Activity) mContext, logoutView);
+			dialog.show();
+		} else {
+			tipView.setText(name);
+			dialog.show();
+		}
 	}
 
 

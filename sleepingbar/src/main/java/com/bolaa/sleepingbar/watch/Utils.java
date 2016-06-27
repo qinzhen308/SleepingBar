@@ -211,4 +211,32 @@ public class Utils {
         return new int[]{cmd,data1,data2};
     }
 
+    public static int[] bytesToIntArrayV2(byte[] src){
+        if(src==null||src.length==0){
+            return null;
+        }
+        int cmd=src[0]&0xffffffff;
+        int data1=0;
+        int data2=0;
+        int data3=0;
+        int data4=0;
+        int data5=0;
+        if(src.length>=5){
+            data1=((src[4]<<24)&0xff000000)|((src[3]<<16)&0x00ff0000)|((src[2]<<8)&0x0000ff00)|((src[1]&0x000000ff));
+        }
+        if(src.length>=9){
+            data2=((src[8]<<24)&0xff000000)|((src[7]<<16)&0x00ff0000)|((src[6]<<8)&0x0000ff00)|((src[5]&0x000000ff));
+        }
+        if(src.length>=13){
+            data3=((src[12]<<24)&0xff000000)|((src[11]<<16)&0x00ff0000)|((src[10]<<8)&0x0000ff00)|((src[9]&0x000000ff));
+        }
+        if(src.length>=17){
+            data4=((src[16]<<24)&0xff000000)|((src[15]<<16)&0x00ff0000)|((src[14]<<8)&0x0000ff00)|((src[13]&0x000000ff));
+        }
+        if(src.length>=20){
+            data5=((0x00000000)&0xff000000)|((src[19]<<16)&0x00ff0000)|((src[18]<<8)&0x0000ff00)|((src[17]&0x000000ff));
+        }
+        return new int[]{cmd,data1,data2,data3,data4,data5};
+    }
+
 }

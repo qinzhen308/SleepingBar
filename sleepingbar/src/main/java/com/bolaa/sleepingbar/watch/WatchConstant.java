@@ -12,4 +12,6 @@ public class WatchConstant {
     public final static UUID UUID_SERVICE = UUID.fromString(UUID_STRING_SERVICE);
     public final static UUID UUID_CHARA_READ = UUID.fromString(UUID_STRING_CHARA_READ);
     public final static UUID UUID_CHARA_WRITE = UUID.fromString(UUID_STRING_CHARA_WRITE);
+
+    public final static String ACTION_WATCH_CONNECTED_SUCCESS="com.bolaa.action.WATCH.CONNECTED.SUCCESS";//连接成功
 }

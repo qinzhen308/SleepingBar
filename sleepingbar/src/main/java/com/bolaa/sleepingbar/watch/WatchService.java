@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar.watch;
 
+import android.app.Notification;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -18,6 +19,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.bolaa.sleepingbar.model.Watch;
 import com.core.framework.develop.LogUtil;
 
 import java.util.Arrays;
@@ -186,6 +188,7 @@ public class WatchService extends Service{
                 @Override
                 public void run() {
                     enableNotification(gatt,true);
+                    setInfo(gatt);
                 }
             });
         }
@@ -232,7 +235,8 @@ public class WatchService extends Service{
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             //收到手环的上报消息
-            LogUtil.d("watch---onCharNotify"+gatt.getDevice().getName()+"notify--"+characteristic.getUuid().toString()+"--->"+Arrays.toString(Utils.bytesToIntArray(characteristic.getValue())));
+            LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--orig-->"+Arrays.toString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
+            LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--dest-->"+Arrays.toString(Utils.bytesToIntArrayV2(characteristic.getValue()))+"--end-");
             LogUtil.d("totalcount---="+(++notifyCount));
             CMDHandler.handleToObj(characteristic.getValue());
         }
@@ -275,6 +279,13 @@ public class WatchService extends Service{
             boolean success =mBluetoothGatt.writeDescriptor(dsc);
             LogUtil.d("watch---writing enabledescriptor:" + success);
             Toast.makeText(getApplicationContext(),"通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
+            if(set&&success){
+                sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS));
+            }
         }
+
+    private void setInfo(BluetoothGatt gatt){
+        
+    }
 
 }
