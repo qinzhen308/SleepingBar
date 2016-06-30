@@ -10,8 +10,10 @@ import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.IBinder;
@@ -20,6 +22,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.bolaa.sleepingbar.model.Watch;
+import com.bolaa.sleepingbar.utils.DateUtil;
 import com.core.framework.develop.LogUtil;
 
 import java.util.Arrays;
@@ -45,6 +48,10 @@ public class WatchService extends Service{
     private boolean mScanning;
     private Handler mHandler=new Handler();
     private String currentAddress;
+    private BluetoothGattCharacteristic writeCharacteristic;
+    private BluetoothGattCharacteristic readCharacteristic;
+
+    WatchCMDReceiver mReceiver;
 
 
     @Nullable
@@ -57,6 +64,7 @@ public class WatchService extends Service{
     public void onCreate() {
         super.onCreate();
         init();
+        registBroadcast();
     }
 
 
@@ -74,7 +82,7 @@ public class WatchService extends Service{
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+        unregistBroadcast();
     }
 
     @Override
@@ -94,6 +102,21 @@ public class WatchService extends Service{
         LogUtil.d("watch---onTrimMemory-->执行 level="+level);
     }
 
+    private void registBroadcast(){
+        if(mReceiver!=null)return;
+        mReceiver=new WatchCMDReceiver();
+        IntentFilter filter=new IntentFilter();
+        filter.addAction(WatchConstant.ACTION_WATCH_CMD_SET_DATE);
+        filter.addAction(WatchConstant.ACTION_WATCH_CMD_SET_INFO);
+        registerReceiver(mReceiver,filter);
+    }
+
+    private void unregistBroadcast(){
+        if(mReceiver!=null){
+            unregisterReceiver(mReceiver);
+            mReceiver=null;
+        }
+    }
 
     private void init() {
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
@@ -188,7 +211,6 @@ public class WatchService extends Service{
                 @Override
                 public void run() {
                     enableNotification(gatt,true);
-                    setInfo(gatt);
                 }
             });
         }
@@ -229,7 +251,7 @@ public class WatchService extends Service{
                     +" write "
                     +characteristic.getUuid().toString()
                     +" -> "
-                    +new String(characteristic.getValue()));
+                    +Arrays.toString(characteristic.getValue()));
         }
 
         @Override
@@ -239,6 +261,9 @@ public class WatchService extends Service{
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--dest-->"+Arrays.toString(Utils.bytesToIntArrayV2(characteristic.getValue()))+"--end-");
             LogUtil.d("totalcount---="+(++notifyCount));
             CMDHandler.handleToObj(characteristic.getValue());
+            if(CMDHandler.CMD_MOVEMENT==characteristic.getValue()[0]){
+                sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_UPDATE_STEP).putExtra(WatchConstant.FLAG_STEP_INFO,Utils.bytesToIntArrayV2(characteristic.getValue())));
+            }
         }
     };
     int notifyCount=0;
@@ -268,12 +293,13 @@ public class WatchService extends Service{
     public void enableNotification(BluetoothGatt mBluetoothGatt,boolean b){
             BluetoothGattService service =mBluetoothGatt.getService(UUID.fromString("000056ff-0000-1000-8000-00805f9b34fb"));
 
-            BluetoothGattCharacteristic ale =service.getCharacteristic(WatchConstant.UUID_CHARA_READ);
+            readCharacteristic =service.getCharacteristic(WatchConstant.UUID_CHARA_READ);
+            writeCharacteristic =service.getCharacteristic(WatchConstant.UUID_CHARA_WRITE);
 
-            boolean set = mBluetoothGatt.setCharacteristicNotification(ale, true);
+            boolean set = mBluetoothGatt.setCharacteristicNotification(readCharacteristic, true);
 
             LogUtil.d("watch--- setnotification = " + set);
-            BluetoothGattDescriptor dsc =ale.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
+            BluetoothGattDescriptor dsc =readCharacteristic.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
 
             dsc.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             boolean success =mBluetoothGatt.writeDescriptor(dsc);
@@ -284,8 +310,24 @@ public class WatchService extends Service{
             }
         }
 
-    private void setInfo(BluetoothGatt gatt){
-        
+    private void setInfo(){
+    }
+
+    public class WatchCMDReceiver extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action=intent.getAction();
+            if(WatchConstant.ACTION_WATCH_CMD_SET_INFO.equals(action)){
+                byte[] info=intent.getByteArrayExtra(WatchConstant.FLAG_USER_INFO);
+                CMDHandler.cmdSetInfo(readCharacteristic,info[0],info[1],info[2],info[3]);
+                mBLE.writeCharacteristic(readCharacteristic);
+            }else if(WatchConstant.ACTION_WATCH_CMD_SET_DATE.equals(action)){
+                if(intent.getIntExtra(WatchConstant.FLAG_DEVICE_DATE,0)>0){
+                    CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000));
+                    mBLE.writeCharacteristic(writeCharacteristic);
+                }
+            }
+        }
     }
 
 }

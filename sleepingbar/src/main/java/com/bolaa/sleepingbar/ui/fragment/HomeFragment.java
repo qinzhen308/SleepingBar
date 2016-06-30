@@ -6,10 +6,17 @@ import com.bolaa.sleepingbar.model.Supporter;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
+import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
 import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
+import com.bolaa.sleepingbar.utils.Constants;
 import com.bolaa.sleepingbar.utils.ShareUtil;
+import com.bolaa.sleepingbar.watch.WatchConstant;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -58,7 +65,11 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 
 	@Override
 	public void onResume() {
+
 		super.onResume();
+		IntentFilter filter=new IntentFilter();
+		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_STEP);
+		getActivity().registerReceiver(mReceiver,filter);
 	}
 
 	@Override
@@ -66,6 +77,11 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 
 	}
 
+	@Override
+	public void onPause() {
+		super.onPause();
+		getActivity().unregisterReceiver(mReceiver);
+	}
 
 	@Override
 	@Nullable
@@ -139,4 +155,17 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			shareUtil.showShareDialog();
 		}
 	}
+
+	private BroadcastReceiver mReceiver=new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String action=intent.getAction();
+			if(WatchConstant.ACTION_WATCH_UPDATE_STEP.equals(action)){
+				int[] stepInfo=intent.getIntArrayExtra(WatchConstant.FLAG_STEP_INFO);
+				tvStep.setText(""+stepInfo[2]);
+				tvCalorie.setText(""+stepInfo[4]);
+				tvDistance.setText(""+(Double.valueOf(stepInfo[3]+"")/1000));
+			}
+		}
+	};
 }

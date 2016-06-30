@@ -14,4 +14,13 @@ public class WatchConstant {
     public final static UUID UUID_CHARA_WRITE = UUID.fromString(UUID_STRING_CHARA_WRITE);
 
     public final static String ACTION_WATCH_CONNECTED_SUCCESS="com.bolaa.action.WATCH.CONNECTED.SUCCESS";//连接成功
+
+    public final static String ACTION_WATCH_UPDATE_STEP="com.bolaa.action.WATCH.CMD.SETDATE";//更新  (33f4)
+    public final static String ACTION_WATCH_UPDATE_SLEEP="com.bolaa.action.WATCH.CMD.SETDATE";//更新步子信息  (33f4)
+    public final static String ACTION_WATCH_CMD_SET_INFO="com.bolaa.action.WATCH.CMD.SETINFO";//写入个人信息
+    public final static String ACTION_WATCH_CMD_SET_DATE="com.bolaa.action.WATCH.CMD.SETDATE";//写入时间   (33f3)
+
+    public final static String FLAG_USER_INFO="flag_user_info";
+    public final static String FLAG_DEVICE_DATE="flag_device_date";
+    public final static String FLAG_STEP_INFO="flag_step_info";
 }

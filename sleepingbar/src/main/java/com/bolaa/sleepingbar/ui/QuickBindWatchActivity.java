@@ -20,13 +20,16 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.DeviceBindingListAdapter;
 import com.bolaa.sleepingbar.base.BaseActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
+import com.bolaa.sleepingbar.utils.DateTimeUtils;
 import com.bolaa.sleepingbar.watch.BluetoothLeClass;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.core.framework.develop.LogUtil;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.zip.DataFormatException;
 
 /**
  * 绑定手环
@@ -180,6 +183,9 @@ public class QuickBindWatchActivity extends BaseActivity{
         public void onReceive(Context context, Intent intent) {
             String action=intent.getAction();
             if(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS.equals(action)){
+                Intent broadcast=new Intent(WatchConstant.ACTION_WATCH_CMD_SET_DATE);
+                broadcast.putExtra(WatchConstant.FLAG_DEVICE_DATE,new Date().getSeconds());
+                sendBroadcast(broadcast);
                 finish();
             }
         }

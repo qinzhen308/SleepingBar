@@ -28,11 +28,14 @@ import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
+import com.bolaa.sleepingbar.utils.DateTimeUtils;
+import com.bolaa.sleepingbar.utils.DateUtil;
 import com.bolaa.sleepingbar.utils.ImageUtil;
 import com.bolaa.sleepingbar.view.CircleImageView;
 import com.bolaa.sleepingbar.view.wheel.NumericWheelAdapter;
 import com.bolaa.sleepingbar.view.wheel.OnWheelScrollListener;
 import com.bolaa.sleepingbar.view.wheel.WheelView;
+import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
@@ -418,7 +421,7 @@ public class MyInfoActivity extends BaseActivity {
 			return;*/
 		}
 
-		String weight=mWeightEt.getText().toString().trim();
+		final String weight=mWeightEt.getText().toString().trim();
 		if (weight .length()>0) {
 			requester.mParams.put("weight", weight);
 		}else {
@@ -427,7 +430,7 @@ public class MyInfoActivity extends BaseActivity {
 			return;*/
 		}
 
-		String height=mHeightEt.getText().toString().trim();
+		final String height=mHeightEt.getText().toString().trim();
 		if (height.length()>0) {
 			requester.mParams.put("height", height);
 		}else {
@@ -451,6 +454,10 @@ public class MyInfoActivity extends BaseActivity {
 						if(object.data!=null&&object.status==BaseObject.STATUS_OK){
 
                             loadPageInfo(true);
+							//设置手环基本信息
+							Intent intent=new Intent(WatchConstant.ACTION_WATCH_CMD_SET_INFO);
+							intent.putExtra(WatchConstant.FLAG_USER_INFO,new byte[]{sex.equals("1")?(byte)1:(byte)0,(byte)DateTimeUtils.getIntervalDays(mBirthday,new Date()),Integer.valueOf(height).byteValue(),Integer.valueOf(weight).byteValue()});
+							sendBroadcast(intent);
 						}else {
 							AppUtil.showToast(getApplicationContext(), object.info);
 						}

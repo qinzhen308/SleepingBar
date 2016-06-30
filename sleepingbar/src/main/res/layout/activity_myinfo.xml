@@ -147,7 +147,8 @@
                 android:gravity="center_vertical|right"
                 android:background="@null"
                 android:visibility="gone"
-                android:text="1234567890987654321"
+                android:text="165"
+                android:inputType="number"
                 android:textColor="@color/text_grey_french1"
                 android:textSize="@dimen/text_size_big" />
 
@@ -209,7 +210,8 @@
             android:gravity="center_vertical|right"
             android:background="@null"
             android:visibility="gone"
-            android:text="1234567890987654321"
+                 android:inputType="number"
+                 android:text="65"
             android:textColor="@color/text_grey_french1"
             android:textSize="@dimen/text_size_big" />
             
