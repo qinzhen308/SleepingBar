@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.DeviceBindingListAdapter;
 import com.bolaa.sleepingbar.base.BaseActivity;
@@ -186,6 +187,7 @@ public class QuickBindWatchActivity extends BaseActivity{
                 Intent broadcast=new Intent(WatchConstant.ACTION_WATCH_CMD_SET_DATE);
                 broadcast.putExtra(WatchConstant.FLAG_DEVICE_DATE,new Date().getSeconds());
                 sendBroadcast(broadcast);
+                HApplication.getInstance().uploadWatchMacAddress(intent.getStringExtra("device_name"),intent.getStringExtra("device_address"));
                 finish();
             }
         }

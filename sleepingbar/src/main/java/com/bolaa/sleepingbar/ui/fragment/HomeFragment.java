@@ -11,6 +11,7 @@ import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
 import com.bolaa.sleepingbar.utils.Constants;
 import com.bolaa.sleepingbar.utils.ShareUtil;
+import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 
 import android.content.BroadcastReceiver;
@@ -69,6 +70,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		super.onResume();
 		IntentFilter filter=new IntentFilter();
 		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_STEP);
+		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_RUN);
 		getActivity().registerReceiver(mReceiver,filter);
 	}
 
@@ -157,14 +159,24 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	}
 
 	private BroadcastReceiver mReceiver=new BroadcastReceiver() {
+		int stepTotal;
+		int run;
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			String action=intent.getAction();
 			if(WatchConstant.ACTION_WATCH_UPDATE_STEP.equals(action)){
 				int[] stepInfo=intent.getIntArrayExtra(WatchConstant.FLAG_STEP_INFO);
+				stepTotal=stepInfo[2];
 				tvStep.setText(""+stepInfo[2]);
 				tvCalorie.setText(""+stepInfo[4]);
 				tvDistance.setText(""+(Double.valueOf(stepInfo[3]+"")/1000));
+				tvWalk.setText(""+(stepTotal-run));
+				tvStepTip.setText(TipUtil.getStepTip(stepInfo[3]));
+				tvStepEvaluate.setText(TipUtil.getStepEvaluate(stepInfo[3]));
+			}else if(WatchConstant.ACTION_WATCH_UPDATE_RUN.equals(action)){
+				int[] runInfo=intent.getIntArrayExtra(WatchConstant.FLAG_RUN_INFO);
+				run=runInfo[2];
+				tvRun.setText(""+runInfo[2]);
 			}
 		}
 	};

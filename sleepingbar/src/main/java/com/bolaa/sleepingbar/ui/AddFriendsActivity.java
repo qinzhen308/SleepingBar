@@ -46,7 +46,7 @@ public class AddFriendsActivity extends BaseListActivity implements LoadStateCon
 		setExtra();
 		initView();
 		setListener();
-//		nearbyFriends(false);
+		nearbyFriends(false);
 	}
 	
 	private void setExtra(){
@@ -54,7 +54,7 @@ public class AddFriendsActivity extends BaseListActivity implements LoadStateCon
 	}
 
 	private void initView(){
-		setActiviyContextView(R.layout.activity_deal_history, true, true);
+		setActiviyContextView(R.layout.activity_add_friends, true, true);
 		setTitleText("", "添加好友", 0, true);
 		etSearch=(EditText)findViewById(R.id.et_search);
 		tvLabel=(TextView) findViewById(R.id.tv_label);

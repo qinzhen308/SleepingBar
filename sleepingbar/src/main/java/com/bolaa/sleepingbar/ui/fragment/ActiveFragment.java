@@ -20,6 +20,7 @@ import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.listener.JSInvokeJavaInterface;
 import com.bolaa.sleepingbar.ui.CommonWebActivity;
 import com.core.framework.develop.LogUtil;
 
@@ -80,7 +81,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
     public void initView() {
         mWebView=(WebView) baseLayout.findViewById(R.id.webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.addJavascriptInterface(this,"active");
+        mWebView.addJavascriptInterface(new JSInvokeJavaInterface(getActivity(),mWebView),"active");
     }
 
     private void setListener() {
@@ -175,9 +176,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-    public void openDetail(String url){
-        CommonWebActivity.invoke(getActivity(),url,null);
-    }
+
 
 
 }

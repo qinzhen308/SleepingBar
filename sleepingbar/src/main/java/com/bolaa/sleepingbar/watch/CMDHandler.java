@@ -3,6 +3,8 @@ package com.bolaa.sleepingbar.watch;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
+import android.content.Context;
+import android.content.Intent;
 
 import com.bolaa.sleepingbar.model.Sleep;
 import com.bolaa.sleepingbar.model.Step;
@@ -61,24 +63,14 @@ public class CMDHandler {
      * @param src
      * @return
      */
-    public static Object handleToObj(byte[] src){
+    public static void synchronizedMovement(Context context, byte[] src){
         int[] data=Utils.bytesToIntArrayV2(src);
         switch (data[0]){
             case CMD_RUN_STEP:
-                Sleep sleep=new Sleep();
-                sleep.startTime=data[1]-data[2];
-                sleep.sleepTime=data[2];
-                sleep.wakeupTime=data[1];
-                SleepTable.getInstance().saveSleep(sleep);
-                return sleep;
+                context.sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_UPDATE_RUN).putExtra(WatchConstant.FLAG_RUN_INFO,data));
             case CMD_MOVEMENT:
-                Step step=new Step();
-                step.timestamp=data[1];
-                step.value=data[2];
-                StepTable.getInstance().saveStep(step);
-                return step;
+                context.sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_UPDATE_STEP).putExtra(WatchConstant.FLAG_STEP_INFO,data));
         }
-        return null;
     }
 
     public static BluetoothGattCharacteristic cmdSetInfo(BluetoothGattCharacteristic characteristic, byte sex, byte age, byte height, byte weight){

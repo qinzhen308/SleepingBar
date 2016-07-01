@@ -4,7 +4,9 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Bundle;
 
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
@@ -15,11 +17,13 @@ import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.RegionInfo;
 import com.bolaa.sleepingbar.model.RegoinWrapper;
 import com.bolaa.sleepingbar.model.Sleep;
+import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.model.tables.RegionTable;
 import com.bolaa.sleepingbar.model.tables.SleepTable;
 import com.bolaa.sleepingbar.model.tables.StepTable;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
+import com.bolaa.sleepingbar.ui.MainActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.bolaa.sleepingbar.utils.ShareUtil;
@@ -27,9 +31,12 @@ import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.MyApplication;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.develop.LogUtil;
+import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.DB.beans.Preferences;
 import com.core.framework.store.sharePer.PreferencesUtils;
+import com.core.framework.util.DialogUtil;
+import com.core.framework.util.StringUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.List;
@@ -87,7 +94,8 @@ public class HApplication extends MyApplication {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-	}
+        loadUserInfo();
+    }
 
 	@Override
 	public void doBusyTransaction() {
@@ -165,9 +173,38 @@ public class HApplication extends MyApplication {
 		Location location = locationManager.getLastKnownLocation(locationProvider);
 		if(location!=null){
 			//不为空,显示地理位置经纬度
+		}else {
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,2000,5,locationListener,getMainLooper());
 		}
 		mLocation=location;
 	}
+
+	private LocationListener locationListener=new LocationListener() {
+		@Override
+		public void onLocationChanged(Location location) {
+			mLocation=location;
+			if(mLocation!=null){
+				LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+				locationManager.removeUpdates(locationListener);
+				locationListener=null;
+			}
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+
+		}
+
+		@Override
+		public void onProviderEnabled(String provider) {
+
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+
+		}
+	};
 
 
 	public boolean isAppOnForeground() {
@@ -204,6 +241,51 @@ public class HApplication extends MyApplication {
 			}
 		},requester);
 	}
-	
+
+	/**
+	 * 上传push的registration id到服务器
+	 */
+	public void uploadWatchMacAddress(String macName,String macAddress){
+		if(!AppStatic.getInstance().isLogin)return;
+		HttpRequester requester=new HttpRequester();
+		requester.getParams().put("equipment", macName);
+		requester.getParams().put("mac", macAddress);
+
+		NetworkWorker.getInstance().post(AppUrls.getInstance().URL_BIND_WATCH_MAC_ADDRESS, new NetworkWorker.ICallback() {
+
+			@Override
+			public void onResponse(int status, String result) {
+				// TODO Auto-generated method stub
+				if(status==200){
+					LogUtil.d("watch---bind watch="+result);
+				}
+			}
+		},requester);
+	}
+
+    public void loadUserInfo() {
+        ParamBuilder params=new ParamBuilder();
+        NetworkWorker.getInstance().getCallbackInBg(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_GET_USER_INFO), new NetworkWorker.ICallback() {
+
+            @Override
+            public void onResponse(int status, String result) {
+                if(status==200){
+                    BaseObject<UserInfo> object= GsonParser.getInstance().parseToObj(result, UserInfo.class);
+                    if(object!=null){
+                        if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+                            AppStatic.getInstance().setmUserInfo(object.data);
+                            AppStatic.getInstance().saveUser(object.data);
+                        }else {
+                        }
+                    }else {
+
+                    }
+                }
+
+            }
+        });
+    }
+
+
 	
 }

@@ -22,6 +22,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.bolaa.sleepingbar.model.Watch;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateUtil;
 import com.core.framework.develop.LogUtil;
 
@@ -211,6 +212,7 @@ public class WatchService extends Service{
                 @Override
                 public void run() {
                     enableNotification(gatt,true);
+//                    enableNotificationWrite(gatt);
                 }
             });
         }
@@ -260,10 +262,8 @@ public class WatchService extends Service{
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--orig-->"+Arrays.toString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--dest-->"+Arrays.toString(Utils.bytesToIntArrayV2(characteristic.getValue()))+"--end-");
             LogUtil.d("totalcount---="+(++notifyCount));
-            CMDHandler.handleToObj(characteristic.getValue());
-            if(CMDHandler.CMD_MOVEMENT==characteristic.getValue()[0]){
-                sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_UPDATE_STEP).putExtra(WatchConstant.FLAG_STEP_INFO,Utils.bytesToIntArrayV2(characteristic.getValue())));
-            }
+            CMDHandler.synchronizedMovement(WatchService.this,characteristic.getValue());
+
         }
     };
     int notifyCount=0;
@@ -306,9 +306,22 @@ public class WatchService extends Service{
             LogUtil.d("watch---writing enabledescriptor:" + success);
             Toast.makeText(getApplicationContext(),"通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
             if(set&&success){
-                sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS));
+                sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS).putExtra("device_name",mBluetoothGatt.getDevice().getName()).putExtra("device_address",mBluetoothGatt.getDevice().getAddress()));
             }
         }
+
+    //必须在主线程执行
+    public void enableNotificationWrite(BluetoothGatt mBluetoothGatt){
+
+        boolean set = mBluetoothGatt.setCharacteristicNotification(writeCharacteristic, true);
+        LogUtil.d("watch 33f3--- setnotification = " + set);
+        if(AppUtil.isEmpty(writeCharacteristic.getDescriptors()))return;
+        BluetoothGattDescriptor dsc =writeCharacteristic.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
+        dsc.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+        boolean success =mBluetoothGatt.writeDescriptor(dsc);
+        LogUtil.d("watch 33f3---writing enabledescriptor:" + success);
+        Toast.makeText(getApplicationContext(),"33f3通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
+    }
 
     private void setInfo(){
     }

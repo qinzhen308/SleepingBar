@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.webkit.WebView;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.common.GlobeFlags;
+import com.bolaa.sleepingbar.listener.JSInvokeJavaInterface;
 
 public class CommonWebActivity extends BaseWebActivity{
 	
@@ -21,6 +23,7 @@ public class CommonWebActivity extends BaseWebActivity{
 		setExtra();
 		initView();
 	}
+	@SuppressLint("JavascriptInterface")
 	private void initView(){
 		if(title==null){
 			setActiviyContextView(R.layout.activity_fishion_detail_web, true, false);
@@ -29,8 +32,8 @@ public class CommonWebActivity extends BaseWebActivity{
 			setTitleText("", title, 0, true);
 		}
 		mWebView=(WebView)findViewById(R.id.web_fishion);
-		mWebView.addJavascriptInterface(this,"active");
-        mWebView.getSettings().setJavaScriptEnabled(true);
+		mWebView.addJavascriptInterface(new JSInvokeJavaInterface(this,mWebView),"active");
+		mWebView.getSettings().setJavaScriptEnabled(true);
 		load(wap_url, false);
 	}
 	
@@ -54,16 +57,6 @@ public class CommonWebActivity extends BaseWebActivity{
 		context.startActivity(intent);
 	}
 
-	public void finishNativePage(){
-		mWebView.stopLoading();
-		finish();
-	}
 
-	public void backWebPage(){
-		mWebView.goBack();
-	}
 
-	public void nextWebPage(){
-		mWebView.goForward();
-	}
 }
