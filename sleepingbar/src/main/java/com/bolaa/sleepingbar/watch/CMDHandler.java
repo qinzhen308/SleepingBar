@@ -10,8 +10,13 @@ import com.bolaa.sleepingbar.model.Sleep;
 import com.bolaa.sleepingbar.model.Step;
 import com.bolaa.sleepingbar.model.tables.SleepTable;
 import com.bolaa.sleepingbar.model.tables.StepTable;
+import com.bolaa.sleepingbar.utils.DateUtil;
+import com.core.framework.develop.LogUtil;
+import com.core.framework.store.sharePer.PreferencesUtils;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * Created by pualz on 2016/5/30.
@@ -73,6 +78,38 @@ public class CMDHandler {
         }
     }
 
+    public static void saveSleep(byte[] src){
+        if(src[0]!=CMD_SLEEP_SOMEDAY)return;
+        String sleep_data=PreferencesUtils.getString("sleep_data");
+        byte[] data=null;
+        try {
+            data=sleep_data.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if(data==null||data.length!=1440){
+            data=new byte[1440];
+        }
+        int time=((src[4]<<24)&0xff000000)|((src[3]<<16)&0x00ff0000)|((src[2]<<8)&0x0000ff00)|((src[1]&0x000000ff));
+        String date=DateUtil.getTime("yyyy-MM-dd hh:mm:ss",new Date((long)(time*1000)));
+        int index=((time/60)%(1440))/15;
+        LogUtil.d("save sleep---"+date+"---index="+index);
+        for(int i=0;i<15;i++){
+            data[index*15+i]=src[i+5];
+        }
+        LogUtil.d("save sleep---"+Arrays.toString(data));
+        try {
+            PreferencesUtils.putString("sleep_data",new String(data,"UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static BluetoothGattCharacteristic cmdGetSleepInfo(BluetoothGattCharacteristic characteristic,byte beforeNow){
+        characteristic.setValue(new byte[]{CMD_MOVEMENT_SOMEDAY,beforeNow});
+        return characteristic;
+    }
+
     public static BluetoothGattCharacteristic cmdSetInfo(BluetoothGattCharacteristic characteristic, byte sex, byte age, byte height, byte weight){
         if(age>127||age<7)return null;
         byte AA=(byte) ((sex<<7)|age);
@@ -100,7 +137,5 @@ public class CMDHandler {
             byteArray[n] = (byte) (integer>>> (n * 8));
         return (byteArray);
     }
-
-
 
 }

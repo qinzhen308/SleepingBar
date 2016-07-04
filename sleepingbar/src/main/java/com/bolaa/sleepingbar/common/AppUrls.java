@@ -93,6 +93,8 @@ public class AppUrls {
 	public String URL_ARTICAL_LAW="http://baidu.com";
 	public String URL_ARTICAL_ABOUT="http://baidu.com";
 
+	public String URL_MEDAL_SHARE=BASE_URL+"user_share.php?act=share_sleepinfo";
+
 
 	/*支付宝回调地址*/
 	public String URL_ZFB_NOTIFY="http://jk.m1ju.com/app/respond_alipay.php";

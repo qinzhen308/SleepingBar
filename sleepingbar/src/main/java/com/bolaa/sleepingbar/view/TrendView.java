@@ -2,16 +2,15 @@ package com.bolaa.sleepingbar.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.bolaa.sleepingbar.R;
-import com.bolaa.sleepingbar.model.Sleep;
 import com.core.framework.app.devInfo.ScreenUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,11 +19,15 @@ import java.util.List;
 public class TrendView extends ImageView{
 
     private List<Point> list;
-    private int good;//优
-    private int well;//良
-    private int bad;//差
+    private float good;//优
+    private float well;//良
+    private float bad;//差
+    private float trendHeight;
+    private float trendWidth;
 
     private int contentPadding;
+
+    private Paint trendPaint;
 
 
     public TrendView(Context context) {
@@ -44,6 +47,10 @@ public class TrendView extends ImageView{
 
     private void init(){
         contentPadding=ScreenUtil.dip2px(getContext(),20);
+        trendPaint=new Paint();
+        trendPaint.setAntiAlias(true);
+        trendPaint.setColor(getResources().getColor(R.color.white));
+        trendPaint.setStrokeWidth(ScreenUtil.dip2px(getContext(),1));
     }
 
 
@@ -54,6 +61,8 @@ public class TrendView extends ImageView{
         good=2*contentPadding;
         well=getHeight()/2;
         bad=getHeight()-2*contentPadding;
+        trendHeight=bad-good+contentPadding;
+        trendWidth=getWidth()-2*contentPadding;
         drawAxis(canvas);
         drawTrend(canvas);
         drawLabel(canvas);
@@ -63,7 +72,7 @@ public class TrendView extends ImageView{
         Paint paint=new Paint();
         paint.setStrokeWidth(ScreenUtil.dip2px(getContext(),1));
         paint.setColor(getResources().getColor(R.color.white));
-        canvas.drawLine(contentPadding,bad+contentPadding ,getWidth()-contentPadding,bad+contentPadding,paint);
+//        canvas.drawLine(contentPadding,bad+contentPadding ,getWidth()-contentPadding,bad+contentPadding,paint);
         paint.setColor(getResources().getColor(R.color.purple2));
         canvas.drawLine(contentPadding,bad,getWidth()-contentPadding,bad,paint);
         canvas.drawLine(contentPadding,well,getWidth()-contentPadding,well,paint);
@@ -75,7 +84,7 @@ public class TrendView extends ImageView{
         paint.setAntiAlias(true);
         paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.text_size_big));
         paint.setColor(getResources().getColor(R.color.white));
-        canvas.drawLine(contentPadding,bad+contentPadding,getWidth()-contentPadding,bad+contentPadding,paint);
+//        canvas.drawLine(contentPadding,bad+contentPadding,getWidth()-contentPadding,bad+contentPadding,paint);
         canvas.drawText("睡眠质量",contentPadding+10,good-getResources().getDimensionPixelSize(R.dimen.text_size_big)-10,paint);
         canvas.drawText("日",getWidth()-contentPadding-10,good-getResources().getDimensionPixelSize(R.dimen.text_size_big)-10,paint);
         paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.text_size));
@@ -89,24 +98,35 @@ public class TrendView extends ImageView{
         if(list==null||list.size()==0){
             return;
         }
-        int maxX=getWidth()-contentPadding*2;
-        int firstLocationX=0;
-        int lastLocationX=getWidth()-contentPadding;
         int size=list.size();
-        for(int i=0;i<size;i++){
-            Point point=new Point();
-            point.x=0;
-            point.y=0;
-            point.isBreak=true;
+        for(int i=1;i<size;i++){
+            Point p1=list.get(i-1);
+            Point p2=list.get(i);
+            if(p1.isBreak) continue;
+            canvas.drawLine(p1.x,p1.y,p2.x,p2.y,trendPaint);
         }
     }
 
     public class Point{
-
-        public int x;
-        public int y;
+        public float x;
+        public float y;
         public boolean isBreak;
+    }
 
+    public void setData(byte[] src){
+        list=new ArrayList<>();
+        for(int i = 0;i<src.length;i++){
+            Point p=new Point();
+            p.x=contentPadding+trendWidth*i/src.length;
+            p.y=(bad+contentPadding)-src[i]* trendHeight /100f;
+            if(src[i]==0){
+                p.isBreak=true;
+            }else {
+                p.isBreak=false;
+            }
+            list.add(p);
+        }
+        invalidate();
     }
 
 

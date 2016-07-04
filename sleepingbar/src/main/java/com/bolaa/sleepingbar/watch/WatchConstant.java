@@ -20,6 +20,7 @@ public class WatchConstant {
     public final static String ACTION_WATCH_UPDATE_SLEEP="com.bolaa.action.WATCH.CMD.SLEEP";//更新步子信息  (33f4)
     public final static String ACTION_WATCH_CMD_SET_INFO="com.bolaa.action.WATCH.CMD.SETINFO";//写入个人信息
     public final static String ACTION_WATCH_CMD_SET_DATE="com.bolaa.action.WATCH.CMD.SETDATE";//写入时间   (33f3)
+    public final static String ACTION_WATCH_CMD_GET_SLEEP="com.bolaa.action.WATCH.CMD.SETDATE";//获取步子信息   (33f3)
 
     public final static String FLAG_USER_INFO="flag_user_info";
     public final static String FLAG_DEVICE_DATE="flag_device_date";

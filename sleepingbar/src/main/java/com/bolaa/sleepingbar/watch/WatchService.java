@@ -109,6 +109,7 @@ public class WatchService extends Service{
         IntentFilter filter=new IntentFilter();
         filter.addAction(WatchConstant.ACTION_WATCH_CMD_SET_DATE);
         filter.addAction(WatchConstant.ACTION_WATCH_CMD_SET_INFO);
+        filter.addAction(WatchConstant.ACTION_WATCH_CMD_GET_SLEEP);
         registerReceiver(mReceiver,filter);
     }
 
@@ -215,6 +216,13 @@ public class WatchService extends Service{
 //                    enableNotificationWrite(gatt);
                 }
             });
+            new Handler(getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    CMDHandler.cmdGetSleepInfo(writeCharacteristic,(byte)0);
+                    mBLE.writeCharacteristic(writeCharacteristic);
+                }
+            },3*1000);
         }
 
     };
@@ -263,7 +271,7 @@ public class WatchService extends Service{
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--dest-->"+Arrays.toString(Utils.bytesToIntArrayV2(characteristic.getValue()))+"--end-");
             LogUtil.d("totalcount---="+(++notifyCount));
             CMDHandler.synchronizedMovement(WatchService.this,characteristic.getValue());
-
+            CMDHandler.saveSleep(characteristic.getValue());
         }
     };
     int notifyCount=0;
@@ -339,6 +347,8 @@ public class WatchService extends Service{
                     CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000));
                     mBLE.writeCharacteristic(writeCharacteristic);
                 }
+            }else if(WatchConstant.ACTION_WATCH_CMD_GET_SLEEP.equals(action)){//读手环的睡眠信息
+                //不一定需要做
             }
         }
     }

@@ -40,7 +40,7 @@ public class MyMedalActivity extends BaseActivity{
 	private void initData() {
 		// TODO Auto-generated method stub
         ParamBuilder params=new ParamBuilder();
-        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_SUPPORTER_LIST), new NetworkWorker.ICallback() {
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_MEDAL_LIST), new NetworkWorker.ICallback() {
             @Override
             public void onResponse(int status, String result) {
                 if(status== 200){
