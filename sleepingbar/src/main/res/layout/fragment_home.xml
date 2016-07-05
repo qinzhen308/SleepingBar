@@ -319,6 +319,16 @@
             android:layout_marginTop="30dp"
             android:background="@color/base_green"
             >
+            <TextView
+                android:id="@+id/tv_need_friends2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:text="邀好友支持"/>
 
             <TextView
                 android:id="@+id/tv_step_label"

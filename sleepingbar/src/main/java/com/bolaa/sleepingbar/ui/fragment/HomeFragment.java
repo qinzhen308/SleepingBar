@@ -2,6 +2,9 @@ package com.bolaa.sleepingbar.ui.fragment;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
+import com.bolaa.sleepingbar.common.APIUtil;
+import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Supporter;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
@@ -13,6 +16,7 @@ import com.bolaa.sleepingbar.utils.Constants;
 import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
+import com.core.framework.util.MD5Util;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -37,6 +41,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 
 
 	private TextView tvNeedFriends;
+	private TextView tvNeedFriends2;
 
 	private TextView tvFundsHelp;
 	private TextView tvFunds;
@@ -121,6 +126,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		tvStep=(TextView) baseLayout.findViewById(R.id.tv_step);
 		tvFunds=(TextView) baseLayout.findViewById(R.id.tv_sleep_funds);
 		tvNeedFriends=(TextView) baseLayout.findViewById(R.id.tv_need_friends);
+		tvNeedFriends2=(TextView) baseLayout.findViewById(R.id.tv_need_friends2);
 		tvFundsHelp=(TextView) baseLayout.findViewById(R.id.tv_funds_help);
 		tvSleepDate=(TextView) baseLayout.findViewById(R.id.tv_sleep_date);
 		tvStepEvaluate=(TextView) baseLayout.findViewById(R.id.tv_step_evaluate);
@@ -139,6 +145,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		layoutSupport.setOnClickListener(this);
 		layoutMedal.setOnClickListener(this);
 		tvNeedFriends.setOnClickListener(this);
+		tvNeedFriends2.setOnClickListener(this);
 
 	}
 	@Override
@@ -153,7 +160,20 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		}else if(v==layoutSleepTrend){
 			SleepTrendActivity.invoke(getActivity());
 		}else if(v==tvNeedFriends){
-			ShareUtil shareUtil=new ShareUtil(getActivity(),"睡吧分享测试","让我测一下---这是内容","http://www.baidu.com");
+            ParamBuilder params= new ParamBuilder();
+            params.clear();
+//            String info =tvWalk.getText().toString()+"_"+tvRun.getText().toString()+"_"+tvDistance.getText().toString()+"_"+tvCalorie.getText().toString();
+//            params.append("info",info);
+//            params.append("s", MD5Util.getMD5(info+"_iphone_android"));
+            ShareUtil shareUtil=new ShareUtil(getActivity(),"睡眠分享", "比比看",APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_SLEEP_SHARE));
+			shareUtil.showShareDialog();
+		}else if(v==tvNeedFriends2){
+			ParamBuilder params= new ParamBuilder();
+			params.clear();
+            String info =tvWalk.getText().toString()+"_"+tvRun.getText().toString()+"_"+tvDistance.getText().toString()+"_"+tvCalorie.getText().toString();
+			params.append("info",info);
+			params.append("s", MD5Util.getMD5(info+"_iphone_android"));
+			ShareUtil shareUtil=new ShareUtil(getActivity(),"运动分享", "比比看",APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_MOVEMENT_SHARE));
 			shareUtil.showShareDialog();
 		}
 	}

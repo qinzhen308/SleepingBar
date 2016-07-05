@@ -93,15 +93,24 @@ public class ShareUtil {
 			ShareChannel sh0 = new ShareChannel(0, "QQ好友",
 					R.drawable.ic_share_qq);
 
+			ShareChannel sh1 = new ShareChannel(0, "qq空间",
+					R.drawable.ic_share_qq_zore);
+
 			ShareChannel sh2 = new ShareChannel(0, "微信好友",
 					R.drawable.ic_share_wx_friend);
 			ShareChannel sh3 = new ShareChannel(0, "新浪微博",
 					R.drawable.ic_share_weibo);
 
+			ShareChannel sh4 = new ShareChannel(0, "朋友圈",
+					R.drawable.ic_share_wx_center);
+
+
 			List<ShareChannel> list = new ArrayList<ShareChannel>();
 			list.add(sh0);
+			list.add(sh1);
 			list.add(sh2);
 			list.add(sh3);
+			list.add(sh4);
 
 			View view = LayoutInflater.from(mContext).inflate(
 					R.layout.dialog_share_posts, null);
@@ -126,7 +135,7 @@ public class ShareUtil {
 						break;
 					case 1:
 						new ShareAction(mContext)
-								.setPlatform(SHARE_MEDIA.WEIXIN)
+								.setPlatform(SHARE_MEDIA.QZONE)
 								.setCallback(umShareListener).withText(content)
 								.withTitle(title).withTargetUrl(targeUrl)
 								.withMedia(mUmImage).share();
@@ -134,11 +143,25 @@ public class ShareUtil {
 						break;
 					case 2:
 
-						new ShareAction(mContext).setPlatform(SHARE_MEDIA.SINA)
+						new ShareAction(mContext).setPlatform(SHARE_MEDIA.WEIXIN)
 								.setCallback(umShareListener).withText(content)
 								.withTitle(title).withTargetUrl(targeUrl)
 								.withMedia(mUmImage).share();
 						break;
+						case 3:
+
+							new ShareAction(mContext).setPlatform(SHARE_MEDIA.SINA)
+									.setCallback(umShareListener).withText(content)
+									.withTitle(title).withTargetUrl(targeUrl)
+									.withMedia(mUmImage).share();
+							break;
+						case 4:
+
+							new ShareAction(mContext).setPlatform(SHARE_MEDIA.WEIXIN_CIRCLE)
+									.setCallback(umShareListener).withText(content)
+									.withTitle(title).withTargetUrl(targeUrl)
+									.withMedia(mUmImage).share();
+							break;
 					}
 
 				}

@@ -1,14 +1,17 @@
 package com.bolaa.sleepingbar.ui;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +29,7 @@ import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
+import com.bolaa.sleepingbar.utils.DateUtil;
 import com.bolaa.sleepingbar.utils.ImageUtil;
 import com.bolaa.sleepingbar.view.CircleImageView;
 import com.bolaa.sleepingbar.view.TrendView;
@@ -41,6 +45,9 @@ import com.core.framework.util.DialogUtil;
 import com.core.framework.util.IOSDialogUtil;
 import com.core.framework.util.IOSDialogUtil.OnSheetItemClickListener;
 import com.core.framework.util.IOSDialogUtil.SheetItemColor;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -109,6 +116,7 @@ public class SleepTrendActivity extends BaseActivity {
         try {
             byte[] data=sleep_data.getBytes("UTF-8");
 //            dayTrend.setData(data);
+            upload(data);
             byte[] data15Sec=new byte[96];
             for(int i=0;i<data15Sec.length;i++){
                 int sum=0;
@@ -121,6 +129,40 @@ public class SleepTrendActivity extends BaseActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+    }
+
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    private void upload(byte[] data){
+        HttpRequester requester=new HttpRequester();
+        JSONArray array= null;
+        try {
+            array = new JSONArray(data);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if(array==null)return;
+//        for(int i=0;i<data.length;i++){
+//            requester.getParams().put("data["+i+"]",data[i]);
+//        }
+        requester.getParams().put("data",array.toString());
+        long time= (new Date().getTime()/((60*60*24)*1000))*(60*60*24);
+        String sign=AppStatic.getInstance().getmUserInfo().user_id+"_"+System.currentTimeMillis()/1000+"_"+233;
+        requester.getParams().put("sleep_date",time+"");
+        requester.getParams().put("sign",sign);
+        requester.getParams().put("sleep_end_time","23:59");
+        requester.getParams().put("sleep_start_time","00:00");
+        LogUtil.d("upload---date="+ DateUtil.getTimeUnitSecond("yyyy-MM-dd hh:mm:ss",time));
+        LogUtil.d("upload---sign="+ sign);
+        NetworkWorker.getInstance().post(AppUrls.getInstance().URL_WATCH_SYNC_SLEEP, new ICallback() {
+            @Override
+            public void onResponse(int status, String result) {
+                if(status==200){
+                    LogUtil.d("upload---result="+result);
+                }
+            }
+        },requester);
+
     }
 
 
