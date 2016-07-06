@@ -7,7 +7,7 @@ public class Watch {
 
     public String bind_time;
     public String id;
-    public String is_binding;
+    public int is_binding;
     public String mac;
     public String name;
     public String unbind_time;

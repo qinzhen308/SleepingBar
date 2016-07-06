@@ -4,6 +4,7 @@ package com.bolaa.sleepingbar.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bolaa.sleepingbar.R;
@@ -34,6 +35,11 @@ public class DeviceInfoListAdapter extends AbstractListAdapter<Watch> {
 		}
 		final Watch watch=mList.get(i);
 		holder.tvName.setText(watch.name);
+		if(watch.is_binding==1){
+			holder.tvUnbind.setVisibility(View.VISIBLE);
+		}else {
+			holder.tvUnbind.setVisibility(View.INVISIBLE);
+		}
 		holder.tvUnbind.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

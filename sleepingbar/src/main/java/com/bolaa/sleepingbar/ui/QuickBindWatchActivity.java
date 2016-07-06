@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bolaa.sleepingbar.HApplication;
@@ -24,7 +25,9 @@ import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateTimeUtils;
 import com.bolaa.sleepingbar.watch.BluetoothLeClass;
 import com.bolaa.sleepingbar.watch.WatchConstant;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.develop.LogUtil;
+import com.core.framework.store.sharePer.PreferencesUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -50,6 +53,8 @@ public class QuickBindWatchActivity extends BaseActivity{
 
     private WatchConnectReceiver receiver;
 
+    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +68,7 @@ public class QuickBindWatchActivity extends BaseActivity{
     @Override
     protected void onDestroy() {
         unRegistBroadcast();
+        scanLeDevice(false);
         super.onDestroy();
     }
 
@@ -92,9 +98,9 @@ public class QuickBindWatchActivity extends BaseActivity{
         }
         mBluetoothAdapter.enable();
         //初始化蓝牙工具类
-        LogUtil.d("BLE---Time="+(System.currentTimeMillis()-t1));
+        LogUtil.d("BLE---init ble Time="+(System.currentTimeMillis()-t1));
         scanLeDevice(true);
-        LogUtil.d("BLE---Time="+(System.currentTimeMillis()-t1));
+        LogUtil.d("BLE---end scan Time="+(System.currentTimeMillis()-t1));
     }
 
     private void setListener() {
@@ -118,6 +124,7 @@ public class QuickBindWatchActivity extends BaseActivity{
         tvSearch=(TextView)findViewById(R.id.tv_search_devices);
         tvSkip =(TextView)findViewById(R.id.tv_skip);
         lvDevices =(ListView) findViewById(R.id.lv_devices);
+        progressBar =(ProgressBar) findViewById(R.id.progress_bar);
         mAdapter=new DeviceBindingListAdapter(this);
         lvDevices.setAdapter(mAdapter);
     }
@@ -128,23 +135,27 @@ public class QuickBindWatchActivity extends BaseActivity{
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    mScanning = false;
-                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                    scanLeDevice(false);
                 }
             }, SCAN_PERIOD);
 
             mScanning = true;
+            progressBar.setVisibility(View.VISIBLE);
+            tvSearch.setVisibility(View.INVISIBLE);
 //            mBluetoothAdapter.startLeScan(new UUID[]{WatchConstant.UUID_SERVICE},mLeScanCallback);
             mBluetoothAdapter.startLeScan(mLeScanCallback);
         } else {
             mScanning = false;
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
+            progressBar.setVisibility(View.GONE);
+            tvSearch.setVisibility(View.VISIBLE);
         }
     }
 
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
                 @Override
                 public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
+                    if(device.getName()==null||!device.getName().contains("aceband"))return;
                     if(mAdapter.getList()==null){
                         List<BluetoothDevice> deviceList=new ArrayList<>();
                         deviceList.add(device);
@@ -188,6 +199,7 @@ public class QuickBindWatchActivity extends BaseActivity{
                 broadcast.putExtra(WatchConstant.FLAG_DEVICE_DATE,new Date().getSeconds());
                 sendBroadcast(broadcast);
                 HApplication.getInstance().uploadWatchMacAddress(intent.getStringExtra("device_name"),intent.getStringExtra("device_address"));
+                PreferencesUtils.putString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,intent.getStringExtra("device_address"));
                 finish();
             }
         }

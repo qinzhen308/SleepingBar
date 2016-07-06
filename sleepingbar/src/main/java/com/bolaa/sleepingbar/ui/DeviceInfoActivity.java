@@ -60,6 +60,7 @@ public class DeviceInfoActivity extends BaseListActivity implements LoadStateCon
 		mPullListView=(PullListView) findViewById(R.id.pull_listview);
 		mPullListView.setMode(PullToRefreshBase.MODE_PULL_DOWN_TO_REFRESH);
 		mListView=mPullListView.getRefreshableView();
+		mListView.setFooterDividersEnabled(false);
 		setFooter();
 		mAdapter=new DeviceInfoListAdapter(this);
 		mListView.setAdapter(mAdapter);

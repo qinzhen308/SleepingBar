@@ -1,58 +1,29 @@
 package com.bolaa.sleepingbar.ui;
 
 import android.annotation.TargetApi;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
-import android.provider.MediaStore;
-import android.provider.Settings;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseActivity;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
-import com.bolaa.sleepingbar.model.UserInfo;
-import com.bolaa.sleepingbar.parser.gson.BaseObject;
-import com.bolaa.sleepingbar.parser.gson.GsonParser;
-import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateUtil;
-import com.bolaa.sleepingbar.utils.ImageUtil;
-import com.bolaa.sleepingbar.view.CircleImageView;
 import com.bolaa.sleepingbar.view.TrendView;
-import com.bolaa.sleepingbar.view.wheel.NumericWheelAdapter;
-import com.bolaa.sleepingbar.view.wheel.OnWheelScrollListener;
-import com.bolaa.sleepingbar.view.wheel.WheelView;
-import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
 import com.core.framework.store.sharePer.PreferencesUtils;
-import com.core.framework.util.DialogUtil;
-import com.core.framework.util.IOSDialogUtil;
-import com.core.framework.util.IOSDialogUtil.OnSheetItemClickListener;
-import com.core.framework.util.IOSDialogUtil.SheetItemColor;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 

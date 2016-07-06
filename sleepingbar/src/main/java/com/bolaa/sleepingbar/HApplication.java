@@ -27,6 +27,7 @@ import com.bolaa.sleepingbar.ui.MainActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.bolaa.sleepingbar.utils.ShareUtil;
+import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.MyApplication;
 import com.core.framework.app.devInfo.ScreenUtil;
@@ -80,7 +81,6 @@ public class HApplication extends MyApplication {
 
 	@Override
 	public void checkService() {
-
 	}
 
 	@Override
@@ -286,6 +286,16 @@ public class HApplication extends MyApplication {
         });
     }
 
+
+	public void autoConnectedWatch(){
+		String macAddress=PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+		if(AppUtil.isNull(macAddress)){
+			return;
+		}
+		Intent intent = new Intent(this, WatchService.class);
+		intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,macAddress);
+		startService(intent);
+	}
 
 	
 }

@@ -25,6 +25,7 @@ import com.bolaa.sleepingbar.model.Watch;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateUtil;
 import com.core.framework.develop.LogUtil;
+import com.core.framework.store.sharePer.PreferencesUtils;
 
 import java.util.Arrays;
 import java.util.UUID;
@@ -75,6 +76,9 @@ public class WatchService extends Service{
 //        scanLeDevice(true);
         if(intent!=null){
             currentAddress=intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS);
+        }
+        if(currentAddress==null){
+            currentAddress= PreferencesUtils.getString(FLAG_CURRENT_DEVICE_ADDRESS);
         }
         tryConnect(intent);
         return super.onStartCommand(intent, flags, startId);
@@ -216,13 +220,7 @@ public class WatchService extends Service{
 //                    enableNotificationWrite(gatt);
                 }
             });
-            new Handler(getMainLooper()).postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    CMDHandler.cmdGetSleepInfo(writeCharacteristic,(byte)0);
-                    mBLE.writeCharacteristic(writeCharacteristic);
-                }
-            },3*1000);
+
         }
 
     };
@@ -300,7 +298,10 @@ public class WatchService extends Service{
     //必须在主线程执行
     public void enableNotification(BluetoothGatt mBluetoothGatt,boolean b){
             BluetoothGattService service =mBluetoothGatt.getService(UUID.fromString("000056ff-0000-1000-8000-00805f9b34fb"));
-
+            if(service==null){
+                AppUtil.showToast(getApplicationContext(),"请连接小趣手环");
+                return;
+            }
             readCharacteristic =service.getCharacteristic(WatchConstant.UUID_CHARA_READ);
             writeCharacteristic =service.getCharacteristic(WatchConstant.UUID_CHARA_WRITE);
 
@@ -308,7 +309,17 @@ public class WatchService extends Service{
 
             LogUtil.d("watch--- setnotification = " + set);
             BluetoothGattDescriptor dsc =readCharacteristic.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
-
+            if(dsc==null){
+                AppUtil.showToast(getApplicationContext(),"该设备无可用特征通道");
+                return;
+            }
+            new Handler(getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    CMDHandler.cmdGetSleepInfo(writeCharacteristic,(byte)0);
+                    mBLE.writeCharacteristic(writeCharacteristic);
+                }
+            },3*1000);
             dsc.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             boolean success =mBluetoothGatt.writeDescriptor(dsc);
             LogUtil.d("watch---writing enabledescriptor:" + success);

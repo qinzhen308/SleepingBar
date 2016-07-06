@@ -70,7 +70,7 @@ public class FriendsListAdapter extends AbstractListAdapter<Friends> {
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				OtherUserHomeActivity.invoke(mContext,item.user_id,item.nick_name);
+				OtherUserHomeActivity.invoke(mContext,item.uid,item.nick_name);
 			}
 		});
 		return view;

@@ -81,7 +81,7 @@ public class OtherUserHomeHeader extends LinearLayout{
         tvCare.setText(data.to_care_num);
         tvFriends.setText(data.care_num);
         tvFunds.setText(data.sleep_fund);
-        tvMedalCount.setText(data.medal_count);
+        tvMedalCount.setText(data.medal_count+"枚");
         tvStep.setText(data.walk_total);
     }
 
