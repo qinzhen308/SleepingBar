@@ -8,6 +8,11 @@ public class WXInfo {
 	private String sign;
 	private String trade_type;
 	private String timestamp;
+	private String order_sn;
+	private String result_code;
+	private String return_code;
+	private String return_msg;
+
 
 	public String getAppid() {
 		return appid;

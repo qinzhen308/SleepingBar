@@ -86,8 +86,9 @@ public class WatchService extends Service{
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         unregistBroadcast();
+        mBLE.close();
+        super.onDestroy();
     }
 
     @Override

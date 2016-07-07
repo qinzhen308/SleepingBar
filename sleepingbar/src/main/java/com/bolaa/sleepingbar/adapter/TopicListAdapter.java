@@ -75,8 +75,7 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 
 			@Override
 			public void onClick(View widget) {
-				AppUtil.showToast(mContext,"点了个几");
-				QuickBindWXActivity.invoke(mContext);
+				BBSPostsDetailActivity.invoke(mContext,item.id);
 			}
 		}, content.length()-2, content.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		spannableString1.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.main)),content.length()-2, content.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

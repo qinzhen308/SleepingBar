@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.bolaa.sleepingbar.HApplication;
@@ -54,7 +55,9 @@ public class AddFriendsActivity extends BaseListActivity implements LoadStateCon
 	}
 
 	private void initView(){
-		setActiviyContextView(R.layout.activity_add_friends, true, true);
+		setActiviyContextView(R.layout.activity_add_friends, false, true);
+		mLoadStateController = new LoadStateController(this,(FrameLayout) findViewById(R.id.layout_load_state_container));
+		hasLoadingState=true;
 		setTitleText("", "添加好友", 0, true);
 		etSearch=(EditText)findViewById(R.id.et_search);
 		tvLabel=(TextView) findViewById(R.id.tv_label);
@@ -101,6 +104,10 @@ public class AddFriendsActivity extends BaseListActivity implements LoadStateCon
 			showLoading();
 		}
 		ParamBuilder params=new ParamBuilder();
+		if(HApplication.getInstance().mLocation!=null){
+			params.append("lat", HApplication.getInstance().mLocation.getLatitude());//纬度
+			params.append("lng",HApplication.getInstance().mLocation.getLongitude());//经度
+		}
 		if(isRefresh){
 			immediateLoadData(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_SEARCH_FRIENDS), FriendsWraper.class);
 		}else {

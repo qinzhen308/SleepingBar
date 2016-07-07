@@ -48,6 +48,7 @@ public class QuickBindWXActivity extends BaseActivity{
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.invoke(QuickBindWXActivity.this);
                 finish();
             }
         });
@@ -129,6 +130,7 @@ public class QuickBindWXActivity extends BaseActivity{
                         if(baseObject.status==BaseObject.STATUS_OK){
                             HApplication.getInstance().loadUserInfo();
                             AppUtil.showToast(getApplicationContext(),baseObject.info);
+                            MainActivity.invoke(QuickBindWXActivity.this);
                             finish();
                         }else {
                             AppUtil.showToast(getApplicationContext(),baseObject.info);

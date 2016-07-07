@@ -5,17 +5,24 @@ import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.model.HomeSleepInfo;
 import com.bolaa.sleepingbar.model.Supporter;
+import com.bolaa.sleepingbar.model.Topic;
+import com.bolaa.sleepingbar.parser.gson.BaseObject;
+import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
 import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Constants;
 import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
+import com.core.framework.develop.LogUtil;
+import com.core.framework.net.NetworkWorker;
 import com.core.framework.util.MD5Util;
 
 import android.content.BroadcastReceiver;
@@ -69,6 +76,10 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	private View layoutSleepTrend;
 	private View layoutMedal;
 
+	private HomeSleepInfo sleepInfo;
+
+	private boolean isLoading;
+
 	@Override
 	public void onResume() {
 
@@ -81,7 +92,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 
 	@Override
 	public void heavyBuz() {
-
+		loadSleepInfo();
 	}
 
 	@Override
@@ -105,8 +116,8 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 		// initData(false);
+		loadSleepInfo();
 	}
-
 
 	public void initView() {
 		layoutSupport=baseLayout.findViewById(R.id.layout_funds_supporter);
@@ -148,6 +159,49 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		tvNeedFriends2.setOnClickListener(this);
 
 	}
+
+	private void loadSleepInfo() {
+		if(isLoading)return;
+		isLoading=true;
+		showLoading();
+		ParamBuilder params=new ParamBuilder();
+
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_HOME), new NetworkWorker.ICallback() {
+
+			@Override
+			public void onResponse(int status, String result) {
+				// TODO Auto-generated method stub
+				if (status == 200) {
+					BaseObject<HomeSleepInfo> object = GsonParser.getInstance().parseToObj(result,HomeSleepInfo.class);
+					if (object != null && object.status == BaseObject.STATUS_OK && object.data != null) {
+						sleepInfo=object.data;
+						setSleepInfo();
+					} else {
+						AppUtil.showToast(getActivity(),object!=null?object.info:"解析失败");
+					}
+				} else {
+					AppUtil.showToast(getActivity(),"请求失败");
+				}
+				isLoading=false;
+			}
+		});
+
+	}
+
+	private void setSleepInfo(){
+		tvSleepDate.setText(sleepInfo.sleep_date);
+		tvFunds.setText(sleepInfo.sleep_fund);
+		tvFundsGot.setText("已累计收货基金"+sleepInfo.got_fund+"元");
+		tvSleepTip.setText(sleepInfo.desc);
+		tvSleepQuanlity.setText(sleepInfo.quality_rating);
+		tvDeepSleep.setText(sleepInfo.deep_time);
+		tvLightSleep.setText(sleepInfo.no_deep_time);
+		tvSupport.setText(sleepInfo.support_num);
+		tvMedal.setText(sleepInfo.medal_num);
+		tvRankinglist.setText(sleepInfo.sleep_rank);
+	}
+
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub

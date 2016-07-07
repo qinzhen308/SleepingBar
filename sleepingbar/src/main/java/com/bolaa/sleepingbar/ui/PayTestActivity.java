@@ -1,7 +1,9 @@
 package com.bolaa.sleepingbar.ui;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,6 +21,7 @@ import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Order;
 import com.bolaa.sleepingbar.model.PayMode;
+import com.bolaa.sleepingbar.model.WXInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
@@ -39,6 +42,9 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 	ListView lvPayMode;
 	PayModeAdapter mAdapter;
 
+	BroadcastReceiver mReceiver;
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,27 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		initView();
 		setListener();
 		loadPageInfo();
+		mReceiver = new BroadcastReceiver() {
+
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				if (intent.getIntExtra("state", 0) == 1) {
+					resultForZhifubao(1, intent.getStringExtra("detail"));
+				} else {
+					resultForZhifubao(0, intent.getStringExtra("detail"));
+				}
+			}
+		};
+
+		registerReceiver(mReceiver, new IntentFilter("colsePay"));
+	}
+
+	@Override
+	protected void onDestroy() {
+		if(mReceiver!=null){
+			unregisterReceiver(mReceiver);
+		}
+		super.onDestroy();
 	}
 
 	private void setExtra(){
@@ -145,7 +172,8 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 							//提交成功
 //							PayResultActivity.invoke(PayTestActivity.this, 1);
 							if("wxpay".equals(mAdapter.getPayModeCode())){
-								AppUtil.showToast(getApplicationContext(), "提交成功，等待后续接入支付");
+								BaseObject<WXInfo> obj = GsonParser.getInstance().parseToObj(result, WXInfo.class);
+								PayUtil.wayToWX(PayTestActivity.this,obj.data);
 							}else {
 								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.price,object.data.out_trade_no,object.data.subject,object.data.return_url);
 							}

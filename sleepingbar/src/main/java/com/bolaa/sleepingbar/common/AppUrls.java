@@ -26,8 +26,9 @@ public class AppUrls {
 	
 	//------------------------ 华丽的分割线----------------
 	public String APP_KEY="test";
-	public String BASE_URL="http://192.168.2.126/beijingsleep/app/";
-	
+//	public String BASE_URL="http://192.168.2.126/beijingsleep/app/";
+	public String BASE_URL="http://bjsleep.m1ju.com/app/";
+
 	public String URL_REGISTER=BASE_URL+"&c=user&act=reg_act";
 	public String URL_USER_INFO_SAVE=BASE_URL+"user.php?act=do_edit_userinfo";//修改或保存个人资料
 
@@ -47,6 +48,7 @@ public class AppUrls {
 	public String URL_HOSPITAL_EVALUATE_LIST=BASE_URL+"&c=hospital&act=comment_list";//评论列表
 	public String URL_CHECK_UPDATE=BASE_URL+"";//升级
 
+	public String URL_HOME=BASE_URL+"sleep.php?act=index";//睡吧首页
 	public String URL_SUPPORTER_LIST=BASE_URL+"sleep.php?act=my_funds";//我的基金页面，也就是基金支持者列表
 	public String URL_SUPPORTER_DETAIL=BASE_URL+"sleep.php?act=fund_detail";//某支持者对我支持基金的明细
 	public String URL_FUNDS_RANKING_LIST=BASE_URL+"sleep.php?act=friend_fund_ranking";//基金排行
@@ -86,6 +88,7 @@ public class AppUrls {
 
 	public String URL_BIND_WX_USER_INFO=BASE_URL+"user.php?act=bind_weixin";//微信绑定
 	public String URL_BIND_WATCH_MAC_ADDRESS=BASE_URL+"user.php?act=bind_equipment";//手环绑定
+	public String URL_UNBIND_WATCH_MAC_ADDRESS=BASE_URL+"user.php?act=unbind_equipment";//手环绑定
 	public String URL_WATCH_SYNC_SLEEP=BASE_URL+"sync.php?act=sleep_save";//同步睡眠信息到服务器
 	public String URL_WATCH_SYNC_STEP=BASE_URL+"sync.php?act=walk_save";//同步运动信息到服务器
 

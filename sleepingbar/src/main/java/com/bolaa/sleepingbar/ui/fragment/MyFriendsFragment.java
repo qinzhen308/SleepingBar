@@ -100,6 +100,7 @@ public class MyFriendsFragment extends BaseListFragment implements PullToRefresh
 		mPullSwipeListView=(PullSwipeListView) baseLayout.findViewById(R.id.pull_listview);
         mPullSwipeListView.setMode(PullToRefreshBase.MODE_PULL_DOWN_TO_REFRESH);
 		mSwipeListView=(SwipeListView) mPullSwipeListView.getRefreshableView();
+		mSwipeListView.setFooterDividersEnabled(false);
         if(pageType==PAGE_TYPE_I_CARE){
             mSwipeListView.setRightViewWidth(ScreenUtil.dip2px(getActivity(),80));//右边距离
         }else {

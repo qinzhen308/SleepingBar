@@ -25,8 +25,10 @@ import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullListView;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullToRefreshBase;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.net.NetworkWorker;
+import com.core.framework.store.sharePer.PreferencesUtils;
 import com.core.framework.util.DialogUtil;
 
 import java.util.List;
@@ -88,9 +90,9 @@ public class DeviceInfoActivity extends BaseListActivity implements LoadStateCon
 		((DeviceInfoListAdapter)mAdapter).setUnbindListener(new DeviceInfoListAdapter.UnbindListener() {
 			@Override
 			public void doUnbind(Watch watch) {
-				AppUtil.showToast(getApplicationContext(),"接口还没有。。。");
-				return;
-//				unBindWatch();
+
+				unBindWatch(watch.id);
+
 			}
 		});
 	}
@@ -122,22 +124,27 @@ public class DeviceInfoActivity extends BaseListActivity implements LoadStateCon
 	}
 
 	//还没做
-	private void unBindWatch(){
+	private void unBindWatch(String device_id){
 		DialogUtil.showDialog(lodDialog);
 		ParamBuilder params=new ParamBuilder();
-		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_DEVICE_HISTORY), new NetworkWorker.ICallback() {
+		params.append("equipment_id",device_id);
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_UNBIND_WATCH_MAC_ADDRESS), new NetworkWorker.ICallback() {
 			@Override
 			public void onResponse(int status, String result) {
 				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
 				if(status==200){
-					BaseObjectList<Watch> object= GsonParser.getInstance().parseToObj4List(result,Watch.class);
+					BaseObject<Object> object= GsonParser.getInstance().parseToObj(result,Object.class);
 					if(object!=null){
-						if(object.status==BaseObjectList.STATUS_OK){
-							mAdapter.setList(object.data);
-							mAdapter.notifyDataSetChanged();
+						if(object.status==BaseObject.STATUS_OK){
+							initData();
+							//删掉缓存的mac地址
+							PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+							//停止蓝牙服务
+							stopService(new Intent(DeviceInfoActivity.this, WatchService.class));
 						}else {
-							AppUtil.showToast(getApplicationContext(),"还没绑定任何设备");
+
 						}
+						AppUtil.showToast(getApplicationContext(),object.info);
 					}else {
 						AppUtil.showToast(getApplicationContext(),"解析出错");
 					}

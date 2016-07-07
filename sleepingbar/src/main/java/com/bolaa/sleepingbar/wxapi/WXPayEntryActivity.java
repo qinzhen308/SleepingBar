@@ -46,7 +46,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 		} else if (-2 == resp.errCode) {
 			erroString = "您已取消了支付！";
 		}
-
+		final int state=resp.errCode==0?1:0;
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("支付结果通知");
 		builder.setMessage(erroString);
@@ -54,7 +54,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 		builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				sendBroadcast(new Intent().setAction("colsePay"));
+				sendBroadcast(new Intent().setAction("colsePay").putExtra("state",state));
 				dialog.dismiss();
 				finish();
 			}

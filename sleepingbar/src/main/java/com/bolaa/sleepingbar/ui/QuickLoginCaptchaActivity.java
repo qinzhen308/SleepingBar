@@ -174,7 +174,7 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
                                             object.data);
                                     AppStatic.getInstance().saveUser(object.data);
                                     HApplication.getInstance().uploadRegistrationId(HApplication.getInstance().push_regestion_id);
-                                    MainActivity.invoke(QuickLoginCaptchaActivity.this);
+                                    QuickBindWatchActivity.invoke(QuickLoginCaptchaActivity.this);
                                     setResult(RESULT_OK);
                                     finish();
                                 }else {

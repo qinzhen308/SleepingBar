@@ -21,6 +21,7 @@ import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.DeviceBindingListAdapter;
 import com.bolaa.sleepingbar.base.BaseActivity;
+import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateTimeUtils;
 import com.bolaa.sleepingbar.watch.BluetoothLeClass;
@@ -54,11 +55,13 @@ public class QuickBindWatchActivity extends BaseActivity{
     private WatchConnectReceiver receiver;
 
     private ProgressBar progressBar;
+    private int from;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        from=getIntent().getIntExtra("from_login",0);
         initView();
         setListener();
         initBLE();
@@ -107,7 +110,7 @@ public class QuickBindWatchActivity extends BaseActivity{
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                jumpToWhere();
             }
         });
 
@@ -119,6 +122,18 @@ public class QuickBindWatchActivity extends BaseActivity{
         });
     }
 
+    //跳转
+    private void jumpToWhere(){
+        if(from==1){
+            if(AppUtil.isNull(AppStatic.getInstance().getmUserInfo().avatar)){//用是否有头像判断是否绑定微信，其实不合理
+                QuickBindWXActivity.invoke(this);
+            }else {
+                MainActivity.invoke(this);
+            }
+        }
+        finish();
+    }
+
     private void initView() {
         setActiviyContextView(R.layout.activity_quick_bind_watch, false, false);
         tvSearch=(TextView)findViewById(R.id.tv_search_devices);
@@ -127,6 +142,11 @@ public class QuickBindWatchActivity extends BaseActivity{
         progressBar =(ProgressBar) findViewById(R.id.progress_bar);
         mAdapter=new DeviceBindingListAdapter(this);
         lvDevices.setAdapter(mAdapter);
+        if(from==1){
+            tvSkip.setVisibility(View.VISIBLE);
+        }else {
+            tvSkip.setVisibility(View.GONE);
+        }
     }
 
     private void scanLeDevice(final boolean enable) {
@@ -170,6 +190,9 @@ public class QuickBindWatchActivity extends BaseActivity{
 
     public static void invoke(Context context){
         Intent intent=new Intent(context,QuickBindWatchActivity.class);
+        if(context instanceof QuickLoginActivity){
+            intent.putExtra("from_login",1);
+        }
         context.startActivity(intent);
     }
 
@@ -200,7 +223,7 @@ public class QuickBindWatchActivity extends BaseActivity{
                 sendBroadcast(broadcast);
                 HApplication.getInstance().uploadWatchMacAddress(intent.getStringExtra("device_name"),intent.getStringExtra("device_address"));
                 PreferencesUtils.putString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,intent.getStringExtra("device_address"));
-                finish();
+                jumpToWhere();
             }
         }
     }
