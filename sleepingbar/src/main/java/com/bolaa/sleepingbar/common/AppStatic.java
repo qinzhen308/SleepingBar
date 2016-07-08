@@ -151,6 +151,17 @@ public class AppStatic {
 		PreferencesUtils.putInteger("is_runking", user.is_runking);
 	}
 
+	//只存修改个人信息页面获取的相关数据
+	public void updateUserPartly(UserInfo userPartly) {
+		putData("user_id", userPartly.user_id);
+		putData("nick_name", userPartly.nick_name);
+		putData("avatar", userPartly.avatar);
+		putData("sex", userPartly.sex);
+		putData("birthday", userPartly.birthday);
+		putData("height", userPartly.height);
+		putData("weight", userPartly.weight);
+	}
+
 	private void putData(String key, String value) {
 		if (value == null) {
 			value = "";

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.TextView;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.DeviceInfoListAdapter;
 import com.bolaa.sleepingbar.common.APIUtil;
@@ -137,10 +138,7 @@ public class DeviceInfoActivity extends BaseListActivity implements LoadStateCon
 					if(object!=null){
 						if(object.status==BaseObject.STATUS_OK){
 							initData();
-							//删掉缓存的mac地址
-							PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
-							//停止蓝牙服务
-							stopService(new Intent(DeviceInfoActivity.this, WatchService.class));
+							HApplication.getInstance().stopWatchService(DeviceInfoActivity.this);
 						}else {
 
 						}

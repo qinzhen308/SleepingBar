@@ -3,6 +3,7 @@ package com.bolaa.sleepingbar.ui.fragment;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.common.APIUtil;
+import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.HomeSleepInfo;
@@ -10,6 +11,7 @@ import com.bolaa.sleepingbar.model.Supporter;
 import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
+import com.bolaa.sleepingbar.ui.CommonWebActivity;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
@@ -18,11 +20,14 @@ import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Constants;
+import com.bolaa.sleepingbar.utils.DateUtil;
 import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
+import com.core.framework.store.sharePer.PreferencesUtils;
 import com.core.framework.util.MD5Util;
 
 import android.content.BroadcastReceiver;
@@ -36,6 +41,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Date;
 
 
 /**
@@ -99,6 +109,12 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	public void onPause() {
 		super.onPause();
 		getActivity().unregisterReceiver(mReceiver);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		cacheStep();
 	}
 
 	@Override
@@ -216,9 +232,9 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		}else if(v==tvNeedFriends){
             ParamBuilder params= new ParamBuilder();
             params.clear();
-//            String info =tvWalk.getText().toString()+"_"+tvRun.getText().toString()+"_"+tvDistance.getText().toString()+"_"+tvCalorie.getText().toString();
-//            params.append("info",info);
-//            params.append("s", MD5Util.getMD5(info+"_iphone_android"));
+            String info =sleepInfo.sleep_info_id;
+            params.append("id",info);
+            params.append("s", MD5Util.getMD5(info+"_iphone_android"));
             ShareUtil shareUtil=new ShareUtil(getActivity(),"睡眠分享", "比比看",APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_SLEEP_SHARE));
 			shareUtil.showShareDialog();
 		}else if(v==tvNeedFriends2){
@@ -226,9 +242,12 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			params.clear();
             String info =tvWalk.getText().toString()+"_"+tvRun.getText().toString()+"_"+tvDistance.getText().toString()+"_"+tvCalorie.getText().toString();
 			params.append("info",info);
+			params.append("id", AppStatic.getInstance().getmUserInfo().user_id);
 			params.append("s", MD5Util.getMD5(info+"_iphone_android"));
 			ShareUtil shareUtil=new ShareUtil(getActivity(),"运动分享", "比比看",APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_MOVEMENT_SHARE));
 			shareUtil.showShareDialog();
+		}else if(v==tvFundsHelp){
+			CommonWebActivity.invoke(getActivity(),AppUrls.getInstance().URL_SLEEP_HELP,"睡眠基金说明");
 		}
 	}
 
@@ -239,6 +258,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		public void onReceive(Context context, Intent intent) {
 			String action=intent.getAction();
 			if(WatchConstant.ACTION_WATCH_UPDATE_STEP.equals(action)){
+				shouldCahe=true;
 				int[] stepInfo=intent.getIntArrayExtra(WatchConstant.FLAG_STEP_INFO);
 				stepTotal=stepInfo[2];
 				tvStep.setText(""+stepInfo[2]);
@@ -254,4 +274,25 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			}
 		}
 	};
+
+	private boolean shouldCahe;
+	private void cacheStep(){
+		if(!shouldCahe)return;
+		JSONObject walk_data=new JSONObject();
+		try {
+			walk_data.putOpt("date", DateUtil.getYMDDate(new Date()));
+			walk_data.putOpt("equipment", PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_NAME));
+			walk_data.putOpt("mac",PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS));
+			walk_data.putOpt("run_total",tvRun.getText().toString());
+			walk_data.putOpt("times",tvStep.getText().toString());
+			walk_data.putOpt("walk_total",tvWalk.getText().toString());
+			walk_data.putOpt("kilometre",tvDistance.getText().toString());
+			walk_data.putOpt("calorie",tvCalorie.getText().toString());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		PreferencesUtils.putString(WatchConstant.FLAG_STEP_CACHE,walk_data.toString());
+	}
+
+
 }

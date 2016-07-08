@@ -40,6 +40,9 @@ import com.core.framework.util.DialogUtil;
 import com.core.framework.util.StringUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;
@@ -95,7 +98,8 @@ public class HApplication extends MyApplication {
 			e.printStackTrace();
 		}
         loadUserInfo();
-    }
+		synchStep();
+	}
 
 	@Override
 	public void doBusyTransaction() {
@@ -295,6 +299,31 @@ public class HApplication extends MyApplication {
 		Intent intent = new Intent(this, WatchService.class);
 		intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,macAddress);
 		startService(intent);
+	}
+
+	public void stopWatchService(Context context){
+		//删掉缓存的mac地址
+		PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+		PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_NAME);
+		//停止蓝牙服务
+		stopService(new Intent(context, WatchService.class));
+	}
+
+	public void synchStep(){
+		HttpRequester requester=new HttpRequester();
+		requester.getParams().put("walk_data",PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE));
+		NetworkWorker.getInstance().postCallbackInBg(AppUrls.getInstance().URL_WATCH_SYNC_STEP, new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(status==200){
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null&&obj.status==BaseObject.STATUS_OK){
+						PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE);
+					}
+				}
+			}
+		},requester);
+
 	}
 
 	

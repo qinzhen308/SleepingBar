@@ -149,8 +149,8 @@ public class MyInfoActivity extends BaseActivity {
                                 AppUtil.showToast(getApplicationContext(), "修改成功");
                                 switchMode();
                             }
-                            AppStatic.getInstance().saveUser(object.data);
-                            AppStatic.getInstance().setmUserInfo(object.data);
+                            AppStatic.getInstance().updateUserPartly(object.data);
+                            AppStatic.getInstance().setmUserInfo(AppStatic.getInstance().getUser());
                             initData();
                         }else {
                             AppUtil.showToast(getApplicationContext(), object.info);

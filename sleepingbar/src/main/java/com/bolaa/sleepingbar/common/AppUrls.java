@@ -95,6 +95,7 @@ public class AppUrls {
 	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";
 	public String URL_ARTICAL_LAW="http://baidu.com";
 	public String URL_ARTICAL_ABOUT="http://baidu.com";
+	public String URL_SLEEP_HELP=BASE_URL+"user.php?act=service_terms";
 
 	public String URL_MEDAL_SHARE=BASE_URL+"user_share.php?act=share_sleepinfo";
 	public String URL_MOVEMENT_SHARE=BASE_URL+"user_share.php?act=share_walkinfo";

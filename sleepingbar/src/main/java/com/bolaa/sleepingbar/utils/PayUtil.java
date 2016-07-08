@@ -189,6 +189,7 @@ public class PayUtil {
 
 		// 服务器异步通知页面路径
 		orderInfo += "&notify_url=" + "\"" + notify_url +"\"";
+//		orderInfo += "&notify_url=" + notify_url ;
 
 		// 服务接口名称， 固定值
 		orderInfo += "&service=\"mobile.securitypay.pay\"";

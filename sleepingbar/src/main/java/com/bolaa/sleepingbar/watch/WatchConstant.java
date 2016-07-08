@@ -26,4 +26,5 @@ public class WatchConstant {
     public final static String FLAG_DEVICE_DATE="flag_device_date";
     public final static String FLAG_STEP_INFO="flag_step_info";
     public final static String FLAG_RUN_INFO="flag_run_info";
+    public final static String FLAG_STEP_CACHE="flag_step_cache";//缓存的步数信息，每次打开客户端会上传,然后再清除
 }

@@ -175,7 +175,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 								BaseObject<WXInfo> obj = GsonParser.getInstance().parseToObj(result, WXInfo.class);
 								PayUtil.wayToWX(PayTestActivity.this,obj.data);
 							}else {
-								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.price,object.data.out_trade_no,object.data.subject,object.data.return_url);
+								PayUtil.wayToZhifubao(PayTestActivity.this,object.data.price,object.data.out_trade_no,object.data.subject,object.data.notify_url);
 							}
 						} else {
 							AppUtil.showToast(getApplicationContext(), object.info);
@@ -298,7 +298,7 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		public String out_trade_no;
 		public String pay_online;
 		public String price;
-		public String return_url;
+		public String notify_url;
 		public String subject;
 	}
 

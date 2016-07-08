@@ -73,8 +73,10 @@ public class CMDHandler {
         switch (data[0]){
             case CMD_RUN_STEP:
                 context.sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_UPDATE_RUN).putExtra(WatchConstant.FLAG_RUN_INFO,data));
+                break;
             case CMD_MOVEMENT:
                 context.sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_UPDATE_STEP).putExtra(WatchConstant.FLAG_STEP_INFO,data));
+                break;
         }
     }
 

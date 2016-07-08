@@ -41,6 +41,7 @@ public class WatchService extends Service{
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
     public static final String FLAG_CURRENT_DEVICE_ADDRESS="flag_current_device_address";
+    public static final String FLAG_CURRENT_DEVICE_NAME="flag_current_device_name";
 
 
     /**搜索BLE终端*/
@@ -343,8 +344,6 @@ public class WatchService extends Service{
         Toast.makeText(getApplicationContext(),"33f3通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
     }
 
-    private void setInfo(){
-    }
 
     public class WatchCMDReceiver extends BroadcastReceiver{
         @Override

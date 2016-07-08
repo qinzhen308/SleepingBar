@@ -13,4 +13,5 @@ public class Medal {
     public String m_name;//勋章名称
     public String user_id;
     public String img;//勋章图片
+    public int is_got;//是否已经获得
 }

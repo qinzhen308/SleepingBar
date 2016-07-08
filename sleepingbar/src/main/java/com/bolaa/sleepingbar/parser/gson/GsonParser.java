@@ -44,6 +44,7 @@ public class GsonParser {
 			if(obj!=null&&obj.status==BaseObject.STATUS_EXPIRE){
 				HApplication.getInstance().saveToken("");
 				AppStatic.getInstance().clearLoginStatus();
+				HApplication.getInstance().stopWatchService(HApplication.getInstance());
 			}
 		} catch (JsonSyntaxException e) {
 			// TODO Auto-generated catch block
@@ -76,6 +77,7 @@ public class GsonParser {
 			if(obj!=null&&obj.status==BaseObject.STATUS_EXPIRE){
 				HApplication.getInstance().saveToken("");
 				AppStatic.getInstance().clearLoginStatus();
+				HApplication.getInstance().stopWatchService(HApplication.getInstance());
 			}
 		} catch (JsonSyntaxException e) {
 			// TODO Auto-generated catch block
@@ -138,6 +140,7 @@ public class GsonParser {
 				if(obj.status==BaseObject.STATUS_EXPIRE){
 					HApplication.getInstance().saveToken("");
 					AppStatic.getInstance().clearLoginStatus();
+					HApplication.getInstance().stopWatchService(HApplication.getInstance());
 				}
 				return obj.data;
 			}
@@ -191,6 +194,7 @@ public class GsonParser {
 		if(state==BaseObject.STATUS_EXPIRE){
 			HApplication.getInstance().saveToken("");
 			AppStatic.getInstance().clearLoginStatus();
+			HApplication.getInstance().stopWatchService(HApplication.getInstance());
 		}
 			BaseObject baseObject=new BaseObject();
 			baseObject.info =msg;
@@ -213,6 +217,7 @@ public class GsonParser {
 		if(state==BaseObject.STATUS_EXPIRE){
 			HApplication.getInstance().saveToken("");
 			AppStatic.getInstance().clearLoginStatus();
+			HApplication.getInstance().stopWatchService(HApplication.getInstance());
 		}
 		BaseObjectList baseObject=new BaseObjectList();
 		baseObject.info =msg;

@@ -66,7 +66,7 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 	/**
 	 * 显示退出登录
 	 */
-	private void showLogoutDialog(String name,final String address) {
+	private void showLogoutDialog(final String name,final String address) {
 		if (dialog == null) {
 			View logoutView = LayoutInflater.from(mContext).inflate(R.layout.dialog_bind_watch_tip, null);
 			tipView=(TextView)logoutView.findViewById(R.id.tv_tip);
@@ -86,6 +86,7 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 					// TODO Auto-generated method stub
 					Intent intent=new Intent(mContext, WatchService.class);
 					intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,address);
+					intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_NAME,name);
 					mContext.startService(intent);
                     if(!((Activity)mContext).isFinishing())dialog.dismiss();
                 }

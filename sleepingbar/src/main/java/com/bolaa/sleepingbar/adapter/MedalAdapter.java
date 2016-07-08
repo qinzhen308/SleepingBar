@@ -112,6 +112,11 @@ public class MedalAdapter extends AbstractListAdapter<Medal> {
 		tvDetail.setText(medal.m_explain);
 		Image13Loader.getInstance().loadImageFade(medal.img,ivAvatar);
 		DialogUtil.showDialog(medalDialog);
+		if(medal.is_got==1){
+			btnShare.setVisibility(View.VISIBLE);
+		}else {
+			btnShare.setVisibility(View.GONE);
+		}
 	}
 
 }

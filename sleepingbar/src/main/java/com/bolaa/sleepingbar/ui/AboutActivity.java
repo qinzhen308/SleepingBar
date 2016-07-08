@@ -90,6 +90,7 @@ public class AboutActivity extends BaseActivity{
                             AppStatic.getInstance().setmUserInfo(null);
                             AppStatic.getInstance().clearUser();
                             HApplication.getInstance().saveToken("");
+                            HApplication.getInstance().stopWatchService(AboutActivity.this);
                             QuickLoginActivity.invoke(AboutActivity.this);
                             setResult(RESULT_OK);
                             finish();

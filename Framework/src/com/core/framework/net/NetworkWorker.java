@@ -376,7 +376,7 @@ public class NetworkWorker {
 		if (callback == null)
 			throw new IllegalArgumentException("callback must not be empty");
 
-		final Handler handler = new Handler();
+		final Handler handler = new Handler(Looper.myLooper());
 
 		threadPool.execute(new Runnable() {
 			@Override
@@ -420,7 +420,7 @@ public class NetworkWorker {
 		if (callback == null)
 			throw new IllegalArgumentException("callback must not be empty");
 
-		final Handler handler = new Handler();
+//		final Handler handler = new Handler();
 
 		threadPool.execute(new Runnable() {
 			@Override
