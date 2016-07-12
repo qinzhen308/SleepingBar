@@ -130,7 +130,6 @@ public class BaseActivity extends Activity implements OnClickListener,
 		}
 	}
 	
-
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {

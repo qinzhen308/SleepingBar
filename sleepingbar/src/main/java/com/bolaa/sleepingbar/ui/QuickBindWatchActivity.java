@@ -190,7 +190,7 @@ public class QuickBindWatchActivity extends BaseActivity{
 
     public static void invoke(Context context){
         Intent intent=new Intent(context,QuickBindWatchActivity.class);
-        if(context instanceof QuickLoginActivity){
+        if(context instanceof QuickLoginCaptchaActivity){
             intent.putExtra("from_login",1);
         }
         context.startActivity(intent);

@@ -14,6 +14,7 @@ import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.model.PraiseResult;
 import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.model.TopicComments;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
@@ -550,10 +551,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 	}
 
 	private void clickGood() {
-		if (posts.is_praise == 1) {
-			AppUtil.showToast(this, "您已点过赞");
-			return;
-		}
+
 		ParamBuilder params = new ParamBuilder();
         params.append("id", "" + posts.id);
 		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_BBS_POSTS_GOOD), new ICallback() {
@@ -562,13 +560,11 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 					public void onResponse(int status, String result) {
 						// TODO Auto-generated method stub
 						if (status == 200) {
-							BaseObject<String> object = GsonParser
-									.getInstance().parseToObj(result,
-											Object.class);
-							if (object != null && object.status == BaseObject.STATUS_OK) {
-								posts.praise_num = posts.praise_num + 1;
-                                posts.is_praise=1;
-                                ivPraise.setImageResource(R.drawable.ic_heart_purple);
+							BaseObject<PraiseResult> object = GsonParser.getInstance().parseToObj(result, PraiseResult.class);
+							if (object != null && object.status == BaseObject.STATUS_OK&&object.data!=null) {
+								posts.praise_num = posts.praise_num + (object.data.op_status==1?1:-1);
+								posts.is_praise=object.data.op_status==1?1:0;
+                                ivPraise.setImageResource(posts.is_praise==1?R.drawable.ic_heart_purple:R.drawable.ic_heart_purple2);
 								tvPraiseCount.setText("" + posts.praise_num);
 //								sendStickyUpdateNotify(1, posts.praise_num);
 							} else {

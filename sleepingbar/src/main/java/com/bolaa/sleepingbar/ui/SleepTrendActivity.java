@@ -10,21 +10,26 @@ import android.os.Handler;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseActivity;
+import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
+import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.parser.gson.BaseObject;
+import com.bolaa.sleepingbar.parser.gson.GsonParser;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateUtil;
 import com.bolaa.sleepingbar.view.TrendView;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
 import com.core.framework.store.sharePer.PreferencesUtils;
+import com.core.framework.util.DialogUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
 import java.util.Random;
 
 /**
@@ -36,6 +41,9 @@ import java.util.Random;
 public class SleepTrendActivity extends BaseActivity {
 
 	private TrendView dayTrend;
+	private TrendView weekTrend;
+	private TrendView monthTrend;
+	private TrendView yearTrend;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,18 +52,32 @@ public class SleepTrendActivity extends BaseActivity {
 		setTitleText("", "睡眠趋势", 0, true);
 		initView();
 		setListener();
-        new Handler().postDelayed(new Runnable() {
+        new Handler().post(new Runnable() {
             @Override
             public void run() {
-//                initData();
-                getData();
+                String sleep_data_per_hour=PreferencesUtils.getString("sleep_data_per_hour");
+                LogUtil.d("sleep---trend-- sleep_data_per_hour="+sleep_data_per_hour);
+                try {
+                    dayTrend.setData(sleep_data_per_hour.getBytes("UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
-        },2000);
+        });
+        loadSleepData();
+        getCollectTime();
+
 	}
 
 	private void initView() {
 		dayTrend=(TrendView)findViewById(R.id.trend_day);
-	}
+		weekTrend=(TrendView)findViewById(R.id.trend_week);
+        monthTrend=(TrendView)findViewById(R.id.trend_month);
+        yearTrend=(TrendView)findViewById(R.id.trend_year);
+        weekTrend.setType(TrendView.TYPE_WEEK);
+        monthTrend.setType(TrendView.TYPE_MONTH);
+        yearTrend.setType(TrendView.TYPE_YEAR);
+    }
 	
 	private void setListener() {
 		// TODO Auto-generated method stub
@@ -82,29 +104,86 @@ public class SleepTrendActivity extends BaseActivity {
 		dayTrend.setData(src);
 	}
 
-    private void getData(){
-        String sleep_data=PreferencesUtils.getString("sleep_data");
-        try {
-            byte[] data=sleep_data.getBytes("UTF-8");
-//            dayTrend.setData(data);
-            upload(data);
-            byte[] data15Sec=new byte[96];
-            for(int i=0;i<data15Sec.length;i++){
-                int sum=0;
-                for(int j=0;j<15;j++){
-                    sum+=data[i*15+j];
+    public void loadSleepData() {
+        DialogUtil.showDialog(lodDialog);
+        ParamBuilder params=new ParamBuilder();
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_GET_SLEEP_IN_YEAR), new NetworkWorker.ICallback() {
+
+            @Override
+            public void onResponse(int status, String result) {
+                if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+                if(status==200){
+                    BaseObject<SleepData> object= GsonParser.getInstance().parseToObj(result, SleepData.class);
+                    if(object!=null){
+                        if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+                            weekTrend.setData(object.data.week_trend);
+                            monthTrend.setData(object.data.mouth_trend);
+                            yearTrend.setData(object.data.year_trend);
+                        }else {
+                            AppUtil.showToast(getApplicationContext(),"解析出错");
+                        }
+                    }else {
+                        AppUtil.showToast(getApplicationContext(),"请求失败");
+                    }
                 }
-                data15Sec[i]=(byte)(sum/15);
+
             }
-            dayTrend.setData(data15Sec);
+        });
+    }
+
+    private void getCollectTime(){
+            ParamBuilder params=new ParamBuilder();
+            NetworkWorker.getInstance().getCallbackInBg(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_SLEEP_DATA_COLLECT_TIME), new NetworkWorker.ICallback() {
+                @Override
+                public void onResponse(int status, String result) {
+                    if(status==200){
+                        BaseObject<SleepCollectTime> object= GsonParser.getInstance().parseToObj(result, SleepCollectTime.class);
+                        if(object!=null){
+                            if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+
+                                uploadTodayData(object.data);
+                            }else {
+                            }
+                        }else {
+
+                        }
+                    }
+
+                }
+            });
+    }
+
+    private void uploadTodayData(SleepCollectTime collectTime){
+        int[] indexs=collectTime.getCollectIndexs();
+        int start=indexs[0]-60*8;
+        int end=indexs[1]-60*8-1;//不包含最后一个点
+        if(end<0){
+            end=-1;
+            collectTime.sleep_end_time="08:00";
+        }
+        String sleep_data=PreferencesUtils.getString("sleep_data_yesterday");
+        byte[] data=new byte[1440-start+end+1];
+        try {
+            LogUtil.d("upload today---data length="+data.length);
+            byte[] data1=sleep_data.getBytes("UTF-8");
+            if(!AppUtil.isEmpty(data1)){
+                System.arraycopy(data1,start,data,0,1440-start);
+            }
+            //今天
+            sleep_data=PreferencesUtils.getString("sleep_data_today");
+            byte[] data2=sleep_data.getBytes("UTF-8");
+            if(!AppUtil.isEmpty(data2)) {
+                System.arraycopy(data2, 0, data, 1440 - start, end + 1);
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        upload(data,collectTime.sleep_start_time,collectTime.sleep_end_time);
     }
 
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
-    private void upload(byte[] data){
+    private void upload(final byte[] data, final String start, String end){
         HttpRequester requester=new HttpRequester();
         JSONArray array= null;
         try {
@@ -117,19 +196,35 @@ public class SleepTrendActivity extends BaseActivity {
 //            requester.getParams().put("data["+i+"]",data[i]);
 //        }
         requester.getParams().put("data",array.toString());
-        long time= (new Date().getTime()/((60*60*24)*1000))*(60*60*24);
-        String sign=AppStatic.getInstance().getmUserInfo().user_id+"_"+System.currentTimeMillis()/1000+"_"+233;
-        requester.getParams().put("sleep_date",time+"");
+//        long time= (new Date().getTime()/((60*60*24)*1000))*(60*60*24);
+        String sign=AppStatic.getInstance().getmUserInfo().user_id+"_"+System.currentTimeMillis()/1000+"_"+133;
+        requester.getParams().put("sleep_date",DateUtil.getYMD_GMTTime(System.currentTimeMillis()));
         requester.getParams().put("sign",sign);
-        requester.getParams().put("sleep_end_time","23:59");
-        requester.getParams().put("sleep_start_time","00:00");
-        LogUtil.d("upload---date="+ DateUtil.getTimeUnitSecond("yyyy-MM-dd hh:mm:ss",time));
+        requester.getParams().put("sleep_end_time",end);
+        requester.getParams().put("sleep_start_time",start);
+//        LogUtil.d("upload---date="+ DateUtil.getTimeUnitSecond("yyyy-MM-dd hh:mm:ss",time));
         LogUtil.d("upload---sign="+ sign);
-        NetworkWorker.getInstance().post(AppUrls.getInstance().URL_WATCH_SYNC_SLEEP, new ICallback() {
+        NetworkWorker.getInstance().postCallbackInBg(AppUrls.getInstance().URL_WATCH_SYNC_SLEEP, new ICallback() {
             @Override
-            public void onResponse(int status, String result) {
+            public void onResponse(final int status, String result) {
                 if(status==200){
                     LogUtil.d("upload---result="+result);
+                    final BaseObject<DaySleepPerHour> obj=GsonParser.getInstance().parseToObj(result,DaySleepPerHour.class);
+                    if(obj!=null&&obj.status==BaseObject.STATUS_OK){
+                        try {
+                            PreferencesUtils.putString("sleep_data_per_hour",new String(obj.data.day_chart,"UTF-8"));
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                dayTrend.setData(obj.data.day_chart);
+                            }
+                        });
+                    }
+
+
                 }
             }
         },requester);
@@ -142,5 +237,41 @@ public class SleepTrendActivity extends BaseActivity {
 		Intent intent =new Intent(context,SleepTrendActivity.class);
 		context.startActivity(intent);
 	}
+
+    public class SleepData{
+        public byte[] mouth_trend;
+        public byte[] week_trend;
+        public byte[] year_trend;
+    }
+
+    public class SleepCollectTime{
+        public String sleep_end_time;
+        public String sleep_start_time;
+
+        public int[] getCollectIndexs(){
+            int[] indexs=new int[2];
+            String[] h_m=sleep_start_time.split(":");
+            indexs[0]=castToInt(h_m[0])*60+castToInt(h_m[1]);
+            h_m=sleep_end_time.split(":");
+            indexs[1]=castToInt(h_m[0])*60+castToInt(h_m[1]);
+            return indexs;
+        }
+
+    }
+
+    private int castToInt(String aa){
+        if(aa.charAt(0)=='0')return Integer.valueOf(aa.charAt(1));
+        return Integer.valueOf(aa);
+    }
+
+
+    public class DaySleepPerHour{
+        public byte[] day_chart;
+        public long sleep_start_time;
+        public String sleep_end_time;
+        public String sign;
+
+
+    }
 
 }

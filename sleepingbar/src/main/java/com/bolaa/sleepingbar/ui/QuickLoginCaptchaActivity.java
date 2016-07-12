@@ -67,7 +67,6 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
         btnNext=(TextView)findViewById(R.id.tv_next);
         btnPrevious=(TextView)findViewById(R.id.tv_phone_again);
         tvGetCaptcha=(TextView)findViewById(R.id.tv_get_captcha);
-
         tvPhone.setText("手机号码："+phone);
     }
 
@@ -94,7 +93,7 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
                             BaseObject<Object> baseObject=GsonParser.getInstance().parseToObj(result, Object.class);
                             if(baseObject!=null&&baseObject.status==BaseObject.STATUS_OK){
                                 AppUtil.showToast(getApplicationContext(), "验证码发送成功");
-                                captchaBtnDisabled();
+//                                captchaBtnDisabled();
                             }else {
                                 AppUtil.showToast(getApplicationContext(), baseObject==null?"发送失败":baseObject.info);
                             }
@@ -202,6 +201,7 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
             login();
         }else if(v==btnPrevious){
             QuickLoginActivity.invoke(this);
+            finish();
         }else if(v==tvGetCaptcha){
             getCode();
         }else {

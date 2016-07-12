@@ -22,6 +22,7 @@ import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.httputil.HttpRequester;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Friends;
+import com.bolaa.sleepingbar.model.PraiseResult;
 import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.model.TopicComments;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
@@ -125,10 +126,6 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 
 
     private void clickGood(final Topic posts) {
-        if (posts.is_praise == 1) {
-            AppUtil.showToast(mContext, "您已点过赞");
-            return;
-        }
         ParamBuilder params = new ParamBuilder();
         params.append("id", "" + posts.id);
         NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_BBS_POSTS_GOOD), new NetworkWorker.ICallback() {
@@ -137,12 +134,10 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
                     public void onResponse(int status, String result) {
                         // TODO Auto-generated method stub
                         if (status == 200) {
-                            BaseObject<String> object = GsonParser
-                                    .getInstance().parseToObj(result,
-                                            Object.class);
-                            if (object != null && object.status == BaseObject.STATUS_OK) {
-                                posts.praise_num = posts.praise_num + 1;
-                                posts.is_praise=1;
+                            BaseObject<PraiseResult> object = GsonParser.getInstance().parseToObj(result, PraiseResult.class);
+                            if (object != null && object.status == BaseObject.STATUS_OK&&object.data!=null) {
+                                posts.praise_num = posts.praise_num + (object.data.op_status==1?1:-1);
+                                posts.is_praise=object.data.op_status==1?1:0;
                                 notifyDataSetChanged();
                             } else {
                                 AppUtil.showToast(mContext, object != null ? object.info : "操作失败");

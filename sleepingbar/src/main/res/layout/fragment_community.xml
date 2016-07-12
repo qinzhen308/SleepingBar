@@ -71,7 +71,7 @@
             android:drawSelectorOnTop="false"
             android:background="@color/white"
             android:fadingEdge="none"
-            android:fastScrollEnabled="true"
+            android:fastScrollEnabled="false"
             android:scrollingCache="false"
             test:showheader="true"
             />

@@ -48,7 +48,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="社区首页"
+                android:text="睡吧"
                 android:textColor="@color/light_gray"
                 android:textSize="@dimen/text_size_small" />
 
@@ -79,7 +79,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="物业中心"
+                android:text="活动"
                 android:textColor="@color/light_gray"
                 android:textSize="@dimen/text_size_small" />
 
@@ -112,7 +112,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="生活超市"
+                android:text="社区"
                 android:textColor="@color/light_gray"
                 android:textSize="@dimen/text_size_small" />
 
@@ -146,7 +146,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="个人中心"
+                android:text="我"
                 android:textColor="@color/light_gray"
                 android:textSize="@dimen/text_size_small" />
 
@@ -193,7 +193,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="社区首页"
+                android:text="睡吧"
                 android:textColor="@color/main"
                 android:textSize="@dimen/text_size_small" />
 
@@ -231,7 +231,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="物业中心"
+                android:text="活动"
                 android:textColor="@color/main"
                 android:textSize="@dimen/text_size_small" />
 
@@ -269,7 +269,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="生活超市"
+                android:text="社区"
                 android:textColor="@color/main"
                 android:textSize="@dimen/text_size_small" />
 
@@ -306,7 +306,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="个人中心"
+                android:text="我"
                 android:textColor="@color/main"
                 android:textSize="@dimen/text_size_small" />
 

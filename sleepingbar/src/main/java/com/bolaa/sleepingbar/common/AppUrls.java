@@ -91,10 +91,12 @@ public class AppUrls {
 	public String URL_UNBIND_WATCH_MAC_ADDRESS=BASE_URL+"user.php?act=unbind_equipment";//手环绑定
 	public String URL_WATCH_SYNC_SLEEP=BASE_URL+"sync.php?act=sleep_save";//同步睡眠信息到服务器
 	public String URL_WATCH_SYNC_STEP=BASE_URL+"sync.php?act=walk_save";//同步运动信息到服务器
+	public String URL_GET_SLEEP_IN_YEAR=BASE_URL+"sync.php?act=sleep_trend";//获取周月年的数据
+	public String URL_SLEEP_DATA_COLLECT_TIME=BASE_URL+"sync.php?act=sleep_time";//采集睡眠数据的时间段
 
-	public String URL_ARTICAL_SERVICE_PROTOCAL="http://baidu.com";
+	public String URL_ARTICAL_SERVICE_PROTOCAL=BASE_URL+"user.php?act=service_terms";
 	public String URL_ARTICAL_LAW="http://baidu.com";
-	public String URL_ARTICAL_ABOUT="http://baidu.com";
+	public String URL_ARTICAL_ABOUT="user.php?act=about_sleepbar";
 	public String URL_SLEEP_HELP=BASE_URL+"user.php?act=service_terms";
 
 	public String URL_MEDAL_SHARE=BASE_URL+"user_share.php?act=share_sleepinfo";

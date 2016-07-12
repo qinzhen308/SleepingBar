@@ -52,11 +52,24 @@ public class DateUtil {
 			"MM-dd HH:mm");
 	public static SimpleDateFormat simpleHSFormat = new SimpleDateFormat(
 			"HH:mm");
-	public static SimpleDateFormat simpleYHMDateFormat = new SimpleDateFormat(
+	public static SimpleDateFormat simpleYHM_GMTDateFormat = new SimpleDateFormat(
 			"yyyy-MM-dd");
 
 	public static SimpleDateFormat utcDateFormat = new SimpleDateFormat(
 			"yyyy-MM-dd'T'HH:mm:ssZ");
+	public static SimpleDateFormat simpleYHMDateFormat = new SimpleDateFormat(
+			"yyyy-MM-dd");
+
+
+	static {
+		simpleYHM_GMTDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+	}
+
+	static {
+		simpleYHMDateFormat.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+	}
+
+
 
 	public static int getDayCountOfYear() {
 		Calendar calendar = Calendar.getInstance();
@@ -284,6 +297,7 @@ public class DateUtil {
 
 	public static String getTime(String pattern, Date date) {
 		SimpleDateFormat format = new SimpleDateFormat(pattern);
+		format.setTimeZone(TimeZone.getDefault());
 		return format.format(date);
 	}
 	
@@ -355,9 +369,12 @@ public class DateUtil {
 
 	}
 
+	public static String getYMD_GMTTime(long source) {
+		return simpleYHM_GMTDateFormat.format(new Date(source));
+	}
+
 	public static String getYMDTime(long source) {
 		return simpleYHMDateFormat.format(new Date(source));
-
 	}
 
 	public static String getHSTime(long source) {
@@ -387,15 +404,19 @@ public class DateUtil {
 		return simpleDateFormat.format(new Date());
 	}
 
+	public static String getYMD_GMTDate(Date date) {
+		return simpleYHM_GMTDateFormat.format(date);
+	}
+
 	public static String getYMDDate(Date date) {
 		return simpleYHMDateFormat.format(date);
 	}
 
-	public static String getYMDDate(String source) {
+	public static String getYMD_GMTDate(String source) {
 		SimpleDateFormat simpleFormat = new SimpleDateFormat("yyyy年M月d日");
 		Date date = new Date();
 		try {
-			date = simpleYHMDateFormat.parse(source);
+			date = simpleYHM_GMTDateFormat.parse(source);
 		} catch (ParseException e) {
 			LogUtil.w(e);
 		}
@@ -1257,7 +1278,7 @@ public class DateUtil {
 	public static String addSomeDays(String oneDay, int days) {
 		String result = "";
 		try {
-			Date date = simpleYHMDateFormat.parse(oneDay);
+			Date date = simpleYHM_GMTDateFormat.parse(oneDay);
 			Calendar calendar = new GregorianCalendar();
 			calendar.setTime(date);
 			calendar.add(calendar.DATE, days);
@@ -1294,7 +1315,7 @@ public class DateUtil {
 	// 获取从今天算起前或者后几（days）天的日期,比如最近7天的，days=-6
 	public static String addSomeDaysSinceToday(int days) {
 		Date date = new Date();
-		return addSomeDays(simpleYHMDateFormat.format(date), days);
+		return addSomeDays(simpleYHM_GMTDateFormat.format(date), days);
 	}
 
 	/**

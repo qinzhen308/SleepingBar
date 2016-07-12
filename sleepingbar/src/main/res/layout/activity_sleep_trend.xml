@@ -16,22 +16,30 @@
             android:scaleType="fitXY"
             android:src="@drawable/bg_trend"/>
 
-        <ImageView
+        <com.bolaa.sleepingbar.view.TrendView
+            android:id="@+id/trend_week"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:scaleType="fitXY"
             android:src="@drawable/bg_trend"/>
 
-        <ImageView
+
+        <com.bolaa.sleepingbar.view.TrendView
+            android:id="@+id/trend_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:scaleType="fitXY"
             android:src="@drawable/bg_trend"/>
 
-        <ImageView
+
+        <com.bolaa.sleepingbar.view.TrendView
+            android:id="@+id/trend_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:scaleType="fitXY"
             android:src="@drawable/bg_trend"/>
 
 

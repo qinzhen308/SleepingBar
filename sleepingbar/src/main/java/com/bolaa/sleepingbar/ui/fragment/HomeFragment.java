@@ -7,25 +7,19 @@ import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.HomeSleepInfo;
-import com.bolaa.sleepingbar.model.Supporter;
-import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.CommonWebActivity;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
-import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
-import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
 import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
-import com.bolaa.sleepingbar.utils.Constants;
 import com.bolaa.sleepingbar.utils.DateUtil;
 import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
-import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.sharePer.PreferencesUtils;
 import com.core.framework.util.MD5Util;
@@ -173,6 +167,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		layoutMedal.setOnClickListener(this);
 		tvNeedFriends.setOnClickListener(this);
 		tvNeedFriends2.setOnClickListener(this);
+		tvFundsHelp.setOnClickListener(this);
 
 	}
 
@@ -215,6 +210,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		tvSupport.setText(sleepInfo.support_num);
 		tvMedal.setText(sleepInfo.medal_num);
 		tvRankinglist.setText(sleepInfo.sleep_rank);
+		tvSleepTrend.setText(sleepInfo.quality_rating);
 	}
 
 
@@ -280,7 +276,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		if(!shouldCahe)return;
 		JSONObject walk_data=new JSONObject();
 		try {
-			walk_data.putOpt("date", DateUtil.getYMDDate(new Date()));
+			walk_data.putOpt("date", DateUtil.getYMD_GMTDate(new Date()));
 			walk_data.putOpt("equipment", PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_NAME));
 			walk_data.putOpt("mac",PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS));
 			walk_data.putOpt("run_total",tvRun.getText().toString());

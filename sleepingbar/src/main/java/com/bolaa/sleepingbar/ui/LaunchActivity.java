@@ -25,7 +25,8 @@ public class LaunchActivity extends Activity{
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				if(HApplication.getInstance().isNewVison()){
+				if(false){
+//				if(HApplication.getInstance().isNewVison()){
 					GuideActivity.invoke(LaunchActivity.this);
 				}else {
 					if(AppStatic.getInstance().isLogin && !AppUtil.isNull(HApplication.getInstance().token)){//已经登录了
