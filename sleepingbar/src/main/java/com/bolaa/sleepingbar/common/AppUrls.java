@@ -98,7 +98,7 @@ public class AppUrls {
 	public String URL_SLEEP_DATA_COLLECT_TIME=BASE_URL+"sync.php?act=sleep_time";//采集睡眠数据的时间段
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL=BASE_URL+"user.php?act=service_terms";
-	public String URL_ARTICAL_LAW=BASE_URL+"ser.php?act=legal_notice";
+	public String URL_ARTICAL_LAW=BASE_URL+"user.php?act=legal_notice";
 	public String URL_ARTICAL_ABOUT=BASE_URL+"user.php?act=about_sleepbar";
 	public String URL_SLEEP_HELP=BASE_URL+"sleep.php?act=fund_spec";
 

@@ -84,6 +84,7 @@ public class HApplication extends MyApplication {
 		PreferencesUtils.putString(AppStatic.ACCESS_TOKEN, token);
 	}
 
+
 	@Override
 	public void checkService() {
 	}

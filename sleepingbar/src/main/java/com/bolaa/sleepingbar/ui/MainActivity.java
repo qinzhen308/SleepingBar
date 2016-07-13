@@ -85,6 +85,15 @@ public class MainActivity extends BaseFragmentActivity implements
 	}
 
 	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		if(intent.getBooleanExtra("cmd_start_login_only",false)){
+			QuickLoginActivity.invoke(this);
+			finish();
+		}
+	}
+
+	@Override
 	public void onLowMemory() {
 		// TODO Auto-generated method stub
 		super.onLowMemory();
@@ -358,6 +367,14 @@ public class MainActivity extends BaseFragmentActivity implements
 		Intent intent = new Intent(context, MainActivity.class);
 		context.startActivity(intent);
 	}
+
+	public static void invoke(Context context,boolean isExpired) {
+		isBackHome = true;
+		Intent intent = new Intent(context, MainActivity.class);
+		intent.putExtra("cmd_start_login_only",isExpired);
+		context.startActivity(intent);
+	}
+
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {

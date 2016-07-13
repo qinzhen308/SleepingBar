@@ -28,11 +28,7 @@ import com.core.framework.util.DialogUtil;
  */
 public abstract class BaseFragmentActivity extends FragmentActivity implements View.OnClickListener{
 
-	@Override
-	public void finish() {
-		super.finish();
-		AppStatic.getInstance().removeActivity(this);
-	}
+
 
 	private TextView mLeftTv;
 	private TextView milddleTv;
