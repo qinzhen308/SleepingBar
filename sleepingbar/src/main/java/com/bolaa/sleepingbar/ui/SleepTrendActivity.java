@@ -52,21 +52,7 @@ public class SleepTrendActivity extends BaseActivity {
 		setTitleText("", "睡眠趋势", 0, true);
 		initView();
 		setListener();
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                String sleep_data_per_hour=PreferencesUtils.getString("sleep_data_per_hour");
-                LogUtil.d("sleep---trend-- sleep_data_per_hour="+sleep_data_per_hour);
-                try {
-                    dayTrend.setData(sleep_data_per_hour.getBytes("UTF-8"));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
         loadSleepData();
-        getCollectTime();
-
 	}
 
 	private void initView() {
@@ -116,6 +102,7 @@ public class SleepTrendActivity extends BaseActivity {
                     BaseObject<SleepData> object= GsonParser.getInstance().parseToObj(result, SleepData.class);
                     if(object!=null){
                         if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+                            dayTrend.setData(object.data.day_trend);
                             weekTrend.setData(object.data.week_trend);
                             monthTrend.setData(object.data.mouth_trend);
                             yearTrend.setData(object.data.year_trend);
@@ -242,6 +229,7 @@ public class SleepTrendActivity extends BaseActivity {
         public byte[] mouth_trend;
         public byte[] week_trend;
         public byte[] year_trend;
+        public byte[] day_trend;
     }
 
     public class SleepCollectTime{

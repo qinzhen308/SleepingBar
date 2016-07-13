@@ -14,4 +14,5 @@ public class Medal {
     public String user_id;
     public String img;//勋章图片
     public int is_got;//是否已经获得
+    public String share_url;//分享链接，只有详情才有数据
 }

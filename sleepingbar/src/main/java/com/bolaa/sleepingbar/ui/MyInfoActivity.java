@@ -36,6 +36,7 @@ import com.bolaa.sleepingbar.view.wheel.NumericWheelAdapter;
 import com.bolaa.sleepingbar.view.wheel.OnWheelScrollListener;
 import com.bolaa.sleepingbar.view.wheel.WheelView;
 import com.bolaa.sleepingbar.watch.WatchConstant;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
@@ -68,6 +69,7 @@ public class MyInfoActivity extends BaseActivity {
 
 	private CircleImageView mIconIv;
 	private TextView mNameTv;
+	private TextView tvUploadAvatar;
 	private TextView mBirthTv;
 	private EditText mNameEt;
 	private EditText mWeightEt;
@@ -121,6 +123,7 @@ public class MyInfoActivity extends BaseActivity {
 		mWeightTv = (TextView) findViewById(R.id.tv_weight);
 		mWeightEt = (EditText) findViewById(R.id.et_weight);
 		mNameEt = (EditText) findViewById(R.id.et_name);
+		tvUploadAvatar = (TextView) findViewById(R.id.tv_upload_avatar);
 		mIconIv.setEnabled(false);
 	}
 	
@@ -232,6 +235,7 @@ public class MyInfoActivity extends BaseActivity {
 			mNameEt.setVisibility(View.VISIBLE);
 			mNameEt.requestFocus();
 			mNameEt.setSelection(mNameEt.getText().length());
+            tvUploadAvatar.setVisibility(View.VISIBLE);
 			setRightTvText("完成");
 			AppUtil.showSoftInputMethod(this, mNameEt);
 		}else {
@@ -241,7 +245,8 @@ public class MyInfoActivity extends BaseActivity {
 			mHeightEt.setVisibility(View.GONE);
 			mNameTv.setVisibility(View.VISIBLE);
 			mNameEt.setVisibility(View.GONE);
-			setRightTvText("修改");
+            tvUploadAvatar.setVisibility(View.INVISIBLE);
+            setRightTvText("修改");
 			AppUtil.hideSoftInputMethod(this, mNameEt);
 		}
 		
@@ -455,9 +460,11 @@ public class MyInfoActivity extends BaseActivity {
 
                             loadPageInfo(true);
 							//设置手环基本信息
-							Intent intent=new Intent(WatchConstant.ACTION_WATCH_CMD_SET_INFO);
-							intent.putExtra(WatchConstant.FLAG_USER_INFO,new byte[]{sex.equals("1")?(byte)1:(byte)0,(byte)DateTimeUtils.getIntervalDays(mBirthday,new Date()),Integer.valueOf(height).byteValue(),Integer.valueOf(weight).byteValue()});
-							sendBroadcast(intent);
+							if(!AppUtil.isNull(PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS))){
+								Intent intent=new Intent(WatchConstant.ACTION_WATCH_CMD_SET_INFO);
+								intent.putExtra(WatchConstant.FLAG_USER_INFO,new byte[]{sex.equals("1")?(byte)1:(byte)0,(byte)DateTimeUtils.getIntervalDays(mBirthday,new Date()),Integer.valueOf(height).byteValue(),Integer.valueOf(weight).byteValue()});
+								sendBroadcast(intent);
+							}
 						}else {
 							AppUtil.showToast(getApplicationContext(), object.info);
 						}

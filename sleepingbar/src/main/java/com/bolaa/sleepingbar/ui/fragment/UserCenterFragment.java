@@ -11,7 +11,13 @@ import android.widget.TextView;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
+import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
+import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.httputil.ParamBuilder;
+import com.bolaa.sleepingbar.model.UserInfo;
+import com.bolaa.sleepingbar.parser.gson.BaseObject;
+import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.AboutActivity;
 import com.bolaa.sleepingbar.ui.AccountActivity;
 import com.bolaa.sleepingbar.ui.DeviceInfoActivity;
@@ -22,6 +28,7 @@ import com.bolaa.sleepingbar.ui.MyMsgActivity;
 import com.bolaa.sleepingbar.ui.PrivateSettingActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.core.framework.net.NetworkWorker;
 
 import org.w3c.dom.Text;
 
@@ -47,10 +54,55 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
     @Override
     public void onResume() {
         super.onResume();
+        getMsgCount();
     }
 
     @Override
     public void heavyBuz() {
+        getMsgCount();
+    }
+
+    private boolean isLoadMsgCount=false;//防止加载过程中再次加载
+    public void getMsgCount() {
+        if(isLoadMsgCount)return;
+        isLoadMsgCount=true;
+        ParamBuilder params=new ParamBuilder();
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_GET_MSG_COUNT), new NetworkWorker.ICallback() {
+
+            @Override
+            public void onResponse(int status, String result) {
+                isLoadMsgCount=false;
+                if(status==200){
+                    BaseObject<Msgcount> object= GsonParser.getInstance().parseToObj(result, Msgcount.class);
+                    if(object!=null){
+                        if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+                            showMsgCount(object.data.message_count);
+                        }else {
+                            showMsgCount(0);
+                        }
+                    }else {
+                        showMsgCount(0);
+                    }
+                }
+
+            }
+        });
+    }
+
+    public class Msgcount{
+        public int message_count;
+    }
+
+    private void showMsgCount(int count){
+        if(count<=0){
+            tvMsgCount.setVisibility(View.GONE);
+        }else if(count>99){
+            tvMsgCount.setVisibility(View.VISIBLE);
+            tvMsgCount.setText("99+");
+        }else {
+            tvMsgCount.setVisibility(View.VISIBLE);
+            tvMsgCount.setText(""+count);
+        }
 
     }
 

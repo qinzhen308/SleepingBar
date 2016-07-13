@@ -29,6 +29,8 @@ import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
+import com.bolaa.sleepingbar.watch.WatchUploadReceiver;
+import com.bolaa.sleepingbar.watch.WatchUploadService;
 import com.core.framework.app.MyApplication;
 import com.core.framework.app.devInfo.ScreenUtil;
 import com.core.framework.develop.LogUtil;
@@ -110,6 +112,7 @@ public class HApplication extends MyApplication {
 		AppStatic.getInstance().setmUserInfo(AppStatic.getInstance().getUser());
 		ShareUtil.initShareData();
 		initPushService();
+		WatchUploadService.setAlarm(getApplicationContext());
 	}
 
 	private void initDatabase() {

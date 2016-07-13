@@ -14,11 +14,13 @@
         android:scaleType="fitXY" />
 
     <TextView
+        android:id="@+id/tv_upload_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:gravity="center"
         android:layout_marginTop="10dp"
+        android:visibility="invisible"
         android:layout_gravity="center_horizontal"
         android:text="点击上传头像"
         android:textColor="@color/main"

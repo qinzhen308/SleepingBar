@@ -102,6 +102,8 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 
 	public interface OnSupportEventListener{
 		public void onSupport(RankinglistItem item);
+
+		public void onPraise(RankinglistItem item);
 	}
 
 }

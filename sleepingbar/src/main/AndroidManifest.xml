@@ -252,6 +252,8 @@
         <service android:name=".watch.WatchService"
             android:process=":WatchService"></service>
 
+        <service android:name=".watch.WatchUploadService"></service>
+
 
         <!--====================以下是三方sdk接入时注册组件的区域=========================-->
         <!-- 微信回调页面 -->

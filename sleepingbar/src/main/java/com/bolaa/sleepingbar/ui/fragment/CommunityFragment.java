@@ -323,6 +323,7 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
         // TODO Auto-generated method stub
         if(!isLoading()){
             initData(true);
+            loadHeaderData();
         }
     }
 
@@ -330,6 +331,7 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
     public void onAgainRefresh() {
         // TODO Auto-generated method stub
         initData(false);
+        loadHeaderData();
     }
 
     @Override

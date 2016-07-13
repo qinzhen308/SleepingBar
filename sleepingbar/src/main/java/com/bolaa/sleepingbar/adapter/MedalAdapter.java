@@ -16,9 +16,13 @@ import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Medal;
+import com.bolaa.sleepingbar.parser.gson.BaseObject;
+import com.bolaa.sleepingbar.parser.gson.GsonParser;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.core.framework.app.devInfo.ScreenUtil;
+import com.core.framework.net.NetworkWorker;
 import com.core.framework.util.DialogUtil;
 import com.core.framework.util.MD5Util;
 
@@ -93,11 +97,7 @@ public class MedalAdapter extends AbstractListAdapter<Medal> {
 			btnShare.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-                    ParamBuilder params=new ParamBuilder();
-                    params.clear();
-                    params.append("id",medal.id);
-                    params.append("s",MD5Util.getMD5(medal.id+"_iphone_anandroid"));
-                    new ShareUtil((Activity) mContext,medal.m_name, medal.m_explain, APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_MEDAL_SHARE),medal.img).showShareDialog();
+					AppUtil.showToast(mContext,"正在获取分享链接，请稍后操作！");
 				}
 			});
 			ivCancel.setOnClickListener(new View.OnClickListener() {
@@ -114,9 +114,38 @@ public class MedalAdapter extends AbstractListAdapter<Medal> {
 		DialogUtil.showDialog(medalDialog);
 		if(medal.is_got==1){
 			btnShare.setVisibility(View.VISIBLE);
+			loadMedalDetail(medal.id);
 		}else {
 			btnShare.setVisibility(View.GONE);
 		}
+	}
+
+	private void loadMedalDetail(String um_id){
+		ParamBuilder params=new ParamBuilder();
+		params.append("um_id",um_id);
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_MEDAL_DETAIL), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(status==200){
+					BaseObject<Medal> object= GsonParser.getInstance().parseToObj(result,Medal.class);
+					if(object!=null&&object.status==BaseObject.STATUS_OK&&object.data!=null){
+						final Medal medal=object.data;
+						tvName.setText(medal.m_name);
+						tvDate.setText("获得时间："+medal.c_time);
+						tvDetail.setText(medal.m_explain);
+						Image13Loader.getInstance().loadImageFade(medal.img,ivAvatar);
+						DialogUtil.showDialog(medalDialog);
+						btnShare.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								new ShareUtil((Activity) mContext,medal.m_name, medal.m_explain, medal.share_url,medal.img).showShareDialog();
+							}
+						});
+					}
+				}
+			}
+		});
+
 	}
 
 }

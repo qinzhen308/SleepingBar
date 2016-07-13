@@ -24,6 +24,8 @@ public class TrendView extends ImageView{
     private float bad;//差
     private float trendHeight;
     private float trendWidth;
+    private int width;
+    private int height;
 
     private int contentPadding;
 
@@ -66,16 +68,21 @@ public class TrendView extends ImageView{
         trendPaint.setStrokeWidth(ScreenUtil.dip2px(getContext(),2));
     }
 
-
-
     @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         good=2*contentPadding;
         well=getHeight()/2;
         bad=getHeight()-2*contentPadding;
         trendHeight=bad-good+contentPadding;
         trendWidth=getWidth()-2*contentPadding;
+        height=getHeight();
+        width=getWidth();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         drawAxis(canvas);
         drawTrend(canvas);
         drawLabel(canvas);
@@ -87,11 +94,11 @@ public class TrendView extends ImageView{
         paint.setStrokeWidth(ScreenUtil.dip2px(getContext(),1));
         paint.setColor(getResources().getColor(R.color.white));
         //横坐标轴
-        canvas.drawLine(contentPadding,bad+contentPadding ,getWidth()-contentPadding,bad+contentPadding,paint);
+        canvas.drawLine(contentPadding,bad+contentPadding ,width-contentPadding,bad+contentPadding,paint);
         paint.setColor(getResources().getColor(R.color.purple2));
-        canvas.drawLine(contentPadding,bad,getWidth()-contentPadding,bad,paint);
-        canvas.drawLine(contentPadding,well,getWidth()-contentPadding,well,paint);
-        canvas.drawLine(contentPadding,good,getWidth()-contentPadding,good,paint);
+        canvas.drawLine(contentPadding,bad,width-contentPadding,bad,paint);
+        canvas.drawLine(contentPadding,well,width-contentPadding,well,paint);
+        canvas.drawLine(contentPadding,good,width-contentPadding,good,paint);
     }
 
     private void drawLabel(Canvas canvas){
@@ -101,16 +108,16 @@ public class TrendView extends ImageView{
         paint.setColor(getResources().getColor(R.color.white));
 //        canvas.drawLine(contentPadding,bad+contentPadding,getWidth()-contentPadding,bad+contentPadding,paint);
         canvas.drawText(type==TYPE_DAY?"睡眠深浅":"睡眠质量",contentPadding+10,good-getResources().getDimensionPixelSize(R.dimen.text_size_big)-10,paint);
-        canvas.drawText(typeLabels[type],getWidth()-contentPadding-10,good-getResources().getDimensionPixelSize(R.dimen.text_size_big)-10,paint);
+        canvas.drawText(typeLabels[type],width-contentPadding-10,good-getResources().getDimensionPixelSize(R.dimen.text_size_big)-10,paint);
         paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.text_size));
         paint.setColor(getResources().getColor(R.color.purple2));
         if(type==TYPE_DAY){
-            canvas.drawText("深",getWidth()-contentPadding-10,good+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
-//            canvas.drawText("一般",getWidth()-contentPadding-10,well+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
-            canvas.drawText("浅",getWidth()-contentPadding-10,bad-10,paint);
+            canvas.drawText("深",width-contentPadding-10,good+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
+//            canvas.drawText("一般",width-contentPadding-10,well+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
+            canvas.drawText("浅",width-contentPadding-10,bad-10,paint);
         }else {
-            canvas.drawText("优",getWidth()-contentPadding-10,good+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
-            canvas.drawText("良",getWidth()-contentPadding-10,well+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
+            canvas.drawText("优",width-contentPadding-10,good+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
+            canvas.drawText("良",width-contentPadding-10,well+getResources().getDimensionPixelSize(R.dimen.text_size_big)+10,paint);
         }
     }
 
@@ -123,7 +130,7 @@ public class TrendView extends ImageView{
         pointPaint.setColor(getResources().getColor(R.color.white));
 
         String[] labels=x_axisLabels[type];
-        float xMax=getWidth()-contentPadding-10;
+        float xMax=width-contentPadding-10;
         float xOri=contentPadding+10;
         float delta=(xMax-xOri)/(labels.length-1);
         float textOffset=-ScreenUtil.dip2px(getContext(),8);
@@ -189,7 +196,7 @@ public class TrendView extends ImageView{
         if(src==null)src=new byte[0];
         list=new ArrayList<>();
         float[] value={bad,bad,well,good};
-        float xMax=getWidth()-contentPadding-10;
+        float xMax=width-contentPadding-10;
         float xOri=contentPadding+10;
         float delta=(xMax-xOri)/(src.length-1);
         for(int i = 0;i<src.length;i++){
@@ -203,7 +210,7 @@ public class TrendView extends ImageView{
             }
             list.add(p);
         }
-        invalidate();
+        postInvalidate();
     }
 
 }

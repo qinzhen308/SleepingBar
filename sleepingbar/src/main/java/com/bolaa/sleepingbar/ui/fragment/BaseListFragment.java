@@ -239,13 +239,13 @@ public abstract class BaseListFragment extends BaseFragment{
         @Override
         public boolean onStartRequest(int page) {
             if (page == 1) {
-                removeSpecialFootView();
+//                removeSpecialFootView();
             }
 
             if (page > 1) {
                 if (isLastPage) {
                     if (isNeedEndTag) {
-                        addSpecailFooterView();
+//                        addSpecailFooterView();
                     } else {
                         if (isNeedEndToast){
                             AppUtil.showToast(getActivity(), R.string.pull_to_refresh_nodata);
@@ -292,7 +292,7 @@ public abstract class BaseListFragment extends BaseFragment{
 
             if (isLastPage && !AppUtil.isEmpty(allData)) {
                 if (isNeedEndTag) {
-                    addSpecailFooterView();
+//                    addSpecailFooterView();
                 } else {
                     if (isNeedEndToast){
                         AppUtil.showToast(getActivity(), R.string.pull_to_refresh_nodata);

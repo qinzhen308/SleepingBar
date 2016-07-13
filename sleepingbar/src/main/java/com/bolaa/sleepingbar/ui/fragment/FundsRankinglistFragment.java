@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,7 +42,7 @@ import com.core.framework.util.DialogUtil;
 import java.util.List;
 
 /**
- * 医疗机构的评价
+ * 睡眠基金排行榜
  * 
  * @author paulz
  *
@@ -88,7 +89,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 	@Nullable
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 			@Nullable Bundle savedInstanceState) {
-		setView(inflater, R.layout.fragment_funds_rankinglist, true);
+		setView(inflater, R.layout.fragment_funds_rankinglist, false);
 		initView();
 		setListener();
 		return baseLayout;
@@ -98,7 +99,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
-//		initData(false);
+		initData(false);
 	}
 
 	private void setExtra(){
@@ -108,6 +109,8 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 	}
 
 	public void initView() {
+        mLoadStateController=new LoadStateController(getActivity(),(FrameLayout)baseLayout.findViewById(R.id.layout_load_state_container));
+        hasLoadingState=true;
 		layoutMyFunds=(ViewGroup) baseLayout.findViewById(R.id.layout_my_funds);
 		tvName=(TextView)layoutMyFunds.findViewById(R.id.tv_name);
 		tvRanking =(TextView)layoutMyFunds.findViewById(R.id.tv_ranking);
@@ -119,6 +122,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 		mPullListView=(PullListView) baseLayout.findViewById(R.id.pull_listview);
 		mPullListView.setMode(PullToRefreshBase.MODE_PULL_DOWN_TO_REFRESH);
 		mListView=mPullListView.getRefreshableView();
+        mListView.setFooterDividersEnabled(false);
 		mAdapter=new FundsRankinglistAdapter(getActivity());
 		mListView.setAdapter(mAdapter);
 
@@ -135,18 +139,26 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 			public void onSupport(RankinglistItem item) {
 				showSupportWindow(item);
 			}
-		});
+
+            @Override
+            public void onPraise(RankinglistItem item) {
+                praise(item);
+            }
+        });
 	}
 
 	private void setMyFundsInfo(){
 		BeanWraper wraper=getBeanWraper();
 		if(wraper!=null){
+			layoutMyFunds.setVisibility(View.VISIBLE);
 			RankinglistItemWraper data=((RankinglistItemWraper)wraper);
 			tvFundsTotal.setText(AppUtil.getTwoDecimal(data.my_sleep_fund));
 			tvName.setText(data.my_nickname);
-			tvRanking.setText(""+data.my_sleep_rank);
+			tvRanking.setText("第"+data.my_sleep_rank+"名");
 			tvSupportCount.setText(""+data.my_support_num);
 			Image13Loader.getInstance().loadImageFade(data.my_avatar,ivAvatar);
+		}else {
+			layoutMyFunds.setVisibility(View.GONE);
 		}
 	}
 
@@ -251,7 +263,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
                         String moneyStr=etMoney.getText().toString().trim();
                         moneys[moneys.length-1]=AppUtil.isNull(moneyStr)?0:Float.valueOf(moneyStr);
                     }
-                    AppUtil.showToast(getActivity(),supportDays[curDayItem]+","+moneys[curMoneyItem]);
+//                    AppUtil.showToast(getActivity(),supportDays[curDayItem]+","+moneys[curMoneyItem]);
                     support(item.user_id,supportDays[curDayItem]+"",moneys[curMoneyItem]+"");
                 }
             });
@@ -321,6 +333,37 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
                 }
             }
         },requester);
+    }
+
+    public void praise(final RankinglistItem item){
+        if(!AppStatic.getInstance().isLogin)return;
+        DialogUtil.showDialog(loadDialog);
+        ParamBuilder params=new ParamBuilder();
+        params.append("uid",item.user_id);
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_FUNDS_RANKING_LIST_PRAISE), new NetworkWorker.ICallback() {
+
+            @Override
+            public void onResponse(int status, String result) {
+                // TODO Auto-generated method stub
+                if(!getActivity().isFinishing())DialogUtil.dismissDialog(loadDialog);
+                if(status==200){
+                    BaseObject<Object> obj= GsonParser.getInstance().parseToObj(result,Object.class);
+                    if(obj!=null){
+                        if(obj.status==BaseObject.STATUS_OK){
+                            AppUtil.showToast(getActivity(),obj.info);
+                            item.is_praise=1;
+                            mAdapter.notifyDataSetChanged();
+                        }else {
+                            AppUtil.showToast(getActivity(),obj.info);
+                        }
+                    }else {
+                        AppUtil.showToast(getActivity(),"操作失败");
+                    }
+                }else {
+                    AppUtil.showToast(getActivity(),"请检查网络");
+                }
+            }
+        });
     }
 
 

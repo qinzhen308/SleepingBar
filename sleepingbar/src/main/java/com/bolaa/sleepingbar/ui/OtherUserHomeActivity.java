@@ -64,7 +64,7 @@ public class OtherUserHomeActivity extends BaseListActivity implements LoadState
             showLoading();
         }
         ParamBuilder params=new ParamBuilder();
-//        params.append("uid",userId);
+        params.append("uid",userId);
         if(isRefresh){
             immediateLoadData(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_TOPIC_LIST), TopicWraper.class);
         }else {

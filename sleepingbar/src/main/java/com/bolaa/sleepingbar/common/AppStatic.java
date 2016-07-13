@@ -184,7 +184,7 @@ public class AppStatic {
 		user.birthday=(PreferencesUtils.getString("birthday"));
 		user.got_fund=(PreferencesUtils.getString("got_fund"));
 		user.height=(PreferencesUtils.getString("height"));
-		user.height=(PreferencesUtils.getString("weight"));
+		user.weight=(PreferencesUtils.getString("weight"));
 		user.is_hidden_coord=(PreferencesUtils.getInteger("is_hidden_coord",0));
 		user.is_open_fund=(PreferencesUtils.getInteger("is_open_fund",0));
 		user.is_runking=(PreferencesUtils.getInteger("is_runking",0));

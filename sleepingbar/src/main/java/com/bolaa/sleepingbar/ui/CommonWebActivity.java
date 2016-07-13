@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.bolaa.sleepingbar.R;
@@ -32,8 +34,33 @@ public class CommonWebActivity extends BaseWebActivity{
 			setTitleText("", title, 0, true);
 		}
 		mWebView=(WebView)findViewById(R.id.web_fishion);
+		WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
+		int width = wm.getDefaultDisplay().getWidth();
+		if(width > 650)
+		{
+			this.mWebView.setInitialScale(190);
+		}else if(width > 520)
+		{
+			this.mWebView.setInitialScale(160);
+		}else if(width > 450)
+		{
+			this.mWebView.setInitialScale(140);
+		}else if(width > 300)
+		{
+			this.mWebView.setInitialScale(120);
+		}else
+		{
+			this.mWebView.setInitialScale(100);
+		}
+		WebSettings webSettings = mWebView.getSettings();
+		webSettings.setSupportZoom(false);
+		webSettings.setBuiltInZoomControls(true);
+		webSettings.setJavaScriptEnabled(true);
+		webSettings.setDomStorageEnabled(true);
+		webSettings.setBlockNetworkImage(false);
+		webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+		webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
 		mWebView.addJavascriptInterface(new JSInvokeJavaInterface(this,mWebView),"active");
-		mWebView.getSettings().setJavaScriptEnabled(true);
 		load(wap_url, false);
 	}
 	

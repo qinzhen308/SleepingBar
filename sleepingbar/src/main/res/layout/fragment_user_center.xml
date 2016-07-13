@@ -121,7 +121,7 @@
                 android:background="@drawable/bg_rectangle_solid_red"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="25dp"
-                android:text="99"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_small"
                 android:paddingTop="2dp"

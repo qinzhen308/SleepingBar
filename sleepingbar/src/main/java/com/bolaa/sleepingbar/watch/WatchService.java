@@ -358,8 +358,10 @@ public class WatchService extends Service{
             String action=intent.getAction();
             if(WatchConstant.ACTION_WATCH_CMD_SET_INFO.equals(action)){
                 byte[] info=intent.getByteArrayExtra(WatchConstant.FLAG_USER_INFO);
-                CMDHandler.cmdSetInfo(readCharacteristic,info[0],info[1],info[2],info[3]);
-                mBLE.writeCharacteristic(readCharacteristic);
+                if(readCharacteristic!=null){
+                    CMDHandler.cmdSetInfo(readCharacteristic,info[0],info[1],info[2],info[3]);
+                    mBLE.writeCharacteristic(readCharacteristic);
+                }
             }else if(WatchConstant.ACTION_WATCH_CMD_SET_DATE.equals(action)){
                 if(intent.getIntExtra(WatchConstant.FLAG_DEVICE_DATE,0)>0){
                     CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000));

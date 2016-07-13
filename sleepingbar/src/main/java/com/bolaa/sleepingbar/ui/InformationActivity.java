@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -124,7 +126,19 @@ public class InformationActivity extends BaseListActivity implements
 		if(AppUtil.isNull(posts.content)){
 			tvContent.setText("");
 		}else {
-			tvContent.setText(Html.fromHtml(posts.content, imgGetter, null));
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					final Spanned spanned=Html.fromHtml(posts.content, imgGetter, null);
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							tvContent.setText(spanned);
+						}
+					});
+				}
+			}).start();
+//			tvContent.setText(Html.fromHtml(posts.content, imgGetter, null));
 		}
 		tvDate.setText(posts.add_time);
 		tvAccessCount.setText("浏览量："+posts.page_view);
@@ -142,8 +156,8 @@ public class InformationActivity extends BaseListActivity implements
 				e.printStackTrace();
 				return null;
 			}
-			drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
-					drawable.getIntrinsicHeight());
+//			drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
+//					drawable.getIntrinsicHeight());
 			return drawable;
 		}
 	};

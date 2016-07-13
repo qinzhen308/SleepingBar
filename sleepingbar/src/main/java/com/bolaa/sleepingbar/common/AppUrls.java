@@ -51,8 +51,10 @@ public class AppUrls {
 	public String URL_HOME=BASE_URL+"sleep.php?act=index";//睡吧首页
 	public String URL_SUPPORTER_LIST=BASE_URL+"sleep.php?act=my_funds";//我的基金页面，也就是基金支持者列表
 	public String URL_SUPPORTER_DETAIL=BASE_URL+"sleep.php?act=fund_detail";//某支持者对我支持基金的明细
-	public String URL_FUNDS_RANKING_LIST=BASE_URL+"sleep.php?act=friend_fund_ranking";//基金排行
+	public String URL_FUNDS_RANKING_LIST=BASE_URL+"sleep.php?act=fund_ranking";//基金排行
+	public String URL_FUNDS_RANKING_LIST_PRAISE=BASE_URL+"sleep.php?act=do_praise";//基金排行点赞
 	public String URL_MEDAL_LIST=BASE_URL+"user.php?act=my_medal";//我的勋章
+	public String URL_MEDAL_DETAIL=BASE_URL+"user.php?act=medal_detail";//我的勋章详情
 	public String URL_GET_CAPTCHA=BASE_URL+"user.php?act=send_verify_code";
 	public String URL_LOGIN=BASE_URL+"user.php?act=login";//登录
 	public String URL_LOGOUT=BASE_URL+"user.php?act=logout";//退出登录
@@ -80,6 +82,7 @@ public class AppUrls {
 	public String URL_PRIVATE_SETTING=BASE_URL+"user.php?act=setting_privacy";//隐私设置
 	public String URL_SUPPORT_FUNDS_TO=BASE_URL+"sleep.php?act=send_fund";//基金支持
 	public String URL_GET_USER_INFO=BASE_URL+"user.php?act=userinfo";//获取个人全部信息
+	public String URL_GET_MSG_COUNT=BASE_URL+"user.php?act=message_count";//获取消息数量
 
 	public String URL_ACTIVE_HOME=BASE_URL+"activity.php?act=list";//首页活动页
 
@@ -95,9 +98,9 @@ public class AppUrls {
 	public String URL_SLEEP_DATA_COLLECT_TIME=BASE_URL+"sync.php?act=sleep_time";//采集睡眠数据的时间段
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL=BASE_URL+"user.php?act=service_terms";
-	public String URL_ARTICAL_LAW="http://baidu.com";
-	public String URL_ARTICAL_ABOUT="user.php?act=about_sleepbar";
-	public String URL_SLEEP_HELP=BASE_URL+"user.php?act=service_terms";
+	public String URL_ARTICAL_LAW=BASE_URL+"ser.php?act=legal_notice";
+	public String URL_ARTICAL_ABOUT=BASE_URL+"user.php?act=about_sleepbar";
+	public String URL_SLEEP_HELP=BASE_URL+"sleep.php?act=fund_spec";
 
 	public String URL_MEDAL_SHARE=BASE_URL+"user_share.php?act=share_sleepinfo";
 	public String URL_MOVEMENT_SHARE=BASE_URL+"user_share.php?act=share_walkinfo";

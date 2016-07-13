@@ -54,7 +54,7 @@ public class QuickLoginActivity extends BaseActivity{
         tvProtocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CommonWebActivity.invoke(QuickLoginActivity.this, AppUrls.getInstance().URL_ARTICAL_ABOUT,"用户协议");
+                CommonWebActivity.invoke(QuickLoginActivity.this, AppUrls.getInstance().URL_ARTICAL_SERVICE_PROTOCAL,"服务条款");
             }
         });
         etPhone.setOnClickListener(new View.OnClickListener() {

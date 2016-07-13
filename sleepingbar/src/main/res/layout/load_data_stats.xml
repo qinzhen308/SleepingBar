@@ -4,12 +4,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <com.bolaa.sleepingbar.view.InterceptRalativeLayout
             android:id="@+id/load_no_data"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:background="@color/milky"
-            android:focusableInTouchMode="true"
             android:visibility="gone">
         <ImageView
                 android:id="@+id/iv_load_no_data"
@@ -34,14 +33,13 @@
                 android:layout_centerHorizontal="true"
                 android:textSize="18sp"
                 android:text="没有更多内容啦！"/>
-    </RelativeLayout>
+    </com.bolaa.sleepingbar.view.InterceptRalativeLayout>
 
-    <RelativeLayout
+    <com.bolaa.sleepingbar.view.InterceptRalativeLayout
             android:id="@+id/load_failure"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:background="@color/milky"
-            android:focusableInTouchMode="true"
             android:visibility="gone">
         
         <ImageView
@@ -79,13 +77,12 @@
                 android:text="刷新页面"/>
 
 
-    </RelativeLayout>
+    </com.bolaa.sleepingbar.view.InterceptRalativeLayout>
 
-    <RelativeLayout
+    <com.bolaa.sleepingbar.view.InterceptRalativeLayout
             android:id="@+id/rl_loading_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:focusableInTouchMode="true"
             android:background="@color/milky"
             android:visibility="gone"
            >
@@ -96,6 +93,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
-    </RelativeLayout>
+    </com.bolaa.sleepingbar.view.InterceptRalativeLayout>
 
 </RelativeLayout>
