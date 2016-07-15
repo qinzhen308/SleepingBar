@@ -133,7 +133,7 @@
             android:name=".ui.QuickLoginActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustPan" >
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name=".ui.QuickLoginCaptchaActivity"

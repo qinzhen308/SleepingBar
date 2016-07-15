@@ -53,6 +53,10 @@ public class SleepTrendActivity extends BaseActivity {
 		initView();
 		setListener();
         loadSleepData();
+        LogUtil.d("sleep_upload_flags----has alrm="+PreferencesUtils.getBoolean("has_watch_alarm"));
+        LogUtil.d("sleep_upload_flags----launch service="+PreferencesUtils.getInteger("launch_synch_service_count"));
+        LogUtil.d("sleep_upload_flags----start upload="+PreferencesUtils.getInteger("start_synch_count"));
+        LogUtil.d("sleep_upload_flags----synch success count="+PreferencesUtils.getInteger("synch_success_count"));
 	}
 
 	private void initView() {

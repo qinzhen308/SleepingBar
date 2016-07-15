@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.bolaa.sleepingbar.view.ResizeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.bolaa.sleepingbar.view.ResizeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/rlayout_login"
         android:layout_width="fill_parent"
         android:background="@drawable/bg_login"
+        android:gravity="center_horizontal"
+    android:orientation="vertical"
         android:layout_height="fill_parent" >
 
     <ImageView
@@ -11,6 +13,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/ic_login_logo"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
 
 
 
@@ -22,13 +30,12 @@
             android:layout_centerHorizontal="true"
             android:background="@null"
             android:gravity="center"
-            android:inputType="phone"
+            android:inputType="textVisiblePassword|textMultiLine"
             android:layout_marginLeft="3dp"
             android:singleLine="true"
             android:hint="请输入手机号码"
             android:textColor="@color/white"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="150dp"
             android:textColorHint="#883EAE"
             android:textSize="@dimen/text_size_big" />
 
@@ -36,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
             android:background="#58319E"
@@ -50,7 +57,7 @@
             android:textColor="@color/white"
             android:padding="5dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="110dp"
+            android:layout_marginBottom="65dp"
             android:layout_alignParentBottom="true"
             android:textSize="@dimen/text_size"
             />
@@ -97,4 +104,4 @@
 
 
 
-</com.bolaa.sleepingbar.view.ResizeLayout>
+</com.bolaa.sleepingbar.view.ResizeLinearLayout>

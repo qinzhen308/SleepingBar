@@ -8,6 +8,7 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.SupporterAdapter;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.common.GlobeFlags;
 import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
@@ -27,6 +28,7 @@ import android.widget.TextView;
  */
 public class SupporterActivity extends BaseListActivity implements LoadStateController.OnLoadErrorListener,PullToRefreshBase.OnRefreshListener{
 	private TextView tvSupportCount;
+	private String LinkId="";
 
 
 	@Override
@@ -40,7 +42,6 @@ public class SupporterActivity extends BaseListActivity implements LoadStateCont
 	}
 	
 	private void setExtra(){
-		
 	}
 
 

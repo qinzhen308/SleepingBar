@@ -125,7 +125,7 @@ public class QuickBindWatchActivity extends BaseActivity{
     //跳转
     private void jumpToWhere(){
         if(from==1){
-            if(AppUtil.isNull(AppStatic.getInstance().getmUserInfo().avatar)){//用是否有头像判断是否绑定微信，其实不合理
+            if(AppUtil.isNull(AppStatic.getInstance().getmUserInfo().unionid)){//用是否有头像判断是否绑定微信，其实不合理
                 QuickBindWXActivity.invoke(this);
             }else {
                 MainActivity.invoke(this);

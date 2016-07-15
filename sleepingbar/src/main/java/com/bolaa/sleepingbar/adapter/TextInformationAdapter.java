@@ -36,7 +36,7 @@ public class TextInformationAdapter extends AbstractListAdapter<Information> {
 		}
 		final Information information=mList.get(i);
 		holder.tvTitle.setText(information.title!=null?information.title:"");
-		holder.tvTitle.setOnClickListener(new View.OnClickListener() {
+		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				InformationActivity.invoke(mContext,information.article_id);

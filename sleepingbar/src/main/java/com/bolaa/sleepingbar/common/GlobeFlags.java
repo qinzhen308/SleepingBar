@@ -40,16 +40,9 @@ public class GlobeFlags {
     //intent参数的key
     public static final String FLAG_FISHION_WAP_URL="flag_fishion_wap_url";
     public static final String FLAG_FISHION_PIC_URL="flag_fishion_pic_url";
-    public static final String FLAG_FISHION_ID="flag_fishion_id";
-    public static final String FLAG_FISHION_CONTENT="flag_fishion_content";
-    public static final String FLAG_CATEGORY_ID="flag_category_id";
-    public static final String FLAG_KEYWORD="flag_keyword";
-    public static final String FLAG_BRAND_ID="flag_brand_id";
-    public static final String FLAG_SHOP_ID="flag_shop_id";
-    public static final String FLAG_SHOP_NAME="flag_shop_name";
-    public static final String FLAG_FROM="flag_from";
-    public static final String FLAG_GOOD_ID="flag_good_id";
-    public static final String FLAG_MODE="flag_mode";
+    public static final String FLAG_PUSH_ID="flag_push_id";
+    public static final String FLAG_PUSH_EXTRA="flag_push_extra";
+
 
 
     public static final String FLAG_PUSH_REGISTION_ID="flag_push_registion_id";

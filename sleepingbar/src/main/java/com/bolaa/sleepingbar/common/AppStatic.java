@@ -122,6 +122,7 @@ public class AppStatic {
 		PreferencesUtils.remove("is_runking");
 		PreferencesUtils.remove("user_money");
 		PreferencesUtils.remove("sleep_fund");
+		PreferencesUtils.remove("unionid");
 	}
 
 	public void unbindThird(String type) {
@@ -152,6 +153,7 @@ public class AppStatic {
 		putData("weight", user.weight);
 		putData("user_money", user.user_money);
 		putData("sleep_fund", user.sleep_fund);
+		putData("unionid", user.unionid);
 		PreferencesUtils.putInteger("is_hidden_coord", user.is_hidden_coord);
 		PreferencesUtils.putInteger("is_open_fund", user.is_open_fund);
 		PreferencesUtils.putInteger("is_runking", user.is_runking);
@@ -196,6 +198,7 @@ public class AppStatic {
 		user.is_runking=(PreferencesUtils.getInteger("is_runking",0));
 		user.user_money=(PreferencesUtils.getString("user_money"));
 		user.sleep_fund=(PreferencesUtils.getString("sleep_fund"));
+		user.unionid=(PreferencesUtils.getString("unionid"));
 		return user;
 	}
 

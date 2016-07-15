@@ -36,7 +36,7 @@ public class SupporterAdapter extends AbstractListAdapter<Supporter> {
 		final Supporter supporter=mList.get(i);
 		holder.tvFunds.setText(AppUtil.getTwoDecimal(supporter.got_fund)+"/"+ AppUtil.getTwoDecimal(supporter.sleep_fund)+"元");
 		holder.tvName.setText(supporter.nick_name);
-		holder.tvRanking.setText(supporter.rank);
+		holder.tvRanking.setText(""+supporter.rank);
 		Image13Loader.getInstance().loadImage(supporter.avatar,holder.ivAvatar,R.drawable.user2);
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override

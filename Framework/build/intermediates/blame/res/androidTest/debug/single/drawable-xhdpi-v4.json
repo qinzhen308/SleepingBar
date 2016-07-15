@@ -4,20 +4,20 @@
         "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\toast_ios_top_normal.9.png"
     },
     {
-        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\img_list_default.9.png",
-        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\img_list_default.9.png"
-    },
-    {
         "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\toast_ios_bottom_normal.9.png",
         "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\toast_ios_bottom_normal.9.png"
     },
     {
-        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\toast_ios_single_normal.9.png",
-        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\toast_ios_single_normal.9.png"
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\img_list_default.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\img_list_default.9.png"
     },
     {
         "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\toast_ios_top_pressed.9.png",
         "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\toast_ios_top_pressed.9.png"
+    },
+    {
+        "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\toast_ios_single_normal.9.png",
+        "source": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\toast_ios_single_normal.9.png"
     },
     {
         "merged": "E:\\paulz\\workspace\\aswork\\SleepingBar\\Framework\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\loading_large_01.png",

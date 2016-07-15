@@ -13,5 +13,7 @@ public class DealLog {
     public String user_money_s;
     public String account_no;
     public String realname;
+    public String in_out_str;//转入。。转出
+    public int in_out;//1 转入
 
 }

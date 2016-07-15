@@ -11,6 +11,7 @@ public class HomeSleepInfo {
     public String sleep_rank;
     public String medal_num;
     public String sleep_info_id;
+    public String sleep_info_url;//睡眠分享链接
     public String quality_rating;
     public String desc;
     public String deep_time;

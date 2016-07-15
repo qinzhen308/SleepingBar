@@ -50,6 +50,11 @@ public class FriendsListAdapter extends AbstractListAdapter<Friends> {
 		holder.tvName.setText(item.nick_name);
 		holder.tvType.setText(item.f_type);
 		Image13Loader.getInstance().loadImageFade(item.avatar,holder.ivAvatar);
+//		if(item.is_care==1){
+//			holder.tvCancelCare.setText("取消\n关注");
+//		}else {
+//			holder.tvCancelCare.setText("关注");
+//		}
 
 		holder.tvCancelCare.setOnClickListener(new View.OnClickListener() {
 			@Override

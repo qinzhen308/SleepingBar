@@ -30,12 +30,11 @@ public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 			holder=(ViewHolder)view.getTag();
 		}
 		final DealLog dealLog=mList.get(i);
-		if(dealLog.user_money_s.contains("-")){
-			holder.tvDescribe.setText("转出");
-			holder.tvDescribe.setTextColor(mContext.getResources().getColor(R.color.base_red));
-		}else {
-			holder.tvDescribe.setText("转入");
+		holder.tvDescribe.setText(dealLog.in_out_str);
+		if(dealLog.in_out==1){
 			holder.tvDescribe.setTextColor(mContext.getResources().getColor(R.color.base_green));
+		}else {
+			holder.tvDescribe.setTextColor(mContext.getResources().getColor(R.color.base_red));
 		}
 		holder.tvDate.setText(dealLog.change_time);
 		holder.tvValue.setText(dealLog.user_money_s);

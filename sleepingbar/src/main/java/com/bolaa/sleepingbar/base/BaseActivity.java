@@ -20,8 +20,11 @@ import android.widget.TextView;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.common.CustomToast;
+import com.bolaa.sleepingbar.common.GlobeFlags;
 import com.bolaa.sleepingbar.controller.LoadStateController;
+import com.bolaa.sleepingbar.ui.MainActivity;
 import com.bolaa.sleepingbar.ui.UserLoginActivity;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.NetStatusListener;
 import com.core.framework.store.sharePer.PreferencesUtils;
@@ -47,8 +50,11 @@ public class BaseActivity extends Activity implements OnClickListener,
 	private View xian;
 	protected Dialog lodDialog;
 
+	protected String pushId;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		pushId=getIntent().getStringExtra(GlobeFlags.FLAG_PUSH_ID);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -256,6 +262,9 @@ public class BaseActivity extends Activity implements OnClickListener,
 		switch (arg0.getId()) {
 		case R.id.baseTitle_leftTv:
 			onLeftClick();
+			if(!AppUtil.isNull(pushId)){
+				MainActivity.invoke(this);
+			}
 			this.finish();
 			break;
 		case R.id.baseTitle_rightIv:
@@ -269,6 +278,14 @@ public class BaseActivity extends Activity implements OnClickListener,
 			break;
 		}
 
+	}
+
+	@Override
+	public void onBackPressed() {
+		if(!AppUtil.isNull(pushId)){
+			MainActivity.invoke(this);
+		}
+		super.onBackPressed();
 	}
 
 	@Override

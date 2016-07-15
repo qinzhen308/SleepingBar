@@ -12,6 +12,7 @@ import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.DealLog;
 import com.bolaa.sleepingbar.model.Friends;
 import com.bolaa.sleepingbar.ui.OtherUserHomeActivity;
+import com.bolaa.sleepingbar.utils.Image13Loader;
 
 import org.w3c.dom.Text;
 
@@ -50,6 +51,7 @@ public class FriendsNearbyAdapter extends AbstractListAdapter<Friends> {
 			holder.tvCare.setText("关注");
 			holder.tvCare.setBackgroundResource(R.drawable.bg_rectangle_strake_half_circel_purple);
 		}
+		Image13Loader.getInstance().loadImageFade(friends.avatar,holder.ivAvatar);
 		final TextView careView=holder.tvCare;
 		holder.tvCare.setOnClickListener(new View.OnClickListener() {
 			@Override

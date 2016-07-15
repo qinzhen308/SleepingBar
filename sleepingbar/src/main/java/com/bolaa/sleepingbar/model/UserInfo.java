@@ -32,7 +32,7 @@ public class UserInfo implements Serializable {
 	public String sleep_fund;// 睡眠基金
 	public String weight;// 体重
 
-	
+	public String unionid;//微信唯一标示，用来判断是否授权过
 	public String member_qqopenid;// 三方凭证 qq
 	public String member_wxopenid;// 三方凭证 微信
 	public String member_sinaopenid;// 三方凭证 新浪微博

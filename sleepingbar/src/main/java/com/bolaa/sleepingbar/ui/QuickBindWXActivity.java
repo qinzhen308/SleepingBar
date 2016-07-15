@@ -117,7 +117,7 @@ public class QuickBindWXActivity extends BaseActivity{
         requester.getParams().put("unionid", data.get("unionid"));
         requester.getParams().put("headimgurl", data.get("headimgurl"));
         requester.getParams().put("sex", data.get("sex"));
-        requester.getParams().put("nikename", data.get("nikename"));
+        requester.getParams().put("nickname", data.get("nickname"));
         NetworkWorker.getInstance().post(AppUrls.getInstance().URL_BIND_WX_USER_INFO, new NetworkWorker.ICallback() {
 
             @Override

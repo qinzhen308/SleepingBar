@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 
@@ -15,7 +16,7 @@ import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 
 /**
- * 体检套餐 适配器
+ * 排行榜 适配器
  * auther paulz
  */
 public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem> {
@@ -45,16 +46,19 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		}
 
 		final RankinglistItem item=mList.get(i);
-		holder.tvFundsTotal.setText(AppUtil.getTwoDecimal(item.user_money));
+		holder.tvFundsTotal.setText(AppUtil.getTwoDecimal(item.sleep_fund));
 		holder.tvName.setText(item.nick_name);
 		holder.tvRanking.setText(""+item.rank);
 		holder.tvSupportCount.setText(""+item.support_num);
 		Image13Loader.getInstance().loadImageFade(item.avatar,holder.ivAvatar);
-		holder.checkBox.setChecked(item.is_praise==1);
+		holder.checkBox.setImageResource(item.is_praise==1?R.drawable.ic_heart_purple:R.drawable.ic_heart_gray);
+		final ImageView tagCheckbox=holder.checkBox;
 		holder.checkBox.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				if(mOnSupportEventListener!=null){
+					mOnSupportEventListener.onPraise(item,tagCheckbox);
+				}
 			}
 		});
 
@@ -81,7 +85,7 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		public TextView tvRanking;
 		public TextView tvSupportCount;
 		public TextView tvFundsTotal;
-		public CheckBox checkBox;
+		public ImageView checkBox;
 		public ImageView ivAvatar;
 		public ImageView ivSupport;
 
@@ -90,7 +94,7 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 			tvRanking =(TextView)view.findViewById(R.id.tv_ranking);
 			tvSupportCount =(TextView)view.findViewById(R.id.tv_support_count);
 			tvFundsTotal =(TextView)view.findViewById(R.id.tv_funds_total);
-			checkBox=(CheckBox) view.findViewById(R.id.checkbox);
+			checkBox=(ImageView) view.findViewById(R.id.checkbox);
 			ivAvatar=(ImageView) view.findViewById(R.id.iv_avatar);
 			ivSupport=(ImageView) view.findViewById(R.id.iv_support);
 		}
@@ -103,7 +107,7 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 	public interface OnSupportEventListener{
 		public void onSupport(RankinglistItem item);
 
-		public void onPraise(RankinglistItem item);
+		public void onPraise(RankinglistItem item,ImageView tagView);
 	}
 
 }

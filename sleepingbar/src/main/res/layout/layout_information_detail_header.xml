@@ -54,17 +54,27 @@
         android:id="@+id/iv_pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/app_launch"
         android:layout_below="@+id/tv_date"
         android:layout_margin="5dp"
         android:scaleType="fitXY"
         />
 
-    <TextView
+    <!--<TextView-->
+        <!--android:id="@+id/tv_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:text="内容按时发货付款圣诞快乐福建省的刻录机考老师的卡洛斯的附件考虑"-->
+        <!--android:layout_below="@+id/iv_pic"-->
+        <!--android:textSize="@dimen/text_size_big"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:textColor="@color/text_grey"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--/>-->
+
+    <WebView
         android:id="@+id/tv_content"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="内容按时发货付款圣诞快乐福建省的刻录机考老师的卡洛斯的附件考虑"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
         android:layout_below="@+id/iv_pic"
         android:textSize="@dimen/text_size_big"
         android:layout_marginLeft="5dp"

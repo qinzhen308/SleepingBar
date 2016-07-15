@@ -195,6 +195,7 @@ public class HApplication extends MyApplication {
 				LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 				locationManager.removeUpdates(locationListener);
 				locationListener=null;
+				synchLocation();
 			}
 		}
 
@@ -329,6 +330,31 @@ public class HApplication extends MyApplication {
 		},requester);
 
 	}
+
+	public void synchLocation() {
+		ParamBuilder params=new ParamBuilder();
+		params.append("lat",mLocation.getLatitude());
+		params.append("lng",mLocation.getLongitude());
+		NetworkWorker.getInstance().getCallbackInBg(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_SYNCH_LOCATION), new NetworkWorker.ICallback() {
+
+			@Override
+			public void onResponse(int status, String result) {
+				if(status==200){
+					BaseObject<UserInfo> object= GsonParser.getInstance().parseToObj(result, UserInfo.class);
+					if(object!=null){
+						if(object.data!=null&&object.status==BaseObject.STATUS_OK){
+							LogUtil.d("同步经纬度---result="+result);
+						}else {
+						}
+					}else {
+
+					}
+				}
+
+			}
+		});
+	}
+
 
 
 }

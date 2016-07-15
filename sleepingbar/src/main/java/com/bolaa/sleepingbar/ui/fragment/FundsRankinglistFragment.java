@@ -4,8 +4,6 @@ package com.bolaa.sleepingbar.ui.fragment;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +34,6 @@ import com.bolaa.sleepingbar.view.pulltorefresh.PullListView;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullToRefreshBase;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
-import com.core.framework.store.sharePer.PreferencesUtils;
 import com.core.framework.util.DialogUtil;
 
 import java.util.List;
@@ -141,8 +138,8 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 			}
 
             @Override
-            public void onPraise(RankinglistItem item) {
-                praise(item);
+            public void onPraise(RankinglistItem item,ImageView tagView) {
+                praise(item,tagView);
             }
         });
 	}
@@ -155,7 +152,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 			tvFundsTotal.setText(AppUtil.getTwoDecimal(data.my_sleep_fund));
 			tvName.setText(data.my_nickname);
 			tvRanking.setText("第"+data.my_sleep_rank+"名");
-			tvSupportCount.setText(""+data.my_support_num);
+			tvSupportCount.setText(""+data.my_praise_num);
 			Image13Loader.getInstance().loadImageFade(data.my_avatar,ivAvatar);
 		}else {
 			layoutMyFunds.setVisibility(View.GONE);
@@ -190,6 +187,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
 		if(supportDialog==null){
             View view=LayoutInflater.from(getActivity()).inflate(R.layout.dialog_support_funds, null);
 			supportDialog = DialogUtil.getMenuDialog(getActivity(), view);
+            supportDialog.setCanceledOnTouchOutside(true);
             tvSupportName=(TextView) view.findViewById(R.id.tv_support_name);
             tvSupportName.setText("支持给："+item.nick_name);
             tvWayDirect=(TextView) view.findViewById(R.id.tv_way_direct_give);
@@ -204,7 +202,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
             etMoney=(EditText) view.findViewById(R.id.et_money);
             dayViews=new TextView[]{tvWayDirect,tvWay5Day,tvWay10Day};
             moneyViews=new TextView[]{tvMoney1,tvMoney2,tvMoney3,tvMoney4,etMoney};
-            etMoney.addTextChangedListener(new TextWatcher() {
+            /*etMoney.addTextChangedListener(new TextWatcher() {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -226,7 +224,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
                         etMoney.setText(s.subSequence(0, i+3));
                     }
                 }
-            });
+            });*/
             for(int i=0;i<dayViews.length;i++){
                 dayViews[i].setOnClickListener(new SelectListener(i) {
                     @Override
@@ -316,7 +314,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
                 // TODO Auto-generated method stub
                 if(!getActivity().isFinishing())DialogUtil.dismissDialog(loadDialog);
                 if(status==200){
-                    LogUtil.d("jpush---bind push info="+result);
+                    LogUtil.d("rankinglist---support result="+result);
                     BaseObject<Object> obj= GsonParser.getInstance().parseToObj(result,Object.class);
                     if(obj!=null){
                         if(obj.status==BaseObject.STATUS_OK){
@@ -335,8 +333,12 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
         },requester);
     }
 
-    public void praise(final RankinglistItem item){
+    public void praise(final RankinglistItem item,final ImageView tagView){
         if(!AppStatic.getInstance().isLogin)return;
+        if(item.is_praise==1){
+            AppUtil.showToast(getActivity(),"您已经赞过它!");
+            return;
+        }
         DialogUtil.showDialog(loadDialog);
         ParamBuilder params=new ParamBuilder();
         params.append("uid",item.user_id);

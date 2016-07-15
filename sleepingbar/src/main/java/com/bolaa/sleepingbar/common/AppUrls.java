@@ -46,7 +46,7 @@ public class AppUrls {
 	public String URL_HOSPITAL_EVALUATE_COMMIT=BASE_URL+"&c=order&act=save_comment";//机构评价
 	public String URL_HOSPITAL_COMBO_LIST=BASE_URL+"&c=hospital&act=package_list";//体检套餐列表
 	public String URL_HOSPITAL_EVALUATE_LIST=BASE_URL+"&c=hospital&act=comment_list";//评论列表
-	public String URL_CHECK_UPDATE=BASE_URL+"";//升级
+	public String URL_CHECK_UPDATE=BASE_URL+"sync.php?act=get_versions";//升级
 
 	public String URL_HOME=BASE_URL+"sleep.php?act=index";//睡吧首页
 	public String URL_SUPPORTER_LIST=BASE_URL+"sleep.php?act=my_funds";//我的基金页面，也就是基金支持者列表
@@ -87,7 +87,7 @@ public class AppUrls {
 	public String URL_ACTIVE_HOME=BASE_URL+"activity.php?act=list";//首页活动页
 
 	public String URL_BBS_POSTS_INFORM=BASE_URL+"community.php?act=to_report";//举报
-	public String URL_BIND_PUSH_INFO=BASE_URL+"";//上报push registration id
+	public String URL_BIND_PUSH_INFO=BASE_URL+"user.php?act=mobile_key";//上报push registration id
 
 	public String URL_BIND_WX_USER_INFO=BASE_URL+"user.php?act=bind_weixin";//微信绑定
 	public String URL_BIND_WATCH_MAC_ADDRESS=BASE_URL+"user.php?act=bind_equipment";//手环绑定
@@ -96,6 +96,8 @@ public class AppUrls {
 	public String URL_WATCH_SYNC_STEP=BASE_URL+"sync.php?act=walk_save";//同步运动信息到服务器
 	public String URL_GET_SLEEP_IN_YEAR=BASE_URL+"sync.php?act=sleep_trend";//获取周月年的数据
 	public String URL_SLEEP_DATA_COLLECT_TIME=BASE_URL+"sync.php?act=sleep_time";//采集睡眠数据的时间段
+
+	public String URL_SYNCH_LOCATION=BASE_URL+"sync.php?act=lng_lat";//同步位置信息
 
 	public String URL_ARTICAL_SERVICE_PROTOCAL=BASE_URL+"user.php?act=service_terms";
 	public String URL_ARTICAL_LAW=BASE_URL+"user.php?act=legal_notice";

@@ -75,16 +75,15 @@
         android:gravity="center"
         />
 
-    <CheckBox
+    <ImageView
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/iv_support"
-        android:button="@drawable/selector_checkbox_heart"
         android:gravity="center"
         android:layout_marginRight="5dp"
         android:layout_centerVertical="true"
-        android:padding="5dp"
+        android:padding="6dp"
         />
 
     <TextView

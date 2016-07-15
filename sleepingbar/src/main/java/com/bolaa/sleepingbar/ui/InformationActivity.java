@@ -10,7 +10,11 @@ import android.text.Spannable;
 import android.text.Spanned;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -62,7 +66,7 @@ public class InformationActivity extends BaseListActivity implements
 	ResizeLinearLayout rootLayout;
 
 	private TextView tvName;
-	private TextView tvContent;
+//	private TextView tvContent;
 	private TextView tvDate;
 	private TextView tvAccessCount;
 	private ImageView ivPic;
@@ -70,6 +74,8 @@ public class InformationActivity extends BaseListActivity implements
 	private String postsId;
 	private int curIv = 0;
 	private int posts_position = -1;//从帖子列表进来的，再列表中的索引
+
+	WebView mWebView;
 	
 
 	@Override
@@ -111,7 +117,9 @@ public class InformationActivity extends BaseListActivity implements
 	private void initPosts() {
 		// TODO Auto-generated method stub
 		tvName=(TextView)header.findViewById(R.id.tv_name);
-		tvContent =(TextView)header.findViewById(R.id.tv_content);
+		mWebView =(WebView) header.findViewById(R.id.tv_content);
+		initWebView();
+//		tvContent =(TextView)header.findViewById(R.id.tv_content);
 		tvDate =(TextView)header.findViewById(R.id.tv_date);
 		tvAccessCount =(TextView)header.findViewById(R.id.tv_access_count);
 		tvDate =(TextView)header.findViewById(R.id.tv_date);
@@ -121,12 +129,64 @@ public class InformationActivity extends BaseListActivity implements
 		ivPic.setLayoutParams(lp);
 	}
 
+	private void initWebView() {
+		// LayoutParams lp=new
+		// LayoutParams(LayoutParams.MATCH_PARENT,ScreenUtil.HEIGHT);
+		// mWebView.setLayoutParams(lp);
+		// contentInSV.addView(mWebView);
+        WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
+        int width = wm.getDefaultDisplay().getWidth();
+        if(width > 650)
+        {
+            this.mWebView.setInitialScale(190);
+        }else if(width > 520)
+        {
+            this.mWebView.setInitialScale(160);
+        }else if(width > 450)
+        {
+            this.mWebView.setInitialScale(140);
+        }else if(width > 300)
+        {
+            this.mWebView.setInitialScale(120);
+        }else
+        {
+            this.mWebView.setInitialScale(100);
+        }
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setDefaultTextEncodingName("UTF-8");
+        webSettings.setSupportZoom(false);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setBlockNetworkImage(false);
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+		mWebView.setWebViewClient(new WebViewClient() {
+
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				// TODO Auto-generated method stub
+				view.loadUrl(url);
+				return true;
+			}
+
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				// TODO Auto-generated method stub
+				super.onPageFinished(view, url);
+				mWebView.setVisibility(View.VISIBLE);
+			}
+		});
+	}
+
+
 	private void setPostsView() {
 		tvName.setText(posts.title);
 		if(AppUtil.isNull(posts.content)){
-			tvContent.setText("");
+//			tvContent.setText("");
+			mWebView.setVisibility(View.GONE);
 		}else {
-			new Thread(new Runnable() {
+			/*new Thread(new Runnable() {
 				@Override
 				public void run() {
 					final Spanned spanned=Html.fromHtml(posts.content, imgGetter, null);
@@ -138,7 +198,8 @@ public class InformationActivity extends BaseListActivity implements
 					});
 				}
 			}).start();
-//			tvContent.setText(Html.fromHtml(posts.content, imgGetter, null));
+//			tvContent.setText(Html.fromHtml(posts.content, imgGetter, null));*/
+			mWebView.loadData(posts.content, "text/html;charset=UTF-8", null);
 		}
 		tvDate.setText(posts.add_time);
 		tvAccessCount.setText("浏览量："+posts.page_view);
@@ -225,7 +286,7 @@ public class InformationActivity extends BaseListActivity implements
 		}
 		ParamBuilder params = new ParamBuilder();
 		params.append("id", postsId + "");
-		params.append("type", 2);
+		params.append("type", 1);
 		if (isRefresh) {
 			immediateLoadData(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_TOPIC_COMMENTS_LIST),
 					CommentsWraper.class);

@@ -42,11 +42,11 @@
 
     <string name="captcha_already_send">已经将手机验证码发送至手机请查收后，输入验证码数字进行验证。</string>
 
-    <string name="update_tuan_coupon_now">正在下载壹品倉客户端&#8230;</string>
+    <string name="update_tuan_coupon_now">正在下载维极睡吧客户端&#8230;</string>
     <string name="update_tip">升级提示</string>
     <string name="update_failure">更新失败</string>
     <string name="update_success">客户端下载成功</string>
     <string name="downloading">正在下载&#8230;</string>
-    <string name="update_coupon_now">正在下载折800客户端&#8230;</string>
+    <string name="update_coupon_now">正在下载维极睡吧客户端&#8230;</string>
 
 </resources>

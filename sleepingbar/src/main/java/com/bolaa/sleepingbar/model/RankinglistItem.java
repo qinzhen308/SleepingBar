@@ -8,8 +8,8 @@ public class RankinglistItem {
     public String avatar;
     public String nick_name;
     public int rank;
-    public int support_num;
+    public String support_num;
     public String user_id;
-    public float user_money;
+    public float sleep_fund;
     public int is_praise;
 }

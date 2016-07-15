@@ -13,7 +13,7 @@
         android:textSize="@dimen/text_size"
         android:textColor="@color/main"
         android:singleLine="true"
-        android:padding="8dp"
+        android:padding="4dp"
         />
     
 

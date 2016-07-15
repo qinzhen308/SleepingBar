@@ -515,7 +515,7 @@
                 android:padding="5dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:text="好厉害"/>
+                android:text="请绑定设备"/>
 
             <TextView
                 android:id="@+id/tv_step_quanlity_tip"
@@ -528,7 +528,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="40dp"
-                android:text="“良好的作息习惯是健康的基础”"/>
+                android:text="“只有绑定手环后才会记录数据”"/>
 
 
 

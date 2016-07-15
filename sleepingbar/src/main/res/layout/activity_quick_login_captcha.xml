@@ -37,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:background="@null"
         android:gravity="center"
-        android:inputType="phone"
+        android:inputType="textVisiblePassword|textMultiLine"
         android:textColor="@color/white"
         android:layout_marginLeft="3dp"
         android:singleLine="true"

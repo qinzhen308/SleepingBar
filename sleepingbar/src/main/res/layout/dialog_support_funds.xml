@@ -141,7 +141,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_small"
             android:background="@drawable/bg_support_funds2"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:gravity="center"
             android:singleLine="true"
             android:layout_marginLeft="8dp"

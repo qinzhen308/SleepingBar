@@ -55,7 +55,7 @@ public class MyMsgAdapter extends AbstractListAdapter<Message> {
 		holder.ivAvatar.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				OtherUserHomeActivity.invoke(mContext,item.user_id,item.nick_name);
+				OtherUserHomeActivity.invoke(mContext,item.f_user_id,item.nick_name);
 			}
 		});
 
@@ -63,7 +63,7 @@ public class MyMsgAdapter extends AbstractListAdapter<Message> {
             @Override
             public void onClick(View v) {
 				if(item.type==1){
-                	BBSPostsDetailActivity.invoke(mContext,item.id);
+                	BBSPostsDetailActivity.invoke(mContext,item.without_id);
 				}
             }
         });

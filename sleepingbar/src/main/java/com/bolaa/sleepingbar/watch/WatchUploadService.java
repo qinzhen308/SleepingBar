@@ -44,15 +44,14 @@ public class WatchUploadService extends IntentService{
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
      *
-     * @param name Used to name the worker thread, important only for debugging.
      */
-    public WatchUploadService(String name) {
-        super(name);
+    public WatchUploadService() {
+        super(WatchUploadService.class.getSimpleName());
     }
 
 
     public static void setAlarm(Context context){
-        if(!PreferencesUtils.getBoolean("has_watch_alarm"))return;
+        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
 
         Intent intent = new Intent(context, WatchUploadService.class);
         intent.setData(Uri.parse("content://com.bolaa.sleepingbar"));
@@ -68,7 +67,9 @@ public class WatchUploadService extends IntentService{
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count")+1);
         if(PreferencesUtils.getBoolean("isLogin")){
+            PreferencesUtils.putInteger("start_synch_count",PreferencesUtils.getInteger("start_synch_count")+1);
             getCollectTime();
         }
     }
@@ -138,7 +139,7 @@ public class WatchUploadService extends IntentService{
         requester.getParams().put("data",array.toString());
 //        long time= (new Date().getTime()/((60*60*24)*1000))*(60*60*24);
         final String sign= PreferencesUtils.getString("user_id")+"_"+System.currentTimeMillis()/1000+"_"+133;
-        final String sleep_date=DateUtil.getYMDTime(System.currentTimeMillis());
+        final String sleep_date=PreferencesUtils.getString("sleep_data_collect_date");
         requester.getParams().put("sleep_date", sleep_date);
         requester.getParams().put("sign",sign);
         requester.getParams().put("sleep_end_time",end);
@@ -152,6 +153,8 @@ public class WatchUploadService extends IntentService{
                     LogUtil.d("upload watch sleep data---result="+result);
                     final BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
                     if(obj!=null&&obj.status==BaseObject.STATUS_OK){
+
+                        PreferencesUtils.putInteger("synch_success_count",PreferencesUtils.getInteger("synch_success_count")+1);
 
                     }else {
 //                        try {

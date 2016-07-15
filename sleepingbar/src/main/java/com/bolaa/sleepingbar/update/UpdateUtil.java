@@ -42,8 +42,8 @@ public class UpdateUtil extends com.core.framework.update.UpdateUtil{
     private static final int POS_TUAN = 0;
     private static final int POS_ZHE = 1;
 
-    private static final String TUAN800_NAME = "yipincang.apk";
-    private static final String ZHE800_NAME = "yipincang.apk";
+    private static final String TUAN800_NAME = "sleepingbar.apk";
+    private static final String ZHE800_NAME = "sleepingbar.apk";
 
     private static Activity mContext;
     private static List<UpdateBuilder> partnerList = new ArrayList<UpdateBuilder>();
@@ -173,9 +173,9 @@ public class UpdateUtil extends com.core.framework.update.UpdateUtil{
         JSONObject mJSONObject = new JSONObject(updateStr);
         ZheUpdateEntity mZheUpdateEntity = new ZheUpdateEntity();
         mZheUpdateEntity.appName = AppConfig.CLIENT_TAG;
-        mZheUpdateEntity.downloadUrl = mJSONObject.optString("file_src");
+        mZheUpdateEntity.downloadUrl = mJSONObject.optString("download_url");
 //        mZheUpdateEntity.remoteVersionCode = Integer.valueOf(mJSONObject.optString("version_sort"));
-        mZheUpdateEntity.remoteVersionCode = mJSONObject.optInt("version_sort");
+        mZheUpdateEntity.remoteVersionCode = mJSONObject.optInt("versions_code");
 //        mZheUpdateEntity.remoteMinVersionCode = Integer.valueOf(mJSONObject.optString("mix_version"));
         mZheUpdateEntity.remoteMinVersionCode = mJSONObject.optInt("mix_version");
         mZheUpdateEntity.description = mJSONObject.optString("description");

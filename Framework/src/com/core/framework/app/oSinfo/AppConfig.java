@@ -40,8 +40,8 @@ public class AppConfig {
     public static final String APP_SECRET="773a8cc792c0038aa278081b90577875";
 
     // tag
-    public static final String CLIENT_TAG = "haiyuehui";
-    public static final String PRODUCT_TAG = "haiyuehui";
+    public static final String CLIENT_TAG = "sleepingbar";
+    public static final String PRODUCT_TAG = "sleepingbar";
     public static final String PLATFORM_TAG = "APad";
 
     // partner

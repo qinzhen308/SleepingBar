@@ -14,5 +14,6 @@ public class Message {
     public int type;
     public String user_id;
     public String syno;
+    public String without_id;
 
 }

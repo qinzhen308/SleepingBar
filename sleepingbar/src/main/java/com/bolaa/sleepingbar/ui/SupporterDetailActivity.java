@@ -30,6 +30,7 @@ import java.util.List;
 public class SupporterDetailActivity extends BaseListActivity implements LoadStateController.OnLoadErrorListener,PullToRefreshBase.OnRefreshListener{
 	private TextView tvSupportCount;
 
+	private String id;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,8 @@ public class SupporterDetailActivity extends BaseListActivity implements LoadSta
 	}
 	
 	private void setExtra(){
-		
+		id=getIntent().getStringExtra("id");
+
 	}
 
 
@@ -69,6 +71,7 @@ public class SupporterDetailActivity extends BaseListActivity implements LoadSta
 			showLoading();
 		}
 		ParamBuilder params=new ParamBuilder();
+		params.append("friend_id",id);
         params.append(ParamBuilder.ACCESS_TOKEN, HApplication.getInstance().token);
 		if(isRefresh){
 			immediateLoadData(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_SUPPORTER_DETAIL), SupporterDetailWraper.class);
@@ -153,7 +156,7 @@ public class SupporterDetailActivity extends BaseListActivity implements LoadSta
 	public static void invoke(Context context, Supporter supporter){
 		Intent intent=new Intent(context,SupporterDetailActivity.class);
 		if(supporter!=null){
-
+			intent.putExtra("id",supporter.id);
 		}
 		context.startActivity(intent);
 	}

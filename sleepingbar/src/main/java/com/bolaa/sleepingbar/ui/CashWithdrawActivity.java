@@ -190,7 +190,7 @@ public class CashWithdrawActivity extends BaseActivity{
         requester.getParams().put("bank_account", card);
         requester.getParams().put("bank_user_name", name);
         requester.getParams().put("money", cash);
-		NetworkWorker.getInstance().get(AppUrls.getInstance().URL_CASH_WITHDRAW, new ICallback() {
+		NetworkWorker.getInstance().post(AppUrls.getInstance().URL_CASH_WITHDRAW, new ICallback() {
 			
 			@Override
 			public void onResponse(int status, String result) {

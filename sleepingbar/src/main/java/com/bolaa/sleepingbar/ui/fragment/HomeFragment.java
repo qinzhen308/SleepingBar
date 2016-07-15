@@ -12,6 +12,7 @@ import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.CommonWebActivity;
 import com.bolaa.sleepingbar.ui.FundsRankinglistActivity;
 import com.bolaa.sleepingbar.ui.MyMedalActivity;
+import com.bolaa.sleepingbar.ui.QuickBindWXActivity;
 import com.bolaa.sleepingbar.ui.SleepTrendActivity;
 import com.bolaa.sleepingbar.ui.SupporterActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
@@ -127,6 +128,13 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		super.onActivityCreated(savedInstanceState);
 		// initData(false);
 		loadSleepInfo();
+		if(AppUtil.isNull(PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS))){
+			tvStepTip.setText(TipUtil.getStepTip(-1));
+			tvStepEvaluate.setText(TipUtil.getStepEvaluate(-1));
+		}else {
+			tvStepTip.setText(TipUtil.getStepTip(0));
+			tvStepEvaluate.setText(TipUtil.getStepEvaluate(0));
+		}
 	}
 
 	public void initView() {
@@ -226,12 +234,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		}else if(v==layoutSleepTrend){
 			SleepTrendActivity.invoke(getActivity());
 		}else if(v==tvNeedFriends){
-            ParamBuilder params= new ParamBuilder();
-            params.clear();
-            String info =sleepInfo.sleep_info_id;
-            params.append("id",info);
-            params.append("s", MD5Util.getMD5(info+"_iphone_android"));
-            ShareUtil shareUtil=new ShareUtil(getActivity(),"睡眠分享", "比比看",APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_SLEEP_SHARE));
+            ShareUtil shareUtil=new ShareUtil(getActivity(),"睡眠分享", "比比看",sleepInfo.sleep_info_url);
 			shareUtil.showShareDialog();
 		}else if(v==tvNeedFriends2){
 			ParamBuilder params= new ParamBuilder();

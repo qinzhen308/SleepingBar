@@ -269,10 +269,12 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 	@Override
 	public void resultForZhifubao(int state, String detail) {
 		if(state==1){
-			PayResultActivity.invoke(PayTestActivity.this, 1);
+//			PayResultActivity.invoke(PayTestActivity.this, 1);
+			AppUtil.showToast(this,"充值成功");
 			finish();
 		}else {
-			PayResultActivity.invoke(PayTestActivity.this, 0);
+			AppUtil.showToast(this,"充值失败");
+//			PayResultActivity.invoke(PayTestActivity.this, 0);
 		}
 	}
 

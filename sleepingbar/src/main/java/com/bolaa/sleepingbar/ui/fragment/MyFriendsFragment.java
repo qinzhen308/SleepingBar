@@ -1,6 +1,7 @@
 package com.bolaa.sleepingbar.ui.fragment;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.KeyEvent;
@@ -17,21 +18,28 @@ import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.FriendsListAdapter;
 import com.bolaa.sleepingbar.adapter.FundsRankinglistAdapter;
+import com.bolaa.sleepingbar.adapter.TopicListAdapter;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
 import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.model.Friends;
+import com.bolaa.sleepingbar.model.Topic;
 import com.bolaa.sleepingbar.model.wrapper.BeanWraper;
 import com.bolaa.sleepingbar.model.wrapper.FriendsWraper;
 import com.bolaa.sleepingbar.model.wrapper.RankinglistItemWraper;
+import com.bolaa.sleepingbar.parser.gson.BaseObject;
+import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullListView;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullSwipeListView;
 import com.bolaa.sleepingbar.view.pulltorefresh.PullToRefreshBase;
 import com.bolaa.sleepingbar.view.pulltorefresh.SwipeListView;
+import com.core.framework.app.base.BaseActivity;
 import com.core.framework.app.devInfo.ScreenUtil;
+import com.core.framework.net.NetworkWorker;
+import com.core.framework.util.DialogUtil;
 
 import java.util.List;
 
@@ -49,6 +57,9 @@ public class MyFriendsFragment extends BaseListFragment implements PullToRefresh
 
 	public EditText etSearch;
 	private String keywords;
+
+	Dialog loadDialog;
+
 
 
 
@@ -110,6 +121,8 @@ public class MyFriendsFragment extends BaseListFragment implements PullToRefresh
         mSwipeListView.setAdapter(mAdapter);
         mLoadStateController=new LoadStateController(getActivity(),(FrameLayout)baseLayout.findViewById(R.id.layout_load_state_container));
         hasLoadingState=true;
+
+		loadDialog = DialogUtil.getCenterDialog(getActivity(), LayoutInflater.from(getActivity()).inflate(R.layout.load_doag, null));
 	}
 
 	private void setListener() {
@@ -121,6 +134,7 @@ public class MyFriendsFragment extends BaseListFragment implements PullToRefresh
                 @Override
                 public void onCancel(Friends friends) {
                     mSwipeListView.hideRightView();
+					cancelCare(friends);
                 }
             });
         }
@@ -139,6 +153,34 @@ public class MyFriendsFragment extends BaseListFragment implements PullToRefresh
 		});
 	}
 
+
+	private void cancelCare(final Friends friends){
+		DialogUtil.showDialog(loadDialog);
+		ParamBuilder params=new ParamBuilder();
+		params.append("f_user_id",friends.uid);
+		params.append("tab","me_care");
+		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_CANCEL_CARE), new NetworkWorker.ICallback() {
+			@Override
+			public void onResponse(int status, String result) {
+				if(!getActivity().isFinishing())DialogUtil.dismissDialog(loadDialog);
+				if(status==200){
+					BaseObject<Object> obj= GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null){
+						if(obj.status==BaseObject.STATUS_OK){
+							initData(true);
+							AppUtil.showToast(getActivity(),obj.info);
+						}else {
+							AppUtil.showToast(getActivity(),obj.info);
+						}
+					}else {
+						AppUtil.showToast(getActivity(),"解析出错");
+					}
+				}else {
+					AppUtil.showToast(getActivity(),"请检查网络");
+				}
+			}
+		});
+	}
 
 
 
@@ -166,7 +208,7 @@ public class MyFriendsFragment extends BaseListFragment implements PullToRefresh
 			params.append("tab", "care_me");
 		}
         if(!AppUtil.isNull(keywords)){
-            params.append("keyword", keywords);
+            params.append("keywords", keywords);
         }
 		if(isRefresh){
 			immediateLoadData(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_MY_FRIENDS_LIST), FriendsWraper.class);

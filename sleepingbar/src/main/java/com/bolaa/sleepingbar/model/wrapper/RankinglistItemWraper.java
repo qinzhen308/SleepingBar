@@ -15,7 +15,7 @@ public class RankinglistItemWraper implements BeanWraper<RankinglistItem>{
     public int page_count;//页码总数
 
     public int my_sleep_rank;
-    public int my_support_num;
+    public int my_praise_num;
     public float my_sleep_fund;
     public String my_nickname;
     public String my_avatar;
