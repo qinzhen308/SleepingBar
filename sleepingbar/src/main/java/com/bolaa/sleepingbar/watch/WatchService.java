@@ -348,7 +348,7 @@ public class WatchService extends Service{
         dsc.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
         boolean success =mBluetoothGatt.writeDescriptor(dsc);
         LogUtil.d("watch 33f3---writing enabledescriptor:" + success);
-        Toast.makeText(getApplicationContext(),"33f3通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(),"33f3通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
     }
 
 

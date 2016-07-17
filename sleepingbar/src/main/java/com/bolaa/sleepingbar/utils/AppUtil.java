@@ -1172,4 +1172,13 @@ public class AppUtil {
 		}
 		return p==null?"":p;
 	}
+
+	public static String getTwoDecimal(double src){
+		DecimalFormat decimalFormat=new DecimalFormat(".00");//构造方法的字符格式这里如果小数不足2位,会以0补足.
+		String p=decimalFormat.format(src);//format 返回的是字符串
+		if(p.startsWith(".")){
+			p="0"+p;
+		}
+		return p==null?"":p;
+	}
 }

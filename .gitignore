@@ -1,0 +1,17 @@
+*.iml
+
+*.gradle
+
+*.idea
+
+*.iml
+
+*.aar
+
+/build
+
+/.gradle
+
+*/.gradle
+
+*/build

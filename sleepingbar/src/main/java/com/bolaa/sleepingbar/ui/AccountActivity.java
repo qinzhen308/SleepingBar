@@ -42,9 +42,14 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
 		setExtra();
 		initView();
 		setListener();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
 		initData();
 	}
-	
+
 	private void setExtra(){
 		
 	}
@@ -196,7 +201,7 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
 	}
 
 	public class AccountData{
-		public float user_money;
+		public double user_money;
 		public List<AccountLog> account_log;
 	}
 
