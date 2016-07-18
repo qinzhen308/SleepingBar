@@ -34,6 +34,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import java.util.Random;
 import java.util.Set;
+import java.util.TimeZone;
 
 /**
  * Created by paulz on 2016/7/13.
@@ -52,17 +53,16 @@ public class WatchUploadService extends IntentService{
 
 
     public static void setAlarm(Context context){
-//        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
-
+        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
         Intent intent = new Intent(context, WatchUploadService.class);
         intent.setData(Uri.parse("content://com.bolaa.sleepingbar"));
         PendingIntent sender = PendingIntent.getService(context, 10010, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         // Schedule the alarm!
         intent.setAction(ACTION_WATCH_UPLOAD_SERVICE);
         AlarmManager am = (AlarmManager) context .getSystemService(Context.ALARM_SERVICE);
-        am.cancel(sender);
         //均衡服务器的压力，设置上报时间为10点半前后5分钟内。
         Calendar calendar = Calendar.getInstance(); calendar.set(Calendar.HOUR_OF_DAY, 10);
+        calendar.setTimeZone(TimeZone.getTimeZone("GMT+8"));
         calendar.set(Calendar.MINUTE, 30+(new Random().nextInt(10)-5));
         calendar.set(Calendar.SECOND, new Random().nextInt(60));
         calendar.set(Calendar.MILLISECOND, 0);
@@ -78,6 +78,15 @@ public class WatchUploadService extends IntentService{
     protected void onHandleIntent(Intent intent) {
         PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count",0)+1);
         if(PreferencesUtils.getBoolean("isLogin")){
+            int count=0;
+            while (PreferencesUtils.getBoolean("sleep_data_synching_at_watch")||count<30){
+                try {
+                    count++;
+                    wait(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
             PreferencesUtils.putInteger("start_synch_count",PreferencesUtils.getInteger("start_synch_count",0)+1);
             getCollectTime();
         }
@@ -127,10 +136,11 @@ public class WatchUploadService extends IntentService{
             if(!AppUtil.isEmpty(data2)) {
                 System.arraycopy(data2, 0, data, 1440 - start, end + 1);
             }
-        } catch (UnsupportedEncodingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }catch (Exception e){
-            e.printStackTrace();
+        }
+        if(AppUtil.isEmpty(data)){
+            data=new byte[1440-start+end+1];
         }
         upload(data,collectTime.sleep_start_time,collectTime.sleep_end_time);
     }

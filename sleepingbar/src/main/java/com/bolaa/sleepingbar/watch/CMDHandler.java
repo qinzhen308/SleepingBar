@@ -76,6 +76,7 @@ public class CMDHandler {
     //返回值代表是否继续昨天的
     public static boolean saveSleep(byte[] src){
         if(!(src[0]==CMD_SLEEP_SOMEDAY||src[0]==CMD_MOVEMENT_SOMEDAY))return false;
+        PreferencesUtils.putBoolean("sleep_data_synching_at_watch",true);//设置状态为同步中，防止上传
         int time=((src[4]<<24)&0xff000000)|((src[3]<<16)&0x00ff0000)|((src[2]<<8)&0x0000ff00)|((src[1]&0x000000ff));
         String date=DateUtil.getYMD_GMTTime(((long)time)*1000);
         String today=DateUtil.getYMD_GMTTime(System.currentTimeMillis());
@@ -116,6 +117,10 @@ public class CMDHandler {
             String sleep_date=DateUtil.getYMDTime(System.currentTimeMillis()-((long)1000)*60*60*24);//对应日期
             PreferencesUtils.putString("sleep_data_collect_date",sleep_date);
             return true;
+        }
+        if(!date.equals(today)&&index==95){//今天的读取结束了，开始读昨天的
+            String sleep_date=DateUtil.getYMDTime(System.currentTimeMillis()-((long)1000)*60*60*24);//对应日期
+            PreferencesUtils.putBoolean("sleep_data_synching_at_watch",false);//是否正在同步中
         }
         return false;
     }
