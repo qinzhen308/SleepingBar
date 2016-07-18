@@ -114,7 +114,7 @@ public class CMDHandler {
         }
         if(date.equals(today)&&index==95){//今天的读取结束了，开始读昨天的
             String sleep_date=DateUtil.getYMDTime(System.currentTimeMillis()-((long)1000)*60*60*24);//对应日期
-            PreferencesUtils.putString("sleep_data_collect_date",sleep_data);
+            PreferencesUtils.putString("sleep_data_collect_date",sleep_date);
             return true;
         }
         return false;

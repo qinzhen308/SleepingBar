@@ -90,7 +90,7 @@ public class SupporterDetailActivity extends BaseListActivity implements LoadSta
         BeanWraper wraper=getBeanWraper();
         if(wraper!=null){
 			SupporterDetailWraper data=(SupporterDetailWraper)wraper;
-//            tvSupportCount.setText(data.+"/");
+            tvSupportCount.setText(data.got_fund+"/"+data.sleep_fund);
         }
     }
 

@@ -332,7 +332,7 @@ public class WatchService extends Service{
             dsc.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             boolean success =mBluetoothGatt.writeDescriptor(dsc);
             LogUtil.d("watch---writing enabledescriptor:" + success);
-            Toast.makeText(getApplicationContext(),"通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(),"通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
             if(set&&success){
                 sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS).putExtra("device_name",mBluetoothGatt.getDevice().getName()).putExtra("device_address",mBluetoothGatt.getDevice().getAddress()));
             }

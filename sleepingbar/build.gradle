@@ -4,6 +4,7 @@ android {
         sleepingbar_debug {
             keyAlias 'sleepingbar'
             keyPassword '123456'
+//            storeFile file('/Users/pualbeben/Documents/paulz/workspace/androidstudio/Sleepingbar/SleepingBar/sleepingbar/sleepingbar.jks')
             storeFile file('E:/paulz/workspace/aswork/SleepingBar/sleepingbar/sleepingbar.jks')
             storePassword '123456'
         }

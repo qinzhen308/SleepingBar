@@ -18,6 +18,8 @@ public class SupporterDetailWraper implements BeanWraper<SupporterDetail>{
     public String nick_name;
     public String user_id;
     public String avatar;
+    public String sleep_fund;
+    public String got_fund;
 
     @Override
     public int getItemsCount(){

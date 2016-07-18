@@ -2,6 +2,10 @@ package com.bolaa.sleepingbar.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -23,6 +27,7 @@ import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.wxapi.WXEntryActivity;
 import com.bolaa.sleepingbar.wxapi.WXEntryActivityV2;
+import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.util.DialogUtil;
 
@@ -79,6 +84,9 @@ public class QuickLoginActivity extends BaseActivity{
         etPhone=(EditText)findViewById(R.id.edit_phone);
         tvProtocal=(TextView)findViewById(R.id.tv_protocol);
         btnNext=(TextView)findViewById(R.id.tv_next);
+//        Bitmap bitmap=BitmapFactory.decodeResource(getResources(),R.drawable.bg_login);
+//        LogUtil.d("bitmapo="+bitmap.getRowBytes());
+//        findViewById(R.id.rlayout_login).setBackground(BitmapDrawable.);
     }
 
 

@@ -252,7 +252,15 @@
         <service android:name=".watch.WatchService"
             android:process=":WatchService"></service>
 
-        <service android:name=".watch.WatchUploadService"></service>
+        <service
+            android:name=".watch.WatchUploadService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.bolaa.sleepingbar.ACTION.WATCH.UPLOAD.SERVICE"/>
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </service>
 
 
         <!--====================以下是三方sdk接入时注册组件的区域=========================-->

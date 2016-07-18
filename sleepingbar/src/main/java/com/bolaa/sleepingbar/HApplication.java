@@ -7,6 +7,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
@@ -267,6 +268,8 @@ public class HApplication extends MyApplication {
 				// TODO Auto-generated method stub
 				if(status==200){
 					LogUtil.d("watch---bind watch="+result);
+					AppUtil.showToast(getInstance(),"绑定手环成功！");
+
 				}
 			}
 		},requester);
@@ -333,8 +336,8 @@ public class HApplication extends MyApplication {
 
 	public void synchLocation() {
 		ParamBuilder params=new ParamBuilder();
-		params.append("lat",mLocation.getLatitude());
-		params.append("lng",mLocation.getLongitude());
+		params.append("lat",""+mLocation.getLatitude());
+		params.append("lng",""+mLocation.getLongitude());
 		NetworkWorker.getInstance().getCallbackInBg(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_SYNCH_LOCATION), new NetworkWorker.ICallback() {
 
 			@Override

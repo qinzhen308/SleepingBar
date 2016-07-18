@@ -40,6 +40,7 @@ import java.util.Set;
  */
 public class WatchUploadService extends IntentService{
     private static final int INTERVAL = 1000 * 60 * 60 * 24;// 24h
+    public static final String ACTION_WATCH_UPLOAD_SERVICE="com.bolaa.sleepingbar.ACTION.WATCH.UPLOAD.SERVICE";
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -51,15 +52,23 @@ public class WatchUploadService extends IntentService{
 
 
     public static void setAlarm(Context context){
-        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
+//        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
 
         Intent intent = new Intent(context, WatchUploadService.class);
         intent.setData(Uri.parse("content://com.bolaa.sleepingbar"));
         PendingIntent sender = PendingIntent.getService(context, 10010, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         // Schedule the alarm!
+        intent.setAction(ACTION_WATCH_UPLOAD_SERVICE);
         AlarmManager am = (AlarmManager) context .getSystemService(Context.ALARM_SERVICE);
+        am.cancel(sender);
+        //均衡服务器的压力，设置上报时间为10点半前后5分钟内。
         Calendar calendar = Calendar.getInstance(); calendar.set(Calendar.HOUR_OF_DAY, 10);
-        calendar.set(Calendar.MINUTE, 30+(new Random().nextInt(10)-5)); calendar.set(Calendar.SECOND, new Random().nextInt(60)); calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.MINUTE, 30+(new Random().nextInt(10)-5));
+        calendar.set(Calendar.SECOND, new Random().nextInt(60));
+        calendar.set(Calendar.MILLISECOND, 0);
+//        calendar.set(Calendar.MINUTE, 36);
+//        calendar.set(Calendar.SECOND,30);
+//        calendar.set(Calendar.MILLISECOND, 0);
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), INTERVAL, sender);
         PreferencesUtils.putBoolean("has_watch_alarm",true);
     }
@@ -67,9 +76,9 @@ public class WatchUploadService extends IntentService{
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count")+1);
+        PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count",0)+1);
         if(PreferencesUtils.getBoolean("isLogin")){
-            PreferencesUtils.putInteger("start_synch_count",PreferencesUtils.getInteger("start_synch_count")+1);
+            PreferencesUtils.putInteger("start_synch_count",PreferencesUtils.getInteger("start_synch_count",0)+1);
             getCollectTime();
         }
     }
@@ -120,6 +129,8 @@ public class WatchUploadService extends IntentService{
             }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
         }
         upload(data,collectTime.sleep_start_time,collectTime.sleep_end_time);
     }
@@ -154,7 +165,7 @@ public class WatchUploadService extends IntentService{
                     final BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
                     if(obj!=null&&obj.status==BaseObject.STATUS_OK){
 
-                        PreferencesUtils.putInteger("synch_success_count",PreferencesUtils.getInteger("synch_success_count")+1);
+                        PreferencesUtils.putInteger("synch_success_count",PreferencesUtils.getInteger("synch_success_count",0)+1);
 
                     }else {
 //                        try {
