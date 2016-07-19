@@ -30,10 +30,10 @@ public class SupporterDetailAdapter extends AbstractListAdapter<SupporterDetail>
 			holder=(ViewHolder)view.getTag();
 		}
 		final SupporterDetail detail=mList.get(i);
-		if("达标天数".equals(detail.type)){
-			holder.tvStatus.setText(detail.days_num+"/"+detail.stages_num);
+		if("0".equals(detail.stages_num)){
+			holder.tvFunds.setText(AppUtil.isNull(detail.type)?"直接赠送":detail.type);
 		}else {
-			holder.tvFunds.setText("直接支持");
+			holder.tvStatus.setText(detail.days_num+"/"+detail.stages_num);
 		}
 		holder.tvFunds.setText(AppUtil.getTwoDecimal(detail.got_money)+"/"+ AppUtil.getTwoDecimal(detail.money)+" 元");
 		holder.tvDate.setText(detail.c_time);

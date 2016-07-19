@@ -42,7 +42,7 @@ public class CashWithdrawActivity extends BaseActivity{
 	TextView tvCashMax;
     WheelView bankWheel;
 	
-	float maxCash;
+	double maxCash;
 	
 	WithdrawPageInfo info;
 	

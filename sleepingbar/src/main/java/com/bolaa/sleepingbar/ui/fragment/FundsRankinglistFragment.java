@@ -242,6 +242,11 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
                         curMoneyItem=this.position;
                         if(curMoneyItem!=moneyViews.length-1){
                             etMoney.setText("");
+                            etMoney.clearFocus();
+                            AppUtil.hideSoftInputMethod(getActivity(),etMoney);
+                        }else {
+                            etMoney.requestFocus();
+                            AppUtil.showSoftInputMethod(getActivity(),etMoney);
                         }
                     }
                 });

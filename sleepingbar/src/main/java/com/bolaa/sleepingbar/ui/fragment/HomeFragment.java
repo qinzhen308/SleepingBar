@@ -106,11 +106,6 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		getActivity().unregisterReceiver(mReceiver);
 	}
 
-	@Override
-	public void onStop() {
-		super.onStop();
-		cacheStep();
-	}
 
 	@Override
 	@Nullable
@@ -134,7 +129,14 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		}else {
 			tvStepTip.setText(TipUtil.getStepTip(0));
 			tvStepEvaluate.setText(TipUtil.getStepEvaluate(0));
+			getStepAtLast();
 		}
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		cacheStep();
 	}
 
 	public void initView() {
@@ -275,7 +277,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	};
 
 	private boolean shouldCahe;
-	private void cacheStep(){
+	public void cacheStep(){
 		if(!shouldCahe)return;
 		JSONObject walk_data=new JSONObject();
 		try {
@@ -291,6 +293,33 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			e.printStackTrace();
 		}
 		PreferencesUtils.putString(WatchConstant.FLAG_STEP_CACHE,walk_data.toString());
+	}
+
+	private void getStepAtLast(){
+		String cur_address=PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+		if(AppUtil.isNull(cur_address))return;
+		String walk_data=PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE);
+		if(AppUtil.isNull(walk_data))return;
+		JSONObject jsonObject= null;
+		try {
+			jsonObject = new JSONObject(walk_data);
+			if(!cur_address.equals(jsonObject.optString("mac")))return;
+			int run_total=jsonObject.optInt("run_total");
+			int step_all=jsonObject.optInt("times");
+			int walk_total=jsonObject.optInt("walk_total");
+			double kilometre=jsonObject.optDouble("kilometre");
+			String calorie=jsonObject.optString("walk_total");
+
+			tvStep.setText(""+step_all);
+			tvCalorie.setText(""+calorie);
+			tvDistance.setText(""+kilometre);
+			tvWalk.setText(""+walk_total);
+			tvStepTip.setText(TipUtil.getStepTip((int)(kilometre*1000)));
+			tvStepEvaluate.setText(TipUtil.getStepEvaluate((int)(kilometre*1000)));
+			tvRun.setText(""+run_total);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 
 

@@ -48,6 +48,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
 		super.onCreate(savedInstanceState);
 		manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		lodDialog = DialogUtil.getCenterDialog(this, LayoutInflater.from(this).inflate(R.layout.load_doag, null));
+		AppStatic.getInstance().addActivity(this);
 	}
 
 	// @TargetApi(19)
@@ -62,6 +63,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
 	// }
 	// win.setAttributes(winParams);
 	// }
+
 
 	public void base_title_goneor_not(Boolean b) {
 		if (b) {
@@ -79,7 +81,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
 	 */
 	protected void setActiviyContextView(int paramInt) {
 
-		AppStatic.getInstance().addActivity(this);
 		setContentView(R.layout.activity_base);
 
 		base_titleLayout = (RelativeLayout) findViewById(R.id.base_titleLayout);
@@ -102,7 +103,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
 	protected void setActiviyContextView(int paramInt, boolean hasLoadingState,
 										 boolean hasTitle) {
 		this.hasLoadingState = hasLoadingState;
-		AppStatic.getInstance().addActivity(this);
 		setContentView(R.layout.activity_base);
 
 		base_titleLayout = (RelativeLayout) findViewById(R.id.base_titleLayout);

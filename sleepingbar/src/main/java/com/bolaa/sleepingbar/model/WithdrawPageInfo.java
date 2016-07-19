@@ -7,7 +7,7 @@ public class WithdrawPageInfo{
 
 	public String user_id;
 	public ArrayList<Bank> bank_array;
-	public float user_money;
+	public double user_money;
 	
 	public class Bank{
 

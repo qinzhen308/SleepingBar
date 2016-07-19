@@ -347,6 +347,12 @@ public class MainActivity extends BaseFragmentActivity implements
 			return;
 		}
 
+		//缓存睡眠数据
+		Fragment findresult = getSupportFragmentManager().findFragmentByTag(TAB1);
+		if(findresult instanceof HomeFragment){
+			((HomeFragment)findresult).cacheStep();
+		}
+
 		mHandler.removeCallbacksAndMessages(null);
 		HApplication.getInstance().exit();
 		super.onBackPressed();

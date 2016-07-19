@@ -262,6 +262,16 @@
             </intent-filter>
         </service>
 
+        <receiver
+            android:name=".watch.WatchUploadReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.bolaa.sleepingbar.ACTION.WATCH.SYNCH.RECEIVER"/>
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </receiver>
+
 
         <!--====================以下是三方sdk接入时注册组件的区域=========================-->
         <!-- 微信回调页面 -->

@@ -115,6 +115,7 @@ public class HApplication extends MyApplication {
 		ShareUtil.initShareData();
 		initPushService();
 		WatchUploadService.setAlarm(getApplicationContext());
+		WatchUploadReceiver.setAlarm(getApplicationContext());
 	}
 
 	private void initDatabase() {
@@ -319,14 +320,16 @@ public class HApplication extends MyApplication {
 
 	public void synchStep(){
 		HttpRequester requester=new HttpRequester();
-		requester.getParams().put("walk_data",PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE));
+		String walk_data=PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE);
+		if (AppUtil.isNull(walk_data))return;
+		requester.getParams().put("walk_data",walk_data);
 		NetworkWorker.getInstance().postCallbackInBg(AppUrls.getInstance().URL_WATCH_SYNC_STEP, new NetworkWorker.ICallback() {
 			@Override
 			public void onResponse(int status, String result) {
 				if(status==200){
 					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
 					if(obj!=null&&obj.status==BaseObject.STATUS_OK){
-						PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE);
+//						PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE);
 					}
 				}
 			}

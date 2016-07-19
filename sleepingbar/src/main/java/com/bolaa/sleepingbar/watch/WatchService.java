@@ -222,6 +222,14 @@ public class WatchService extends Service{
 //                    enableNotificationWrite(gatt);
                 }
             });
+            //读取手环mac地址---暂时不需要
+           /* new Handler(getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    CMDHandler.cmdGetMacAddress(writeCharacteristic);
+                    mBLE.writeCharacteristic(writeCharacteristic);
+                }
+            },5*1000);*/
 
         }
 
@@ -368,7 +376,10 @@ public class WatchService extends Service{
                     mBLE.writeCharacteristic(writeCharacteristic);
                 }
             }else if(WatchConstant.ACTION_WATCH_CMD_GET_SLEEP.equals(action)){//读手环的睡眠信息
-                //不一定需要做
+                if(writeCharacteristic!=null){
+                    CMDHandler.cmdGetSleepInfo(writeCharacteristic,(byte)0);
+                    mBLE.writeCharacteristic(writeCharacteristic);
+                }
             }
         }
     }

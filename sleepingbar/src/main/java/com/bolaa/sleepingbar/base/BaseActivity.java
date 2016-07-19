@@ -61,6 +61,7 @@ public class BaseActivity extends Activity implements OnClickListener,
 		lodDialog = DialogUtil.getCenterDialog(this, LayoutInflater.from(this)
 				.inflate(R.layout.load_doag, null));
 		NetworkWorker.getInstance().setNetStatusListener(this);
+		AppStatic.getInstance().addActivity(this);
 	}
 
 	// @TargetApi(19)
@@ -92,7 +93,6 @@ public class BaseActivity extends Activity implements OnClickListener,
 	 */
 	protected void setActiviyContextView(int paramInt) {
 
-		AppStatic.getInstance().addActivity(this);
 		setContentView(R.layout.activity_base);
 
 		base_titleLayout = (RelativeLayout) findViewById(R.id.base_titleLayout);
@@ -115,7 +115,6 @@ public class BaseActivity extends Activity implements OnClickListener,
 	protected void setActiviyContextView(int paramInt, boolean hasLoadingState,
 			boolean hasTitle) {
 		this.hasLoadingState = hasLoadingState;
-		AppStatic.getInstance().addActivity(this);
 		setContentView(R.layout.activity_base);
 
 		base_titleLayout = (RelativeLayout) findViewById(R.id.base_titleLayout);

@@ -27,8 +27,11 @@ import com.bolaa.sleepingbar.ui.MyMedalActivity;
 import com.bolaa.sleepingbar.ui.MyMsgActivity;
 import com.bolaa.sleepingbar.ui.PrivateSettingActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
+import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.net.NetworkWorker;
+import com.core.framework.store.sharePer.PreferencesUtils;
 
 import org.w3c.dom.Text;
 
@@ -55,6 +58,11 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
     public void onResume() {
         super.onResume();
         getMsgCount();
+        if(AppUtil.isNull(PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS))){
+            tvBindWatch.setVisibility(View.GONE);
+        }else {
+            tvBindWatch.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

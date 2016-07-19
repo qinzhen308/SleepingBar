@@ -131,8 +131,8 @@ public class PayTestActivity extends BaseActivity implements PayUtil.PayListener
 		mode2.pay_code="2";
 		mode2.pay_id="2";
 		mode2.pay_name="支付宝";
-		list.add(mode1);
 		list.add(mode2);
+		list.add(mode1);
 		mAdapter.setList(list);
 		mAdapter.notifyDataSetChanged();
 	}

@@ -76,13 +76,14 @@ public class WatchUploadService extends IntentService{
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        LogUtil.d("alarm---onHandleIntent---start");
         PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count",0)+1);
         if(PreferencesUtils.getBoolean("isLogin")){
             int count=0;
             while (PreferencesUtils.getBoolean("sleep_data_synching_at_watch")||count<30){
                 try {
                     count++;
-                    wait(1000);
+                    Thread.currentThread().sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -93,6 +94,7 @@ public class WatchUploadService extends IntentService{
     }
 
     private void getCollectTime(){
+        LogUtil.d("alarm---onHandleIntent---getCollectTime");
         ParamBuilder params=new ParamBuilder();
         NetworkWorker.getInstance().getCallbackInBg(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_SLEEP_DATA_COLLECT_TIME), new NetworkWorker.ICallback() {
             @Override
@@ -115,6 +117,7 @@ public class WatchUploadService extends IntentService{
     }
 
     private void uploadTodayData(SleepTrendActivity.SleepCollectTime collectTime){
+        LogUtil.d("alarm---onHandleIntent---uploadTodayData");
         int[] indexs=collectTime.getCollectIndexs();
         int start=indexs[0]-60*8;
         int end=indexs[1]-60*8-1;//不包含最后一个点

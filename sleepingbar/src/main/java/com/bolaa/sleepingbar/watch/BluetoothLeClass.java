@@ -32,6 +32,8 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.core.framework.store.sharePer.PreferencesUtils;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -101,11 +103,16 @@ public class BluetoothLeClass{
                     // Attempts to discover services after successful connection.
                     Log.i(TAG, "Attempting to start service discovery:" +
                             mBluetoothGatt.discoverServices());
-
+                    PreferencesUtils.putBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED,true);
                 } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
-                    if(mOnDisconnectListener!=null)
+                    if(mOnDisconnectListener!=null) {
                         mOnDisconnectListener.onDisconnect(gatt);
+                    }
                     Log.i(TAG, "Disconnected from GATT server.");
+                    PreferencesUtils.putBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED,false);
+                }else {
+                    PreferencesUtils.putBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED,false);
+
                 }
             }
         }

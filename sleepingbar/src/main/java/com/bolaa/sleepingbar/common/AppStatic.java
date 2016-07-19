@@ -9,7 +9,9 @@ import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.ui.MainActivity;
+import com.bolaa.sleepingbar.ui.QuickLoginActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
+import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
 import com.core.framework.store.sharePer.PreferencesUtils;
@@ -60,8 +62,16 @@ public class AppStatic {
 			PreferencesUtils.putBoolean("isLogin",false);
 			//关闭所有页面，重新打开登录页面
 			Iterator<Activity> it = mActivityMap.values().iterator();
+			LogUtil.d("clearLoginStatus---mActivityMap size---"+mActivityMap.size());
 			if (it.hasNext()) {
-				MainActivity.invoke(it.next(),true);
+				LogUtil.d("clearLoginStatus---重新登录---");
+				Activity a=it.next();
+				if(a instanceof MainActivity){
+					QuickLoginActivity.invoke(a);
+					a.finish();
+				}else {
+					MainActivity.invoke(a,true);
+				}
 			}
 		}
 		
@@ -69,7 +79,7 @@ public class AppStatic {
 
 	/**
 	 * 添加
-	 * 
+	 *
 	 * @param activity
 	 */
 	public void addActivity(Activity activity) {

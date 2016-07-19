@@ -496,7 +496,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 		NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_BBS_POSTS_INFORM), new NetworkWorker.ICallback() {
 			@Override
 			public void onResponse(int status, String result) {
-				if(isFinishing())DialogUtil.dismissDialog(lodDialog);
+				if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
 				if(status==200){
 					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
 					if(obj!=null){

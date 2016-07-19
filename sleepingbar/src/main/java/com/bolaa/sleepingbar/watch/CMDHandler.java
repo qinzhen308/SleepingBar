@@ -30,6 +30,7 @@ public class CMDHandler {
     public final static byte CMD_MOVEMENT_SOMEDAY=0x10;//运动整天数据 (采集时间，跑步数)
     public final static byte CMD_SLEEP_SOMEDAY=0x11;//睡眠整天数据 (采集时间，跑步数)
     public final static byte CMD_ELECTRIC=0x0B;//电量
+    public final static byte CMD_GET_MAC_ADDRESS=0x0C;//手环mac地址
 
 //    /**
 //     * 处理源数据，转换成对应对象， 并存入数据库
@@ -119,7 +120,6 @@ public class CMDHandler {
             return true;
         }
         if(!date.equals(today)&&index==95){//今天的读取结束了，开始读昨天的
-            String sleep_date=DateUtil.getYMDTime(System.currentTimeMillis()-((long)1000)*60*60*24);//对应日期
             PreferencesUtils.putBoolean("sleep_data_synching_at_watch",false);//是否正在同步中
         }
         return false;
@@ -146,6 +146,13 @@ public class CMDHandler {
         byteArray[0]=CMD_SET_DATE;
         for (int n = 0; n < byteNum; n++)
             byteArray[n+1] = (byte) (time>>> (n * 8));
+        characteristic.setValue(byteArray);
+        return characteristic;
+    }
+
+    public static BluetoothGattCharacteristic cmdGetMacAddress(BluetoothGattCharacteristic characteristic){
+        byte[] byteArray = new byte[20];
+        byteArray[0]=CMD_GET_MAC_ADDRESS;
         characteristic.setValue(byteArray);
         return characteristic;
     }

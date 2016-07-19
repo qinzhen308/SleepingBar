@@ -45,6 +45,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onResume() {
         super.onResume();
+        load(APIUtil.parseGetUrlHasMethod(new ParamBuilder().getParamList(),AppUrls.getInstance().URL_ACTIVE_HOME),!isFirstLoad);
     }
 
     @Override

@@ -62,7 +62,7 @@ public class MyMsgAdapter extends AbstractListAdapter<Message> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-				if(item.type==1){
+				if(item.type==1&&!AppUtil.isNull(item.without_id)){
                 	BBSPostsDetailActivity.invoke(mContext,item.without_id);
 				}
             }
