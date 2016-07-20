@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.net.Uri;
 
 import com.bolaa.sleepingbar.HApplication;
+import com.bolaa.sleepingbar.utils.AppUtil;
+import com.core.framework.develop.LogUtil;
 import com.core.framework.store.sharePer.PreferencesUtils;
 
 import java.util.Calendar;
@@ -24,17 +26,22 @@ public class WatchUploadReceiver extends BroadcastReceiver{
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if(ACTION_WATCH_SYNCH_RECEIVER.equals(intent.getAction())){
-            if(PreferencesUtils.getBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED)){//连接状态，发广播获取睡眠数据
-                context.sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CMD_GET_SLEEP));
-            }else {//未连接状态，就启动手环
-                HApplication.getInstance().autoConnectedWatch();
-            }
+       /* if(ACTION_WATCH_SYNCH_RECEIVER.equals(intent.getAction())){
+
+        }*/
+        boolean isRuning= HApplication.getInstance().isWatchServiceWork();
+        LogUtil.d("alarm---WatchUploadReceiver---onReceive--isRuning="+isRuning);
+        if(PreferencesUtils.getBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED)&&isRuning){//连接状态，发广播获取睡眠数据
+            LogUtil.d("alarm---WatchUploadReceiver---onReceive--发广播");
+            context.sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CMD_GET_SLEEP));
+        }else {//未连接状态，就启动手环
+            LogUtil.d("alarm---WatchUploadReceiver---onReceive--连接蓝牙");
+            HApplication.getInstance().autoConnectedWatch();
         }
     }
 
     public static void setAlarm(Context context){
-        if(PreferencesUtils.getBoolean("has_watch_alarm_synch"))return;
+//        if(PreferencesUtils.getBoolean("has_watch_alarm_synch"))return;
         Intent intent = new Intent(context, WatchUploadReceiver.class);
         intent.setData(Uri.parse("content://com.bolaa.sleepingbar.receiver"));
         PendingIntent sender = PendingIntent.getBroadcast(context, 10011, intent, PendingIntent.FLAG_CANCEL_CURRENT);
@@ -48,7 +55,6 @@ public class WatchUploadReceiver extends BroadcastReceiver{
 //        calendar.set(Calendar.SECOND, 0);
 //        calendar.set(Calendar.MILLISECOND, 0);
         am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), INTERVAL, sender);
-        PreferencesUtils.putBoolean("has_watch_alarm_synch",true);
     }
 
 

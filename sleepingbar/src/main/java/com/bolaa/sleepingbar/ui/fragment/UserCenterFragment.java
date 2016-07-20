@@ -59,9 +59,9 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         super.onResume();
         getMsgCount();
         if(AppUtil.isNull(PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS))){
-            tvBindWatch.setVisibility(View.GONE);
-        }else {
             tvBindWatch.setVisibility(View.VISIBLE);
+        }else {
+            tvBindWatch.setVisibility(View.GONE);
         }
     }
 

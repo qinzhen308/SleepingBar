@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
-    <item
-        jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="22.0.1"
-        sha1="d94814c0bf808a38b82da213f022cff98a95f995">
-        <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_640341da060a13431d2e9144b9ea8cd6ce3e7c39\classes.dex" />
-    </item>
-
-</items>

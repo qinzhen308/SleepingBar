@@ -53,7 +53,7 @@ public class WatchUploadService extends IntentService{
 
 
     public static void setAlarm(Context context){
-        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
+//        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
         Intent intent = new Intent(context, WatchUploadService.class);
         intent.setData(Uri.parse("content://com.bolaa.sleepingbar"));
         PendingIntent sender = PendingIntent.getService(context, 10010, intent, PendingIntent.FLAG_CANCEL_CURRENT);
@@ -61,16 +61,24 @@ public class WatchUploadService extends IntentService{
         intent.setAction(ACTION_WATCH_UPLOAD_SERVICE);
         AlarmManager am = (AlarmManager) context .getSystemService(Context.ALARM_SERVICE);
         //均衡服务器的压力，设置上报时间为10点半前后5分钟内。
-        Calendar calendar = Calendar.getInstance(); calendar.set(Calendar.HOUR_OF_DAY, 10);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
         calendar.setTimeZone(TimeZone.getTimeZone("GMT+8"));
         calendar.set(Calendar.MINUTE, 30+(new Random().nextInt(10)-5));
         calendar.set(Calendar.SECOND, new Random().nextInt(60));
         calendar.set(Calendar.MILLISECOND, 0);
+        // 如果当前时间大于设置的时间，那么就从第二天的设定时间开始
+        long selectTime=calendar.getTimeInMillis();
+        if(System.currentTimeMillis() > selectTime) {
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+            selectTime = calendar.getTimeInMillis();
+        }
 //        calendar.set(Calendar.MINUTE, 36);
 //        calendar.set(Calendar.SECOND,30);
 //        calendar.set(Calendar.MILLISECOND, 0);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), INTERVAL, sender);
-        PreferencesUtils.putBoolean("has_watch_alarm",true);
+        am.setRepeating(AlarmManager.RTC_WAKEUP,selectTime , INTERVAL, sender);
+//        PreferencesUtils.putBoolean("has_watch_alarm",true);
     }
 
 
@@ -78,6 +86,7 @@ public class WatchUploadService extends IntentService{
     protected void onHandleIntent(Intent intent) {
         LogUtil.d("alarm---onHandleIntent---start");
         PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count",0)+1);
+        setAlarm(this);
         if(PreferencesUtils.getBoolean("isLogin")){
             int count=0;
             while (PreferencesUtils.getBoolean("sleep_data_synching_at_watch")||count<30){

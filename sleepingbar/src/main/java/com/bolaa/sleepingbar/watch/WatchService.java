@@ -276,9 +276,8 @@ public class WatchService extends Service{
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             //收到手环的上报消息
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--orig-->"+Arrays.toString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
-            LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--hex-->"+Utils.bytesToHexString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
+//            LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--hex-->"+Utils.bytesToHexString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--dest-->"+Arrays.toString(Utils.bytesToIntArrayV2(characteristic.getValue()))+"--end-");
-            LogUtil.d("totalcount---="+(++notifyCount));
 
             CMDHandler.synchronizedMovement(WatchService.this,characteristic.getValue());
             //读取最近两天的数据
@@ -289,7 +288,6 @@ public class WatchService extends Service{
             }
         }
     };
-    int notifyCount=0;
 
     // Device scan callback.
     private BluetoothAdapter.LeScanCallback mLeScanCallback =
