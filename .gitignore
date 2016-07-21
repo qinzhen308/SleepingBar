@@ -4,14 +4,17 @@
 
 *.idea
 
-*.iml
+/*.iml
 
-*.aar
+/build/
 
-/build
-
-/.gradle
-
-*/.gradle
+/gradle/
 
 */build
+
+/gen/
+
+*/bin/
+
+*/src/androidTest/
+

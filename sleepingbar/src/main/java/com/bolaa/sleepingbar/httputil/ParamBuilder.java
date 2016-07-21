@@ -235,6 +235,7 @@ public class ParamBuilder {
     public ParamBuilder() {
 		// TODO Auto-generated constructor stub
     	append(ParamBuilder.ACCESS_TOKEN, HApplication.getInstance().token);
+    	append("sb_platform", "android");
 	}
     /**
      * A string contains a group status ID  and separated in "," .

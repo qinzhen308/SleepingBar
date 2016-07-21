@@ -26,6 +26,7 @@ import com.bolaa.sleepingbar.utils.DateUtil;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.sharePer.PreferencesUtils;
+import com.core.framework.util.MD5Util;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,15 +57,15 @@ public class WatchUploadService extends IntentService{
 //        if(PreferencesUtils.getBoolean("has_watch_alarm"))return;
         Intent intent = new Intent(context, WatchUploadService.class);
         intent.setData(Uri.parse("content://com.bolaa.sleepingbar"));
-        PendingIntent sender = PendingIntent.getService(context, 10010, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent sender = PendingIntent.getService(context, 10010, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         // Schedule the alarm!
         intent.setAction(ACTION_WATCH_UPLOAD_SERVICE);
         AlarmManager am = (AlarmManager) context .getSystemService(Context.ALARM_SERVICE);
         //均衡服务器的压力，设置上报时间为10点半前后5分钟内。
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 10);
         calendar.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
         calendar.set(Calendar.MINUTE, 30+(new Random().nextInt(10)-5));
         calendar.set(Calendar.SECOND, new Random().nextInt(60));
         calendar.set(Calendar.MILLISECOND, 0);
@@ -171,12 +172,16 @@ public class WatchUploadService extends IntentService{
 
         requester.getParams().put("data",array.toString());
 //        long time= (new Date().getTime()/((60*60*24)*1000))*(60*60*24);
-        final String sign= PreferencesUtils.getString("user_id")+"_"+System.currentTimeMillis()/1000+"_"+133;
         final String sleep_date=PreferencesUtils.getString("sleep_data_collect_date");
+        String uinfoid=PreferencesUtils.getString("user_id");
+        String mac=PreferencesUtils.getString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC);
+        final String sign= MD5Util.getMD5(uinfoid.concat("#").concat(sleep_date).concat("#").concat(start).concat("#").concat(end).concat("#").concat(mac).concat("_iphone_android_@2016y"));
         requester.getParams().put("sleep_date", sleep_date);
         requester.getParams().put("sign",sign);
         requester.getParams().put("sleep_end_time",end);
         requester.getParams().put("sleep_start_time",start);
+        requester.getParams().put("uinfoid",uinfoid);
+        requester.getParams().put("mac",mac);
 //        LogUtil.d("upload---date="+ DateUtil.getTimeUnitSecond("yyyy-MM-dd hh:mm:ss",time));
         LogUtil.d("upload---sign="+ sign);
         NetworkWorker.getInstance().postCallbackInBg(AppUrls.getInstance().URL_WATCH_SYNC_SLEEP, new NetworkWorker.ICallback() {

@@ -302,6 +302,7 @@ public class HApplication extends MyApplication {
 
 	public void autoConnectedWatch(){
 		String macAddress=PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+		LogUtil.d("watch device address---"+macAddress);
 		if(AppUtil.isNull(macAddress)){
 			return;
 		}
@@ -329,7 +330,7 @@ public class HApplication extends MyApplication {
 				if(status==200){
 					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
 					if(obj!=null&&obj.status==BaseObject.STATUS_OK){
-//						PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE);
+						PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE);
 					}
 				}
 			}

@@ -26,9 +26,11 @@ public class WatchUploadReceiver extends BroadcastReceiver{
 
     @Override
     public void onReceive(Context context, Intent intent) {
-       /* if(ACTION_WATCH_SYNCH_RECEIVER.equals(intent.getAction())){
-
-        }*/
+        if(Intent.ACTION_DATE_CHANGED.equals(intent.getAction())){
+            //日期改变，删除步行缓存
+            PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
+            return;
+        }
         boolean isRuning= HApplication.getInstance().isWatchServiceWork();
         LogUtil.d("alarm---WatchUploadReceiver---onReceive--isRuning="+isRuning);
         if(PreferencesUtils.getBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED)&&isRuning){//连接状态，发广播获取睡眠数据

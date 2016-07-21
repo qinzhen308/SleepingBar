@@ -75,12 +75,17 @@ public class WatchService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 //        scanLeDevice(true);
+        String newAddress=null;
         if(intent!=null){
-            currentAddress=intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS);
+            newAddress =intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS);
         }
-        if(currentAddress==null){
-            currentAddress= PreferencesUtils.getString(FLAG_CURRENT_DEVICE_ADDRESS);
+        if(newAddress==null){
+            newAddress = PreferencesUtils.getString(FLAG_CURRENT_DEVICE_ADDRESS);
         }
+        if(!AppUtil.isNull(currentAddress)&&!AppUtil.isNull(newAddress)&&!currentAddress.equals(intent.getStringExtra(FLAG_CURRENT_DEVICE_ADDRESS))){
+            mBLE.close();
+        }
+        currentAddress=newAddress;
         tryConnect(intent);
         return super.onStartCommand(intent, flags, startId);
     }
@@ -340,6 +345,7 @@ public class WatchService extends Service{
             LogUtil.d("watch---writing enabledescriptor:" + success);
 //            Toast.makeText(getApplicationContext(),"通知开起:"+set+"--写入:"+success,Toast.LENGTH_LONG).show();
             if(set&&success){
+                LogUtil.d("watch---connect---success---mac="+mBluetoothGatt.getDevice().getAddress());
                 sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS).putExtra("device_name",mBluetoothGatt.getDevice().getName()).putExtra("device_address",mBluetoothGatt.getDevice().getAddress()));
             }
         }

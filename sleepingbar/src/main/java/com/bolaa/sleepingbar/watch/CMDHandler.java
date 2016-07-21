@@ -103,6 +103,10 @@ public class CMDHandler {
             for(int i=0;i<15;i++){
                 data[index*15+i]=src[i+5];
             }
+        }else if(src[0]==CMD_MOVEMENT_SOMEDAY){
+            for(int i=0;i<15;i++){
+                data[index*15+i]=0;
+            }
         }
         LogUtil.d("save sleep---"+Arrays.toString(data));
         try {
@@ -117,6 +121,7 @@ public class CMDHandler {
         if(date.equals(today)&&index==95){//今天的读取结束了，开始读昨天的
             String sleep_date=DateUtil.getYMDTime(System.currentTimeMillis()-((long)1000)*60*60*24);//对应日期
             PreferencesUtils.putString("sleep_data_collect_date",sleep_date);
+            PreferencesUtils.putString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC,PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS));
             return true;
         }
         if(!date.equals(today)&&index==95){//今天的读取结束了，开始读昨天的

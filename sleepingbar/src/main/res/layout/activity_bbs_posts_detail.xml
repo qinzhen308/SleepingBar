@@ -18,7 +18,7 @@
         android:background="@color/white"
         android:divider="@null"
         android:fadingEdge="none"
-        android:fastScrollEnabled="true"
+        android:fastScrollEnabled="false"
         android:scrollingCache="false"
         android:layout_weight="1"
         test:showheader="false"

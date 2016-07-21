@@ -8,8 +8,12 @@ import android.widget.ImageView;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
+import com.bolaa.sleepingbar.ui.PhotoViewerActivity;
 import com.bolaa.sleepingbar.utils.Image13Loader;
 import com.core.framework.app.devInfo.ScreenUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PictureAdapter extends AbstractListAdapter<String> {
@@ -31,7 +35,7 @@ public class PictureAdapter extends AbstractListAdapter<String> {
 	}
 
 	@Override
-	public View getView(int i, View view, ViewGroup viewGroup) {
+	public View getView(final int i, View view, ViewGroup viewGroup) {
 		// TODO Auto-generated method stub
 		ViewHolder holder=null;
 		if(view==null){
@@ -46,7 +50,11 @@ public class PictureAdapter extends AbstractListAdapter<String> {
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				ArrayList<String> picUrls=new ArrayList<String>();
+				for(int j=0;j<mList.size();j++){
+					picUrls.add(img_path+mList.get(j));
+				}
+				PhotoViewerActivity.invoke(mContext,picUrls,i);
 			}
 		});
 

@@ -246,9 +246,9 @@ public class BBSSendPostsActivity extends BaseActivity {
 		}
 	}
 
-	public static void invoke(Context context) {
+	public static void invoke(Activity context) {
 		Intent intent = new Intent(context, BBSSendPostsActivity.class);
-		context.startActivity(intent);
+		context.startActivityForResult(intent,8886);
 	}
 
 	class PicAdapter extends AbstractListAdapter<PicItem> {

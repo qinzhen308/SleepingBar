@@ -130,6 +130,8 @@ public class QuickBindWatchActivity extends BaseActivity{
             }else {
                 MainActivity.invoke(this);
             }
+        }else {
+            sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME));
         }
         finish();
     }
@@ -223,6 +225,7 @@ public class QuickBindWatchActivity extends BaseActivity{
                 sendBroadcast(broadcast);
                 HApplication.getInstance().uploadWatchMacAddress(intent.getStringExtra("device_name"),intent.getStringExtra("device_address"));
                 PreferencesUtils.putString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,intent.getStringExtra("device_address"));
+                LogUtil.d("QuickBindWatchActivity---success---mac="+intent.getStringExtra("device_address"));
                 PreferencesUtils.putString(WatchService.FLAG_CURRENT_DEVICE_NAME,intent.getStringExtra("device_name"));
                 jumpToWhere();
             }

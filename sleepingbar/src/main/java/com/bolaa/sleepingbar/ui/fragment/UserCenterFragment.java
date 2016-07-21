@@ -133,7 +133,8 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 
     private void initData() {
         if(AppStatic.getInstance().getmUserInfo()!=null){
-            Image13Loader.getInstance().loadImage(AppStatic.getInstance().getmUserInfo().avatar,ivAvatar,R.drawable.img_avatar_default);
+//            Image13Loader.getInstance().loadImage(AppStatic.getInstance().getmUserInfo().avatar,ivAvatar,R.drawable.img_avatar_default);
+            Image13Loader.getInstance().loadNoStubImageFade(AppStatic.getInstance().getmUserInfo().avatar,ivAvatar);
             tvName.setText(AppStatic.getInstance().getmUserInfo().nick_name);
         }
     }

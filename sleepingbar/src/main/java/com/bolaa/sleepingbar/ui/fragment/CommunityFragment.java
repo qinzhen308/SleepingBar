@@ -327,6 +327,13 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
         }
     }
 
+    public void onSendPostsBackRefresh() {
+        // TODO Auto-generated method stub
+        if(!isLoading()){
+            initData(true);
+        }
+    }
+
     @Override
     public void onAgainRefresh() {
         // TODO Auto-generated method stub

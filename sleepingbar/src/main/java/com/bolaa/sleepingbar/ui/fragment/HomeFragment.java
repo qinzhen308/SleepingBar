@@ -21,6 +21,7 @@ import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
+import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.sharePer.PreferencesUtils;
 import com.core.framework.util.MD5Util;
@@ -92,6 +93,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		IntentFilter filter=new IntentFilter();
 		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_STEP);
 		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_RUN);
+		filter.addAction(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME);
 		getActivity().registerReceiver(mReceiver,filter);
 	}
 
@@ -272,6 +274,15 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 				int[] runInfo=intent.getIntArrayExtra(WatchConstant.FLAG_RUN_INFO);
 				run=runInfo[2];
 				tvRun.setText(""+runInfo[2]);
+			}else if(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME.equals(action)){
+				if(AppUtil.isNull(PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS))){
+					tvStepTip.setText(TipUtil.getStepTip(-1));
+					tvStepEvaluate.setText(TipUtil.getStepEvaluate(-1));
+				}else {
+					tvStepTip.setText(TipUtil.getStepTip(0));
+					tvStepEvaluate.setText(TipUtil.getStepEvaluate(0));
+					getStepAtLast();
+				}
 			}
 		}
 	};
@@ -281,39 +292,53 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		if(!shouldCahe)return;
 		JSONObject walk_data=new JSONObject();
 		try {
-			walk_data.putOpt("date", DateUtil.getYMD_GMTDate(new Date()));
-			walk_data.putOpt("equipment", PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_NAME));
-			walk_data.putOpt("mac",PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS));
-			walk_data.putOpt("run_total",tvRun.getText().toString());
-			walk_data.putOpt("times",tvStep.getText().toString());
-			walk_data.putOpt("walk_total",tvWalk.getText().toString());
-			walk_data.putOpt("kilometre",tvDistance.getText().toString());
-			walk_data.putOpt("calorie",tvCalorie.getText().toString());
+            String uinfoid=PreferencesUtils.getString("user_id");
+            if(AppUtil.isNull(uinfoid))return;
+            String mac=PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+            LogUtil.d("cacheStep----mac="+mac);
+            if(AppUtil.isNull(mac))return;
+            String calorie=tvCalorie.getText().toString();
+            String kilometre=tvDistance.getText().toString();
+            String walk_total=tvStep.getText().toString();
+            String run_total=tvRun.getText().toString();
+            String equipment= PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_NAME);
+            String date= DateUtil.getYMD_GMTDate(new Date());
+            String sign=MD5Util.getMD5(uinfoid.concat("#").concat(date).concat("#").concat(walk_total).concat("#").concat(run_total).concat("#").concat(kilometre).concat("#").concat(calorie).concat("#").concat(equipment).concat("#").concat(mac).concat("_iphone_android_@2016y"));
+			walk_data.putOpt("date", date);
+			walk_data.putOpt("equipment", equipment);
+			walk_data.putOpt("mac",mac);
+			walk_data.putOpt("run_total",run_total);
+			walk_data.putOpt("walk_total",walk_total);
+			walk_data.putOpt("kilometre",kilometre);
+			walk_data.putOpt("calorie",calorie);
+			walk_data.putOpt("uinfoid",uinfoid);
+			walk_data.putOpt("sign",sign);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		PreferencesUtils.putString(WatchConstant.FLAG_STEP_CACHE,walk_data.toString());
+		String walk_data_str=walk_data.toString();
+		PreferencesUtils.putString(WatchConstant.FLAG_STEP_CACHE,walk_data_str);
+		PreferencesUtils.putString(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK,walk_data_str);
 	}
 
 	private void getStepAtLast(){
 		String cur_address=PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
 		if(AppUtil.isNull(cur_address))return;
-		String walk_data=PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE);
+		String walk_data=PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
 		if(AppUtil.isNull(walk_data))return;
 		JSONObject jsonObject= null;
 		try {
 			jsonObject = new JSONObject(walk_data);
 			if(!cur_address.equals(jsonObject.optString("mac")))return;
 			int run_total=jsonObject.optInt("run_total");
-			int step_all=jsonObject.optInt("times");
 			int walk_total=jsonObject.optInt("walk_total");
 			double kilometre=jsonObject.optDouble("kilometre");
 			String calorie=jsonObject.optString("walk_total");
 
-			tvStep.setText(""+step_all);
+			tvStep.setText(""+walk_total);
 			tvCalorie.setText(""+calorie);
 			tvDistance.setText(""+kilometre);
-			tvWalk.setText(""+walk_total);
+			tvWalk.setText(""+(walk_total-run_total));
 			tvStepTip.setText(TipUtil.getStepTip((int)(kilometre*1000)));
 			tvStepEvaluate.setText(TipUtil.getStepEvaluate((int)(kilometre*1000)));
 			tvRun.setText(""+run_total);

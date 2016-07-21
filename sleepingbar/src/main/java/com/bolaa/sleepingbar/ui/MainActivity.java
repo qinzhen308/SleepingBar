@@ -388,7 +388,13 @@ public class MainActivity extends BaseFragmentActivity implements
 		mShareAPI.onActivityResult(requestCode, resultCode, data);
 		if(resultCode==RESULT_OK){
 			if(requestCode==101){//退出登录回来，需要关闭主页
+				QuickLoginActivity.invoke(MainActivity.this);
 				finish();
+			}else if(requestCode==8886){//发帖回来
+				Fragment findresult = getSupportFragmentManager().findFragmentByTag(TAB3);
+				if(findresult instanceof CommunityFragment){
+					((CommunityFragment)findresult).onSendPostsBackRefresh();
+				}
 			}
 		}
 	}

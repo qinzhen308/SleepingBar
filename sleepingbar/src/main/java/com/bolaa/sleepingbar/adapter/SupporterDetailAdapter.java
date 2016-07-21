@@ -31,7 +31,7 @@ public class SupporterDetailAdapter extends AbstractListAdapter<SupporterDetail>
 		}
 		final SupporterDetail detail=mList.get(i);
 		if("0".equals(detail.stages_num)){
-			holder.tvFunds.setText(AppUtil.isNull(detail.type)?"直接赠送":detail.type);
+			holder.tvStatus.setText(AppUtil.isNull(detail.type)?"直接赠送":detail.type);
 		}else {
 			holder.tvStatus.setText(detail.days_num+"/"+detail.stages_num);
 		}
