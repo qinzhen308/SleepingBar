@@ -46,7 +46,7 @@ public class FundsRankinglistAdapter extends AbstractListAdapter<RankinglistItem
 		}
 
 		final RankinglistItem item=mList.get(i);
-		holder.tvFundsTotal.setText(AppUtil.getTwoDecimal(item.sleep_fund));
+		holder.tvFundsTotal.setText(item.sleep_fund);
 		holder.tvName.setText(item.nick_name);
 		holder.tvRanking.setText(""+item.rank);
 		holder.tvSupportCount.setText(""+item.support_num);

@@ -156,7 +156,7 @@ public class CashWithdrawActivity extends BaseActivity{
 	private void submit(){
 		String cash=etCash.getText().toString().trim();
 		if(!AppUtil.isNull(cash)){
-			float cashF=Float.valueOf(cash);
+			double cashF=Double.valueOf(cash);
 			if(cashF<=0){
 				AppUtil.showToast(getApplicationContext(), "您输入的金额有误");
 				return;
@@ -181,6 +181,9 @@ public class CashWithdrawActivity extends BaseActivity{
 		if(AppUtil.isNull(card)){
 			AppUtil.showToast(this, "请输入需要转入的账户");
 			return ;
+		}else if(card.length()<9){
+			AppUtil.showToast(this, "请输入正确的银行卡号");
+			return;
 		}
 		if(AppUtil.isNull(name)){
 			AppUtil.showToast(this, "请输入户主名字");

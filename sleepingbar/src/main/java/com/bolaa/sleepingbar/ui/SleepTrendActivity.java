@@ -249,11 +249,11 @@ public class SleepTrendActivity extends BaseActivity {
             return indexs;
         }
 
-    }
+        private int castToInt(String aa){
+            if(aa.charAt(0)=='0')return Integer.valueOf(aa.charAt(1));
+            return Integer.valueOf(aa);
+        }
 
-    private int castToInt(String aa){
-        if(aa.charAt(0)=='0')return Integer.valueOf(aa.charAt(1));
-        return Integer.valueOf(aa);
     }
 
 

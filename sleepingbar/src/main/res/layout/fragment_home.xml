@@ -73,7 +73,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="50dp"
-                android:text="已累计收货基金0.00元"/>
+                android:text="已累计收获基金0.00元"/>
 
 
         </RelativeLayout>

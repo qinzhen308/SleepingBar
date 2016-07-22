@@ -31,4 +31,8 @@ public class WatchConstant {
     public final static String FLAG_STEP_CACHE_FOR_LOOK="flag_step_cache_for_look";//缓存的不步行信息，用来展示的,每天清空
     public final static String FLAG_IS_WATCH_CONNECTED="flag_is_watch_connected";//手环是否连接状态的标记
     public final static String FLAG_SLEEP_DATA_FOR_MAC="flag_sleep_data_for_mac";//采集的数据属于哪个设备
+    public final static String FLAG_IS_START_BY_DATE_CHANGED="flag_is_start_by_date_changed";//
+    public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_TODAY="flag_once_uplaod_sleep_data_today";//
+    public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_YESTERDAY="flag_once_uplaod_sleep_data_yesterday";//
+    public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE="flag_once_uplaod_sleep_data_date";//
 }

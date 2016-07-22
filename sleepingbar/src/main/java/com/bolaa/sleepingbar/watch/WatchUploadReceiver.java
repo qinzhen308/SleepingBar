@@ -29,6 +29,8 @@ public class WatchUploadReceiver extends BroadcastReceiver{
         if(Intent.ACTION_DATE_CHANGED.equals(intent.getAction())){
             //日期改变，删除步行缓存
             PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
+            //到点上传昨天的数据(防止今天没传成功的情况)
+            context.startService(new Intent(context,WatchUploadService.class).putExtra(WatchConstant.FLAG_IS_START_BY_DATE_CHANGED,true));
             return;
         }
         boolean isRuning= HApplication.getInstance().isWatchServiceWork();

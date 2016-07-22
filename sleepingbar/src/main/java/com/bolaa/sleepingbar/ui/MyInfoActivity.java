@@ -515,12 +515,12 @@ public class MyInfoActivity extends BaseActivity {
 
 		@Override
 		public void onScrollingFinished(WheelView wheel) {
-			int n_year = year.getCurrentItem() + 1950;// 年
+			int n_year = year.getCurrentItem() + 1900;// 年
 			int n_month = month.getCurrentItem() + 1;// 月
 
 			initDay(n_year, n_month);
 
-			mBirthday = new StringBuilder().append((year.getCurrentItem() + 1950)).append("-")
+			mBirthday = new StringBuilder().append((year.getCurrentItem() + 1900)).append("-")
 					.append((month.getCurrentItem() + 1) < 10 ? "0" + (month.getCurrentItem() + 1)
 							: (month.getCurrentItem() + 1))
 					.append("-").append(((day.getCurrentItem() + 1) < 10) ? "0" + (day.getCurrentItem() + 1)
@@ -605,7 +605,7 @@ public class MyInfoActivity extends BaseActivity {
 		/**
 		 * 设置年份
 		 */
-		NumericWheelAdapter numericWheelAdapter1 = new NumericWheelAdapter(this, 1950, norYear);
+		NumericWheelAdapter numericWheelAdapter1 = new NumericWheelAdapter(this, 1900, norYear);
 		numericWheelAdapter1.setLabel("年");
 		year.setViewAdapter(numericWheelAdapter1);
 		year.setCyclic(true);// 是否可循环滑动
@@ -630,7 +630,7 @@ public class MyInfoActivity extends BaseActivity {
 		month.setVisibleItems(9);
 		day.setVisibleItems(9);
 
-		year.setCurrentItem(curYear - 1950);
+		year.setCurrentItem(curYear - 1900);
 		month.setCurrentItem(curMonth - 1);
 		day.setCurrentItem(curDate - 1);
 

@@ -114,7 +114,7 @@ public class HApplication extends MyApplication {
 		AppStatic.getInstance().setmUserInfo(AppStatic.getInstance().getUser());
 		ShareUtil.initShareData();
 		initPushService();
-		WatchUploadService.setAlarm(getApplicationContext());
+//		WatchUploadService.setAlarm(getApplicationContext());
 		WatchUploadReceiver.setAlarm(getApplicationContext());
 	}
 

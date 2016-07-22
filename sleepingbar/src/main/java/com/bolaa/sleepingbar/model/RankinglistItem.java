@@ -7,9 +7,9 @@ package com.bolaa.sleepingbar.model;
 public class RankinglistItem {
     public String avatar;
     public String nick_name;
-    public int rank;
+    public String rank;
     public String support_num;
     public String user_id;
-    public float sleep_fund;
+    public String sleep_fund;
     public int is_praise;
 }

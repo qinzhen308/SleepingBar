@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.DealLog;
+import com.bolaa.sleepingbar.utils.AppUtil;
 
 public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 
@@ -36,10 +37,22 @@ public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 		}else {
 			holder.tvDescribe.setTextColor(mContext.getResources().getColor(R.color.base_red));
 		}
+
+		if((dealLog.change_type==1||dealLog.change_type==2)&& !AppUtil.isNull(dealLog.trade_no)){//充值
+			holder.layoutBottom.setVisibility(View.VISIBLE);
+			holder.tvAccountNumber.setText(dealLog.trade_no);
+            holder.tvAccountInfo.setText(dealLog.pay_name);
+        }else if(dealLog.change_type==6){//提现
+            holder.layoutBottom.setVisibility(View.VISIBLE);
+            holder.tvAccountNumber.setText(dealLog.account_no);
+            holder.tvAccountInfo.setText(dealLog.realname);
+        }else {
+            holder.layoutBottom.setVisibility(View.GONE);
+            holder.tvAccountInfo.setText("");
+        }
 		holder.tvDate.setText(dealLog.change_time);
 		holder.tvValue.setText(dealLog.user_money_s);
 		holder.tvStatus.setText(dealLog.change_desc);
-		holder.tvAccountInfo.setText(dealLog.realname+" "+dealLog.account_no);
 		return view;
 	}
 	
@@ -49,6 +62,9 @@ public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 		public TextView tvStatus;
 		public TextView tvDescribe;
 		public TextView tvAccountInfo;
+		public TextView tvAccountNumber;
+		public TextView tvCashWithdrawStatus;
+		public View layoutBottom;
 
 		public ViewHolder(View view){
 			tvValue=(TextView)view.findViewById(R.id.tv_value);
@@ -56,6 +72,9 @@ public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 			tvStatus =(TextView)view.findViewById(R.id.tv_status);
 			tvDescribe =(TextView)view.findViewById(R.id.tv_describe);
 			tvAccountInfo =(TextView)view.findViewById(R.id.tv_account_info);
+			tvAccountNumber =(TextView)view.findViewById(R.id.tv_account_number);
+			tvCashWithdrawStatus =(TextView)view.findViewById(R.id.tv_cash_withdraw_status);
+			layoutBottom =view.findViewById(R.id.layout_bottom);
 		}
 		
 	}

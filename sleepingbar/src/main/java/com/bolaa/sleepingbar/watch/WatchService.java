@@ -286,10 +286,18 @@ public class WatchService extends Service{
 
             CMDHandler.synchronizedMovement(WatchService.this,characteristic.getValue());
             //读取最近两天的数据
-            if(CMDHandler.saveSleep(characteristic.getValue())){
+            int resultCode=CMDHandler.saveSleep(characteristic.getValue());
+            if(resultCode==1){
                 //昨天的
                 CMDHandler.cmdGetSleepInfo(writeCharacteristic,(byte)1);
                 mBLE.writeCharacteristic(writeCharacteristic);
+            }else if(resultCode==2){
+                //获取完毕
+                startService(new Intent(WatchService.this,WatchUploadService.class).setAction(WatchUploadService.ACTION_WATCH_UPLOAD_SERVICE)
+                        .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_TODAY,PreferencesUtils.getString("sleep_data_today"))
+                        .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_YESTERDAY,PreferencesUtils.getString("sleep_data_yesterday"))
+                        .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE,PreferencesUtils.getString("sleep_data_collect_date"))
+                );
             }
         }
     };

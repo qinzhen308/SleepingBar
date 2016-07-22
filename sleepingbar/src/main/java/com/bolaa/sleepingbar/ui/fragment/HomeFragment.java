@@ -214,7 +214,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	private void setSleepInfo(){
 		tvSleepDate.setText(sleepInfo.sleep_date);
 		tvFunds.setText(sleepInfo.sleep_fund);
-		tvFundsGot.setText("已累计收货基金"+sleepInfo.got_fund+"元");
+		tvFundsGot.setText("已累计收获基金"+sleepInfo.got_fund+"元");
 		tvSleepTip.setText(sleepInfo.desc);
 		tvSleepQuanlity.setText(sleepInfo.quality_rating);
 		tvDeepSleep.setText(sleepInfo.deep_time);
@@ -333,7 +333,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			int run_total=jsonObject.optInt("run_total");
 			int walk_total=jsonObject.optInt("walk_total");
 			double kilometre=jsonObject.optDouble("kilometre");
-			String calorie=jsonObject.optString("walk_total");
+			String calorie=jsonObject.optString("calorie");
 
 			tvStep.setText(""+walk_total);
 			tvCalorie.setText(""+calorie);

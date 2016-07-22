@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppStatic;
@@ -43,6 +44,11 @@ import java.util.TimeZone;
 public class WatchUploadService extends IntentService{
     private static final int INTERVAL = 1000 * 60 * 60 * 24;// 24h
     public static final String ACTION_WATCH_UPLOAD_SERVICE="com.bolaa.sleepingbar.ACTION.WATCH.UPLOAD.SERVICE";
+
+    private boolean isStartByDateChanged;
+    private String once_uplaod_sleep_data_today;
+    private String once_uplaod_sleep_data_yesterday;
+    private String once_uplaod_sleep_data_date;
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -86,8 +92,17 @@ public class WatchUploadService extends IntentService{
     @Override
     protected void onHandleIntent(Intent intent) {
         LogUtil.d("alarm---onHandleIntent---start");
+        isStartByDateChanged=intent.getBooleanExtra(WatchConstant.FLAG_IS_START_BY_DATE_CHANGED,false);
+        if(!isStartByDateChanged){
+            once_uplaod_sleep_data_today=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_TODAY);
+            once_uplaod_sleep_data_yesterday=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_YESTERDAY);
+            once_uplaod_sleep_data_date=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE);
+            if (AppUtil.isNull(once_uplaod_sleep_data_date)){
+                LogUtil.d("alarm---onHandleIntent---睡眠无效数据");
+                return;
+            }
+        }
         PreferencesUtils.putInteger("launch_synch_service_count",PreferencesUtils.getInteger("launch_synch_service_count",0)+1);
-        setAlarm(this);
         if(PreferencesUtils.getBoolean("isLogin")){
             int count=0;
             while (PreferencesUtils.getBoolean("sleep_data_synching_at_watch")||count<30){
@@ -113,8 +128,16 @@ public class WatchUploadService extends IntentService{
                     BaseObject<SleepTrendActivity.SleepCollectTime> object= GsonParser.getInstance().parseToObj(result, SleepTrendActivity.SleepCollectTime.class);
                     if(object!=null){
                         if(object.data!=null&&object.status==BaseObject.STATUS_OK){
-
-                            uploadTodayData(object.data);
+                            int[] indexs=object.data.getCollectIndexs();
+                            int start=indexs[0]-60*8;
+                            int end=indexs[1]-60*8-1;//不包含最后一个点
+                            int todayIndex=(int)(System.currentTimeMillis()/(1000*60))%(60*24);
+                            LogUtil.d("alarm---onHandleIntent---getCollectTime---today index="+todayIndex);
+                            if(todayIndex>end&&todayIndex<start){
+                                uploadTodayData(object.data);
+                            }else if(isStartByDateChanged){
+                                uploadTodayData(object.data);
+                            }
                         }else {
                         }
                     }else {
@@ -135,7 +158,12 @@ public class WatchUploadService extends IntentService{
             end=-1;
             collectTime.sleep_end_time="08:00";
         }
-        String sleep_data= PreferencesUtils.getString("sleep_data_yesterday");
+        String sleep_data= "";
+        if(isStartByDateChanged){
+            sleep_data=PreferencesUtils.getString("sleep_data_yesterday");
+        }else {
+            sleep_data=once_uplaod_sleep_data_yesterday;
+        }
         byte[] data=new byte[1440-start+end+1];
         try {
             LogUtil.d("upload today---data length="+data.length);
@@ -144,7 +172,11 @@ public class WatchUploadService extends IntentService{
                 System.arraycopy(data1,start,data,0,1440-start);
             }
             //今天
-            sleep_data=PreferencesUtils.getString("sleep_data_today");
+            if(isStartByDateChanged){
+                sleep_data=PreferencesUtils.getString("sleep_data_today");
+            }else {
+                sleep_data=once_uplaod_sleep_data_today;
+            }
             byte[] data2=sleep_data.getBytes("UTF-8");
             if(!AppUtil.isEmpty(data2)) {
                 System.arraycopy(data2, 0, data, 1440 - start, end + 1);
@@ -172,7 +204,12 @@ public class WatchUploadService extends IntentService{
 
         requester.getParams().put("data",array.toString());
 //        long time= (new Date().getTime()/((60*60*24)*1000))*(60*60*24);
-        final String sleep_date=PreferencesUtils.getString("sleep_data_collect_date");
+        String sleep_date="";
+        if(isStartByDateChanged){
+            sleep_date=PreferencesUtils.getString("sleep_data_collect_date");
+        }else {
+            sleep_date=once_uplaod_sleep_data_date;
+        }
         String uinfoid=PreferencesUtils.getString("user_id");
         String mac=PreferencesUtils.getString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC);
         final String sign= MD5Util.getMD5(uinfoid.concat("#").concat(sleep_date).concat("#").concat(start).concat("#").concat(end).concat("#").concat(mac).concat("_iphone_android_@2016y"));
@@ -193,6 +230,10 @@ public class WatchUploadService extends IntentService{
                     if(obj!=null&&obj.status==BaseObject.STATUS_OK){
 
                         PreferencesUtils.putInteger("synch_success_count",PreferencesUtils.getInteger("synch_success_count",0)+1);
+
+                        PreferencesUtils.remove("sleep_data_today");
+                        PreferencesUtils.remove("sleep_data_yesterday");
+                        PreferencesUtils.remove("sleep_data_collect_date");
 
                     }else {
 //                        try {

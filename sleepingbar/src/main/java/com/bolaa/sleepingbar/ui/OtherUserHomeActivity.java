@@ -96,6 +96,7 @@ public class OtherUserHomeActivity extends BaseListActivity implements LoadState
     }
 
     private void loadHeaderData(){
+        showLoading();
         ParamBuilder params=new ParamBuilder();
         params.append("uid",userId);
         NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(), AppUrls.getInstance().URL_OTHER_USER_INFO), new NetworkWorker.ICallback() {
@@ -105,19 +106,23 @@ public class OtherUserHomeActivity extends BaseListActivity implements LoadState
                     BaseObject<Content> obj= GsonParser.getInstance().parseToObj(result,Content.class);
                     if(obj!=null){
                         if(obj.status==BaseObject.STATUS_OK&&obj.data!=null&&obj.data.user_info!=null){
+                            showSuccess();
                             header.setVisibility(View.VISIBLE);
                             header.showHeader(obj.data.user_info);
                         }else {
 //                            AppUtil.showToast(getActivity(),obj.info);
                             header.setVisibility(View.GONE);
+                            showFailture();
                         }
                     }else {
 //                        AppUtil.showToast(getActivity(),"解析出错");
                         header.setVisibility(View.GONE);
+                        showFailture();
                     }
                 }else {
                     header.setVisibility(View.GONE);
 //                    AppUtil.showToast(getActivity(),"请检查网络");
+                    showFailture();
                 }
             }
         });
@@ -130,9 +135,9 @@ public class OtherUserHomeActivity extends BaseListActivity implements LoadState
         // TODO Auto-generated method stub
         mPullListView.onRefreshComplete();
         if(AppUtil.isEmpty(allData)){
-            showNodata();
+//            showNodata();
         }else {
-            showSuccess();
+//            showSuccess();
         }
         mAdapter.setList(allData);
         mAdapter.notifyDataSetChanged();
@@ -143,28 +148,28 @@ public class OtherUserHomeActivity extends BaseListActivity implements LoadState
     protected void loadError(String message, Throwable throwable, int page) {
         // TODO Auto-generated method stub
         mPullListView.onRefreshComplete();
-        showFailture();
+//        showFailture();
     }
 
     @Override
     protected void loadTimeOut(String message, Throwable throwable) {
         // TODO Auto-generated method stub
         mPullListView.onRefreshComplete();
-        showFailture();
+//        showFailture();
     }
 
     @Override
     protected void loadNoNet() {
         // TODO Auto-generated method stub
         mPullListView.onRefreshComplete();
-        showFailture();
+//        showFailture();
     }
 
     @Override
     protected void loadServerError() {
         // TODO Auto-generated method stub
         mPullListView.onRefreshComplete();
-        showFailture();
+//        showFailture();
 
     }
 

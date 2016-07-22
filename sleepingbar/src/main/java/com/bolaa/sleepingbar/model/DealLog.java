@@ -15,5 +15,7 @@ public class DealLog {
     public String realname;
     public String in_out_str;//转入。。转出
     public int in_out;//1 转入
+    public int change_type;//0=>'其他', 1=>'支付宝', 2=>'微信', 3=>'银联', 4=>'系统赠送', 5=>'睡眠基金', 6=>'提现', 7=>'赠送基金'
+    public String trade_no;//支付宝或微信账号
 
 }
