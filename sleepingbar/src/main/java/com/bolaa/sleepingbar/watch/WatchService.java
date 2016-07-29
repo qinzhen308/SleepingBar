@@ -29,6 +29,9 @@ import com.core.framework.store.sharePer.PreferencesUtils;
 
 import java.util.Arrays;
 import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 保持手环与app的数据交互，处理数据逻辑
@@ -68,6 +71,7 @@ public class WatchService extends Service{
         super.onCreate();
         init();
         registBroadcast();
+        startCheck();
     }
 
 
@@ -94,6 +98,7 @@ public class WatchService extends Service{
     public void onDestroy() {
         unregistBroadcast();
         mBLE.close();
+        stopCheck();
         super.onDestroy();
     }
 
@@ -293,10 +298,12 @@ public class WatchService extends Service{
                 mBLE.writeCharacteristic(writeCharacteristic);
             }else if(resultCode==2){
                 //获取完毕
+                PreferencesUtils.putString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC,gatt.getDevice().getAddress());
                 startService(new Intent(WatchService.this,WatchUploadService.class).setAction(WatchUploadService.ACTION_WATCH_UPLOAD_SERVICE)
                         .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_TODAY,PreferencesUtils.getString("sleep_data_today"))
                         .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_YESTERDAY,PreferencesUtils.getString("sleep_data_yesterday"))
                         .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE,PreferencesUtils.getString("sleep_data_collect_date"))
+                        .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_MAC,gatt.getDevice().getAddress())
                 );
             }
         }
@@ -393,6 +400,45 @@ public class WatchService extends Service{
                     mBLE.writeCharacteristic(writeCharacteristic);
                 }
             }
+        }
+    }
+
+    private long mSwitchInterval=1000*60;
+
+
+    private class CheckConnectionTask implements Runnable{
+
+        @Override
+        public void run() {
+            if(!mBLE.isConnected()){
+                boolean isSuc=mBLE.reconnect();
+                LogUtil.d("watch reconnect isSuc="+isSuc);
+            }
+        }
+    };
+
+    private class checkTask implements Runnable{
+
+        @Override
+        public void run() {
+            if(!mBLE.isConnected()){
+                mHandler.post(new CheckConnectionTask());
+            }
+        }
+    };
+    private ScheduledExecutorService mScheduleService;
+
+    public void startCheck() {
+        stopCheck();
+        mScheduleService = Executors.newSingleThreadScheduledExecutor();
+        mScheduleService.scheduleAtFixedRate(new checkTask(),
+                mSwitchInterval , mSwitchInterval, TimeUnit.MILLISECONDS);
+    }
+
+
+    public void stopCheck() {
+        if (mScheduleService != null && !mScheduleService.isShutdown()) {
+            mScheduleService.shutdownNow();
         }
     }
 

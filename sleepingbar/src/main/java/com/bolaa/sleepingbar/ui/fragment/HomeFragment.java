@@ -90,11 +90,6 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	public void onResume() {
 
 		super.onResume();
-		IntentFilter filter=new IntentFilter();
-		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_STEP);
-		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_RUN);
-		filter.addAction(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME);
-		getActivity().registerReceiver(mReceiver,filter);
 	}
 
 	@Override
@@ -105,9 +100,13 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	@Override
 	public void onPause() {
 		super.onPause();
-		getActivity().unregisterReceiver(mReceiver);
 	}
 
+	@Override
+	public void onDestroy() {
+		getActivity().unregisterReceiver(mReceiver);
+		super.onDestroy();
+	}
 
 	@Override
 	@Nullable
@@ -133,6 +132,11 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			tvStepEvaluate.setText(TipUtil.getStepEvaluate(0));
 			getStepAtLast();
 		}
+		IntentFilter filter=new IntentFilter();
+		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_STEP);
+		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_RUN);
+		filter.addAction(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME);
+		getActivity().registerReceiver(mReceiver,filter);
 	}
 
 	@Override

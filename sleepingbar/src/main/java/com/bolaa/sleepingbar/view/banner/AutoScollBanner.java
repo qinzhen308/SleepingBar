@@ -75,6 +75,7 @@ public class AutoScollBanner extends LinearLayout implements
 	// 设置视图的Adapter
 	private void setPageAdapter(LoopBannerAdapter adapter) {
 		mBannerAdater = adapter;
+
 		mViewPager.setAdapter(mBannerAdater);
 		mViewPager.setLoopMode(true, mBannerAdater.getOriginPosition());
 		if (mBannerAdater.convertRealPosition(mViewPager.getAutoCurrentIndex()) >= mBannerAdater
@@ -212,6 +213,7 @@ public class AutoScollBanner extends LinearLayout implements
 			mBannerAdater = new LoopBannerAdapter(mViews);
 			setPageAdapter(mBannerAdater);
 		} else {
+			mViewPager.removeAllViews();
 			mBannerAdater.setData(mViews);
 			if (mBannerAdater.convertRealPosition(mViewPager
 					.getAutoCurrentIndex()) >= mBannerAdater.getRealCount()) {

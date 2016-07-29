@@ -10,9 +10,9 @@ public class TipUtil {
     public static final String[] sleepDescs={"没有检测到睡眠数据，请正确使用设备","只有绑定设备后才会记录数据","你真的太棒了","你能得“优”吗？","睡眠质量这么差，真是让人心疼。"};
 
     public static String getStepEvaluate(int distance){
-        if(distance>=100000){
+        if(distance>=10000){
             return stepEvaluate[2];
-        }else if(distance>=40000){
+        }else if(distance>=4000){
             return stepEvaluate[3];
         }else if(distance>0){
             return stepEvaluate[4];
@@ -24,9 +24,9 @@ public class TipUtil {
     }
 
     public static String getStepTip(int distance){
-        if(distance>=100000){
+        if(distance>=10000){
             return stepDescs[2];
-        }else if(distance>=40000){
+        }else if(distance>=4000){
             return stepDescs[3];
         }else if(distance>0){
             return stepDescs[4];

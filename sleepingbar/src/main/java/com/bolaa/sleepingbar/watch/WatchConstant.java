@@ -35,4 +35,5 @@ public class WatchConstant {
     public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_TODAY="flag_once_uplaod_sleep_data_today";//
     public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_YESTERDAY="flag_once_uplaod_sleep_data_yesterday";//
     public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE="flag_once_uplaod_sleep_data_date";//
+    public final static String FLAG_ONCE_UPLOAD_SLEEP_DATA_MAC="flag_once_uplaod_sleep_data_mac";//
 }

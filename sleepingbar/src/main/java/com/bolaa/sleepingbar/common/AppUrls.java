@@ -59,6 +59,7 @@ public class AppUrls {
 	public String URL_LOGIN=BASE_URL+"user.php?act=login";//登录
 	public String URL_LOGOUT=BASE_URL+"user.php?act=logout";//退出登录
 	public String URL_DEAL_HISTORY=BASE_URL+"user.php?act=account_log";//历史交易记录
+	public String URL_CASH_LOG=BASE_URL+"user.php?act=apply_cash_list";//提现记录
 	public String URL_ACCOUNT_INFO=BASE_URL+"user.php?act=user_account";//个人中心我的账户
 	public String URL_CASH_WITHDRAW=BASE_URL+"user.php?act=do_apply_cash";//提现
 	public String URL_CASH_WITHDRAW_PAGE_INFO=BASE_URL+"user.php?act=apply_cash";//提现页面信息
@@ -83,6 +84,7 @@ public class AppUrls {
 	public String URL_SUPPORT_FUNDS_TO=BASE_URL+"sleep.php?act=send_fund";//基金支持
 	public String URL_GET_USER_INFO=BASE_URL+"user.php?act=userinfo";//获取个人全部信息
 	public String URL_GET_MSG_COUNT=BASE_URL+"user.php?act=message_count";//获取消息数量
+	public String URL_CASH_WITHDRAW_CANCEL=BASE_URL+"user.php?act=cancel_apply_cash";//取消提现
 
 	public String URL_ACTIVE_HOME=BASE_URL+"activity.php?act=list";//首页活动页
 

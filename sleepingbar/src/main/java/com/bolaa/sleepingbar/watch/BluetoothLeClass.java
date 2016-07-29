@@ -16,7 +16,6 @@
 
 package com.bolaa.sleepingbar.watch;
 
-import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
@@ -27,15 +26,11 @@ import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Binder;
-import android.os.IBinder;
 import android.util.Log;
 
 import com.core.framework.store.sharePer.PreferencesUtils;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Service for managing connection and data communication with a GATT server hosted on a
@@ -48,6 +43,8 @@ public class BluetoothLeClass{
     private BluetoothAdapter mBluetoothAdapter;
     private String mBluetoothDeviceAddress;
     private BluetoothGatt mBluetoothGatt;
+
+    private boolean isConnected;
 
 	public interface OnConnectListener {
 		public void onConnect(BluetoothGatt gatt);
@@ -103,6 +100,7 @@ public class BluetoothLeClass{
                     // Attempts to discover services after successful connection.
                     Log.i(TAG, "Attempting to start service discovery:" +
                             mBluetoothGatt.discoverServices());
+                    isConnected =true;
                     PreferencesUtils.putBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED,true);
                 } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                     if(mOnDisconnectListener!=null) {
@@ -110,9 +108,10 @@ public class BluetoothLeClass{
                     }
                     Log.i(TAG, "Disconnected from GATT server.");
                     PreferencesUtils.putBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED,false);
+                    isConnected =false;
                 }else {
                     PreferencesUtils.putBoolean(WatchConstant.FLAG_IS_WATCH_CONNECTED,false);
-
+                    isConnected =false;
                 }
             }
         }
@@ -267,6 +266,11 @@ public class BluetoothLeClass{
         mBluetoothGatt.disconnect();
     }
 
+    public boolean reconnect(){
+        if(mBluetoothGatt==null)return false;
+        return mBluetoothGatt.connect();
+    }
+
     /**
      * After using a given BLE device, the app must call this method to ensure resources are
      * released properly.
@@ -322,5 +326,9 @@ public class BluetoothLeClass{
         if (mBluetoothGatt == null) return null;
 
         return mBluetoothGatt.getServices();
+    }
+
+    public boolean isConnected(){
+        return isConnected;
     }
 }

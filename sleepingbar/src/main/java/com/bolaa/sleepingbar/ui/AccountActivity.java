@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.AccountLogAdapter;
+import com.bolaa.sleepingbar.adapter.CashWithdrawLogAdapter;
 import com.bolaa.sleepingbar.adapter.SupporterAdapter;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
@@ -33,6 +34,7 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
 	private TextView tvRecharge;
 	private TextView tvCashWithdraw;
 	private TextView tvDealHistory;
+	private TextView tvCashHistory;
 
 
 	@Override
@@ -63,6 +65,7 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
 		tvRecharge =(TextView) findViewById(R.id.btn_recharge);
 		tvCashWithdraw =(TextView) findViewById(R.id.btn_cash_withdraw);
 		tvDealHistory =(TextView) findViewById(R.id.tv_deal_history);
+		tvCashHistory =(TextView) findViewById(R.id.tv_cash_history);
 		mPullListView=(PullListView) findViewById(R.id.pull_listview);
 		mPullListView.setMode(-1);
 		mListView=mPullListView.getRefreshableView();
@@ -77,6 +80,7 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
 		tvRecharge.setOnClickListener(this);
 		tvCashWithdraw.setOnClickListener(this);
 		tvDealHistory.setOnClickListener(this);
+		tvCashHistory.setOnClickListener(this);
 	}
 
 
@@ -131,6 +135,8 @@ public class AccountActivity extends BaseListActivity implements LoadStateContro
             CashWithdrawActivity.invoke(this);
 		}else if(v==tvRecharge){
 			PayTestActivity.invoke(this);
+		}else if(v==tvCashHistory){//提现记录
+            CashWithdrawLogActivity.invoke(this);
 		}else{
 			super.onClick(v);
 		}

@@ -108,6 +108,11 @@ public class LoopBannerAdapter extends PagerAdapter {
 	@Override
 	public void destroyItem(ViewGroup container, int position, Object object) {
 		// Log.d("qz","destroyItem----position="+position+",index="+position%realCount);
-		// container.removeView(mViews.get(position%realCount));
+//		if(getRealCount()>2){
+//			container.removeView(mViews.get(position%realCount));
+//
+//		}else {
+////			container.removeViewAt(1);
+//		}
 	}
 }

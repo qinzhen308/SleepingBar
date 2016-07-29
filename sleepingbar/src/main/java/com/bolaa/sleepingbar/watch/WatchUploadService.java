@@ -49,6 +49,7 @@ public class WatchUploadService extends IntentService{
     private String once_uplaod_sleep_data_today;
     private String once_uplaod_sleep_data_yesterday;
     private String once_uplaod_sleep_data_date;
+    private String once_uplaod_sleep_data_mac;
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -97,6 +98,7 @@ public class WatchUploadService extends IntentService{
             once_uplaod_sleep_data_today=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_TODAY);
             once_uplaod_sleep_data_yesterday=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_YESTERDAY);
             once_uplaod_sleep_data_date=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE);
+            once_uplaod_sleep_data_mac=intent.getStringExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_MAC);
             if (AppUtil.isNull(once_uplaod_sleep_data_date)){
                 LogUtil.d("alarm---onHandleIntent---睡眠无效数据");
                 return;
@@ -211,7 +213,12 @@ public class WatchUploadService extends IntentService{
             sleep_date=once_uplaod_sleep_data_date;
         }
         String uinfoid=PreferencesUtils.getString("user_id");
-        String mac=PreferencesUtils.getString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC);
+        String mac="";
+        if(isStartByDateChanged){
+            mac=PreferencesUtils.getString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC);
+        }else {
+            mac=once_uplaod_sleep_data_mac;
+        }
         final String sign= MD5Util.getMD5(uinfoid.concat("#").concat(sleep_date).concat("#").concat(start).concat("#").concat(end).concat("#").concat(mac).concat("_iphone_android_@2016y"));
         requester.getParams().put("sleep_date", sleep_date);
         requester.getParams().put("sign",sign);
