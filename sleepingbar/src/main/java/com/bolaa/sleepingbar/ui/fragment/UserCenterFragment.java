@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.common.APIUtil;
@@ -29,6 +31,7 @@ import com.bolaa.sleepingbar.ui.PrivateSettingActivity;
 import com.bolaa.sleepingbar.ui.QuickBindWatchActivity;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.Image13Loader;
+import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.sharePer.PreferencesUtils;
@@ -85,6 +88,19 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
                     if(object!=null){
                         if(object.data!=null&&object.status==BaseObject.STATUS_OK){
                             showMsgCount(object.data.message_count);
+                            if(object.data.is_binding==0){
+                                tvBindWatch.setVisibility(object.data.is_binding==0?View.VISIBLE:View.GONE);
+                                if(HApplication.getInstance().isWatchServiceWork()){
+                                    HApplication.getInstance().stopWatchService(getActivity());
+                                }else {
+                                    if(!AppUtil.isNull(PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK))){
+                                        PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
+                                        PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_NAME);
+                                        PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+                                        getActivity().sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_DISCONNECTED));
+                                    }
+                                }
+                            }
                         }else {
                             showMsgCount(0);
                         }
@@ -99,6 +115,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 
     public class Msgcount{
         public int message_count;
+        public int is_binding;
     }
 
     private void showMsgCount(int count){

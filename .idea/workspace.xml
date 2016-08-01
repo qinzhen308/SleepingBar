@@ -94,7 +94,7 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af7f6801-a035-4a16-98e0-f4d096b9c3dc" name="Default" comment="">
@@ -103,57 +103,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/apache-mime4j-0.6.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/apache-mime4j-0.6.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpcore-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpcore-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpmime-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpmime-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/apache-mime4j-0.6.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/apache-mime4j-0.6.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpcore-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpcore-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpmime-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpmime-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/Framework/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-debug.aar" afterPath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-release.aar" afterPath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/android-pdfview/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/android-pdfview/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/build/outputs/aar/android-pdfview-debug.aar" afterPath="$PROJECT_DIR$/android-pdfview/build/outputs/aar/android-pdfview-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/blame/res/androidTest/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/Framework/build/intermediates/blame/res/androidTest/debug/single/drawable-xhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/android-pdfview.iml" afterPath="$PROJECT_DIR$/android-pdfview/android-pdfview.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/share.iml" afterPath="$PROJECT_DIR$/share/share.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/common/AppUrls.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/common/AppUrls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/AccountActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/AccountActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/WBShareActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/WBShareActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DeviceBindingListAdapter.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DeviceBindingListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListAdapter.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/HomeSleepInfo.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/HomeSleepInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DeviceInfoActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DeviceInfoActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/AutoScollBanner.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/AutoScollBanner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/LoopBannerAdapter.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/LoopBannerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/BluetoothLeClass.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/BluetoothLeClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/TipUtil.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/TipUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchConstant.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchConstant.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_account.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_account.xml" />
     </list>
     <ignored path="SleepingBar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -199,12 +169,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4973822">
-              <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+            <state vertical-scroll-proportion="-8.933333">
+              <caret line="174" column="81" selection-start-line="174" selection-start-column="81" selection-end-line="174" selection-end-column="81" />
+              <folding>
+                <element signature="e#2794#2795#0" expanded="true" />
+                <element signature="e#2816#2817#0" expanded="true" />
+                <element signature="e#6622#8050#0" expanded="true" />
+                <element signature="e#8049#8050#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActiveFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#2749#2750#0" expanded="true" />
+                <element signature="e#2814#2815#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/base/BaseFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.75">
+              <caret line="260" column="24" selection-start-line="260" selection-start-column="24" selection-end-line="260" selection-end-column="24" />
+              <folding>
+                <element signature="e#8443#8996#0" expanded="true" />
+                <element signature="e#8995#8996#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCenterFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+              <folding>
+                <element signature="e#2445#2446#0" expanded="true" />
+                <element signature="e#2474#2475#0" expanded="true" />
+                <element signature="e#2809#4590#0" expanded="true" />
+                <element signature="e#4589#4590#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceBindingListAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DeviceBindingListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="87" column="63" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceInfoActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DeviceInfoActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.821428">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommunityFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36347827">
+              <caret line="82" column="64" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
+              <folding>
+                <element signature="e#2116#2117#0" expanded="true" />
+                <element signature="e#2148#2149#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -4003,14 +4062,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/utils/AppUtil.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/httputil/HttpRequester.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/httputil/ParamBuilder.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_bbs_posts_detail.xml" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/SupporterDetailAdapter.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/BBSSendPostsActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/PictureAdapter.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/PhotoViewerActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java" />
@@ -4018,7 +4069,6 @@
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/AboutActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MainActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_quick_login_captcha.xml" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/fragment_funds_rankinglist.xml" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MyInfoActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/fragment_home.xml" />
@@ -4028,7 +4078,6 @@
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/OtherUserHomeActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadReceiver.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/CMDHandler.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_deal_history.xml" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CashWithdrawActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_funds_rankinglist.xml" />
@@ -4036,10 +4085,8 @@
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/DealLog.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DealHistoryAdapter.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/include_funds_rankinglist_my.xml" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchConstant.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/TipUtil.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/wrapper/CashLogWraper.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_account.xml" />
@@ -4053,7 +4100,19 @@
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/LoopBannerAdapter.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/AutoScollBanner.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/BluetoothLeClass.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/utils/ShareUtil.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/WBShareActivity.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/HomeSleepInfo.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchConstant.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DeviceBindingListAdapter.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DeviceInfoActivity.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListAdapter.java" />
       </list>
     </option>
   </component>
@@ -4088,6 +4147,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -4099,7 +4159,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -4132,346 +4191,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepingbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SleepingBar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="net" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="E:/android/sdk_as" />
-    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;Aut&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/AutoScollBanner.java&#10;watch&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;communi&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.CommunityFragment&#10;android&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/AndroidManifest.xml&#10;account&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.AccountActivity&#10;dealhisa&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DealHistoryActivity.java&#10;up&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java&#10;ran&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/FundsRankinglistFragment.java&#10;rank&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/FundsRankinglistAdapter.java&#10;dealh&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DealHistoryActivity.java&#10;happ&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;cashw&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CashWithdrawActivity.java&#10;deal&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.DealHistoryActivity&#10;Intent&#9;PSI&#9;JAVA://android.content.Intent&#10;cmd&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.watch.CMDHandler&#10;watchser&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.watch.WatchUploadService&#10;other&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.OtherUserHomeActivity&#10;usercen&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java&#10;myinfo&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.MyInfoActivity&#10;ranking&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.FundsRankinglistActivity&#10;quicklo&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.QuickLoginCaptchaActivity&#10;homef&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;main&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MainActivity.java&#10;abou&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/AboutActivity.java&#10;about&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.AboutActivity&#10;quickbi&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;quic&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java&#10;watchse&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;watchu&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java&#10;quick&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;topic&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.TopicListAdapter&#10;Prefer&#9;PSI&#9;JAVA://com.core.framework.store.sharePer.PreferencesUtils&#10;com&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;suppor&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/SupporterDetailAdapter.java&#10;quickwa&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.QuickBindWatchActivity&#10;pref&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/Framework/src/com/core/framework/store/sharePer/PreferencesUtils.java&#10;hap&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;prefer&#9;PSI&#9;JAVA://com.core.framework.store.sharePer.PreferencesUtils&#10;wa&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;info&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java&#10;app&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;w&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;md5&#9;PSI&#9;JAVA://com.core.framework.util.MD5Util&#10;param&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.httputil.ParamBuilder&#10;apput&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/utils/AppUtil.java&#10;appu&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.utils.AppUtil&#10;Happ&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;wat&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadReceiver.java&#10;communit&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java" />
-    <property name="device.picker.selection" value="3515889b" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Bolaa_jiwei" />
+    <property name="SearchEverywhereHistoryKey" value="com&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;device&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.DeviceInfoActivity&#10;de&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DeviceBindingListAdapter.java&#10;active&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.ActiveFragment&#10;comm&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;hap&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;happ&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;quickbind&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;watch&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;watchs&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;usercen&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java&#10;Homefr&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;myfr&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.MyFriendsFragment&#10;appurl&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/common/AppUrls.java&#10;tren&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.view.TrendView&#10;home&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;Aut&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/AutoScollBanner.java&#10;communi&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.CommunityFragment&#10;android&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/AndroidManifest.xml&#10;account&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.AccountActivity&#10;dealhisa&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DealHistoryActivity.java&#10;up&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java&#10;ran&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/FundsRankinglistFragment.java&#10;rank&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/FundsRankinglistAdapter.java&#10;dealh&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DealHistoryActivity.java&#10;cashw&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CashWithdrawActivity.java&#10;deal&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.DealHistoryActivity&#10;Intent&#9;PSI&#9;JAVA://android.content.Intent&#10;cmd&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.watch.CMDHandler&#10;watchser&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.watch.WatchUploadService&#10;other&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.OtherUserHomeActivity&#10;myinfo&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.MyInfoActivity&#10;ranking&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.FundsRankinglistActivity&#10;quicklo&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.QuickLoginCaptchaActivity&#10;homef&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;main&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MainActivity.java&#10;abou&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/AboutActivity.java&#10;about&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.AboutActivity&#10;quickbi&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;quic&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java&#10;watchse&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;watchu&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadService.java&#10;quick&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;topic&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.TopicListAdapter&#10;Prefer&#9;PSI&#9;JAVA://com.core.framework.store.sharePer.PreferencesUtils&#10;suppor&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/SupporterDetailAdapter.java&#10;quickwa&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.QuickBindWatchActivity&#10;pref&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/Framework/src/com/core/framework/store/sharePer/PreferencesUtils.java&#10;prefer&#9;PSI&#9;JAVA://com.core.framework.store.sharePer.PreferencesUtils&#10;wa&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java" />
+    <property name="device.picker.selection" value="AVD_for_Nexus_One_by_Google" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../glide" />
     <property name="DEBUGGABLE_DEVICE" value="meizu-mx4-750BBLD226WJ" />
     <property name="DEBUGGABLE_PROCESS" value="com.bolaa.sleepingbar:WatchService" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -4816,13 +4547,12 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32962137" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.50959486" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2793177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32739422" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4904051" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4831,10 +4561,8 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -4842,8 +4570,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2793177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -4886,7 +4617,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java</url>
-          <line>163</line>
+          <line>170</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -5000,7 +4731,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java</url>
-          <line>244</line>
+          <line>268</line>
           <properties />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
@@ -5030,19 +4761,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java</url>
-          <line>238</line>
+          <line>240</line>
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java</url>
-          <line>258</line>
+          <line>260</line>
           <properties />
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java</url>
-          <line>349</line>
+          <line>358</line>
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
@@ -5054,7 +4785,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java</url>
-          <line>309</line>
+          <line>335</line>
           <properties />
           <option name="timeStamp" value="125" />
         </line-breakpoint>
@@ -5090,7 +4821,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java</url>
-          <line>301</line>
+          <line>303</line>
           <properties />
           <option name="timeStamp" value="132" />
         </line-breakpoint>
@@ -5115,178 +4846,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="308" column="26" selection-start-line="308" selection-start-column="26" selection-end-line="308" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchUploadReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63001746">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CashWithdrawActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.964286">
-          <caret line="247" column="55" selection-start-line="247" selection-start-column="55" selection-end-line="247" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/FundsRankinglistAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_funds_rankinglist.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/res/layout/include_funds_rankinglist_my.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0367504">
-          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/res/layout/fragment_funds_rankinglist.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4777563">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/FundsRankinglistFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.582897">
-          <caret line="114" column="54" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15304948">
-          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/CMDHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/android/SDK-forAS/platforms/android-22/android.jar!/org/apache/http/impl/client/AbstractHttpClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3504587">
-          <caret line="161" column="29" selection-start-line="161" selection-start-column="29" selection-end-line="161" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/wrapper/RankinglistItemWraper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
-          <folding>
-            <element signature="e#3708#3709#0" expanded="true" />
-            <element signature="e#3749#3892#0" expanded="true" />
-            <element signature="e#3891#3892#0" expanded="true" />
-            <element signature="e#5112#5263#0" expanded="true" />
-            <element signature="e#5262#5263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Framework/src/com/core/framework/util/EntitySort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="62" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/android/SDK-forAS/platforms/android-22/android.jar!/org/apache/http/cookie/Cookie.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27889907">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Framework/src/com/core/framework/net/AbstractCookie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39790577">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framework/src/com/core/framework/net/HttpRequester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.4333334">
@@ -5299,7 +4858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3504587">
           <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5315,14 +4873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="253" column="39" selection-start-line="253" selection-start-column="39" selection-end-line="253" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/TipUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17491369">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
           <folding />
         </state>
       </provider>
@@ -5378,8 +4928,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="246" column="17" selection-start-line="246" selection-start-column="17" selection-end-line="246" selection-end-column="17" />
           <folding>
-            <element signature="e#4939#6159#0" expanded="true" />
-            <element signature="e#6158#6159#0" expanded="true" />
+            <element signature="e#4939#6159#0" expanded="false" />
+            <element signature="e#6158#6159#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -5389,8 +4939,8 @@
         <state vertical-scroll-proportion="0.087456845">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="26" />
           <folding>
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#664#665#0" expanded="false" />
+            <element signature="e#694#695#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -5441,33 +4991,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.293103">
-          <caret line="160" column="49" selection-start-line="160" selection-start-column="49" selection-end-line="160" selection-end-column="49" />
-          <folding>
-            <element signature="e#2867#2885#0" expanded="true" />
-            <element signature="e#3089#3107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/common/AppUrls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51898736">
-          <caret line="86" column="42" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/CashWithdrawLogAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.466667">
           <caret line="76" column="35" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1372#1523#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1372#1523#0" expanded="false" />
+            <element signature="e#1522#1523#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -5477,8 +5008,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
           <folding>
-            <element signature="e#1979#2124#0" expanded="true" />
-            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#1979#2124#0" expanded="false" />
+            <element signature="e#2123#2124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -5503,15 +5034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.76">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5527,10 +5049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-          <folding>
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#1995#1996#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5547,8 +5065,8 @@
         <state vertical-scroll-proportion="0.7504587">
           <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
           <folding>
-            <element signature="e#12866#12867#0" expanded="true" />
-            <element signature="e#12900#12901#0" expanded="true" />
+            <element signature="e#12866#12867#0" expanded="false" />
+            <element signature="e#12900#12901#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -5557,7 +5075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43826088">
           <caret line="144" column="48" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5566,17 +5083,6 @@
         <state vertical-scroll-proportion="0.26608697">
           <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40733945">
-          <caret line="434" column="33" selection-start-line="434" selection-start-column="33" selection-end-line="434" selection-end-column="34" />
-          <folding>
-            <element signature="e#3199#3200#0" expanded="true" />
-            <element signature="e#3244#3245#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5591,11 +5097,222 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37977806">
+          <caret line="388" column="18" selection-start-line="388" selection-start-column="18" selection-end-line="388" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/WBShareActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17491369">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/utils/ShareUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5630713">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="e#3362#4764#0" expanded="true" />
+            <element signature="e#4763#4764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2973913">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="42" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="130" column="62" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/MyFriendsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.659686">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/model/HomeSleepInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5968586">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/common/AppUrls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5082873">
+          <caret line="90" column="82" selection-start-line="90" selection-start-column="82" selection-end-line="90" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36649215">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4450262">
+          <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/TipUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8289703">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framework/src/com/core/framework/app/oSinfo/SuNetEvn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1169283">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.75">
+          <caret line="260" column="24" selection-start-line="260" selection-start-column="24" selection-end-line="260" selection-end-column="24" />
+          <folding>
+            <element signature="e#8443#8996#0" expanded="true" />
+            <element signature="e#8995#8996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.469459">
+          <caret line="225" column="42" selection-start-line="225" selection-start-column="42" selection-end-line="225" selection-end-column="42" />
+          <folding>
+            <element signature="e#3562#3709#0" expanded="true" />
+            <element signature="e#3708#3709#0" expanded="true" />
+            <element signature="e#3749#3892#0" expanded="true" />
+            <element signature="e#3891#3892#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4973822">
-          <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+        <state vertical-scroll-proportion="-8.933333">
+          <caret line="174" column="81" selection-start-line="174" selection-start-column="81" selection-end-line="174" selection-end-column="81" />
+          <folding>
+            <element signature="e#2794#2795#0" expanded="true" />
+            <element signature="e#2816#2817#0" expanded="true" />
+            <element signature="e#6622#8050#0" expanded="true" />
+            <element signature="e#8049#8050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/base/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/ActiveFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#2749#2750#0" expanded="true" />
+            <element signature="e#2814#2815#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+          <folding>
+            <element signature="e#2445#2446#0" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2809#4590#0" expanded="true" />
+            <element signature="e#4589#4590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/DeviceBindingListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="63" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/DeviceInfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/controller/AbstractListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321739">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/BaseListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321739">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0243478">
+          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36347827">
+          <caret line="82" column="64" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
+          <folding>
+            <element signature="e#2116#2117#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

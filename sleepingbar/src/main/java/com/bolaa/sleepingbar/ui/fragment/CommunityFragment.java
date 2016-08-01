@@ -249,6 +249,7 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
                     BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
                     if(obj!=null){
                         if(obj.status==BaseObject.STATUS_OK){
+                            AppUtil.showToast(getActivity(),obj.info);
                             topic.has_been_cared=0;
                         }else {
                             AppUtil.showToast(getActivity(),obj.info);

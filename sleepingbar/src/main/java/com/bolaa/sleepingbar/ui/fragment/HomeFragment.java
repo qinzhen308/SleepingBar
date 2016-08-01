@@ -1,5 +1,6 @@
 package com.bolaa.sleepingbar.ui.fragment;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.common.APIUtil;
@@ -136,6 +137,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_STEP);
 		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_RUN);
 		filter.addAction(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME);
+		filter.addAction(WatchConstant.ACTION_WATCH_DISCONNECTED);
 		getActivity().registerReceiver(mReceiver,filter);
 	}
 
@@ -203,6 +205,18 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 					if (object != null && object.status == BaseObject.STATUS_OK && object.data != null) {
 						sleepInfo=object.data;
 						setSleepInfo();
+                        if(sleepInfo.is_binding==0){
+                            if(HApplication.getInstance().isWatchServiceWork()){
+                                HApplication.getInstance().stopWatchService(getActivity());
+                            }else {
+                                if(!AppUtil.isNull(PreferencesUtils.getString(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK))){
+                                    PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
+                                    PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_NAME);
+                                    PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
+                                    disbindWatch();
+                                }
+                            }
+                        }
 					} else {
 						AppUtil.showToast(getActivity(),object!=null?object.info:"解析失败");
 					}
@@ -213,6 +227,16 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			}
 		});
 
+	}
+
+	private void disbindWatch(){
+		tvStep.setText("0");
+		tvCalorie.setText("0");
+		tvDistance.setText("0.0");
+		tvWalk.setText("0");
+		tvStepTip.setText(TipUtil.getStepTip(-1));
+		tvStepEvaluate.setText(TipUtil.getStepEvaluate(-1));
+		tvRun.setText("0");
 	}
 
 	private void setSleepInfo(){
@@ -287,6 +311,8 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 					tvStepEvaluate.setText(TipUtil.getStepEvaluate(0));
 					getStepAtLast();
 				}
+			}else if(WatchConstant.ACTION_WATCH_DISCONNECTED.equals(action)){
+				disbindWatch();
 			}
 		}
 	};

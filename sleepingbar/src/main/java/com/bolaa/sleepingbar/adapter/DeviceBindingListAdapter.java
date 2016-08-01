@@ -17,6 +17,7 @@ import com.bolaa.sleepingbar.controller.AbstractListAdapter;
 import com.bolaa.sleepingbar.model.Watch;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.watch.WatchService;
+import com.core.framework.app.oSinfo.SuNetEvn;
 import com.core.framework.util.DialogUtil;
 import com.core.framework.util.IOSDialogUtil;
 
@@ -84,11 +85,15 @@ public class DeviceBindingListAdapter extends AbstractListAdapter<BluetoothDevic
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
+					if(!((Activity)mContext).isFinishing())dialog.dismiss();
+					if(!SuNetEvn.getInstance().isHasNet()){
+						AppUtil.showToast(mContext,"未检测到网络，请检查网络");
+						return;
+					}
 					Intent intent=new Intent(mContext, WatchService.class);
 					intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,address);
 					intent.putExtra(WatchService.FLAG_CURRENT_DEVICE_NAME,name);
 					mContext.startService(intent);
-                    if(!((Activity)mContext).isFinishing())dialog.dismiss();
                 }
 			});
 			dialog = DialogUtil.getCenterDialog((Activity) mContext, logoutView);

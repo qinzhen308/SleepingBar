@@ -34,6 +34,7 @@ import com.bolaa.sleepingbar.watch.WatchUploadReceiver;
 import com.bolaa.sleepingbar.watch.WatchUploadService;
 import com.core.framework.app.MyApplication;
 import com.core.framework.app.devInfo.ScreenUtil;
+import com.core.framework.app.oSinfo.SuNetEvn;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
@@ -116,6 +117,7 @@ public class HApplication extends MyApplication {
 		initPushService();
 //		WatchUploadService.setAlarm(getApplicationContext());
 		WatchUploadReceiver.setAlarm(getApplicationContext());
+		SuNetEvn.getInstance();
 	}
 
 	private void initDatabase() {
@@ -269,9 +271,15 @@ public class HApplication extends MyApplication {
 				// TODO Auto-generated method stub
 				if(status==200){
 					LogUtil.d("watch---bind watch="+result);
-					AppUtil.showToast(getInstance(),"绑定手环成功！");
-
+					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
+					if(obj!=null&&obj.status==BaseObject.STATUS_OK){
+						//只有服务器绑定成功才算成功，否则关掉蓝牙服务
+						AppUtil.showToast(getInstance(),"绑定手环成功！");
+						return;
+					}
 				}
+				AppUtil.showToast(getInstance(),"未检测到网络，请检查网络");
+				stopWatchService(getInstance());
 			}
 		},requester);
 	}
@@ -315,6 +323,7 @@ public class HApplication extends MyApplication {
 		//删掉缓存的mac地址
 		PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_ADDRESS);
 		PreferencesUtils.remove(WatchService.FLAG_CURRENT_DEVICE_NAME);
+		PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
 		//停止蓝牙服务
 		stopService(new Intent(context, WatchService.class));
 	}

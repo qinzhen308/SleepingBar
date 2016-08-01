@@ -99,6 +99,8 @@ public class WatchService extends Service{
         unregistBroadcast();
         mBLE.close();
         stopCheck();
+        //断开连接时，首页步行数据清空
+        sendBroadcast(new Intent(WatchConstant.ACTION_WATCH_DISCONNECTED));
         super.onDestroy();
     }
 

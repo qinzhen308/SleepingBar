@@ -19,6 +19,7 @@ import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.base.BaseFragment;
 import com.bolaa.sleepingbar.common.APIUtil;
 import com.bolaa.sleepingbar.common.AppUrls;
+import com.bolaa.sleepingbar.controller.LoadStateController;
 import com.bolaa.sleepingbar.httputil.ParamBuilder;
 import com.bolaa.sleepingbar.listener.JSInvokeJavaInterface;
 import com.bolaa.sleepingbar.ui.CommonWebActivity;
@@ -29,7 +30,7 @@ import com.core.framework.develop.LogUtil;
  * web页面
  * Created by paulz on 2016/5/31.
  */
-public class ActiveFragment extends BaseFragment implements View.OnClickListener {
+public class ActiveFragment extends BaseFragment implements View.OnClickListener ,LoadStateController.OnLoadErrorListener{
     WebView mWebView;
 
     protected String mCurrentUrl;
@@ -41,6 +42,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
     protected void isNeedCloseThisActivity(boolean isNeed) {
 
     }
+
 
     @Override
     public void onResume() {
@@ -64,7 +66,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        setView(inflater, R.layout.fragment_active_web, false);
+        setView(inflater, R.layout.fragment_active_web, true);
         initView();
         setListener();
         return baseLayout;
@@ -86,8 +88,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
     }
 
     private void setListener() {
-
-
+        mLoadStateController.setOnLoadErrorListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -104,6 +105,11 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
+    @Override
+    public void onAgainRefresh() {
+        load(APIUtil.parseGetUrlHasMethod(new ParamBuilder().getParamList(),AppUrls.getInstance().URL_ACTIVE_HOME),!isFirstLoad);
+    }
+
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -115,6 +121,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
             super.onReceivedError(view, errorCode, description, failingUrl);
             LogUtil.d("------------------error-----------------");
+            showFailture();
         }
 
         private void notifyOtherSchema(String url) {

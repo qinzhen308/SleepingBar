@@ -48,14 +48,17 @@ public class DeviceInfoActivity extends BaseListActivity implements LoadStateCon
 		setExtra();
 		initView();
 		setListener();
-		initData();
 	}
 	
 	private void setExtra(){
 		
 	}
 
-
+	@Override
+	public void onResume() {
+		super.onResume();
+		initData();
+	}
 
 	private void initView(){
 		setActiviyContextView(R.layout.activity_device_info_list, false, true);

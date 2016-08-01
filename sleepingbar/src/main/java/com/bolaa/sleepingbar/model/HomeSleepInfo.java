@@ -17,5 +17,7 @@ public class HomeSleepInfo {
     public String deep_time;
     public String no_deep_time;
     public String sleep_date;
+    public int  is_binding;//  1 已绑定  0未绑定
+    ;
 
 }

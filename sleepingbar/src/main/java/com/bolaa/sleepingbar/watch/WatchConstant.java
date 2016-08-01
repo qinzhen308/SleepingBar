@@ -15,6 +15,7 @@ public class WatchConstant {
 
     public final static String ACTION_WATCH_CONNECTED_SUCCESS="com.bolaa.action.WATCH.CONNECTED.SUCCESS";//连接成功
     public final static String ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME="com.bolaa.action.WATCH.CONNECTED.SUCCESS.HOME";//连接成功,通知首页更改状态
+    public final static String ACTION_WATCH_DISCONNECTED="com.bolaa.action.WATCH.DISCONNECTED";//断开连接
 
     public final static String ACTION_WATCH_UPDATE_STEP="com.bolaa.action.WATCH.CMD.STEP";//更新  (33f4)
     public final static String ACTION_WATCH_UPDATE_RUN="com.bolaa.action.WATCH.CMD.RUN";//更新  (33f4)
