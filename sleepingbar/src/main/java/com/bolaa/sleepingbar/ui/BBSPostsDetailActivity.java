@@ -5,6 +5,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.adapter.PictureAdapter;
 import com.bolaa.sleepingbar.adapter.TopicCommentsAdapter;
@@ -567,6 +568,7 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
                                 ivPraise.setImageResource(posts.is_praise==1?R.drawable.ic_heart_purple:R.drawable.ic_heart_purple2);
 								tvPraiseCount.setText("" + posts.praise_num);
 //								sendStickyUpdateNotify(1, posts.praise_num);
+								HApplication.getInstance().changedPraise.put(posts.id,posts.is_praise);
 							} else {
 								AppUtil.showToast(getApplicationContext(), object != null ? object.info : "操作失败");
 							}
@@ -588,7 +590,11 @@ public class BBSPostsDetailActivity extends BaseListActivity implements
 		if (comment == null || comment.trim().length() <= 0) {
 			AppUtil.showToast(this, "评论不能为空");
 			return;
+		}else if(comment.length() > 300){
+			AppUtil.showToast(this, "评论字数不能超过300");
+			return;
 		}
+
 		HttpRequester requester = new HttpRequester();
 		requester.getParams().put("id", "" + posts.id);
 		requester.getParams().put("content", comment);

@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\weiboSDKCore_3.1.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c0b990dc90a5145b02387a5f54e6ca41ba80f719">
-        <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\weiboSDKCore_3.1.4_fbcab606879094677d42bb79705affac8b6c06f9.jar" />
-    </item>
-    <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\libs\UPPayAssistEx.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -16,17 +9,24 @@
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\UPPayAssistEx_761f7f0ae8d8b42b12fde36b9fb90fe3782fea31.jar" />
     </item>
     <item
+        jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\weiboSDKCore_3.1.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="407a561d32ac04adfe999f2b3dbdc20204c4d11f">
+        <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\weiboSDKCore_3.1.4_fbcab606879094677d42bb79705affac8b6c06f9.jar" />
+    </item>
+    <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="d82295cb3c773402d396a9afdfe458aad55fc57c">
+        sha1="42aa8057bb08149d8d2c2942ca3720668964fcad">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\SleepingBar-share-unspecified_014ada89b33839241eba70817dc94445faa51fe0.jar" />
     </item>
     <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\Framework\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="a3746dd2a279d54d353bc8c47daa6af314856585">
+        sha1="b3bb38bc2f16b711ded4f57d3ba8bec813ddf6e5">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\SleepingBar-Framework-unspecified_fc6afcbb4e2eee6771da80b8b2323f07e90eb824.jar" />
     </item>
     <item
@@ -40,7 +40,7 @@
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\SocialSDK_Sina.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="18fcb4d503d3cbe7e23042a505103ebd880b0a3a">
+        sha1="7a15898d990b72587f1afa35f7ee0f5d87f9a17c">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\SocialSDK_Sina_662cd8cfc643611359c2cced532f56edac5a6ff6.jar" />
     </item>
     <item
@@ -54,28 +54,28 @@
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\Framework\unspecified\jars\libs\httpmime-4.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1586121eb7abb73aac04c7be8afb72350431d2e1">
+        sha1="74181b621c6edb5a59c21bedaa6c0b15a3874e02">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\httpmime-4.2.1_ca9ecf5b33315116a2ca906560e10c06381bfdbc.jar" />
     </item>
     <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\SocialSDK_QQZone_3.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="90870f232e3e1fc251386b135ad1da97fa5cfa7b">
+        sha1="2f1b7d4b14097afaf15fbe1e3100e29f73dc8b5d">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\SocialSDK_QQZone_3_0da9a9a90afcf3028037533632f335026bbb31ef.jar" />
     </item>
     <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\umeng_social_sdk.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="4562cb498e3dc278f173b97378810c17eee6ec25">
+        sha1="c74e8d9e013a8dfde3053bebca02e74d029bc9d9">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\umeng_social_sdk_aadc9de583278a4745eb5f5a4790f19cb318b312.jar" />
     </item>
     <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\open_sdk_r5509.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="6ac063b6289f8ed4e18eece9dfd399555cb9e51e">
+        sha1="27b9df1be7c90a8680472fd56e6a2d643fb847af">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\open_sdk_r5509_17d752b665636fdaade8bbd0996bd9791f6ef1b1.jar" />
     </item>
     <item
@@ -96,7 +96,7 @@
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\SocialSDK_WeiXin_1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="d46b06603328b5b1709f3cb5b9314cb6c5b5793e">
+        sha1="a3cdc2280b5db7fbb283e38ca29a7d3145b02fa6">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\SocialSDK_WeiXin_1_64abe7b3aff84aad5f8caf25209ea15b5099223b.jar" />
     </item>
     <item
@@ -114,18 +114,18 @@
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\PdfViewer_08edd2a67bde13156efe988c6d6135a1dd4627d3.jar" />
     </item>
     <item
-        jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\Framework\unspecified\jars\libs\httpcore-4.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f66fdf4915e5095a65a5f52d61d6ff67d17d3672">
-        <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\httpcore-4.2.1_9eb818fe1e657f6993118a7de28edb3e3c66d27d.jar" />
-    </item>
-    <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\SocialSDK_WeiXin_2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="9eee353015f37c679f79dc58e6367a6551a76169">
+        sha1="90dc581be1b766d9406628911889f5e5d64a3c91">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\SocialSDK_WeiXin_2_f370a26f7a2d4deeeb6eb419c3a62cb9b7a8c9ea.jar" />
+    </item>
+    <item
+        jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\Framework\unspecified\jars\libs\httpcore-4.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="98db76bbc0ac3ccd54b0eefbb2315c0b688daa3e">
+        <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\httpcore-4.2.1_9eb818fe1e657f6993118a7de28edb3e3c66d27d.jar" />
     </item>
     <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\libs\alipaySdk-20151215.jar"
@@ -138,14 +138,14 @@
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\share\unspecified\jars\libs\mta-sdk-1.6.2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="9ba6cbbef66664c250331d49dd6395e44e52b0d9">
+        sha1="5c97171591c73f39d0bab0b99f82d7f2fee5e008">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\mta-sdk-1.6.2_fd60cd0697b521be11b0e620ada55573c4a27734.jar" />
     </item>
     <item
         jar="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\exploded-aar\SleepingBar\Framework\unspecified\jars\libs\apache-mime4j-0.6.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1c2b87b2cc4fa2ffa1b7af1f9d3967def0d69c34">
+        sha1="17f821b029a6740d75ef6a04106f6145380acb72">
         <dex dex="E:\paulz\workspace\aswork\SleepingBar\sleepingbar\build\intermediates\pre-dexed\release\apache-mime4j-0.6_2871bcf59a1b16cfaa8ffac4ebeb7f37cbaaa261.jar" />
     </item>
 

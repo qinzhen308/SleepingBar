@@ -39,6 +39,7 @@ import com.core.framework.util.DialogUtil;
 import com.core.framework.util.IOSDialogUtil;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 首页--社区
@@ -54,6 +55,19 @@ public class CommunityFragment extends BaseListFragment implements View.OnClickL
     @Override
     public void onResume() {
         super.onResume();
+        if(HApplication.getInstance().changedPraise.size()>0){
+            Set<String> keys=HApplication.getInstance().changedPraise.keySet();
+            String id=keys.iterator().next();
+            List<Topic> topics=(List<Topic>)mAdapter.getList();
+            for(int i=0,size=topics.size();i<size;i++){
+                if(topics.get(i).id.equals(id)){
+                    topics.get(i).is_praise=HApplication.getInstance().changedPraise.get(id);
+                    mAdapter.notifyDataSetChanged();
+                    HApplication.getInstance().changedPraise.clear();
+                    break;
+                }
+            }
+        }
     }
 
 

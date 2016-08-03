@@ -39,6 +39,8 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
 
     private boolean isTaoBaoOrderFirst = true;  // 第一次进入淘宝订单页面
 
+    private boolean isError;
+
     protected void isNeedCloseThisActivity(boolean isNeed) {
 
     }
@@ -77,7 +79,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         // initData(false);
-        load(APIUtil.parseGetUrlHasMethod(new ParamBuilder().getParamList(),AppUrls.getInstance().URL_ACTIVE_HOME),false);
+//        load(APIUtil.parseGetUrlHasMethod(new ParamBuilder().getParamList(),AppUrls.getInstance().URL_ACTIVE_HOME),false);
     }
 
     @SuppressLint("JavascriptInterface")
@@ -98,6 +100,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         if (mWebView == null) throw new IllegalArgumentException("mWebView must not be empty");
         mWebView.setWebViewClient(new MyWebViewClient());
         mWebView.setWebChromeClient(new MyWebChromeClient());
+        isError=false;
         if(isReLoad){
             mWebView.reload();
         }else {
@@ -122,6 +125,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
             super.onReceivedError(view, errorCode, description, failingUrl);
             LogUtil.d("------------------error-----------------");
             showFailture();
+            isError=true;
         }
 
         private void notifyOtherSchema(String url) {
@@ -136,7 +140,9 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            showSuccess();
+            if(!isError){
+                showSuccess();
+            }
             mCurrentUrl = url;
 
             LogUtil.d("---------------finishUrl-----------------" + url);
@@ -151,6 +157,7 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
             super.onPageStarted(view, url, favicon);
         }
 
+
     }
 
     private class MyWebChromeClient extends WebChromeClient {
@@ -159,7 +166,9 @@ public class ActiveFragment extends BaseFragment implements View.OnClickListener
         public void onProgressChanged(WebView view, int newProgress) {
             if (newProgress > 50) {
                 isFirstLoad = true;
-                showSuccess();
+                if(!isError){
+                    showSuccess();
+                }
             } else if (isFirstLoad) {
                 isFirstLoad = false;
                 showLoading();

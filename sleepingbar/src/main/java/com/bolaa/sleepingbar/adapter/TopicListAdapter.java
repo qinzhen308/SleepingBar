@@ -66,7 +66,7 @@ public class TopicListAdapter extends AbstractListAdapter<Topic> {
 		holder.tvName.setText(item.nick_name);
 		String content=item.content+"  全文";
 		if(item.content!=null&&item.content.length()>40){
-			content=item.content.substring(0,40)+"  全文";
+			content=item.content.substring(0,37)+"...  全文";
 		}
 		SpannableString spannableString1 = new SpannableString(content);
 		spannableString1.setSpan(new ClickableSpan(){

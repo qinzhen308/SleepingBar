@@ -19,6 +19,7 @@ import com.bolaa.sleepingbar.model.UserInfo;
 import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
+import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.sharePer.PreferencesUtils;
@@ -172,6 +173,11 @@ public class QuickLoginCaptchaActivity extends BaseActivity{
                                     AppStatic.getInstance().setmUserInfo(
                                             object.data);
                                     AppStatic.getInstance().saveUser(object.data);
+                                    if(object.data.equipment!=null){
+                                        PreferencesUtils.putString(WatchService.FLAG_CURRENT_DEVICE_NAME,object.data.equipment.name);
+                                        PreferencesUtils.putString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS,object.data.equipment.mac);
+                                        HApplication.getInstance().autoConnectedWatch();
+                                    }
                                     HApplication.getInstance().uploadRegistrationId(HApplication.getInstance().push_regestion_id);
                                     QuickBindWatchActivity.invoke(QuickLoginCaptchaActivity.this);
                                     setResult(RESULT_OK);

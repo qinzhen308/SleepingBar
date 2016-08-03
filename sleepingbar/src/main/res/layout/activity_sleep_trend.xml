@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:padding="10dp"
         android:orientation="vertical" >
-        <com.bolaa.sleepingbar.view.TrendView
+        <com.bolaa.sleepingbar.view.TrendViewV2
             android:id="@+id/trend_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/bg_trend"/>
 
-        <com.bolaa.sleepingbar.view.TrendView
+        <com.bolaa.sleepingbar.view.TrendViewV2
             android:id="@+id/trend_week"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:src="@drawable/bg_trend"/>
 
 
-        <com.bolaa.sleepingbar.view.TrendView
+        <com.bolaa.sleepingbar.view.TrendViewV2
             android:id="@+id/trend_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:src="@drawable/bg_trend"/>
 
 
-        <com.bolaa.sleepingbar.view.TrendView
+        <com.bolaa.sleepingbar.view.TrendViewV2
             android:id="@+id/trend_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

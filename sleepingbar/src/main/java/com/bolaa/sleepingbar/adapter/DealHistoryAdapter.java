@@ -38,17 +38,21 @@ public class DealHistoryAdapter extends AbstractListAdapter<DealLog> {
 			holder.tvDescribe.setTextColor(mContext.getResources().getColor(R.color.base_red));
 		}
 
-		if((dealLog.change_type==1||dealLog.change_type==2)&& !AppUtil.isNull(dealLog.trade_no)){//充值
-			holder.layoutBottom.setVisibility(View.VISIBLE);
-			holder.tvAccountNumber.setText(dealLog.trade_no);
-            holder.tvAccountInfo.setText(dealLog.pay_name);
-        }else if(dealLog.change_type==6){//提现
+		if((dealLog.change_type==1||dealLog.change_type==2)){//充值
+			if(!AppUtil.isNull(dealLog.trade_no)){
+				holder.layoutBottom.setVisibility(View.VISIBLE);
+				holder.tvAccountNumber.setText(dealLog.trade_no);
+			}else {
+				holder.layoutBottom.setVisibility(View.GONE);
+			}
+			holder.tvAccountInfo.setText(dealLog.pay_name);
+		}else if(dealLog.change_type==6){//提现
             holder.layoutBottom.setVisibility(View.VISIBLE);
             holder.tvAccountNumber.setText(dealLog.account_no);
             holder.tvAccountInfo.setText(dealLog.realname);
         }else {
             holder.layoutBottom.setVisibility(View.GONE);
-            holder.tvAccountInfo.setText("");
+            holder.tvAccountInfo.setText(dealLog.pay_name);
         }
 		holder.tvDate.setText(dealLog.change_time);
 		holder.tvValue.setText(dealLog.user_money_s);

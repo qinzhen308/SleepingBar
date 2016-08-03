@@ -36,6 +36,7 @@ public class PrivateSettingActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         initView();
         setListener();
+        loadPrivateSetting();
     }
 
 
@@ -56,6 +57,42 @@ public class PrivateSettingActivity extends BaseActivity{
         cbLocationEnable.setOnClickListener(this);
     }
 
+    public void loadPrivateSetting(){
+        if(!AppStatic.getInstance().isLogin)return;
+        DialogUtil.showDialog(lodDialog);
+        ParamBuilder params=new ParamBuilder();
+        NetworkWorker.getInstance().get(APIUtil.parseGetUrlHasMethod(params.getParamList(),AppUrls.getInstance().URL_LOAD_PRIVATE_SETTING), new NetworkWorker.ICallback() {
+
+            @Override
+            public void onResponse(int status, String result) {
+                // TODO Auto-generated method stub
+                if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
+                if(status==200){
+                    BaseObject<PrivateSetting> obj=GsonParser.getInstance().parseToObj(result,PrivateSetting.class);
+                    if(obj!=null){
+                        if(obj.status==BaseObject.STATUS_OK && obj.data!=null){
+                            AppStatic.getInstance().getmUserInfo().is_runking = obj.data.is_runking;
+                            AppStatic.getInstance().getmUserInfo().is_open_fund = obj.data.is_open_fund;
+                            AppStatic.getInstance().getmUserInfo().is_hidden_coord = obj.data.is_hidden_coord;
+                            PreferencesUtils.putInteger("is_runking",AppStatic.getInstance().getmUserInfo().is_runking);
+                            PreferencesUtils.putInteger("is_open_fund", AppStatic.getInstance().getmUserInfo().is_open_fund);
+                            PreferencesUtils.putInteger("is_hidden_coord", AppStatic.getInstance().getmUserInfo().is_hidden_coord);
+                            cbFundsRankinglistEnable.setChecked(AppStatic.getInstance().getmUserInfo().is_runking==1);
+                            cbPublicFundsEnable.setChecked(AppStatic.getInstance().getmUserInfo().is_open_fund==1);
+                            cbLocationEnable.setChecked(AppStatic.getInstance().getmUserInfo().is_hidden_coord==1);
+                        }else {
+                            AppUtil.showToast(getApplicationContext(),obj.info);
+                        }
+                    }else {
+                        AppUtil.showToast(getApplicationContext(),"获取失败");
+                    }
+                }else {
+                    AppUtil.showToast(getApplicationContext(),"获取失败");
+                }
+            }
+        });
+    }
+
     /**
      *
      * @param setting_key  1是否参与睡眠基金排行 2是否公开睡眠基金 3是否隐藏我的地理位置
@@ -74,7 +111,6 @@ public class PrivateSettingActivity extends BaseActivity{
                 // TODO Auto-generated method stub
                 if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
                 if(status==200){
-                    LogUtil.d("jpush---bind push info="+result);
                     BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
                     if(obj!=null){
                         if(obj.status==BaseObject.STATUS_OK){
@@ -145,5 +181,11 @@ public class PrivateSettingActivity extends BaseActivity{
     public static void invoke(Context context){
         Intent intent =new Intent(context,PrivateSettingActivity.class);
         context.startActivity(intent);
+    }
+
+    public class PrivateSetting{
+        public int is_hidden_coord;
+        public int is_open_fund;
+        public int is_runking;
     }
 }

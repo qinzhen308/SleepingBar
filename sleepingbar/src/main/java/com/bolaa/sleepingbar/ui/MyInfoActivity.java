@@ -38,6 +38,7 @@ import com.bolaa.sleepingbar.view.wheel.WheelView;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
 import com.core.framework.app.devInfo.ScreenUtil;
+import com.core.framework.develop.LogUtil;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
@@ -51,6 +52,7 @@ import com.core.framework.util.StringUtil;
 import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * 基本信息
@@ -515,20 +517,46 @@ public class MyInfoActivity extends BaseActivity {
 
 		@Override
 		public void onScrollingFinished(WheelView wheel) {
+			checkLimit(wheel);
+			/*int n_year = year.getCurrentItem() + 1900;// 年
+			int n_month = month.getCurrentItem() + 1;// 月
+			initDay(n_year, n_month);
+			mBirthday = new StringBuilder().append((year.getCurrentItem() + 1900)).append("-")
+					.append((month.getCurrentItem() + 1) < 10 ? "0" + (month.getCurrentItem() + 1)
+							: (month.getCurrentItem() + 1))
+					.append("-").append(((day.getCurrentItem() + 1) < 10) ? "0" + (day.getCurrentItem() + 1)
+							: (day.getCurrentItem() + 1))
+					.toString();*/
+		}
+	};
+
+	private void checkLimit(WheelView wheel){
+		int monthInt=month.getCurrentItem()+1;
+		int dayInt=day.getCurrentItem()+1;
+		String selectDate=(year.getCurrentItem()+1900)+"-"+(monthInt<10?"0"+monthInt:monthInt)+"-"+(dayInt<10?"0"+dayInt:dayInt)+" 00:00:00";
+		LogUtil.d("wheel checkLimit---"+wheel+"---selectDate="+selectDate);
+		if(DateUtil.beforeNow(selectDate)){
 			int n_year = year.getCurrentItem() + 1900;// 年
 			int n_month = month.getCurrentItem() + 1;// 月
-
 			initDay(n_year, n_month);
-
 			mBirthday = new StringBuilder().append((year.getCurrentItem() + 1900)).append("-")
 					.append((month.getCurrentItem() + 1) < 10 ? "0" + (month.getCurrentItem() + 1)
 							: (month.getCurrentItem() + 1))
 					.append("-").append(((day.getCurrentItem() + 1) < 10) ? "0" + (day.getCurrentItem() + 1)
 							: (day.getCurrentItem() + 1))
 					.toString();
-
+			return;
 		}
-	};
+		month.setCurrentItem(norMonth-1,true);
+		day.setCurrentItem(norDay-1,true);
+		int n_year = norYear ;// 年
+		int n_month = norMonth ;// 月
+		initDay(n_year, n_month);
+		mBirthday = new StringBuilder().append((norYear )).append("-")
+				.append((norMonth ) < 10 ? "0" + (norMonth ) : (norMonth ))
+				.append("-").append(( norDay < 10) ? "0" + (norDay ) : (norDay ))
+				.toString();
+	}
 
 	private void initDay(int arg1, int arg2) {
 		// 设置天数
@@ -578,6 +606,9 @@ public class MyInfoActivity extends BaseActivity {
 		return day;
 	}
 
+	int norYear=0;
+	int norMonth=0;
+	int norDay=0;
 	/**
 	 * 时间选择控价
 	 * 
@@ -585,7 +616,11 @@ public class MyInfoActivity extends BaseActivity {
 	 */
 	private View getDataPick() {
 		Calendar c = Calendar.getInstance();
-		int norYear = c.get(Calendar.YEAR);
+		c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+		c.setTimeInMillis(System.currentTimeMillis());
+		norYear = c.get(Calendar.YEAR);
+		norMonth = c.get(Calendar.MONTH)+1;
+		norDay = c.get(Calendar.DAY_OF_MONTH);
 		int curYear = mYear;
 		int curMonth = mMonth + 1;
 		int curDate = mDay;

@@ -19,7 +19,7 @@ import com.bolaa.sleepingbar.parser.gson.BaseObject;
 import com.bolaa.sleepingbar.parser.gson.GsonParser;
 import com.bolaa.sleepingbar.utils.AppUtil;
 import com.bolaa.sleepingbar.utils.DateUtil;
-import com.bolaa.sleepingbar.view.TrendView;
+import com.bolaa.sleepingbar.view.TrendViewV2;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.net.NetworkWorker.ICallback;
@@ -40,10 +40,10 @@ import java.util.Random;
  */
 public class SleepTrendActivity extends BaseActivity {
 
-	private TrendView dayTrend;
-	private TrendView weekTrend;
-	private TrendView monthTrend;
-	private TrendView yearTrend;
+	private TrendViewV2 dayTrend;
+	private TrendViewV2 weekTrend;
+	private TrendViewV2 monthTrend;
+	private TrendViewV2 yearTrend;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +60,13 @@ public class SleepTrendActivity extends BaseActivity {
 	}
 
 	private void initView() {
-		dayTrend=(TrendView)findViewById(R.id.trend_day);
-		weekTrend=(TrendView)findViewById(R.id.trend_week);
-        monthTrend=(TrendView)findViewById(R.id.trend_month);
-        yearTrend=(TrendView)findViewById(R.id.trend_year);
-        weekTrend.setType(TrendView.TYPE_WEEK);
-        monthTrend.setType(TrendView.TYPE_MONTH);
-        yearTrend.setType(TrendView.TYPE_YEAR);
+		dayTrend=(TrendViewV2)findViewById(R.id.trend_day);
+		weekTrend=(TrendViewV2)findViewById(R.id.trend_week);
+        monthTrend=(TrendViewV2)findViewById(R.id.trend_month);
+        yearTrend=(TrendViewV2)findViewById(R.id.trend_year);
+        weekTrend.setType(TrendViewV2.TYPE_WEEK);
+        monthTrend.setType(TrendViewV2.TYPE_MONTH);
+        yearTrend.setType(TrendViewV2.TYPE_YEAR);
     }
 	
 	private void setListener() {

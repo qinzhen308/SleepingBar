@@ -448,16 +448,11 @@ public class InformationActivity extends BaseListActivity implements
 						if (!isFinishing())
 							DialogUtil.dismissDialog(lodDialog);
 						if (status == 200) {
-							BaseObject<String> object = GsonParser
-									.getInstance().parseToObj(result,
-											Object.class);
-							if (object != null
-									&& object.status == BaseObject.STATUS_OK) {
-								AppUtil.showToast(getApplicationContext(),
-										object.info);
+							BaseObject<String> object = GsonParser.getInstance().parseToObj(result,Object.class);
+							if (object != null && object.status == BaseObject.STATUS_OK) {
+								AppUtil.showToast(getApplicationContext(), object.info);
 							} else {
-								AppUtil.showToast(getApplicationContext(),
-										object != null ? object.info : "操作失败");
+								AppUtil.showToast(getApplicationContext(), object != null ? object.info : "操作失败");
 							}
 						} else {
 							AppUtil.showToast(getApplicationContext(), "操作失败");
@@ -508,6 +503,9 @@ public class InformationActivity extends BaseListActivity implements
 		String comment = etComment.getText().toString();
 		if (comment == null || comment.trim().length() <= 0) {
 			AppUtil.showToast(this, "评论不能为空");
+			return;
+		}else if(comment.length() > 300){
+			AppUtil.showToast(this, "评论字数不能超过300");
 			return;
 		}
 		HttpRequester requester = new HttpRequester();
@@ -646,7 +644,7 @@ public class InformationActivity extends BaseListActivity implements
 					BaseObject<Object> obj=GsonParser.getInstance().parseToObj(result,Object.class);
 					if(obj!=null){
 						if(obj.status==BaseObject.STATUS_OK){
-
+                            AppUtil.showToast(getApplicationContext(),obj.info);
 						}else {
 							AppUtil.showToast(getApplicationContext(),obj.info);
 						}

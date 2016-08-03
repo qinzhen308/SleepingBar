@@ -57,7 +57,11 @@ public class TopicListStyle2Adapter extends AbstractListAdapter<Topic> {
 		}
 
 		final Topic item=mList.get(i);
-		holder.tvContent.setText(item.content);
+		if(item.content!=null&&item.content.length()>40){
+			holder.tvContent.setText(item.content.substring(0,37)+"...");
+		}else {
+			holder.tvContent.setText(item.content);
+		}
         holder.tvContent.setMovementMethod(LinkMovementMethod.getInstance());
         holder.tvDate.setText(item.c_time);
 		holder.tvCommtenCount.setText("留言："+item.comment_num);

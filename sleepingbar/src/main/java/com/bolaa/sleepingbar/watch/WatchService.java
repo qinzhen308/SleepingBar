@@ -393,7 +393,7 @@ public class WatchService extends Service{
                 }
             }else if(WatchConstant.ACTION_WATCH_CMD_SET_DATE.equals(action)){
                 if(intent.getIntExtra(WatchConstant.FLAG_DEVICE_DATE,0)>0){
-                    CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000));
+                    CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000+(8*60*60)));
                     mBLE.writeCharacteristic(writeCharacteristic);
                 }
             }else if(WatchConstant.ACTION_WATCH_CMD_GET_SLEEP.equals(action)){//读手环的睡眠信息

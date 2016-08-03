@@ -251,25 +251,7 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
                     }
                 });
             }
-            btnSupport.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(curDayItem<0){
-                        AppUtil.showToast(getActivity(),"请选择支持方式");
-                        return;
-                    }
-                    if(curMoneyItem<0){
-                        AppUtil.showToast(getActivity(),"请选择支持金额");
-                        return;
-                    }
-                    if(curMoneyItem==moneyViews.length-1){
-                        String moneyStr=etMoney.getText().toString().trim();
-                        moneys[moneys.length-1]=AppUtil.isNull(moneyStr)?0:Float.valueOf(moneyStr);
-                    }
-//                    AppUtil.showToast(getActivity(),supportDays[curDayItem]+","+moneys[curMoneyItem]);
-                    support(item.user_id,supportDays[curDayItem]+"",moneys[curMoneyItem]+"");
-                }
-            });
+
 
 		}else {
             moneys[moneys.length-1]=0;
@@ -283,7 +265,28 @@ public class FundsRankinglistFragment extends BaseListFragment implements PullTo
             curDayItem=-1;
             curMoneyItem=-1;
             tvSupportName.setText("支持给："+item.nick_name);
+
 		}
+
+        btnSupport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(curDayItem<0){
+                    AppUtil.showToast(getActivity(),"请选择支持方式");
+                    return;
+                }
+                if(curMoneyItem<0){
+                    AppUtil.showToast(getActivity(),"请选择支持金额");
+                    return;
+                }
+                if(curMoneyItem==moneyViews.length-1){
+                    String moneyStr=etMoney.getText().toString().trim();
+                    moneys[moneys.length-1]=AppUtil.isNull(moneyStr)?0:Float.valueOf(moneyStr);
+                }
+//                    AppUtil.showToast(getActivity(),supportDays[curDayItem]+","+moneys[curMoneyItem]);
+                support(item.user_id,supportDays[curDayItem]+"",moneys[curMoneyItem]+"");
+            }
+        });
 		DialogUtil.showDialog(supportDialog);
 	}
 

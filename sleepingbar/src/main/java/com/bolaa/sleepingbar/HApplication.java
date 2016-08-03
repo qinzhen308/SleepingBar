@@ -38,16 +38,21 @@ import com.core.framework.app.oSinfo.SuNetEvn;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.image.universalimageloader.core.ImageLoader;
 import com.core.framework.net.NetworkWorker;
+import com.core.framework.store.DB.beans.KeyValue;
 import com.core.framework.store.DB.beans.Preferences;
 import com.core.framework.store.sharePer.PreferencesUtils;
 import com.core.framework.util.DialogUtil;
 import com.core.framework.util.StringUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 
+import org.apache.http.NameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.KeyPair;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -61,7 +66,9 @@ public class HApplication extends MyApplication {
 
 	public Location mLocation;
 
-	
+	public Map<String , Integer> changedPraise=new HashMap<>();
+
+
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
@@ -192,13 +199,19 @@ public class HApplication extends MyApplication {
 	}
 
 	private LocationListener locationListener=new LocationListener() {
+		boolean isFirstMode=true;
+
 		@Override
 		public void onLocationChanged(Location location) {
 			mLocation=location;
 			if(mLocation!=null){
-				LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-				locationManager.removeUpdates(locationListener);
-				locationListener=null;
+				if(isFirstMode){
+					LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+					locationManager.removeUpdates(locationListener);
+					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,60000,10,locationListener,getMainLooper());
+					isFirstMode=false;
+				}
+//				locationListener=null;
 				synchLocation();
 			}
 		}

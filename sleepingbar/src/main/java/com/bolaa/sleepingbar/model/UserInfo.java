@@ -38,7 +38,15 @@ public class UserInfo implements Serializable {
 	public String member_sinaopenid;// 三方凭证 新浪微博
 	
 	public ThirdUser thirdUser;//三方登录用户信息
-	
+
+	public Device equipment;
+
+
+	public class Device{
+		public String name;
+		public String mac;
+	}
+
 
 	
 
