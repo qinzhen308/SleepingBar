@@ -106,7 +106,7 @@ public class SleepTrendActivity extends BaseActivity {
                     final BaseObject<SleepData> object= GsonParser.getInstance().parseToObj(result, SleepData.class);
                     if(object!=null){
                         if(object.data!=null&&object.status==BaseObject.STATUS_OK){
-                            runOnUiThread(new Runnable() {
+                            new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
                                     dayTrend.setData(object.data.day_trend);
@@ -114,7 +114,7 @@ public class SleepTrendActivity extends BaseActivity {
                                     monthTrend.setData(object.data.mouth_trend);
                                     yearTrend.setData(object.data.year_trend);
                                 }
-                            });
+                            },500);
                         }else {
                             AppUtil.showToast(getApplicationContext(),"解析出错");
                         }

@@ -36,6 +36,8 @@ public class TrendViewV2 extends ImageView{
     private Paint trendPaint;
     private Paint pPaint;
 
+    private boolean needDrawTrend;
+
     public final static int TYPE_DAY=0;
     public final static int TYPE_WEEK=1;
     public final static int TYPE_MONTH=2;
@@ -116,10 +118,12 @@ public class TrendViewV2 extends ImageView{
         if(getHeight()==0){
             measureDimens();
         }
-        drawAxis(canvas);
-        drawTrend(canvas);
-        drawLabel(canvas);
-        drawX_axisLabels(canvas);
+        if(needDrawTrend){
+            drawAxis(canvas);
+            drawLabel(canvas);
+            drawX_axisLabels(canvas);
+            drawTrend(canvas);
+        }
     }
 
     private void drawAxis(Canvas canvas){
@@ -271,6 +275,7 @@ public class TrendViewV2 extends ImageView{
 
     //取值3个刻度点   (草泥马，变4个刻度了)
     public void setData(byte[] src){
+        needDrawTrend=true;
         if(src==null)src=new byte[0];
         list=new ArrayList<>();
         float[] value={xAxis,bad,well,good};

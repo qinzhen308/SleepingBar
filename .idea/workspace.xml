@@ -98,23 +98,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af7f6801-a035-4a16-98e0-f4d096b9c3dc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/app_launch.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_Framework_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_android-pdfview_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_share_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
@@ -123,65 +111,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_sleepingbar_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/apache-mime4j-0.6.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/apache-mime4j-0.6.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpcore-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpcore-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpmime-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/debug/libs/httpmime-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/apache-mime4j-0.6.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/apache-mime4j-0.6.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpcore-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpcore-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpmime-4.2.1.jar" afterPath="$PROJECT_DIR$/Framework/build/intermediates/bundles/release/libs/httpmime-4.2.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/Framework/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-debug.aar" afterPath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-release.aar" afterPath="$PROJECT_DIR$/Framework/build/outputs/aar/Framework-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/android-pdfview/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/android-pdfview/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android-pdfview/build/outputs/aar/android-pdfview-debug.aar" afterPath="$PROJECT_DIR$/android-pdfview/build/outputs/aar/android-pdfview-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/guide1.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/guide1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/guide2.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/guide2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/guide3.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/guide3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/ic_login_logo.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/ic_login_logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/logo.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/drawable-xhdpi/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/mipmap-xhdpi/logo.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/mipmap-xhdpi/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/mipmap-xxhdpi/logo.png" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/mipmap-xxhdpi/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/Framework.iml" afterPath="$PROJECT_DIR$/Framework/Framework.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/blame/res/androidTest/debug/single/anim.json" afterPath="$PROJECT_DIR$/Framework/build/intermediates/blame/res/androidTest/debug/single/anim.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/build/intermediates/blame/res/androidTest/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/Framework/build/intermediates/blame/res/androidTest/debug/single/drawable-xhdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CommonWebActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CommonWebActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/GuideActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/GuideActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/LaunchActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/LaunchActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/LoopCirclePageIndicator.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/LoopCirclePageIndicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java" afterPath="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_account.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_account.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_add_friends.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_add_friends.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_common_list.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_common_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_coupon_list.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_coupon_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_device_info_list.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_device_info_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_guide.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_guide.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_hospital_combo_select.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_hospital_combo_select.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_make_appointment.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_make_appointment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_my_msg.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_my_msg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_other_user_home.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_other_user_home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_quick_bind_watch.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_quick_bind_watch.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_score_history.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_score_history.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_supporter_detail.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_supporter_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_supporter_list.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_supporter_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/dialog_medal.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/dialog_medal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/dialog_support_funds.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/dialog_support_funds.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/fragment_hospital_combo.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/fragment_hospital_combo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_friends.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_friends.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_friends_nearby.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_friends_nearby.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_topic.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_topic.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_topic_comments.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/item_topic_comments.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/layout_topic_detail_header.xml" afterPath="$PROJECT_DIR$/sleepingbar/src/main/res/layout/layout_topic_detail_header.xml" />
     </list>
     <ignored path="SleepingBar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -240,11 +174,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InformationActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InformationActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43106458">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.0">
+              <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrendViewV2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47155964">
+              <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -273,14 +217,27 @@
       <file leaf-file-name="QuickBindWatchActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.566667">
-              <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
+            <state vertical-scroll-proportion="-3.5">
+              <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
               <folding>
-                <element signature="e#3606#3753#0" expanded="true" />
                 <element signature="e#3752#3753#0" expanded="true" />
+                <element signature="e#3793#3936#0" expanded="true" />
                 <element signature="e#3935#3936#0" expanded="true" />
                 <element signature="e#3972#4264#0" expanded="true" />
                 <element signature="e#4263#4264#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SleepTrendActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.7">
+              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+              <folding>
+                <element signature="e#3873#4363#0" expanded="true" />
+                <element signature="e#4362#4363#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -4138,12 +4095,12 @@
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/banner/LoopCirclePageIndicator.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_guide.xml" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/dialog_support_funds.xml" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/res/layout/dialog_medal.xml" />
-        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CommonWebActivity.java" />
         <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java" />
+        <option value="$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java" />
       </list>
     </option>
   </component>
@@ -4391,10 +4348,10 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="E:/android/sdk_as" />
-    <property name="SearchEverywhereHistoryKey" value="common&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.CommonWebActivity&#10;infor&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.InformationActivity&#10;medal&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.MedalAdapter&#10;medala&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.SmallMedalAdapter&#10;rank&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.FundsRankinglistFragment&#10;suppor&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.SupporterActivity&#10;trend&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.SleepTrendActivity&#10;guid&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/GuideActivity.java&#10;laun&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/LaunchActivity.java&#10;quickbin&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;quickbind&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java&#10;active&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.ActiveFragment&#10;happ&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;comm&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/res/layout/activity_common_list.xml&#10;gui&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.GuideActivity&#10;androidm&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/AndroidManifest.xml&#10;main&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MainActivity.java&#10;cmd&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.watch.CMDHandler&#10;watchser&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;quick&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.QuickLoginCaptchaActivity&#10;tren&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java&#10;push&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/receiver/PushMsgReceiver.java&#10;addf&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.AddFriendsActivity&#10;myfr&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.MyFriendsActivity&#10;otheruser&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.OtherUserHomeActivity&#10;basead&#9;PSI&#9;JAVA://android.widget.BaseAdapter&#10;pushr&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/receiver/PushMsgReceiver.java&#10;listview&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.view.pulltorefresh.SwipeListView&#10;quickb&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java&#10;topicst&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListStyle2Adapter.java&#10;topic&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListAdapter.java&#10;home&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;topiccom&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicCommentsAdapter.java&#10;bbs&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/BBSPostsDetailActivity.java&#10;user&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java&#10;trenv&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java&#10;com&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;dealhi&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.DealHistoryAdapter&#10;bbsde&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/BBSPostsDetailActivity.java&#10;usercen&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java&#10;communi&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;info&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java&#10;myinfo&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MyInfoActivity.java&#10;comment&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.TopicCommentsAdapter&#10;hap&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;recei&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.receiver.PushMsgReceiver&#10;trendac&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.SleepTrendActivity&#10;informa&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.InformationActivity&#10;priv&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.PrivateSettingActivity&#10;rankinglist&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.FundsRankinglistActivity" />
-    <property name="device.picker.selection" value="3515889b" />
+    <property name="SearchEverywhereHistoryKey" value="trend&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java&#10;trenv&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java&#10;common&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.CommonWebActivity&#10;infor&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.InformationActivity&#10;medal&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.MedalAdapter&#10;medala&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.SmallMedalAdapter&#10;rank&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.FundsRankinglistFragment&#10;suppor&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.SupporterActivity&#10;guid&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/GuideActivity.java&#10;laun&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/LaunchActivity.java&#10;quickbin&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java&#10;quickbind&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java&#10;active&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.fragment.ActiveFragment&#10;happ&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;comm&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/res/layout/activity_common_list.xml&#10;gui&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.GuideActivity&#10;androidm&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/AndroidManifest.xml&#10;main&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MainActivity.java&#10;cmd&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.watch.CMDHandler&#10;watchser&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/WatchService.java&#10;quick&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.QuickLoginCaptchaActivity&#10;tren&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java&#10;push&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/receiver/PushMsgReceiver.java&#10;addf&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.AddFriendsActivity&#10;myfr&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.MyFriendsActivity&#10;otheruser&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.OtherUserHomeActivity&#10;basead&#9;PSI&#9;JAVA://android.widget.BaseAdapter&#10;pushr&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/receiver/PushMsgReceiver.java&#10;listview&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.view.pulltorefresh.SwipeListView&#10;quickb&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWXActivity.java&#10;topicst&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListStyle2Adapter.java&#10;topic&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicListAdapter.java&#10;home&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/HomeFragment.java&#10;topiccom&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/adapter/TopicCommentsAdapter.java&#10;bbs&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/BBSPostsDetailActivity.java&#10;user&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java&#10;com&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;dealhi&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.DealHistoryAdapter&#10;bbsde&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/BBSPostsDetailActivity.java&#10;usercen&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/UserCenterFragment.java&#10;communi&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/fragment/CommunityFragment.java&#10;info&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java&#10;myinfo&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/MyInfoActivity.java&#10;comment&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.adapter.TopicCommentsAdapter&#10;hap&#9;FILE&#9;file://E:/paulz/workspace/aswork/SleepingBar/sleepingbar/src/main/java/com/bolaa/sleepingbar/HApplication.java&#10;recei&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.receiver.PushMsgReceiver&#10;trendac&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.SleepTrendActivity&#10;informa&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.InformationActivity&#10;priv&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.PrivateSettingActivity&#10;rankinglist&#9;PSI&#9;JAVA://com.bolaa.sleepingbar.ui.FundsRankinglistActivity" />
+    <property name="device.picker.selection" value="014a142543e79661" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../GradleTest" />
-    <property name="DEBUGGABLE_DEVICE" value="xiaomi-2014812-3515889b" />
+    <property name="DEBUGGABLE_DEVICE" value="lge-nexus_5-014a142543e79661" />
     <property name="DEBUGGABLE_PROCESS" value="com.bolaa.sleepingbar" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="ExportApk.ApkPath" value="E:\paulz\工作文档\项目文件\睡吧\签名和apks" />
@@ -4736,15 +4693,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32962137" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.50959486" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32739422" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2793177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4904051" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
@@ -4893,7 +4850,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java</url>
-          <line>219</line>
+          <line>231</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
@@ -5007,19 +4964,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java</url>
-          <line>447</line>
+          <line>459</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java</url>
-          <line>439</line>
+          <line>451</line>
           <properties />
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java</url>
-          <line>520</line>
+          <line>532</line>
           <properties />
           <option name="timeStamp" value="141" />
         </line-breakpoint>
@@ -5065,8 +5022,14 @@
           <properties />
           <option name="timeStamp" value="151" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="152" />
+      <option name="time" value="153" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
@@ -5086,37 +5049,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/AddFriendsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/receiver/PushMsgReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/share/libs/umeng_social_sdk.jar!/com/umeng/socialize/UMShareAPI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34917733">
-          <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Framework/src/com/core/framework/app/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/watch/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4991274">
@@ -5420,36 +5352,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.566667">
-          <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
-          <folding>
-            <element signature="e#3606#3753#0" expanded="true" />
-            <element signature="e#3752#3753#0" expanded="true" />
-            <element signature="e#3935#3936#0" expanded="true" />
-            <element signature="e#3972#4264#0" expanded="true" />
-            <element signature="e#4263#4264#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SupporterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.56173915">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="76" selection-start-line="111" selection-start-column="76" selection-end-line="111" selection-end-column="76" />
-          <folding>
-            <element signature="e#3861#4351#0" expanded="true" />
-            <element signature="e#4350#4351#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5510,14 +5417,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8678261">
-          <caret line="293" column="28" selection-start-line="293" selection-start-column="28" selection-end-line="293" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/res/layout/activity_guide.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40425533">
@@ -5553,6 +5452,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/android/SDK-forAS/sources/android-22/android/webkit/WebSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321739">
+          <caret line="467" column="48" selection-start-line="467" selection-start-column="48" selection-end-line="467" selection-end-column="48" />
+          <folding>
+            <element signature="e#16747#16748#0" expanded="true" />
+            <element signature="e#16783#16784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/android/SDK-forAS/sources/android-22/android/util/DisplayMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321739">
+          <caret line="156" column="15" selection-start-line="156" selection-start-column="15" selection-end-line="156" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framework/src/com/core/framework/app/devInfo/ScreenUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33211008">
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/LaunchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -5564,6 +5490,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/CommonWebActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -5572,10 +5506,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/InformationActivity.java">
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/QuickBindWatchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43106458">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.5">
+          <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+          <folding>
+            <element signature="e#3752#3753#0" expanded="true" />
+            <element signature="e#3793#3936#0" expanded="true" />
+            <element signature="e#3935#3936#0" expanded="true" />
+            <element signature="e#3972#4264#0" expanded="true" />
+            <element signature="e#4263#4264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/android/SDK-forAS/sources/android-22/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.36173913">
+          <caret line="5288" column="22" selection-start-line="5288" selection-start-column="22" selection-end-line="5288" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/ui/SleepTrendActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.7">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+          <folding>
+            <element signature="e#3873#4363#0" expanded="true" />
+            <element signature="e#4362#4363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sleepingbar/src/main/java/com/bolaa/sleepingbar/view/TrendViewV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47155964">
+          <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
           <folding />
         </state>
       </provider>

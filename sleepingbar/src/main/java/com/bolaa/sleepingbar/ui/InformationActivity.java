@@ -153,7 +153,19 @@ public class InformationActivity extends BaseListActivity implements
             this.mWebView.setInitialScale(100);
         }
         WebSettings webSettings = mWebView.getSettings();
-        webSettings.setDefaultTextEncodingName("UTF-8");
+
+		if(ScreenUtil.DENSITY_DPI>520){
+			webSettings.setTextSize(WebSettings.TextSize.LARGEST);
+		}else if(ScreenUtil.DENSITY_DPI>360){
+			webSettings.setTextSize(WebSettings.TextSize.LARGER);
+		}else if(ScreenUtil.DENSITY_DPI>200){
+			webSettings.setTextSize(WebSettings.TextSize.NORMAL);
+		}else {
+			webSettings.setTextSize(WebSettings.TextSize.SMALLEST);
+		}
+
+
+		webSettings.setDefaultTextEncodingName("UTF-8");
         webSettings.setSupportZoom(false);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setJavaScriptEnabled(true);
