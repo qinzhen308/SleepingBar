@@ -11,7 +11,7 @@ android:dividerHeight="1dp"
 android:background="@color/white"
 android:drawSelectorOnTop="false"
 android:fadingEdge="none"
-android:fastScrollEnabled="true"
+android:fastScrollEnabled="false"
 android:scrollingCache="false"
 test:showheader="false"
     />

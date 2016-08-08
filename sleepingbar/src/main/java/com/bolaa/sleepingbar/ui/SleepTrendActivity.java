@@ -103,13 +103,18 @@ public class SleepTrendActivity extends BaseActivity {
             public void onResponse(int status, String result) {
                 if(!isFinishing())DialogUtil.dismissDialog(lodDialog);
                 if(status==200){
-                    BaseObject<SleepData> object= GsonParser.getInstance().parseToObj(result, SleepData.class);
+                    final BaseObject<SleepData> object= GsonParser.getInstance().parseToObj(result, SleepData.class);
                     if(object!=null){
                         if(object.data!=null&&object.status==BaseObject.STATUS_OK){
-                            dayTrend.setData(object.data.day_trend);
-                            weekTrend.setData(object.data.week_trend);
-                            monthTrend.setData(object.data.mouth_trend);
-                            yearTrend.setData(object.data.year_trend);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dayTrend.setData(object.data.day_trend);
+                                    weekTrend.setData(object.data.week_trend);
+                                    monthTrend.setData(object.data.mouth_trend);
+                                    yearTrend.setData(object.data.year_trend);
+                                }
+                            });
                         }else {
                             AppUtil.showToast(getApplicationContext(),"解析出错");
                         }

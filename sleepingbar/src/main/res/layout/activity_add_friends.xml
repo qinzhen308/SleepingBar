@@ -51,7 +51,7 @@
         android:background="@color/white"
         android:drawSelectorOnTop="false"
         android:fadingEdge="none"
-        android:fastScrollEnabled="true"
+        android:fastScrollEnabled="false"
         android:scrollingCache="false"
         android:layout_below="@+id/tv_label"
         test:showheader="true"

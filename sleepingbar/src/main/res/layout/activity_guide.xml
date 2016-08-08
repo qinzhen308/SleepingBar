@@ -16,23 +16,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_centerHorizontal="true"
                     android:padding="6dip"
-                    app:fillColor="#D7EDDD"
-                    app:pageColor="@color/white"
+                    app:fillColor="@color/gray"
+                    app:pageColor="@color/purple"
                     app:radius="5dip"
         />
 
-    <ImageView
+    <TextView
         android:id="@+id/iv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/weiji_btn"
+        android:text="进入睡吧"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/purple"
+        android:background="@drawable/bg_rectangle_strake_purple"
         android:visibility="gone"
         android:layout_above="@+id/idc_ad_indicator"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="14dp"
         />
 
     

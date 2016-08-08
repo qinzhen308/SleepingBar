@@ -87,6 +87,9 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 
 	private boolean isLoading;
 
+	int stepTotal;
+	int run;
+
 	@Override
 	public void onResume() {
 
@@ -283,8 +286,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 	}
 
 	private BroadcastReceiver mReceiver=new BroadcastReceiver() {
-		int stepTotal;
-		int run;
+
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			String action=intent.getAction();
@@ -364,7 +366,12 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			int walk_total=jsonObject.optInt("walk_total");
 			double kilometre=jsonObject.optDouble("kilometre");
 			String calorie=jsonObject.optString("calorie");
-
+			if(run==0){
+				run=run_total;
+			}
+			if(stepTotal==0){
+				stepTotal=walk_total;
+			}
 			tvStep.setText(""+walk_total);
 			tvCalorie.setText(""+calorie);
 			tvDistance.setText(""+kilometre);

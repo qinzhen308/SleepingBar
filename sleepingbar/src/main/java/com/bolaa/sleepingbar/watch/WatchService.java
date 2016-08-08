@@ -19,6 +19,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.bolaa.sleepingbar.model.Watch;
@@ -284,12 +285,28 @@ public class WatchService extends Service{
                     +Arrays.toString(characteristic.getValue()));
         }
 
+//        int[][] data0x17=new int[192][16];
+//        int i=0;
+
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             //收到手环的上报消息
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--orig-->"+Arrays.toString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
 //            LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--hex-->"+Utils.bytesToHexString(characteristic.getValue())+"--cmd(0x"+Utils.bytesToHexString(new byte[]{characteristic.getValue()[0]})+")");
             LogUtil.d("watch---onCharNotify----"+gatt.getDevice().getName()+"----notify--"+characteristic.getUuid().toString()+"--dest-->"+Arrays.toString(Utils.bytesToIntArrayV2(characteristic.getValue()))+"--end-");
+
+//            byte[] data=characteristic.getValue();
+//            int[] ints=new int[16];
+//            if(data[0]==17){
+//                ints[0]=((data[4]<<24)&0xff000000)|((data[3]<<16)&0x00ff0000)|((data[2]<<8)&0x0000ff00)|((data[1]&0x000000ff));
+//                for(int j=5;j<data.length;j++){
+//                    ints[j-4]=data[j];
+//                }
+//                data0x17[i++]=ints;
+//            }else if(data[0]==16){
+//                ints[0]=((data[4]<<24)&0xff000000)|((data[3]<<16)&0x00ff0000)|((data[2]<<8)&0x0000ff00)|((data[1]&0x000000ff));
+//                data0x17[i++]=ints;
+//            }
 
             CMDHandler.synchronizedMovement(WatchService.this,characteristic.getValue());
             //读取最近两天的数据
@@ -299,6 +316,15 @@ public class WatchService extends Service{
                 CMDHandler.cmdGetSleepInfo(writeCharacteristic,(byte)1);
                 mBLE.writeCharacteristic(writeCharacteristic);
             }else if(resultCode==2){
+//                i=0;
+//                new Thread(){
+//                    @Override
+//                    public void run() {
+//                        for(int x=0;x<data0x17.length;x++){
+//                            LogUtil.d("watch----all i="+x+"--"+Arrays.toString(data0x17[x]));
+//                        }
+//                    }
+//                }.start();
                 //获取完毕
                 PreferencesUtils.putString(WatchConstant.FLAG_SLEEP_DATA_FOR_MAC,gatt.getDevice().getAddress());
                 startService(new Intent(WatchService.this,WatchUploadService.class).setAction(WatchUploadService.ACTION_WATCH_UPLOAD_SERVICE)

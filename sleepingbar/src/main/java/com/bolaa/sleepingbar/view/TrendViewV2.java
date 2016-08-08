@@ -46,7 +46,7 @@ public class TrendViewV2 extends ImageView{
 //    private String x_axisLabels[][] ={{"20:00","21:00","22:00","23:00","00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00",}
     private String x_axisLabels[][] ={{"21:00","","23:00","","01:00","","03:00","","05:00","","07:00","08:00"}
             ,{"周一","周二","周三","周四","周五","周六","周日",}
-            ,{"4","8","12","16","20","24","28","30"}
+            ,{"1-4","5-8","9-12","13-16","17-20","21-24","25-28","29-30"}
             ,{"1","2","3","4","5","6","7","8","9","10","11","12"}};
 
 
@@ -82,13 +82,24 @@ public class TrendViewV2 extends ImageView{
             calendar.setTimeInMillis(System.currentTimeMillis());
             int day=calendar.getActualMaximum(Calendar.DATE);
             LogUtil.d("trendview---max day="+day);
-            labels[labels.length-1]=day==28?"":(""+day);
+            if(day==28){
+                labels[labels.length-1]="";
+            }else if(day==29){
+                labels[labels.length-1]="29";
+            }else {
+                labels[labels.length-1]="29-"+day;
+            }
         }
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        measureDimens();
+    }
+
+    private void measureDimens(){
+        width=getWidth();
         good=2*contentPadding;
         trendHeight=getHeight()-3*contentPadding;
         float deltaLine=trendHeight/3;
@@ -97,12 +108,14 @@ public class TrendViewV2 extends ImageView{
         xAxis=getHeight()-contentPadding;
         trendWidth=getWidth()-2*contentPadding;
         height=getHeight();
-        width=getWidth();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if(getHeight()==0){
+            measureDimens();
+        }
         drawAxis(canvas);
         drawTrend(canvas);
         drawLabel(canvas);
@@ -112,10 +125,10 @@ public class TrendViewV2 extends ImageView{
     private void drawAxis(Canvas canvas){
         Paint paint=new Paint();
         paint.setStrokeWidth(ScreenUtil.dip2px(getContext(),1));
-        paint.setColor(getResources().getColor(R.color.white));
+//        paint.setColor(getResources().getColor(R.color.white));
+        paint.setColor(getResources().getColor(R.color.purple2));
         //横坐标轴
         canvas.drawLine(contentPadding,xAxis ,width-contentPadding,xAxis,paint);
-        paint.setColor(getResources().getColor(R.color.purple2));
         canvas.drawLine(contentPadding,bad,width-contentPadding,bad,paint);
         canvas.drawLine(contentPadding,well,width-contentPadding,well,paint);
         canvas.drawLine(contentPadding,good,width-contentPadding,good,paint);
@@ -149,7 +162,7 @@ public class TrendViewV2 extends ImageView{
         paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.text_size_mini));
         paint.setColor(getResources().getColor(R.color.purple2));
         Paint pointPaint=new Paint();
-        pointPaint.setColor(getResources().getColor(R.color.white));
+        pointPaint.setColor(getResources().getColor(R.color.purple2));
 
         String[] labels=x_axisLabels[type];
         float xMax=width-contentPadding-10;
@@ -177,6 +190,7 @@ public class TrendViewV2 extends ImageView{
         //画点
         for(int i=0;i<size;i++){
             Point p=list.get(i);
+            if(p.isBreak) continue;
             canvas.drawCircle(p.x,p.y,5,pPaint);
         }
     }
@@ -201,7 +215,13 @@ public class TrendViewV2 extends ImageView{
             calendar.setTimeInMillis(System.currentTimeMillis());
             int day=calendar.getActualMaximum(Calendar.DATE);
             LogUtil.d("trendview---max day="+day);
-            labels[labels.length-1]=day==28?"":(""+day);
+            if(day==28){
+                labels[labels.length-1]="";
+            }else if(day==29){
+                labels[labels.length-1]="29";
+            }else {
+                labels[labels.length-1]="29-"+day;
+            }
         }
     }
 
@@ -257,6 +277,9 @@ public class TrendViewV2 extends ImageView{
         float xMax=width-contentPadding-10;
         float xOri=contentPadding+10;
         float delta=(xMax-xOri)/(src.length-1);
+        if(type==TYPE_YEAR){
+            delta=(xMax-xOri)/11;
+        }
         for(int i = 0;i<src.length;i++){
             Point p=new Point();
             p.x=xOri+i*delta;
@@ -267,6 +290,16 @@ public class TrendViewV2 extends ImageView{
 //                p.isBreak=false;
 //            }
             list.add(p);
+        }
+        if(type==TYPE_YEAR){
+            list.get(list.size()-1).isBreak=true;
+            for(int i=list.size();i<12;i++){
+                Point p=new Point();
+                p.x=xOri+i*delta;
+                p.y=value[0];
+                p.isBreak=true;
+                list.add(p);
+            }
         }
         postInvalidate();
     }

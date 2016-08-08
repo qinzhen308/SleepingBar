@@ -102,7 +102,7 @@ public class LoopCirclePageIndicator extends View implements PageIndicator {
 
         mPaintPageFill = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaintPageFill.setStyle(Style.FILL);
-//        mPaintPageFill.setStrokeWidth(3);//画灰色圆的画笔
+        mPaintPageFill.setStrokeWidth(3);//画灰色圆的画笔
         mPaintPageFill.setColor(a.getColor(R.styleable.CirclePageIndicator_pageColor, defaultPageColor));
 
         mPaintStroke = new Paint(Paint.ANTI_ALIAS_FLAG);

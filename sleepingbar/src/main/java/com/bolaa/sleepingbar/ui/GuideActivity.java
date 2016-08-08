@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,7 @@ import com.core.framework.store.sharePer.PreferencesUtils;
 public class GuideActivity extends BaseActivity {
 	ViewPager mPager;
 	LoopCirclePageIndicator indicator;
-	ImageView ivSkip;
+	TextView ivSkip;
 	int imgs[] = { R.drawable.guide1,R.drawable.guide2,R.drawable.guide3 };
 	
 	ArrayList<ImageView> pages=new ArrayList<ImageView>();
@@ -54,7 +55,7 @@ public class GuideActivity extends BaseActivity {
 		indicator.setRealCount(imgs.length);
 		mPager.setAdapter(new GuideAdapter());
 		indicator.setViewPager(mPager);
-		ivSkip=(ImageView)findViewById(R.id.iv_skip);
+		ivSkip=(TextView) findViewById(R.id.iv_skip);
 		if(imgs.length==1){
 			ivSkip.setVisibility(View.VISIBLE);
 		}

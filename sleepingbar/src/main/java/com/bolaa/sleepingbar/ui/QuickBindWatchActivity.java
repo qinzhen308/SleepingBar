@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -44,6 +45,7 @@ import java.util.zip.DataFormatException;
 public class QuickBindWatchActivity extends BaseActivity{
     TextView tvSearch;
     TextView tvSkip;
+    TextView tvBuy;
     ListView lvDevices;
     private DeviceBindingListAdapter mAdapter;
 
@@ -120,6 +122,14 @@ public class QuickBindWatchActivity extends BaseActivity{
                 initBLE();
             }
         });
+        tvBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://shop.weijihealth.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
     }
 
     //跳转
@@ -139,6 +149,7 @@ public class QuickBindWatchActivity extends BaseActivity{
     private void initView() {
         setActiviyContextView(R.layout.activity_quick_bind_watch, false, false);
         tvSearch=(TextView)findViewById(R.id.tv_search_devices);
+        tvBuy=(TextView)findViewById(R.id.tv_buy);
         tvSkip =(TextView)findViewById(R.id.tv_skip);
         lvDevices =(ListView) findViewById(R.id.lv_devices);
         progressBar =(ProgressBar) findViewById(R.id.progress_bar);

@@ -9,6 +9,7 @@ import com.bolaa.sleepingbar.HApplication;
 import com.bolaa.sleepingbar.R;
 import com.bolaa.sleepingbar.common.AppStatic;
 import com.bolaa.sleepingbar.utils.AppUtil;
+import com.core.framework.store.sharePer.PreferencesUtils;
 
 public class LaunchActivity extends Activity{
 	TextView tvVersion;
@@ -20,13 +21,16 @@ public class LaunchActivity extends Activity{
 		tvVersion=(TextView)findViewById(R.id.tv_version);
 		tvVersion.setText("睡吧  for android v"+HApplication.getInstance().getVersionName());
 		HApplication.getInstance().autoConnectedWatch();
+		if(!PreferencesUtils.getBoolean("not_new_install")){
+			PreferencesUtils.putBoolean("not_new_install",true);
+		}
 		new Handler().postDelayed(new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				if(false){
-//				if(HApplication.getInstance().isNewVison()){
+//				if(false){
+				if(HApplication.getInstance().isNewVison()){
 					GuideActivity.invoke(LaunchActivity.this);
 				}else {
 					if(AppStatic.getInstance().isLogin && !AppUtil.isNull(HApplication.getInstance().token)){//已经登录了

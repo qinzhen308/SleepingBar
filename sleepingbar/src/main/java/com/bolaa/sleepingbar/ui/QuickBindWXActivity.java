@@ -67,6 +67,10 @@ public class QuickBindWXActivity extends BaseActivity{
     }
 
     private void authorise(){
+        if(!mShareAPI.isInstall(this,SHARE_MEDIA.WEIXIN)){
+//            AppUtil.showToast(this,"请安装微信客户端");
+            return;
+        }
         DialogUtil.showDialog(lodDialog);
         SHARE_MEDIA platform = SHARE_MEDIA.WEIXIN;
         mShareAPI.doOauthVerify(this, platform, umAuthListener);

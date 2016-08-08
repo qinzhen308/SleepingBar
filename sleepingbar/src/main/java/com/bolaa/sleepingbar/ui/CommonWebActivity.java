@@ -53,8 +53,8 @@ public class CommonWebActivity extends BaseWebActivity{
 			this.mWebView.setInitialScale(100);
 		}
 		WebSettings webSettings = mWebView.getSettings();
-		webSettings.setSupportZoom(false);
-		webSettings.setBuiltInZoomControls(true);
+//		webSettings.setSupportZoom(false);
+//		webSettings.setBuiltInZoomControls(true);
 		webSettings.setJavaScriptEnabled(true);
 		webSettings.setDomStorageEnabled(true);
 		webSettings.setBlockNetworkImage(false);
