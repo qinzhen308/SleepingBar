@@ -60,6 +60,9 @@ public class WatchService extends Service{
 
     WatchCMDReceiver mReceiver;
 
+    boolean isNeedAdjustingTime=false;
+
+
 
     @Nullable
     @Override
@@ -333,6 +336,12 @@ public class WatchService extends Service{
                         .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_DATE,PreferencesUtils.getString("sleep_data_collect_date"))
                         .putExtra(WatchConstant.FLAG_ONCE_UPLOAD_SLEEP_DATA_MAC,gatt.getDevice().getAddress())
                 );
+                //再次写入时间,防止之前没写进去
+                if(isNeedAdjustingTime){
+                    CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000+(8*60*60)));
+                    mBLE.writeCharacteristic(writeCharacteristic);
+                    isNeedAdjustingTime=false;
+                }
             }
         }
     };
@@ -419,6 +428,7 @@ public class WatchService extends Service{
                 }
             }else if(WatchConstant.ACTION_WATCH_CMD_SET_DATE.equals(action)){
                 if(intent.getIntExtra(WatchConstant.FLAG_DEVICE_DATE,0)>0){
+                    isNeedAdjustingTime=true;
                     CMDHandler.cmdSetDate(writeCharacteristic,(int)(System.currentTimeMillis()/1000+(8*60*60)));
                     mBLE.writeCharacteristic(writeCharacteristic);
                 }

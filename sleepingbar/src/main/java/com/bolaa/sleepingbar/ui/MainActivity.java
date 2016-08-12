@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -58,12 +59,12 @@ public class MainActivity extends BaseFragmentActivity implements
 
 	private boolean isFirst = true;
 
-	public static String TAB1 = "TAB1";
-	public static String TAB2 = "TAB2";
-	public static String TAB3 = "TAB3";
-	public static String TAB4 = "TAB4";
+	public static final String TAB1 = "TAB1";
+	public static final String TAB2 = "TAB2";
+	public static final String TAB3 = "TAB3";
+	public static final String TAB4 = "TAB4";
 
-	private String tag = "";
+	private String tag = TAB1;
 	public static boolean isBackHome = false;
 
 	private Handler mHandler = new Handler();
@@ -71,10 +72,16 @@ public class MainActivity extends BaseFragmentActivity implements
 	UMShareAPI mShareAPI;
 
 
+	private boolean isReInstance;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		if(savedInstanceState!=null){
+			tag=savedInstanceState.getString("cur_tag",TAB1);
+			isReInstance=true;
+		}
 		mShareAPI = UMShareAPI.get(this);
 		initView();
 		checkUpdate();
@@ -82,6 +89,17 @@ public class MainActivity extends BaseFragmentActivity implements
 //		if (!PreferencesUtils.getBoolean(AppStatic.receiveMsg)) {
 //			JPushInterface.stopPush(getApplicationContext());
 //		}
+		if(isReInstance){
+			switchToFragment(tag);
+			changeViewBackground(tag);
+			isReInstance=false;
+		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		outState.putString("cur_tag",tag);
 	}
 
 	@Override
@@ -167,6 +185,7 @@ public class MainActivity extends BaseFragmentActivity implements
 		rightIv = (ImageView) findViewById(R.id.baseTitle_rightIv);
 		// rightIv.setOnClickListener(rightListener);
 		initFragment();
+
 	}
 
 	private void initFragment() {
@@ -177,7 +196,6 @@ public class MainActivity extends BaseFragmentActivity implements
 			fragmentTransaction.add(R.id.main_fLayout, currentFrag, TAB1)
 					.commit();
 			isFirst = false;
-			tag = TAB1;
 			// changeViewBackground(HOME);
 		}
 	}
@@ -197,9 +215,9 @@ public class MainActivity extends BaseFragmentActivity implements
 			// 判断为相同fragment不切换
 		} else {
 			if (findresult != null) {
-				fragmentTransaction.hide(currentFrag).show(findresult).commit();
+				fragmentTransaction.hide(currentFrag).show(findresult);
+				adjustFragmentHindState(currentFrag.getTag(),Tag);
 			} else {
-
 				if (Tag.equals(TAB1)) {
 					findresult = new HomeFragment();
 				} else if (Tag.equals(TAB2)) {
@@ -215,7 +233,35 @@ public class MainActivity extends BaseFragmentActivity implements
 			}
 		}
 		currentFrag = findresult;
+	}
 
+	public void adjustFragmentHindState(String currentTab,String newTab){
+		FragmentManager fm=getSupportFragmentManager();
+		if(!currentTab.equals(TAB1)&&!newTab.equals(TAB1)){
+			Fragment fg=fm.findFragmentByTag(TAB1);
+			if(fg!=null){
+				fragmentTransaction.hide(fg);
+			}
+		}
+		if(!currentTab.equals(TAB2)&&!newTab.equals(TAB2)){
+			Fragment fg=fm.findFragmentByTag(TAB2);
+			if(fg!=null){
+				fragmentTransaction.hide(fg);
+			}
+		}
+		if(!currentTab.equals(TAB3)&&!newTab.equals(TAB3)){
+			Fragment fg=fm.findFragmentByTag(TAB3);
+			if(fg!=null){
+				fragmentTransaction.hide(fg);
+			}
+		}
+		if(!currentTab.equals(TAB4)&&!newTab.equals(TAB4)){
+			Fragment fg=fm.findFragmentByTag(TAB4);
+			if(fg!=null){
+				fragmentTransaction.hide(fg);
+			}
+		}
+		fragmentTransaction.commit();
 	}
 
 	// @Override

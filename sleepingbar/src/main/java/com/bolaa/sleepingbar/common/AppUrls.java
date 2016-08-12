@@ -26,8 +26,9 @@ public class AppUrls {
 	
 	//------------------------ 华丽的分割线----------------
 	public String APP_KEY="test";
-//	public String BASE_URL="http://192.168.2.126/beijingsleep/app/";
-	public String BASE_URL="http://bjsleep.m1ju.com/app/";
+//	public String BASE_URL="http://192.168.2.126/beijingsleep/app/";//局域网测试
+//	public String BASE_URL="http://bjsleep.m1ju.com/app/";//线上测试
+	public String BASE_URL="http://sleep.weijihealth.com/app/";//正式域名
 
 	public String URL_REGISTER=BASE_URL+"&c=user&act=reg_act";
 	public String URL_USER_INFO_SAVE=BASE_URL+"user.php?act=do_edit_userinfo";//修改或保存个人资料

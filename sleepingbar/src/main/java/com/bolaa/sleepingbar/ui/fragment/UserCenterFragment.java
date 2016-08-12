@@ -66,6 +66,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         }else {
             tvBindWatch.setVisibility(View.GONE);
         }
+        initData();
     }
 
     @Override
@@ -145,7 +146,6 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
     public void onActivityCreated(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
-         initData();
     }
 
     private void initData() {

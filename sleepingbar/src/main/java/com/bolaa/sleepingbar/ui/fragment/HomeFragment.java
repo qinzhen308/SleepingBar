@@ -22,6 +22,7 @@ import com.bolaa.sleepingbar.utils.ShareUtil;
 import com.bolaa.sleepingbar.watch.TipUtil;
 import com.bolaa.sleepingbar.watch.WatchConstant;
 import com.bolaa.sleepingbar.watch.WatchService;
+import com.bolaa.sleepingbar.watch.WatchUploadService;
 import com.core.framework.develop.LogUtil;
 import com.core.framework.net.NetworkWorker;
 import com.core.framework.store.sharePer.PreferencesUtils;
@@ -141,6 +142,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		filter.addAction(WatchConstant.ACTION_WATCH_UPDATE_RUN);
 		filter.addAction(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME);
 		filter.addAction(WatchConstant.ACTION_WATCH_DISCONNECTED);
+		filter.addAction(Intent.ACTION_DATE_CHANGED);
 		getActivity().registerReceiver(mReceiver,filter);
 	}
 
@@ -274,7 +276,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		}else if(v==tvNeedFriends2){
 			ParamBuilder params= new ParamBuilder();
 			params.clear();
-            String info =tvWalk.getText().toString()+"_"+tvRun.getText().toString()+"_"+tvDistance.getText().toString()+"_"+tvCalorie.getText().toString();
+            String info =tvStep.getText().toString()+"_"+tvRun.getText().toString()+"_"+tvDistance.getText().toString()+"_"+tvCalorie.getText().toString();
 			params.append("info",info);
 			params.append("id", AppStatic.getInstance().getmUserInfo().user_id);
 			params.append("s", MD5Util.getMD5(info+"_iphone_android"));
@@ -304,6 +306,7 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 				int[] runInfo=intent.getIntArrayExtra(WatchConstant.FLAG_RUN_INFO);
 				run=runInfo[2];
 				tvRun.setText(""+runInfo[2]);
+				tvWalk.setText(""+(stepTotal-run));
 			}else if(WatchConstant.ACTION_WATCH_CONNECTED_SUCCESS_NOTIFY_HOME.equals(action)){
 				if(AppUtil.isNull(PreferencesUtils.getString(WatchService.FLAG_CURRENT_DEVICE_ADDRESS))){
 					tvStepTip.setText(TipUtil.getStepTip(-1));
@@ -315,6 +318,13 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 				}
 			}else if(WatchConstant.ACTION_WATCH_DISCONNECTED.equals(action)){
 				disbindWatch();
+			}else if(Intent.ACTION_DATE_CHANGED.equals(intent.getAction())){
+				//日期改变，删除步行缓存
+				PreferencesUtils.remove(WatchConstant.FLAG_STEP_CACHE_FOR_LOOK);
+				//到点上传昨天的数据(防止今天没传成功的情况)
+				run=0;
+				stepTotal=0;
+				return;
 			}
 		}
 	};

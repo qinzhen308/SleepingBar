@@ -153,13 +153,17 @@ public class WatchUploadService extends IntentService{
 
     private void uploadTodayData(SleepTrendActivity.SleepCollectTime collectTime){
         LogUtil.d("alarm---onHandleIntent---uploadTodayData");
-        int[] indexs=collectTime.getCollectIndexs();
-        int start=indexs[0]-60*8;
-        int end=indexs[1]-60*8-1;//不包含最后一个点
-        if(end<0){
-            end=-1;
-            collectTime.sleep_end_time="08:00";
-        }
+
+        //因为手环系统时间比现实快了8小时，且手环里面的时间是都是转换成GMT+0来处理逻辑的，所以相当于手环里算出的时间是北京时间。所以取值不用进行时区转换
+        //不转换时区，也就不存在越界（时间跨天）的问题
+        int[] indexs=collectTime.getCollectIndexs();int start=indexs[0];
+        int end=indexs[1]-1;//不包含最后一个点
+//        int start=indexs[0]-60*8;
+//        int end=indexs[1]-60*8-1;//不包含最后一个点
+//        if(end<0){
+//            end=-1;
+//            collectTime.sleep_end_time="08:00";
+//        }
         String sleep_data= "";
         if(isStartByDateChanged){
             sleep_data=PreferencesUtils.getString("sleep_data_yesterday");
