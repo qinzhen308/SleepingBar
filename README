@@ -1,0 +1,25 @@
+sleepingbar模块是主项目业务
+Framework模块是框架，包括http请求以及一些工具类，日志管理等
+share模块，是三方分享、授权的三方sdk，目的只是为了将分享和授权这些社会化能力从主业务模块拆分出来，方便扩展或移除功能。其中的微信jar包会和微信支付冲突，所以主模块中引入微信支付的时候，
+请自行选择保留share里或者微信支付里的包。睡吧里是保留了share里的微信jar包
+
+sleepingbar.jks 的密码是123456  别名是sleepingbar  别名密码123456
+
+项目是用gradle管理项目和打包，建议开发环境使用最新版的android studio
+
+AppUrls是服务器接口管理类
+
+Framework模块中的NetworkWorker是网络请求的封装类，基于httpclient，实现了get和post的同步以及异步请求，也同时包含有回调和无回调的异步请求，请按需选择使用。
+客户端里的分页列表页面都共用了一套模板，继承至BaseListActivity和BaseListFragment。其中的网络请求部分用的不是NetworkWorker，而是单独封装的。目的是使分页列表数据的请求单独过程独立，不被普通请求影响。
+通过PageListRequest请求数据，并保留数当前状态（页码，已请求回来数据等...），待数据请求回来，回调到PageListResponse，最终回调到页面。
+页面通过继承BaseListActivity或BaseListFragment，并实现下列方法，来完成对该请求的回调的实现。
+    protected abstract void handlerData(List allData, List currentData, boolean isLastPage);
+
+    protected abstract void loadError(String message, Throwable throwable, int page);
+
+    protected abstract void loadTimeOut(String message, Throwable throwable);
+
+    protected abstract void loadNoNet();
+
+    protected abstract void loadServerError();
+
